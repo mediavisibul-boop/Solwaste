@@ -64,7 +64,7 @@ export const PartnerWithUs: React.FC = () => {
                 <p className="text-xl text-gray-300 max-w-2xl leading-relaxed mb-10 font-light">
                     We make composting machines. You know people who need them. Let's work together.
                 </p>
-                <Button className="py-5 px-10 text-xl" onClick={() => window.location.href = 'mailto:partners@solwaste.co'}>
+                <Button className="py-5 px-10 text-xl" onClick={() => window.open('https://quark-cornflower-fe8.notion.site/2cc84662572280d786f1f62594f9327f?pvs=105', '_blank')}>
                     Apply Now
                 </Button>
             </motion.div>
@@ -183,7 +183,7 @@ export const PartnerWithUs: React.FC = () => {
                         <p className="text-gray-700 text-lg mb-8">
                             Join a network of changemakers who are turning waste management into a movement.
                         </p>
-                        <Button className="w-full py-5 text-xl uppercase tracking-widest shadow-xl" onClick={() => window.location.href = 'mailto:partners@solwaste.co'}>
+                        <Button className="w-full py-5 text-xl uppercase tracking-widest shadow-xl" onClick={() => window.open('https://quark-cornflower-fe8.notion.site/2cc84662572280d786f1f62594f9327f?pvs=105', '_blank')}>
                             Apply Now
                         </Button>
                         <p className="text-center text-sm text-gray-500 mt-4">

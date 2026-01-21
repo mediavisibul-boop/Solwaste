@@ -174,11 +174,18 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                  </p>
               </div>
               <div className="flex space-x-4 sm:space-x-5 pt-2">
-                 {[Instagram, X, Linkedin, Youtube].map((Icon, i) => (
-                     <a key={i} href="#" className="text-gray-400 hover:text-brand-gold transition-colors transform hover:-translate-y-1 duration-300 touch-manipulation" aria-label={`Social media link ${i + 1}`}>
-                         <Icon size={22} className="sm:w-6 sm:h-6" />
-                     </a>
-                 ))}
+                 <a href="https://www.instagram.com/solwaste?igsh=MXVsMXVpMmZkOWh3Yg==" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-brand-gold transition-colors transform hover:-translate-y-1 duration-300 touch-manipulation" aria-label="Instagram">
+                     <Instagram size={22} className="sm:w-6 sm:h-6" />
+                 </a>
+                 <a href="https://x.com/SolwasteCo" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-brand-gold transition-colors transform hover:-translate-y-1 duration-300 touch-manipulation" aria-label="X (Twitter)">
+                     <X size={22} className="sm:w-6 sm:h-6" />
+                 </a>
+                 <a href="https://www.linkedin.com/company/solwaste/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-brand-gold transition-colors transform hover:-translate-y-1 duration-300 touch-manipulation" aria-label="LinkedIn">
+                     <Linkedin size={22} className="sm:w-6 sm:h-6" />
+                 </a>
+                 <a href="#" className="text-gray-400 hover:text-brand-gold transition-colors transform hover:-translate-y-1 duration-300 touch-manipulation" aria-label="Youtube">
+                     <Youtube size={22} className="sm:w-6 sm:h-6" />
+                 </a>
               </div>
             </div>
 

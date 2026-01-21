@@ -123,7 +123,9 @@ export const Careers: React.FC = () => {
                   {roles.map((role, idx) => (
                       <a 
                         key={idx} 
-                        href="mailto:careers@solwaste.co"
+                        href="https://quark-cornflower-fe8.notion.site/2cc84662572280318ff3ff2d5f2f0fee?pvs=105"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="bg-white p-6 border border-gray-200 flex justify-between items-center group hover:border-brand-gold transition-all cursor-pointer shadow-sm hover:shadow-md"
                       >
                           <span className="font-heading font-bold text-lg text-brand-brown group-hover:text-brand-gold transition-colors">{role}</span>
@@ -136,8 +138,8 @@ export const Careers: React.FC = () => {
                       <h3 className="text-2xl font-heading font-bold mb-2">Don't see your role?</h3>
                       <p className="text-gray-400">We are always looking for exceptional talent. Pitch us your role.</p>
                   </div>
-                  <Button variant="white" className="px-8 py-3" onClick={() => window.location.href = 'mailto:careers@solwaste.co'}>
-                      Email Us
+                  <Button variant="white" className="px-8 py-3" onClick={() => window.open('https://quark-cornflower-fe8.notion.site/2cc84662572280318ff3ff2d5f2f0fee?pvs=105', '_blank')}>
+                      Apply Now
                   </Button>
               </div>
           </div>
@@ -173,7 +175,7 @@ export const Careers: React.FC = () => {
                           <p className="text-white/90 text-lg mb-10 font-medium">
                               Ready to make a difference? Apply now and start your journey with Solwaste.
                           </p>
-                          <Button variant="white" className="w-full py-5 text-xl font-bold uppercase tracking-widest" onClick={() => window.location.href = 'mailto:careers@solwaste.co'}>
+                          <Button variant="white" className="w-full py-5 text-xl font-bold uppercase tracking-widest" onClick={() => window.open('https://quark-cornflower-fe8.notion.site/2cc84662572280318ff3ff2d5f2f0fee?pvs=105', '_blank')}>
                               Apply Now
                           </Button>
                       </div>

@@ -26,7 +26,7 @@ const slides: Slide[] = [
     title: "EcoLoop™",
     subtitle: "The Workhorse",
     description: "Designed for Gated Communities and Hotels. Handles 50-1000kg/day with Zero-Maintenance HEPA filtration. No smells, no pests.",
-    image: "/ecoloop.webp", // Single optimized image instead of slideshow
+    images: ["/ecoloop.webp", "/ecoloop2.webp","/ecoloop3.webp"], // Single optimized image instead of slideshow
     isDark: false, // Navbar should be Dark
     badge: "Societies & Hotels",
     specs: [
@@ -42,7 +42,7 @@ const slides: Slide[] = [
     title: "CompoGen™",
     subtitle: "The Enterprise Standard",
     description: "The 1.5+ Ton/day industrial powerhouse. High-torque German motors designed for 24/7 continuous operation in municipal and commercial sectors.",
-    image: "/compogen.png",
+    images: ["/compogen.webp", "/compogen2.webp"], // Single optimized image instead of slideshow
     isDark: true, // Navbar should be White
     badge: "Industrial & Municipal",
     specs: [
@@ -58,7 +58,7 @@ const slides: Slide[] = [
     title: "CyberSoil™",
     subtitle: "Residential Luxury",
     description: "The sleek solution for luxury apartments and executive cabins. Solar Dehydration technology processes waste in total silence.",
-    images: ["/cybersoli.webp", "/cybersoil1.webp"], // CyberSoil slideshow
+    images: ["/cybersoil.webp", "/cybersoil2.webp"], // CyberSoil slideshow
     isDark: false, // Navbar should be Dark
     badge: "Home & Office",
     specs: [
