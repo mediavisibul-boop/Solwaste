@@ -103,7 +103,7 @@ export const Solutions: React.FC = () => {
           name="EcoLoop™"
           tagline="Societies & Hotels"
           description="A zero-maintenance workhorse designed for residential societies, hotels, and resorts. The EcoLoop ensures that waste management doesn't impact the aesthetics or air quality of your premises."
-          image="/ecoloop.webp"
+          image="/ecoloop.png"
           reversed
           features={[
             "Zero Odor & Pest Free Operation",
@@ -124,7 +124,7 @@ export const Solutions: React.FC = () => {
           name="CyberSoil™"
           tagline="Residential & VP Cabins"
           description="Sustainability meets luxury. CyberSoil brings advanced solar dehydration technology into a form factor that fits under a dishwasher. Perfect for luxury apartments and executive offices."
-          image="/cybersoil.webp"
+          image="/cybersoil.png"
           features={[
             "Advanced Solar Dehydration Technology",
             "Compact Under-Counter Dimensions",

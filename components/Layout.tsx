@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Leaf, MapPin, Phone, Mail, Facebook, Twitter, Linkedin, Instagram, Youtube } from 'lucide-react';
+import { Menu, X, MapPin, Phone, Mail, Linkedin, Instagram, Youtube } from 'lucide-react';
 import { Button } from './ui/Button';
 
 export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -50,11 +50,6 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
     ? (isSlideDark ? 'text-white' : 'text-brand-brown') 
     : 'text-brand-brown';
 
-  // Logo Container Logic
-  const logoBgClass = isNavTransparent
-    ? (isSlideDark ? 'bg-white text-brand-gold' : 'bg-brand-dark text-white')
-    : 'bg-brand-gold text-white';
-
   return (
     <div className="flex flex-col min-h-screen font-sans overflow-x-hidden bg-gray-50">
       {/* Global Animations Style Block */}
@@ -87,9 +82,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
         <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 sm:space-x-3 group touch-manipulation">
-            <div className={`p-1.5 sm:p-2 rounded-sm transition-colors duration-500 shadow-sm ${logoBgClass}`}>
-              <Leaf size={20} className="sm:w-6 sm:h-6" fill="currentColor" />
-            </div>
+            <img src="/logo.png" alt="Solwaste Logo" className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 object-contain" />
             <div className="flex flex-col leading-none select-none">
               <span className={`text-xl sm:text-2xl md:text-3xl font-heading font-bold tracking-tighter transition-colors duration-300 ${textColorClass}`}>
                 SOL<span className="text-brand-gold">WASTE</span>
@@ -181,7 +174,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                  </p>
               </div>
               <div className="flex space-x-4 sm:space-x-5 pt-2">
-                 {[Instagram, Facebook, Twitter, Linkedin, Youtube].map((Icon, i) => (
+                 {[Instagram, X, Linkedin, Youtube].map((Icon, i) => (
                      <a key={i} href="#" className="text-gray-400 hover:text-brand-gold transition-colors transform hover:-translate-y-1 duration-300 touch-manipulation" aria-label={`Social media link ${i + 1}`}>
                          <Icon size={22} className="sm:w-6 sm:h-6" />
                      </a>
@@ -189,48 +182,60 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
               </div>
             </div>
 
-            {/* Column 2 Links */}
+            {/* Column 2 - Left Row */}
             <div className="lg:pl-8">
               <ul className="space-y-2 sm:space-y-3 font-heading font-medium text-base sm:text-lg text-gray-400">
-                {['Vision 2047', 'Sustainability', 'Blog', 'Gallery'].map((item) => (
-                  <li key={item}>
+                {[
+                  { name: 'Blog', path: '#' },
+                  { name: 'Sustainability', path: '/sustainability' },
+                  { name: 'Vision 2047', path: '/vision-2047' }
+                ].map((item) => (
+                  <li key={item.name}>
                     <Link 
-                        to={item === 'Vision 2047' ? '/vision-2047' : item === 'Sustainability' ? '/sustainability' : '#'} 
+                        to={item.path} 
                         className="hover:text-white transition-colors block touch-manipulation py-1"
                     >
-                        {item}
+                        {item.name}
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Column 3 Links */}
+            {/* Column 3 - Middle Row */}
             <div>
               <ul className="space-y-2 sm:space-y-3 font-heading font-medium text-base sm:text-lg text-gray-400">
-                {['Careers', 'Contact'].map((item) => (
-                  <li key={item}>
+                {[
+                  { name: 'Case Studies', path: '/case-studies' },
+                  { name: 'Gallery', path: '#' },
+                  { name: 'Contact', path: '/contact' }
+                ].map((item) => (
+                  <li key={item.name}>
                     <Link 
-                        to={item === 'Contact' ? '/contact' : item === 'Careers' ? '/careers' : '#'} 
+                        to={item.path} 
                         className="hover:text-white transition-colors block touch-manipulation py-1"
                     >
-                        {item}
+                        {item.name}
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
 
-             {/* Column 4 Links */}
+             {/* Column 4 - Right Row */}
              <div>
               <ul className="space-y-2 sm:space-y-3 font-heading font-medium text-base sm:text-lg text-gray-400">
-                {['Press and Media', 'Partner with us', 'Case Studies'].map((item) => (
-                  <li key={item}>
+                {[
+                  { name: 'Press and Media', path: '#' },
+                  { name: 'Partner with us', path: '/partner' },
+                  { name: 'Careers', path: '/careers' }
+                ].map((item) => (
+                  <li key={item.name}>
                      <Link 
-                        to={item === 'Partner with us' ? '/partner' : item === 'Case Studies' ? '/case-studies' : '#'} 
+                        to={item.path} 
                         className="hover:text-white transition-colors block touch-manipulation py-1"
                      >
-                        {item}
+                        {item.name}
                     </Link>
                   </li>
                 ))}

@@ -177,7 +177,12 @@ export const Careers: React.FC = () => {
                               Apply Now
                           </Button>
                       </div>
-                      <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+                      {/* CSS-only pattern - no external image */}
+                      <div className="absolute top-0 left-0 w-full h-full opacity-10" style={{
+                        backgroundImage: `repeating-linear-gradient(0deg, rgba(255,255,255,0.05) 0px, transparent 1px, transparent 2px, rgba(255,255,255,0.05) 3px),
+                                         repeating-linear-gradient(90deg, rgba(255,255,255,0.05) 0px, transparent 1px, transparent 2px, rgba(255,255,255,0.05) 3px)`,
+                        backgroundSize: '4px 4px'
+                      }}></div>
                   </div>
               </div>
           </div>

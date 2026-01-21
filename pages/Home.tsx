@@ -26,7 +26,7 @@ const slides: Slide[] = [
     title: "EcoLoop™",
     subtitle: "The Workhorse",
     description: "Designed for Gated Communities and Hotels. Handles 50-1000kg/day with Zero-Maintenance HEPA filtration. No smells, no pests.",
-    images: ["/ecoloop.png", "/ecoloop2.png", "/ecoloop3.png"], // Multiple images for slideshow
+    image: "/ecoloop.png", // Single optimized image instead of slideshow
     isDark: false, // Navbar should be Dark
     badge: "Societies & Hotels",
     specs: [
@@ -58,7 +58,7 @@ const slides: Slide[] = [
     title: "CyberSoil™",
     subtitle: "Residential Luxury",
     description: "The sleek solution for luxury apartments and executive cabins. Solar Dehydration technology processes waste in total silence.",
-    image: "/cybersoil.png",
+    images: ["/cybersoli.webp", "/cybersoil1.webp"], // CyberSoil slideshow
     isDark: false, // Navbar should be Dark
     badge: "Home & Office",
     specs: [
@@ -74,7 +74,7 @@ const slides: Slide[] = [
     title: "FAHAKA",
     subtitle: "The Universal Decomposer",
     description: "Breaking the barriers of organic waste. Capable of processing Food, Plastic Bottles, and Sanitary Waste into sterile resources.",
-    image: "https://www.transparenttextures.com/patterns/carbon-fibre.png",
+    images: ["/fahaka.webp", "/fahaka2.webp", "/fahaka3.webp"], // Fahaka machine slideshow
     isDark: true, // Navbar should be White
     badge: "Innovation Lab"
   }
@@ -107,12 +107,33 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
 
   // FAHAKA LAYOUT
   if (slide.type === 'innovation') {
-    return (
-      <div className="relative w-full h-full flex flex-col justify-center items-center bg-brand-dark text-center px-4 sm:px-6 overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-40 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-gold/20 to-brand-dark z-0"></div>
+    // Get the current image for slideshow
+    const currentImage = slide.images ? slide.images[currentImageIndex] : undefined;
 
-        <div className="relative z-10 max-w-5xl pt-8 sm:pt-12 px-4">
+    return (
+      <div className="relative w-full h-full flex flex-col justify-between bg-black text-center px-4 sm:px-6 overflow-hidden">
+        {/* Background Image Slideshow */}
+        <div className="absolute inset-0 z-0">
+          {currentImage && (
+            <AnimatePresence mode="wait">
+              <motion.img 
+                key={currentImage}
+                src={currentImage} 
+                alt={slide.title} 
+                className="w-full h-full object-cover object-center"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.7 }}
+              />
+            </AnimatePresence>
+          )}
+          {/* Premium black fade overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 max-w-5xl mx-auto pt-28 sm:pt-32 md:pt-36 px-4 flex-grow flex flex-col justify-center">
            <motion.div
              initial={{ opacity: 0, y: 30 }}
              animate={{ opacity: 1, y: 0 }}
@@ -121,24 +142,44 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
              <div className="inline-block border border-brand-gold/50 bg-brand-gold/10 backdrop-blur-md rounded-full px-4 sm:px-6 py-1.5 sm:py-2 text-brand-gold font-bold uppercase tracking-widest text-[10px] sm:text-xs mb-6 sm:mb-8 shadow-[0_0_15px_rgba(190,215,84,0.4)]">
                {slide.badge}
              </div>
-             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[9rem] font-heading font-black text-white mb-2 tracking-tighter leading-none mix-blend-overlay">
+             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[9rem] font-heading font-black text-white mb-2 tracking-tighter leading-none drop-shadow-2xl">
                {slide.title}
              </h1>
-             <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-gray-200 mb-6 sm:mb-8 uppercase tracking-widest">
+             <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-gray-200 mb-6 sm:mb-8 uppercase tracking-widest drop-shadow-lg">
                {slide.subtitle}
              </p>
-             <p className="text-gray-200 text-base sm:text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed font-normal px-4">
+             <p className="text-gray-200 text-base sm:text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed font-normal px-4 drop-shadow-md">
                Breaking the barriers of organic waste. <br className="hidden sm:block"/>
                Processing <span className="font-bold text-white">Food, Plastics, and Sanitary Waste</span> into sterile resources.
              </p>
 
              <Link to="/fahaka">
-               <Button className="bg-brand-gold text-white border-brand-gold hover:bg-white hover:text-brand-gold py-3 sm:py-4 px-8 sm:px-12 text-base sm:text-lg lg:text-xl shadow-2xl shadow-brand-gold/20 w-full sm:w-auto">
+               <Button className="bg-brand-gold text-white border-brand-gold hover:bg-white hover:text-brand-gold py-3 sm:py-4 px-8 sm:px-12 text-base sm:text-lg lg:text-xl shadow-2xl shadow-brand-gold/20 w-full sm:w-auto touch-manipulation">
                  Explore Fahaka
                </Button>
              </Link>
            </motion.div>
         </div>
+
+        {/* Image Slideshow Indicators */}
+        {slide.images && slide.images.length > 1 && (
+          <div className="relative z-10 pb-6 sm:pb-8">
+            <div className="flex justify-center gap-2 sm:gap-2.5">
+              {slide.images.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentImageIndex(idx)}
+                  className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 touch-manipulation ${
+                    idx === currentImageIndex 
+                      ? 'w-6 sm:w-8 bg-brand-gold' 
+                      : 'w-1.5 sm:w-2 bg-white/30 hover:bg-white/50'
+                  }`}
+                  aria-label={`View image ${idx + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     );
   }
@@ -169,7 +210,7 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
               key={currentImage}
               src={currentImage}
               alt={slide.title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
