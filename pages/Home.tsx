@@ -113,8 +113,8 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
     const currentImage = slide.images ? slide.images[currentImageIndex] : undefined;
 
     return (
-      <div className="relative w-full h-full flex flex-col justify-between bg-black text-center px-4 sm:px-6 overflow-hidden">
-        {/* Background Image Slideshow */}
+      <div className="relative w-full h-full flex flex-col justify-between bg-black text-center px-3 xs:px-4 sm:px-6 overflow-hidden">
+        {/* Background Image Slideshow - Optimized for Mobile */}
         <div className="absolute inset-0 z-0">
           {currentImage && (
             <AnimatePresence mode="wait">
@@ -122,7 +122,10 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
                 key={currentImage}
                 src={currentImage} 
                 alt={slide.title} 
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-cover object-center md:object-contain lg:object-cover"
+                style={{
+                  objectPosition: 'center center'
+                }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -130,12 +133,12 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
               />
             </AnimatePresence>
           )}
-          {/* Premium black fade overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
+          {/* Premium black fade overlay for text readability - Stronger on mobile */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80 md:from-black/60 md:via-black/40 md:to-black/70"></div>
         </div>
 
-        {/* Content */}
-        <div className="relative z-10 max-w-5xl mx-auto pt-28 sm:pt-32 md:pt-36 px-4 flex-grow flex flex-col justify-center">
+        {/* Content - Better mobile spacing */}
+        <div className="relative z-10 max-w-5xl mx-auto pt-24 xs:pt-28 sm:pt-32 md:pt-36 px-3 xs:px-4 flex-grow flex flex-col justify-center">
            <motion.div
              initial={{ opacity: 0, y: 30 }}
              animate={{ opacity: 1, y: 0 }}
@@ -204,7 +207,7 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
 
   return (
     <div className={`relative w-full h-full flex flex-col justify-between ${backgroundClass}`}>
-       {/* Background Image with Slideshow */}
+       {/* Background Image with Slideshow - Mobile Optimized */}
        <div className="absolute inset-0 z-0">
         {currentImage && (
           <AnimatePresence mode="wait">
@@ -213,6 +216,9 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
               src={currentImage}
               alt={slide.title}
               className="w-full h-full object-cover object-center"
+              style={{
+                objectPosition: 'center center'
+              }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -222,14 +228,14 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
             />
           </AnimatePresence>
         )}
-        {/* Subtle black fade overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/40"></div>
+        {/* Adaptive overlay - Stronger on mobile for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/50 md:from-black/30 md:via-black/10 md:to-black/40"></div>
         {/* Light tinted overlay */}
         <div className={`absolute inset-0 ${isDark ? 'bg-gradient-to-b from-brand-dark/20 via-transparent to-brand-dark/30' : 'bg-gradient-to-b from-white/20 via-transparent to-white/30'}`}></div>
       </div>
 
-      {/* Header Content */}
-      <div className={`relative z-10 container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 pt-24 xs:pt-28 sm:pt-32 md:pt-36 lg:pt-40 text-center`}>
+      {/* Header Content - Mobile Optimized Spacing */}
+      <div className={`relative z-10 container mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 pt-20 xs:pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-40 text-center`}>
         <motion.div
            initial={{ opacity: 0, y: 30 }}
            animate={{ opacity: 1, y: 0 }}
@@ -241,38 +247,38 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
               {slide.badge}
             </span>
           )}
-          <h1 className={`text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-heading font-bold ${textColor} mb-3 sm:mb-4 md:mb-5 lg:mb-6 tracking-tight leading-tight shadow-sm px-2 md:px-4`}>
+          <h1 className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-heading font-bold ${textColor} mb-2 xs:mb-3 sm:mb-4 md:mb-5 lg:mb-6 tracking-tight leading-[1.1] xs:leading-[1.15] sm:leading-tight shadow-sm px-1 xs:px-2 md:px-4`}>
             {slide.title}
           </h1>
-          <h2 className={`text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold uppercase tracking-wide sm:tracking-wider md:tracking-widest ${subColor} mb-5 sm:mb-6 md:mb-7 lg:mb-8 opacity-90 px-2 md:px-4 leading-snug`}>
+          <h2 className={`text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold uppercase tracking-wide sm:tracking-wider md:tracking-widest ${subColor} mb-3 xs:mb-4 sm:mb-5 md:mb-6 lg:mb-7 opacity-90 px-1 xs:px-2 md:px-4 leading-snug`}>
             {slide.subtitle}
           </h2>
-          <p className={`text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl ${descColor} max-w-5xl mx-auto leading-relaxed md:leading-loose font-semibold drop-shadow-md px-4 sm:px-6 md:px-8`}>
+          <p className={`text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl ${descColor} max-w-5xl mx-auto leading-relaxed md:leading-loose font-semibold drop-shadow-md px-3 xs:px-4 sm:px-6 md:px-8`}>
             {slide.description}
           </p>
         </motion.div>
       </div>
 
-      {/* Footer Specs & CTA */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 pb-10 xs:pb-12 sm:pb-14 md:pb-16 lg:pb-20 xl:pb-24">
-        <div className="flex flex-col lg:flex-row items-stretch lg:items-end justify-between gap-6 sm:gap-7 md:gap-8 lg:gap-10 xl:gap-12">
-          {/* Specs Grid */}
-          <div className={`grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 xs:gap-5 sm:gap-6 md:gap-7 lg:gap-8 xl:gap-12 w-full lg:w-auto ${hasBackgroundImage ? 'text-white' : (isDark ? 'text-white' : 'text-brand-brown')}`}>
+      {/* Footer Specs & CTA - Mobile Optimized */}
+      <div className="relative z-10 container mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 pb-8 xs:pb-10 sm:pb-12 md:pb-14 lg:pb-18 xl:pb-22">
+        <div className="flex flex-col lg:flex-row items-stretch lg:items-end justify-between gap-5 xs:gap-6 sm:gap-7 md:gap-8 lg:gap-10 xl:gap-12">
+          {/* Specs Grid - Mobile Optimized */}
+          <div className={`grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 xs:gap-4 sm:gap-5 md:gap-6 lg:gap-7 xl:gap-10 w-full lg:w-auto ${hasBackgroundImage ? 'text-white' : (isDark ? 'text-white' : 'text-brand-brown')}`}>
             {slide.specs?.map((spec, idx) => (
-              <div key={idx} className="flex flex-col border-l-3 sm:border-l-4 md:border-l-[5px] border-brand-gold/60 pl-3 xs:pl-4 sm:pl-5 md:pl-6 py-2 hover:border-brand-gold transition-colors">
-                <div className="flex items-baseline gap-1">
-                   <span className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold leading-none">{spec.value}</span>
-                   {spec.unit && <span className="text-xs xs:text-sm sm:text-base md:text-lg font-bold text-brand-gold">{spec.unit}</span>}
+              <div key={idx} className="flex flex-col border-l-2 xs:border-l-3 sm:border-l-4 md:border-l-[5px] border-brand-gold/60 pl-2 xs:pl-3 sm:pl-4 md:pl-5 py-1.5 xs:py-2 hover:border-brand-gold transition-colors">
+                <div className="flex items-baseline gap-0.5 xs:gap-1">
+                   <span className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-heading font-bold leading-none">{spec.value}</span>
+                   {spec.unit && <span className="text-[10px] xs:text-xs sm:text-sm md:text-base font-bold text-brand-gold">{spec.unit}</span>}
                 </div>
-                <span className={`text-[10px] xs:text-xs sm:text-sm md:text-base font-bold uppercase tracking-wider md:tracking-widest mt-1.5 sm:mt-2 md:mt-2.5 ${hasBackgroundImage ? 'text-gray-300' : (isDark ? 'text-gray-300' : 'text-gray-600')}`}>{spec.label}</span>
+                <span className={`text-[9px] xs:text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-wide sm:tracking-wider md:tracking-widest mt-1 xs:mt-1.5 sm:mt-2 ${hasBackgroundImage ? 'text-gray-300' : (isDark ? 'text-gray-300' : 'text-gray-600')}`}>{spec.label}</span>
               </div>
             ))}
           </div>
 
-          {/* Buttons */}
-          <div className="flex flex-col xs:flex-row gap-3 xs:gap-3.5 sm:gap-4 md:gap-5 w-full lg:w-auto mt-2 lg:mt-0 min-h-[48px] items-stretch">
+          {/* Buttons - Mobile Optimized */}
+          <div className="flex flex-col xs:flex-row gap-2.5 xs:gap-3 sm:gap-4 md:gap-5 w-full lg:w-auto mt-3 xs:mt-4 lg:mt-0 min-h-[48px] items-stretch">
              <Link to="/contact" className="w-full xs:w-1/2 lg:w-auto flex-1 lg:flex-none group">
-                <div className={`relative overflow-hidden w-full h-full min-h-[50px] xs:min-h-[52px] sm:min-h-[56px] md:min-h-[60px] lg:min-h-[64px] rounded-xl touch-manipulation transition-all duration-300 ${isDark ? 'bg-gradient-to-r from-white to-gray-100 hover:from-gray-100 hover:to-white shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)]' : 'bg-gradient-to-r from-brand-dark via-brand-olive to-brand-dark hover:from-brand-olive hover:via-brand-dark hover:to-brand-olive shadow-[0_0_20px_rgba(255,215,0,0.3)] hover:shadow-[0_0_30px_rgba(255,215,0,0.5)]'} active:scale-[0.97] hover:scale-[1.02]`}>
+                <div className={`relative overflow-hidden w-full h-full min-h-[48px] xs:min-h-[50px] sm:min-h-[54px] md:min-h-[58px] lg:min-h-[62px] rounded-lg xs:rounded-xl touch-manipulation transition-all duration-300 ${isDark ? 'bg-gradient-to-r from-white to-gray-100 hover:from-gray-100 hover:to-white shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)]' : 'bg-gradient-to-r from-brand-dark via-brand-olive to-brand-dark hover:from-brand-olive hover:via-brand-dark hover:to-brand-olive shadow-[0_0_20px_rgba(255,215,0,0.3)] hover:shadow-[0_0_30px_rgba(255,215,0,0.5)]'} active:scale-[0.97] hover:scale-[1.02]`}>
                   {/* Shine effect */}
                   <div className={`absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r ${isDark ? 'from-transparent via-white/40 to-transparent' : 'from-transparent via-brand-gold/40 to-transparent'}`}></div>
                   
@@ -280,9 +286,9 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
                   <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${isDark ? 'bg-white/10' : 'bg-brand-gold/10'} animate-pulse`}></div>
                   
                   {/* Button content */}
-                  <div className={`relative flex items-center justify-center gap-2 xs:gap-2.5 sm:gap-3 h-full px-6 xs:px-7 sm:px-8 md:px-10 lg:px-12 ${isDark ? 'text-brand-dark' : 'text-white'}`}>
-                    <span className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300">Order Now</span>
-                    <svg className="w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className={`relative flex items-center justify-center gap-1.5 xs:gap-2 sm:gap-2.5 h-full px-4 xs:px-5 sm:px-6 md:px-8 lg:px-10 ${isDark ? 'text-brand-dark' : 'text-white'}`}>
+                    <span className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl font-bold uppercase tracking-wide xs:tracking-wider group-hover:tracking-widest transition-all duration-300">Order Now</span>
+                    <svg className="w-3.5 h-3.5 xs:w-4 xs:h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
                   </div>
@@ -290,7 +296,7 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
             </Link>
             
             <Link to="/owc" className="w-full xs:w-1/2 lg:w-auto flex-1 lg:flex-none group">
-                <div className={`relative overflow-hidden w-full h-full min-h-[50px] xs:min-h-[52px] sm:min-h-[56px] md:min-h-[60px] lg:min-h-[64px] rounded-xl touch-manipulation transition-all duration-300 ${isDark ? 'bg-white/10 hover:bg-white/20 border-2 border-white/50 hover:border-white shadow-[0_0_15px_rgba(255,255,255,0.2)] hover:shadow-[0_0_25px_rgba(255,255,255,0.4)]' : 'bg-white/80 hover:bg-white border-2 border-brand-olive-dark/50 hover:border-brand-olive shadow-[0_0_15px_rgba(94,121,96,0.2)] hover:shadow-[0_0_25px_rgba(94,121,96,0.4)]'} backdrop-blur-lg active:scale-[0.97] hover:scale-[1.02]`}>
+                <div className={`relative overflow-hidden w-full h-full min-h-[48px] xs:min-h-[50px] sm:min-h-[54px] md:min-h-[58px] lg:min-h-[62px] rounded-lg xs:rounded-xl touch-manipulation transition-all duration-300 ${isDark ? 'bg-white/10 hover:bg-white/20 border-2 border-white/50 hover:border-white shadow-[0_0_15px_rgba(255,255,255,0.2)] hover:shadow-[0_0_25px_rgba(255,255,255,0.4)]' : 'bg-white/80 hover:bg-white border-2 border-brand-olive-dark/50 hover:border-brand-olive shadow-[0_0_15px_rgba(94,121,96,0.2)] hover:shadow-[0_0_25px_rgba(94,121,96,0.4)]'} backdrop-blur-lg active:scale-[0.97] hover:scale-[1.02]`}>
                   {/* Shine effect */}
                   <div className={`absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r ${isDark ? 'from-transparent via-white/30 to-transparent' : 'from-transparent via-brand-olive/30 to-transparent'}`}></div>
                   
@@ -298,26 +304,26 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
                   <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl ${isDark ? 'ring-2 ring-white/40' : 'ring-2 ring-brand-olive/40'}`}></div>
                   
                   {/* Button content */}
-                  <div className={`relative flex items-center justify-center gap-2 xs:gap-2.5 sm:gap-3 h-full px-6 xs:px-7 sm:px-8 md:px-10 lg:px-12 ${isDark ? 'text-white' : 'text-brand-olive-dark group-hover:text-brand-olive'}`}>
-                    <svg className="w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 group-hover:rotate-90 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className={`relative flex items-center justify-center gap-1.5 xs:gap-2 sm:gap-2.5 h-full px-4 xs:px-5 sm:px-6 md:px-8 lg:px-10 ${isDark ? 'text-white' : 'text-brand-olive-dark group-hover:text-brand-olive'}`}>
+                    <svg className="w-3.5 h-3.5 xs:w-4 xs:h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:rotate-90 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
-                    <span className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300">Tech Specs</span>
+                    <span className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl font-bold uppercase tracking-wide xs:tracking-wider group-hover:tracking-widest transition-all duration-300">Tech Specs</span>
                   </div>
                 </div>
             </Link>
           </div>
         </div>
         
-        {/* Image Slideshow Indicators */}
+        {/* Image Slideshow Indicators - Mobile Optimized */}
         {slide.images && slide.images.length > 1 && (
-          <div className="flex justify-center items-center gap-2 xs:gap-2.5 sm:gap-3 mt-6 sm:mt-7 md:mt-8 lg:mt-10">
+          <div className="flex justify-center items-center gap-1.5 xs:gap-2 sm:gap-2.5 mt-4 xs:mt-5 sm:mt-6 md:mt-7 lg:mt-8">
             {slide.images.map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => setCurrentImageIndex(idx)}
-                className={`rounded-full transition-all duration-300 ease-in-out touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center p-2 active:scale-90 ${
+                className={`rounded-full transition-all duration-300 ease-in-out touch-manipulation min-w-[40px] min-h-[40px] xs:min-w-[44px] xs:min-h-[44px] flex items-center justify-center p-1.5 xs:p-2 active:scale-90 ${
                   idx === currentImageIndex
                     ? 'scale-110'
                     : 'scale-100 hover:scale-105'
@@ -326,8 +332,8 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
               >
                 <span className={`block rounded-full transition-all duration-300 ${
                   idx === currentImageIndex
-                    ? `h-2 sm:h-2.5 md:h-3 w-8 sm:w-10 md:w-12 ${isDark ? 'bg-white shadow-lg shadow-white/50' : 'bg-brand-dark shadow-lg shadow-brand-dark/50'}`
-                    : `h-2 sm:h-2.5 md:h-3 w-2 sm:w-2.5 md:w-3 ${isDark ? 'bg-white/40 hover:bg-white/60' : 'bg-brand-dark/40 hover:bg-brand-dark/60'}`
+                    ? `h-1.5 xs:h-2 sm:h-2.5 md:h-3 w-6 xs:w-8 sm:w-10 md:w-12 ${isDark ? 'bg-white shadow-lg shadow-white/50' : 'bg-brand-dark shadow-lg shadow-brand-dark/50'}`
+                    : `h-1.5 xs:h-2 sm:h-2.5 md:h-3 w-1.5 xs:w-2 sm:w-2.5 md:w-3 ${isDark ? 'bg-white/40 hover:bg-white/60' : 'bg-brand-dark/40 hover:bg-brand-dark/60'}`
                 }`}></span>
               </button>
             ))}
@@ -442,8 +448,8 @@ export const Home: React.FC = () => {
             </button>
         </div>
 
-        {/* BOTTOM INDICATORS - Improved touch targets and accessibility */}
-        <div className="absolute bottom-6 xs:bottom-7 sm:bottom-8 md:bottom-10 lg:bottom-12 left-1/2 transform -translate-x-1/2 z-20 flex gap-2 xs:gap-2.5 sm:gap-3 md:gap-4">
+        {/* BOTTOM INDICATORS - Mobile Optimized with Better Touch Targets */}
+        <div className="absolute bottom-4 xs:bottom-5 sm:bottom-6 md:bottom-8 lg:bottom-10 left-1/2 transform -translate-x-1/2 z-20 flex gap-1.5 xs:gap-2 sm:gap-2.5 md:gap-3">
              {slides.map((_, idx) => (
                  <button 
                     key={idx}
@@ -451,11 +457,11 @@ export const Home: React.FC = () => {
                         setDirection(idx > currentIndex ? 1 : -1);
                         setCurrentIndex(idx);
                     }}
-                    className={`min-w-[44px] min-h-[44px] flex items-center justify-center p-2 rounded-full transition-all duration-300 ease-in-out touch-manipulation active:scale-90 ${idx === currentIndex ? 'scale-110' : 'scale-100 hover:scale-105'}`}
+                    className={`min-w-[40px] min-h-[40px] xs:min-w-[44px] xs:min-h-[44px] flex items-center justify-center p-1.5 xs:p-2 rounded-full transition-all duration-300 ease-in-out touch-manipulation active:scale-90 ${idx === currentIndex ? 'scale-110' : 'scale-100 hover:scale-105'}`}
                     aria-label={`Go to slide ${idx + 1}: ${slides[idx].title}`}
                     aria-current={idx === currentIndex ? 'true' : 'false'}
                  >
-                    <span className={`block rounded-full transition-all duration-300 ${idx === currentIndex ? 'h-2 sm:h-2.5 md:h-3 w-14 sm:w-16 md:w-20 lg:w-24 bg-brand-gold shadow-lg shadow-brand-gold/50' : 'h-2 sm:h-2.5 md:h-3 w-2 sm:w-2.5 md:w-3 bg-white/40 hover:bg-white/70 active:bg-white'}`}></span>
+                    <span className={`block rounded-full transition-all duration-300 ${idx === currentIndex ? 'h-1.5 xs:h-2 sm:h-2.5 md:h-3 w-10 xs:w-12 sm:w-14 md:w-18 lg:w-20 bg-brand-gold shadow-lg shadow-brand-gold/50' : 'h-1.5 xs:h-2 sm:h-2.5 md:h-3 w-1.5 xs:w-2 sm:w-2.5 md:w-3 bg-white/40 hover:bg-white/70 active:bg-white'}`}></span>
                  </button>
              ))}
         </div>
