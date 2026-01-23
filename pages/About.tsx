@@ -16,8 +16,8 @@ export const About: React.FC = () => {
     <div className="">
       <SEO 
         title="About Us - Leading Waste Management Company in India"
-        description="Solwaste is India's leading provider of organic waste management solutions. German engineering meets Indian innovation. SWM Rules 2016 compliant, 5-year warranty, serving 500+ clients across India since inception."
-        keywords="about solwaste, waste management company India, organic waste solutions, composting technology, sustainable waste management, environmental solutions, green technology India"
+        description="Solwaste provides composting solutions for large waste generators in India. We help organizations implement on-site composting solutions that reduce waste costs, ensure compliance, and support long-term sustainability goals. Trusted by 500+ clients including hotels, malls, IT parks, hospitals, and institutions."
+        keywords="about solwaste, waste management company India, composting solutions for large waste generators, bulk waste generators, organic waste solutions, on-site composting, composting technology, sustainable waste management, waste compliance India, zero waste India, environmental solutions, green technology India, SWM Rules compliance, ESG sustainability"
         type="website"
       />
       {/* Header - Mobile Optimized */}
@@ -36,7 +36,7 @@ export const About: React.FC = () => {
               Engineering A <br className="hidden sm:block"/> Sustainable Tomorrow
             </h1>
             <p className="text-base sm:text-lg md:text-xl lg:text-xl max-w-2xl leading-relaxed font-light border-l-2 sm:border-l-4 border-gray-700 pl-4 sm:pl-5 md:pl-6">
-              Solwaste is dedicated to transforming the way India manages organic waste. Through innovation, technology, and commitment, we turn environmental challenges into economic resources.
+              We help organizations across India implement on-site composting solutions that reduce waste costs, ensure compliance, and support long-term sustainability goals. Through proven technology, turnkey installation, and compliance-ready systems, we turn environmental challenges into economic resources.
             </p>
           </motion.div>
         </div>
@@ -54,13 +54,13 @@ export const About: React.FC = () => {
               <div className="w-16 sm:w-20 md:w-24 h-0.5 sm:h-1 bg-brand-gold mb-5 sm:mb-6 md:mb-7 lg:mb-8"></div>
               <div className="space-y-4 sm:space-y-5 md:space-y-6 text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg">
                 <p>
-                  Solwaste was founded with a singular vision: to address the growing organic waste crisis in urban environments through reliable, scalable technology.
+                  Solwaste was founded with a singular vision: to address the growing organic waste crisis in urban environments through reliable, scalable, compliance-ready technology.
                 </p>
                 <p>
-                  Leveraging <strong>German engineering</strong> principles, we developed a suite of Organic Waste Composters (OWC) that offer superior efficiency and durability compared to conventional methods. We don't just assemble machines; we engineer ecosystems.
+                  Leveraging <strong>German engineering</strong> principles, we developed a suite of Organic Waste Composters (OWC) that offer superior efficiency and durability compared to conventional methods. Our composting solutions help <strong>large waste generators in India</strong>—hotels, malls, IT parks, hospitals, educational institutions, and food processing units—stay compliant with India's Solid Waste Management Rules while reducing costs.
                 </p>
                 <p>
-                  Today, with over <strong>500 installations</strong> across commercial, institutional, and residential sectors, we are a trusted partner in India's journey towards the "Waste to Wealth" and "Clean India" missions.
+                  Today, with over <strong>500 installations</strong> across commercial, institutional, and residential sectors, we are a trusted partner in India's journey towards the "Waste to Wealth" and "Clean India" missions. Our on-site composting solutions reduce waste hauling costs, ensure compliance, and help organizations achieve their ESG and sustainability goals.
                 </p>
               </div>
             </div>
@@ -106,10 +106,10 @@ export const About: React.FC = () => {
            
            <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
              {[
-               { icon: <Users size={28} className="sm:w-8 sm:h-8" />, label: "Residential Societies", desc: "RWAs & Townships" },
-               { icon: <div className="font-black text-xl sm:text-2xl">🏢</div>, label: "Corporate Offices", desc: "Tech Parks & SEZs" },
                { icon: <div className="font-black text-xl sm:text-2xl">🏨</div>, label: "Hotels & Resorts", desc: "Hospitality Industry" },
-               { icon: <div className="font-black text-xl sm:text-2xl">🏛️</div>, label: "Municipalities", desc: "Smart City Projects" },
+               { icon: <div className="font-black text-xl sm:text-2xl">🏢</div>, label: "Corporate & IT Parks", desc: "Tech Parks & SEZs" },
+               { icon: <div className="font-black text-xl sm:text-2xl">🏥</div>, label: "Hospitals & Institutions", desc: "Healthcare & Education" },
+               { icon: <div className="font-black text-xl sm:text-2xl">🏛️</div>, label: "Malls & Municipalities", desc: "Commercial & Government" },
              ].map((client, idx) => (
                <div key={idx} className="p-5 sm:p-6 md:p-7 lg:p-8 bg-white border-b-4 border-transparent hover:border-brand-gold shadow-sm hover:shadow-xl transition-all group">
                  <div className="mb-4 sm:mb-5 md:mb-6 text-brand-brown group-hover:text-brand-gold transition-colors flex justify-center bg-brand-light w-14 h-14 sm:w-16 sm:h-16 rounded-full items-center mx-auto">{client.icon}</div>

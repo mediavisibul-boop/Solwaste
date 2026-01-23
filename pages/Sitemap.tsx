@@ -25,11 +25,13 @@ const Sitemap = () => {
         { name: "Vision 2047", path: "/vision-2047", description: "Our roadmap towards a zero-waste India" },
         { name: "Sustainability", path: "/sustainability", description: "Our ESG goals and environmental impact metrics" },
         { name: "Case Studies", path: "/case-studies", description: "Successful implementations across India" },
+        { name: "Gallery", path: "/gallery", description: "View our installations and projects in action" },
       ]
     },
     {
       title: "Partnerships & Careers",
       links: [
+        { name: "Press and Media", path: "/press-media", description: "Latest news, installations, and media coverage" },
         { name: "Partner With Us", path: "/partner", description: "Become a Solwaste partner and join our mission" },
         { name: "Careers", path: "/careers", description: "Explore job opportunities at Solwaste" },
       ]

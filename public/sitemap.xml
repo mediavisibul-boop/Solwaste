@@ -70,6 +70,34 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Gallery Page -->
+  <url>
+    <loc>https://solwaste.co/#/gallery</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://solwaste.co/gallery/img1.webp</image:loc>
+      <image:title>Solwaste Installation 1</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://solwaste.co/gallery/img2.webp</image:loc>
+      <image:title>Solwaste Installation 2</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://solwaste.co/gallery/img3.webp</image:loc>
+      <image:title>Solwaste Installation 3</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://solwaste.co/gallery/img4.webp</image:loc>
+      <image:title>Solwaste Installation 4</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://solwaste.co/gallery/img5.webp</image:loc>
+      <image:title>Solwaste Installation 5</image:title>
+    </image:image>
+  </url>
+
   <!-- Sustainability Page -->
   <url>
     <loc>https://solwaste.co/#/sustainability</loc>
@@ -98,6 +126,14 @@
   <url>
     <loc>https://solwaste.co/#/careers</loc>
     <lastmod>2026-01-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Press & Media Page -->
+  <url>
+    <loc>https://solwaste.co/#/press-media</loc>
+    <lastmod>2026-01-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

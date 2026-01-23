@@ -32,9 +32,9 @@ export const Sustainability: React.FC = () => {
   return (
     <div className="bg-white">
       <SEO 
-        title="Sustainability Report - Environmental Impact & ESG Goals"
-        description="Solwaste's commitment to sustainability. Carbon footprint reduction, circular economy principles, ESG goals, environmental impact metrics. Building a zero-waste future for India through innovation."
-        keywords="sustainability report, environmental impact, ESG goals, circular economy, carbon footprint reduction, zero waste, sustainable practices, green technology, climate action India"
+        title="Sustainability & ESG Solutions for Large Waste Generators in India"
+        description="Solwaste helps large waste generators achieve ESG and sustainability goals through on-site composting solutions. Carbon footprint reduction, circular economy principles, SWM compliance, and environmental impact metrics. Building a zero-waste future for India's hotels, malls, IT parks, hospitals, and institutions."
+        keywords="sustainability report, ESG solutions India, composting solutions for large waste generators, environmental impact, ESG goals large organizations, circular economy India, carbon footprint reduction, zero waste India, sustainable waste management, green technology, climate action India, waste to wealth, SWM compliance"
         type="article"
       />
       {/* Header */}

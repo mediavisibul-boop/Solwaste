@@ -15,7 +15,7 @@ interface SEOProps {
 export const SEO: React.FC<SEOProps> = ({
   title,
   description,
-  keywords = 'organic waste management, composting machines, waste management solutions, EcoLoop, CompoGen, CyberSoil, Fahaka, organic waste composter, sustainable waste management, India waste management',
+  keywords = 'composting solutions for large waste generators in India, organic waste management, bulk waste generators India, on-site composting, composting machines, waste management solutions, EcoLoop, CompoGen, CyberSoil, Fahaka, organic waste composter, sustainable waste management, waste compliance India, SWM Rules compliance, zero waste India, ESG sustainability, waste to wealth India',
   image = '/logo.png',
   type = 'website',
   author = 'Solwaste',

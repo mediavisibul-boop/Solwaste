@@ -261,7 +261,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
               <ul className="space-y-2 sm:space-y-3 font-heading font-medium text-base sm:text-lg text-gray-400">
                 {[
                   { name: 'Case Studies', path: '/case-studies' },
-                  { name: 'Gallery', path: '#' },
+                  { name: 'Gallery', path: '/gallery' },
                   { name: 'Contact', path: '/contact' }
                 ].map((item) => (
                   <li key={item.name}>
@@ -280,7 +280,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
              <div>
               <ul className="space-y-2 sm:space-y-3 font-heading font-medium text-base sm:text-lg text-gray-400">
                 {[
-                  { name: 'Press and Media', path: '#' },
+                  { name: 'Press and Media', path: '/press-media' },
                   { name: 'Partner with us', path: '/partner' },
                   { name: 'Careers', path: '/careers' }
                 ].map((item) => (

@@ -134,7 +134,7 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
             </AnimatePresence>
           )}
           {/* Premium white fade overlay for elegant look */}
-          <div className="absolute inset-0 bg-gradient-to-b from-white/35 via-white/25 to-white/30"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/25 to-black/30"></div>
         </div>
 
         {/* Content - Better mobile spacing */}
@@ -392,9 +392,9 @@ export const Home: React.FC = () => {
   return (
     <>
       <SEO 
-        title="Home - Leading Organic Waste Management Solutions"
-        description="Solwaste offers advanced organic waste composters for societies, hotels, industries & municipalities. EcoLoop, CompoGen, CyberSoil & Fahaka - SWM Rules 2016 compliant. Transform waste into valuable compost with German engineering."
-        keywords="organic waste management India, composting machines, waste to compost, EcoLoop waste composter, CompoGen industrial composter, CyberSoil residential composter, Fahaka waste processor, sustainable waste solutions, zero waste technology, SWM Rules 2016"
+        title="Composting Solutions for Large Waste Generators in India"
+        description="Solwaste provides composting solutions for large waste generators in India - hotels, malls, IT parks, hospitals & institutions. On-site waste management that reduces costs, ensures compliance with SWM Rules, and supports ESG goals. Process 100kg to several tons daily with proven German engineering. Zero landfill, maximum ROI."
+        keywords="composting solutions for large waste generators in India, bulk waste generators, organic waste management India, on-site composting, hotel waste management, mall waste solutions, IT park composting, hospital waste management, institutional composting, SWM Rules compliance, waste to wealth India, zero waste India, ESG sustainability, EcoLoop, CompoGen, CyberSoil, Fahaka, composting machines India"
         type="website"
       />
       {/* FULL SCREEN SLIDER SECTION */}

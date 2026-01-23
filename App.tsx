@@ -14,6 +14,8 @@ import { CaseStudies } from './pages/CaseStudies';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import AccessibilityStatement from './pages/AccessibilityStatement';
 import Sitemap from './pages/Sitemap';
+import PressMedia from './pages/PressMedia';
+import Gallery from './pages/Gallery';
 
 const App: React.FC = () => {
   return (
@@ -30,6 +32,8 @@ const App: React.FC = () => {
           <Route path="/careers" element={<Careers />} />
           <Route path="/partner" element={<PartnerWithUs />} />
           <Route path="/case-studies" element={<CaseStudies />} />
+          <Route path="/press-media" element={<PressMedia />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/accessibility-statement" element={<AccessibilityStatement />} />
           <Route path="/sitemap" element={<Sitemap />} />
