@@ -1,34 +1,37 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight } from '../Icons';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'outline' | 'white';
   withArrow?: boolean;
 }
 
-export const Button: React.FC<ButtonProps> = ({ 
-  children, 
-  variant = 'primary', 
-  withArrow = false, 
-  className = '', 
-  ...props 
+export const Button: React.FC<ButtonProps> = ({
+  children,
+  variant = 'primary',
+  withArrow = false,
+  className = '',
+  ...props
 }) => {
-  // Removed rounded corners, increased font weight, tracking
-  const baseStyles = "inline-flex items-center justify-center transition-all duration-300 ease-in-out border-2 font-heading font-bold tracking-wider";
-  
-  const variants = {
-    primary: "bg-brand-gold text-white border-brand-gold hover:bg-brand-olive hover:border-brand-olive",
-    outline: "bg-transparent text-brand-gold border-brand-gold hover:bg-brand-gold hover:text-white",
-    white: "bg-white text-brand-dark border-white hover:bg-brand-light border-transparent"
+  const baseStyles = 'inline-flex items-center justify-center rounded-md transition-colors duration-150 font-medium focus:outline-none focus:ring-2 focus:ring-offset-2';
+
+  const size = 'px-4 py-2 sm:px-5 sm:py-3 text-sm sm:text-base';
+
+  const variants: Record<string, string> = {
+    primary: 'bg-[var(--accent,#d4af37)] text-white border-transparent hover:bg-opacity-95 shadow-sm',
+    outline: 'bg-transparent text-[var(--accent,#111827)] border border-gray-200 hover:bg-gray-50',
+    white: 'bg-white text-[var(--text,#111827)] border border-gray-100 hover:bg-gray-50',
   };
 
   return (
-    <button 
-      className={`${baseStyles} ${variants[variant]} ${className}`} 
+    <button
+      className={`${baseStyles} ${size} ${variants[variant]} ${className}`}
       {...props}
     >
-      {children}
-      {withArrow && <ArrowRight className="ml-2 w-5 h-5" />}
+      <span className="leading-none">{children}</span>
+      {withArrow && (
+        <ArrowRight className="ml-3 w-4 h-4" />
+      )}
     </button>
   );
 };

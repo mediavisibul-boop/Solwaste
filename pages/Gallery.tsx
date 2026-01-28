@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { SEO } from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight } from '../components/Icons';
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);

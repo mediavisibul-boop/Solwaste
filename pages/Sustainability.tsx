@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Eye, Leaf, Scale, Building2, Truck, Lightbulb, Users, FileText, RefreshCw, Mail, Phone, MapPin } from 'lucide-react';
+import { Eye, Leaf, Scale, Building2, Truck, Lightbulb, Users, FileText, RefreshCw, Mail, Phone, MapPin } from '../components/Icons';
 import { SEO } from '../components/SEO';
 
 const Section: React.FC<{ number: string; title: string; children: React.ReactNode; icon: React.ReactNode }> = ({ number, title, children, icon }) => (

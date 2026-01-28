@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, MapPin, Phone, Mail, Linkedin, Instagram, Youtube } from 'lucide-react';
+import { Menu, X, MapPin, Phone, Mail, Linkedin, Instagram, Youtube } from './Icons';
 import { Button } from './ui/Button';
 
 export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -51,7 +51,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
     : 'text-brand-brown';
 
   return (
-    <div className="flex flex-col min-h-screen font-sans overflow-x-hidden bg-gray-50">
+    <div className="flex flex-col min-h-screen font-sans overflow-x-hidden max-w-full bg-gray-50">
       {/* Global Animations Style Block */}
       <style>{`
             @keyframes marquee {
@@ -79,13 +79,13 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             : 'bg-white/95 backdrop-blur-md shadow-sm py-3 sm:py-4 border-b border-gray-200' 
         }`}
       >
-        <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
+        <div className="container mx-auto px-3 xs:px-4 sm:px-6 flex justify-between items-center">
           {/* Logo - Clean design without borders */}
-          <Link to="/" className="flex items-center gap-2 sm:gap-3 group touch-manipulation">
+          <Link to="/" className="flex items-center gap-0.5 sm:gap-1 group touch-manipulation">
             <img 
               src="/logo.png" 
               alt="Solwaste Logo" 
-              className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 object-contain transition-all duration-500"
+              className="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 object-contain transition-all duration-500"
             />
             <div className="flex flex-col leading-none select-none">
               <span className="text-xl sm:text-2xl md:text-3xl font-heading font-bold tracking-tighter transition-colors duration-500">
@@ -115,7 +115,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                   isNavTransparent ? 'text-white' : 'text-brand-brown'
                 }`}
             >
-                <span className="relative px-2.5 py-1 text-[10px] font-bold rounded-md bg-brand-gold text-white badge-blink shadow-md shadow-brand-gold/30">
+                <span className="relative px-2.5 py-1 text-[10px] font-bold rounded-md bg-[#FF0000] text-white badge-blink shadow-md shadow-[#FF0000]/30">
                   NEW
                 </span>
                 <span className="group-hover:text-brand-gold transition-colors relative">
@@ -155,7 +155,8 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 
         {/* Mobile Menu - Enhanced responsive design */}
         <div className={`md:hidden absolute top-full left-0 w-full bg-white shadow-2xl border-t-2 border-gray-100 transition-all duration-300 ease-in-out origin-top ${isMobileMenuOpen ? 'max-h-screen opacity-100 visible' : 'max-h-0 opacity-0 invisible'}`}>
-          <nav className="flex flex-col p-5 xs:p-6 sm:p-7 md:p-8 space-y-3 xs:space-y-4 sm:space-y-5" role="navigation" aria-label="Mobile navigation">
+          <div className="container mx-auto px-3 xs:px-4 sm:px-6">
+            <nav className="flex flex-col p-5 xs:p-6 sm:p-7 md:p-8 space-y-3 xs:space-y-4 sm:space-y-5" role="navigation" aria-label="Mobile navigation">
             <Link 
               to="/" 
               onClick={() => setIsMobileMenuOpen(false)} 
@@ -176,7 +177,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
               className="min-h-[48px] flex items-center justify-center text-base xs:text-lg sm:text-xl font-heading font-bold uppercase tracking-wider text-brand-gold bg-brand-light hover:bg-brand-gold hover:text-white active:bg-brand-gold/90 transition-all duration-200 py-3 xs:py-3.5 px-4 rounded-lg active:scale-98 touch-manipulation relative"
             >
               Fahaka 
-              <span className="text-[10px] xs:text-xs bg-brand-gold text-white px-2 py-1 rounded ml-2 badge-blink font-bold absolute -top-1 -right-1">NEW</span>
+              <span className="text-[10px] xs:text-xs bg-[#FF0000] text-white px-2 py-1 rounded ml-2 badge-blink font-bold absolute -top-1 -right-1">NEW</span>
             </Link>
             <div className="pt-2">
               <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="block">
@@ -185,7 +186,8 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                   </Button>
               </Link>
             </div>
-          </nav>
+            </nav>
+          </div>
         </div>
       </nav>
 
@@ -206,7 +208,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
              </div>
         </div>
 
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="container mx-auto px-3 xs:px-4 sm:px-6 relative z-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-8 mb-12 sm:mb-16 border-b border-gray-800 pb-10 sm:pb-12">
             
             {/* Column 1: Contact Info */}

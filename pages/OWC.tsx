@@ -1,17 +1,39 @@
 import React, { useState, useEffect } from 'react';
-import { Check, Download } from 'lucide-react';
+import { Check, Download } from '../components/Icons';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '../components/ui/Button';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
 
 const SpecTable: React.FC<{ specs: {label: string, value: string}[] }> = ({ specs }) => (
-  <div className="grid grid-cols-2 gap-y-4 sm:gap-y-5 gap-x-6 sm:gap-x-8 mt-4 sm:mt-5 md:mt-6 text-base">
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
     {specs.map((s, i) => (
-      <div key={i} className="flex justify-between border-b border-gray-200 pb-2 sm:pb-3">
-        <span className="font-bold text-gray-600 uppercase text-xs tracking-wider">{s.label}</span>
-        <span className="font-bold text-brand-brown text-base sm:text-lg">{s.value}</span>
-      </div>
+      <motion.div 
+        key={i}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: i * 0.1 }}
+        className="relative group"
+      >
+        <div className="bg-white border-2 border-gray-100 rounded-xl p-5 sm:p-6 hover:border-brand-gold/40 hover:shadow-lg transition-all duration-300">
+          {/* Decorative corner accent */}
+          <div className="absolute top-0 right-0 w-12 h-12 bg-gradient-to-br from-brand-gold/10 to-transparent rounded-tr-xl rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          
+          <div className="relative">
+            <div className="text-xs sm:text-sm font-bold text-gray-500 uppercase tracking-widest mb-2 sm:mb-3 flex items-center gap-2">
+              <div className="w-1 h-1 rounded-full bg-brand-gold" />
+              {s.label}
+            </div>
+            <div className="text-xl sm:text-2xl md:text-3xl font-heading font-black text-brand-dark group-hover:text-brand-gold transition-colors duration-300">
+              {s.value}
+            </div>
+          </div>
+          
+          {/* Bottom accent line */}
+          <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-gold/0 via-brand-gold to-brand-gold/0 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-b-xl" />
+        </div>
+      </motion.div>
     ))}
   </div>
 );
@@ -90,9 +112,34 @@ const ProductDetail: React.FC<{
         </ul>
       </div>
 
-      <div className="bg-brand-light p-5 sm:p-6 md:p-7 lg:p-8 border border-gray-200 rounded-sm">
-         <h4 className="font-heading font-bold uppercase text-brand-brown mb-3 sm:mb-4 text-sm sm:text-base tracking-wide">Technical Specifications</h4>
-         <SpecTable specs={specs} />
+      <div className="bg-gradient-to-br from-brand-light via-white to-brand-light/50 p-6 sm:p-8 md:p-10 lg:p-12 border-2 border-gray-100 rounded-2xl shadow-xl relative overflow-hidden">
+        {/* Subtle pattern background */}
+        <div className="absolute inset-0 opacity-[0.02]" style={{
+          backgroundImage: 'radial-gradient(circle at 2px 2px, #000 1px, transparent 1px)',
+          backgroundSize: '32px 32px'
+        }}></div>
+        
+        {/* Floating orb decoration */}
+        <div className="absolute -top-20 -right-20 w-64 h-64 bg-brand-gold/5 rounded-full blur-3xl" />
+        <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-brand-olive/5 rounded-full blur-3xl" />
+        
+        <div className="relative">
+          {/* Section Header */}
+          <div className="mb-8 sm:mb-10 md:mb-12">
+            <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+              <div className="h-1 w-8 sm:w-12 bg-gradient-to-r from-brand-gold to-brand-gold-dark rounded-full" />
+              <h4 className="text-xs sm:text-sm font-bold text-brand-gold uppercase tracking-[0.2em]">Specifications</h4>
+            </div>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-brand-dark uppercase tracking-tight">
+              Technical Details
+            </h3>
+            <p className="text-gray-600 mt-3 sm:mt-4 text-sm sm:text-base max-w-2xl">
+              Precision-engineered specifications for optimal performance and reliability
+            </p>
+          </div>
+          
+          <SpecTable specs={specs} />
+        </div>
       </div>
     </div>
     </div>

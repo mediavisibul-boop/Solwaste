@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Target, Globe, Award, Users, ChevronRight } from 'lucide-react';
+import { Target, Globe, Award, Users, ChevronRight } from '../components/Icons';
 import { SEO } from '../components/SEO';
 
 const Card: React.FC<{ icon: React.ReactNode, title: string, text: string }> = ({ icon, title, text }) => (

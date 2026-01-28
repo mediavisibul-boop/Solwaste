@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '../components/ui/Button';
-import { ChevronLeft, ChevronRight, Zap, ShieldCheck, Recycle, Target, Globe, Award } from 'lucide-react';
+import { GlassButton } from '../components/ui/GlassButton';
+import { FloatingCard, AnimatedIcon, GlassCard } from '../components/ui/AnimatedComponents';
+import { ChevronLeft as ChevronLeftIcon, ChevronRight as ChevronRightIcon, Zap, ShieldCheck, Recycle, Target, Globe, Award, Box as BoxIcon, Clock, Settings, Battery, Leaf, Check, X, Building2, Scale, Flame, Layers, CloudFog, RefreshCw, FileText, TrendingUp, CheckCircle, Factory, Briefcase, Rocket, ArrowRight, Mail, Sparkles, Package, Timer, Shield, Gauge } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PartnersSection from '../components/PartnersSection';
 import { SEO } from '../components/SEO';
+import { GovernmentMandate, ImpactStats, ProcessFlow, MissionGrid } from '../components/Home';
+
+// Re-export some icons for backwards compatibility
+const ChevronLeft = ChevronLeftIcon;
+const ChevronRight = ChevronRightIcon;
+const Box = BoxIcon;
 
 // Slide type definition
 type Slide = {
@@ -89,24 +97,14 @@ const Card: React.FC<{ icon: React.ReactNode, title: string, text: string }> = (
       <h3 className="text-xl sm:text-2xl font-heading font-bold text-brand-brown mb-3 sm:mb-4 uppercase tracking-wide">{title}</h3>
       <p className="text-gray-700 leading-relaxed font-normal text-base sm:text-lg">{text}</p>
     </div>
-);
+  );
 
-const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
-  // State for image slideshow (for slides with multiple images)
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  
-  // Auto-rotate images if multiple images exist
-  useEffect(() => {
-    if (slide.images && slide.images.length > 1) {
-      const imageCount = slide.images.length;
-      const interval = setInterval(() => {
-        setCurrentImageIndex((prev) => (prev + 1) % imageCount);
-      }, 3000); // Change image every 3 seconds
-      
-      return () => clearInterval(interval);
-    }
-  }, [slide.images]);
-
+// SlideContent component
+const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: { 
+  slide: Slide; 
+  currentImageIndex: number; 
+  setCurrentImageIndex: (idx: number) => void;
+}) => {
   // FAHAKA LAYOUT
   if (slide.type === 'innovation') {
     // Get the current image for slideshow
@@ -144,9 +142,7 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
              animate={{ opacity: 1, y: 0 }}
              transition={{ delay: 0.3 }}
            >
-             <div className="inline-block border border-brand-gold/50 bg-brand-gold/10 backdrop-blur-md rounded-full px-4 sm:px-6 py-1.5 sm:py-2 text-brand-gold font-bold uppercase tracking-widest text-[10px] sm:text-xs mb-6 sm:mb-8 shadow-[0_0_15px_rgba(190,215,84,0.4)]">
-               {slide.badge}
-             </div>
+             {/* badge removed from slides */}
              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[9rem] font-heading font-black text-white mb-2 tracking-tighter leading-none drop-shadow-2xl">
                {slide.title}
              </h1>
@@ -159,9 +155,15 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
              </p>
              
              <Link to="/fahaka">
-               <Button className="bg-brand-gold text-white border-brand-gold hover:bg-white hover:text-brand-gold py-3 sm:py-4 px-8 sm:px-12 text-base sm:text-lg lg:text-xl shadow-2xl shadow-brand-gold/20 w-full sm:w-auto touch-manipulation">
+               <GlassButton 
+                 variant="primary" 
+                 size="xl" 
+                 icon={Rocket}
+                 glow={true}
+                 className="w-full sm:w-auto"
+               >
                  Explore Fahaka
-               </Button>
+               </GlassButton>
              </Link>
            </motion.div>
         </div>
@@ -197,6 +199,25 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
   // Enhanced text visibility: Use lighter grays for dark bg, darker grays for light bg
   const subColor = hasBackgroundImage ? 'text-gray-200' : (isDark ? 'text-gray-200' : 'text-brand-brown');
   const descColor = hasBackgroundImage ? 'text-gray-100' : (isDark ? 'text-gray-100' : 'text-brand-brown');
+  
+  // Visual proof icons for specs - Using Lucide icons
+  const getSpecIcon = (label: string) => {
+    const key = label.toLowerCase();
+    const iconProps = { size: 32, className: "stroke-2" };
+    switch(key) {
+      case 'capacity': return <Package {...iconProps} />;
+      case 'cycle time': return <Timer {...iconProps} />;
+      case 'material': return <Layers {...iconProps} />;
+      case 'filtration': return <Sparkles {...iconProps} />;
+      case 'automation': return <Settings {...iconProps} />;
+      case 'warranty': return <Shield {...iconProps} />;
+      case 'safety': return <ShieldCheck {...iconProps} />;
+      case 'power': return <Battery {...iconProps} />;
+      case 'size': return <Gauge {...iconProps} />;
+      case 'tech': return <Zap {...iconProps} />;
+      default: return <Sparkles {...iconProps} />;
+    }
+  };
 
   // Get the current image (either from images array or single image)
   const currentImage = slide.images ? slide.images[currentImageIndex] : slide.image;
@@ -207,27 +228,49 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
 
   return (
     <div className={`relative w-full h-full flex flex-col justify-between ${backgroundClass}`}>
-       {/* Background Image with Slideshow - Mobile Optimized */}
+       {/* Background Image with Slideshow + Parallax - Mobile Optimized */}
        <div className="absolute inset-0 z-0">
         {currentImage && (
           <AnimatePresence mode="wait">
-            <motion.img 
-              key={currentImage}
-              src={currentImage} 
-              alt={slide.title} 
-              className="w-full h-full object-cover object-center"
-              style={{
-                objectPosition: 'center center'
-              }}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-              onError={(e) => console.error('Image failed to load:', currentImage, e)}
-              onLoad={() => console.log('Image loaded:', currentImage)}
-            />
+            <motion.div className="w-full h-full overflow-hidden">
+              <motion.img 
+                key={currentImage}
+                src={currentImage} 
+                alt={slide.title} 
+                className="w-full h-full object-cover object-center"
+                style={{
+                  objectPosition: 'center center'
+                }}
+                initial={{ opacity: 0, scale: 1.1 }}
+                animate={{ 
+                  opacity: 1, 
+                  scale: 1,
+                  y: [0, -20, 0]
+                }}
+                exit={{ opacity: 0, scale: 1.05 }}
+                transition={{ 
+                  opacity: { duration: 0.5 },
+                  scale: { duration: 0.7 },
+                  y: { duration: 20, repeat: Infinity, ease: "easeInOut" }
+                }}
+                onError={(e) => console.error('Image failed to load:', currentImage, e)}
+                onLoad={() => console.log('Image loaded:', currentImage)}
+              />
+            </motion.div>
           </AnimatePresence>
         )}
+        {/* Ambient glow effect */}
+        <motion.div 
+          className="absolute inset-0"
+          animate={{
+            background: [
+              'radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.15) 0%, transparent 50%)',
+              'radial-gradient(circle at 70% 50%, rgba(212, 175, 55, 0.15) 0%, transparent 50%)',
+              'radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.15) 0%, transparent 50%)'
+            ]
+          }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        />
         {/* Premium white fade overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/25 to-black/30"></div>
         {/* Light tinted overlay */}
@@ -242,11 +285,7 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
            transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
            className="max-w-6xl mx-auto"
         >
-            {slide.badge && (
-              <span className={`inline-block py-2 sm:py-2.5 md:py-3 px-5 sm:px-6 md:px-8 mb-4 sm:mb-5 md:mb-6 lg:mb-8 text-xs sm:text-sm md:text-base font-bold uppercase tracking-wider sm:tracking-wide md:tracking-widest border-2 ${isDark ? 'border-brand-gold text-brand-gold bg-brand-dark/70' : 'border-brand-olive-dark text-brand-olive-dark bg-white/70'} backdrop-blur-md rounded-lg shadow-lg`}>
-              {slide.badge}
-            </span>
-          )}
+            {/* badge removed from slides */}
           <h1 className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-heading font-bold ${textColor} mb-2 xs:mb-3 sm:mb-4 md:mb-5 lg:mb-6 tracking-tight leading-[1.1] xs:leading-[1.15] sm:leading-tight px-1 xs:px-2 md:px-4`} style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5), 0 4px 30px rgba(0,0,0,0.3)' }}>
             {slide.title}
           </h1>
@@ -262,56 +301,88 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
       {/* Footer Specs & CTA - Mobile Optimized */}
       <div className="relative z-10 container mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 pb-8 xs:pb-10 sm:pb-12 md:pb-16 lg:pb-20 xl:pb-24">
         <div className="flex flex-col lg:flex-row items-center lg:items-end justify-between gap-6 xs:gap-7 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16">
-          {/* Specs Grid - Mobile Optimized */}
+          {/* Visual Proof Blocks - Premium Glass Morphism Cards */}
           <div className={`grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 xs:gap-4 sm:gap-5 md:gap-6 lg:gap-8 xl:gap-10 w-full lg:flex-1 ${hasBackgroundImage ? 'text-white' : (isDark ? 'text-white' : 'text-brand-brown')}`}>
             {slide.specs?.map((spec, idx) => (
-              <div key={idx} className="flex flex-col border-l-2 xs:border-l-3 sm:border-l-4 md:border-l-[5px] border-brand-gold/60 pl-2 xs:pl-3 sm:pl-4 md:pl-5 py-1.5 xs:py-2 hover:border-brand-gold transition-colors">
-                <div className="flex items-baseline gap-0.5 xs:gap-1" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.4), 0 3px 15px rgba(0,0,0,0.2)' }}>
-                   <span className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-heading font-bold leading-none">{spec.value}</span>
-                   {spec.unit && <span className="text-[10px] xs:text-xs sm:text-sm md:text-base font-bold text-brand-gold">{spec.unit}</span>}
+              <motion.div 
+                key={idx} 
+                className="relative flex flex-col bg-white/5 backdrop-blur-2xl rounded-2xl p-4 xs:p-5 border-2 border-white/10 hover:border-brand-gold/60 hover:bg-white/10 transition-all duration-500 group overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-brand-gold/20"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: idx * 0.15, type: 'spring', stiffness: 100 }}
+                whileHover={{ scale: 1.08, y: -8, rotateY: 5 }}
+              >
+                {/* Shimmer effect */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
+                  initial={{ x: '-100%' }}
+                  animate={{ x: '100%' }}
+                  transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
+                />
+                
+                {/* Animated background glow */}
+                <motion.div 
+                  className="absolute inset-0 bg-gradient-to-br from-brand-gold/0 via-brand-gold/10 to-brand-gold/0 opacity-0 group-hover:opacity-100 rounded-2xl"
+                  animate={{
+                    background: [
+                      'radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.15), transparent 50%)',
+                      'radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.15), transparent 50%)',
+                      'radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.15), transparent 50%)'
+                    ]
+                  }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                />
+                
+                {/* Icon with pulse animation */}
+                <motion.div 
+                  className="text-3xl xs:text-4xl sm:text-5xl mb-3 relative z-10 text-brand-gold"
+                  whileHover={{ 
+                    scale: 1.2,
+                    rotate: [0, -10, 10, 0],
+                    transition: { duration: 0.5 }
+                  }}
+                >
+                  {getSpecIcon(spec.label)}
+                </motion.div>
+                
+                {/* Value */}
+                <div className="flex items-baseline gap-1 relative z-10 mb-2" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.4), 0 3px 15px rgba(0,0,0,0.2)' }}>
+                   <span className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-heading font-black leading-none group-hover:text-brand-gold transition-colors duration-300">{spec.value}</span>
+                   {spec.unit && <span className="text-sm xs:text-base font-bold text-brand-gold/80 group-hover:text-brand-gold">{spec.unit}</span>}
                 </div>
-                <span className={`text-[9px] xs:text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-wide sm:tracking-wider md:tracking-widest mt-1 xs:mt-1.5 sm:mt-2 ${hasBackgroundImage ? 'text-gray-300' : (isDark ? 'text-gray-300' : 'text-gray-600')}`} style={{ textShadow: '0 1px 8px rgba(0,0,0,0.3), 0 2px 12px rgba(0,0,0,0.2)' }}>{spec.label}</span>
-              </div>
+                
+                {/* Label */}
+                <span className={`text-[10px] xs:text-xs sm:text-sm font-bold uppercase tracking-widest relative z-10 ${hasBackgroundImage ? 'text-gray-200' : (isDark ? 'text-gray-200' : 'text-gray-400')} group-hover:text-white transition-colors`} style={{ textShadow: '0 1px 8px rgba(0,0,0,0.3), 0 2px 12px rgba(0,0,0,0.2)' }}>{spec.label}</span>
+                
+                {/* Corner glow accent */}
+                <div className="absolute top-0 right-0 w-16 h-16 bg-brand-gold/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </motion.div>
             ))}
           </div>
 
-          {/* Buttons - Mobile Optimized with Better Placement */}
-          <div className="flex flex-col xs:flex-row gap-3 xs:gap-3.5 sm:gap-4 md:gap-5 w-full lg:w-auto lg:flex-shrink-0">
-             <Link to="/contact" className="w-full xs:flex-1 lg:w-auto group">
-                <div className={`relative overflow-hidden w-full h-full min-h-[52px] xs:min-h-[54px] sm:min-h-[56px] md:min-h-[60px] lg:min-h-[64px] flex items-center justify-center rounded-lg xs:rounded-xl touch-manipulation transition-all duration-300 ${isDark ? 'bg-gradient-to-r from-white to-gray-100 hover:from-gray-100 hover:to-white shadow-[0_0_25px_rgba(255,255,255,0.35)] hover:shadow-[0_0_35px_rgba(255,255,255,0.55)]' : 'bg-gradient-to-r from-brand-dark via-brand-olive to-brand-dark hover:from-brand-olive hover:via-brand-dark hover:to-brand-olive shadow-[0_0_25px_rgba(255,215,0,0.35)] hover:shadow-[0_0_35px_rgba(255,215,0,0.55)]'} active:scale-[0.98] hover:scale-[1.03]`}>
-                  {/* Shine effect */}
-                  <div className={`absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r ${isDark ? 'from-transparent via-white/40 to-transparent' : 'from-transparent via-brand-gold/40 to-transparent'}`}></div>
-                  
-                  {/* Glow pulse */}
-                  <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${isDark ? 'bg-white/10' : 'bg-brand-gold/10'} animate-pulse`}></div>
-                  
-                  {/* Button content */}
-                  <div className={`relative flex items-center justify-center gap-2 xs:gap-2.5 sm:gap-3 px-5 xs:px-6 sm:px-7 md:px-9 lg:px-11 ${isDark ? 'text-brand-dark' : 'text-white'}`}>
-                    <span className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300 whitespace-nowrap leading-none">Order Now</span>
-                    <svg className="w-4 h-4 xs:w-4 xs:h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-6 lg:h-6 flex-shrink-0 group-hover:translate-x-1.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                  </div>
-                </div>
+          {/* Buttons - Premium Glass Morphism CTAs */}
+          <div className="flex flex-col xs:flex-row gap-4 w-full lg:w-auto lg:flex-shrink-0">
+             <Link to="/contact" className="w-full xs:flex-1 lg:w-auto">
+                <GlassButton 
+                  variant="primary" 
+                  size="lg" 
+                  icon={ArrowRight}
+                  glow={true}
+                  className="w-full"
+                >
+                  Order Now
+                </GlassButton>
             </Link>
             
-            <Link to="/owc" className="w-full xs:flex-1 lg:w-auto group">
-                <div className={`relative overflow-hidden w-full h-full min-h-[52px] xs:min-h-[54px] sm:min-h-[56px] md:min-h-[60px] lg:min-h-[64px] flex items-center justify-center rounded-lg xs:rounded-xl touch-manipulation transition-all duration-300 ${isDark ? 'bg-white/10 hover:bg-white/20 border-2 border-white/50 hover:border-white shadow-[0_0_20px_rgba(255,255,255,0.25)] hover:shadow-[0_0_30px_rgba(255,255,255,0.45)]' : 'bg-white/80 hover:bg-white border-2 border-brand-olive-dark/50 hover:border-brand-olive shadow-[0_0_20px_rgba(94,121,96,0.25)] hover:shadow-[0_0_30px_rgba(94,121,96,0.45)]'} backdrop-blur-lg active:scale-[0.98] hover:scale-[1.03]`}>
-                  {/* Shine effect */}
-                  <div className={`absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r ${isDark ? 'from-transparent via-white/30 to-transparent' : 'from-transparent via-brand-olive/30 to-transparent'}`}></div>
-                  
-                  {/* Animated border glow */}
-                  <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl ${isDark ? 'ring-2 ring-white/40' : 'ring-2 ring-brand-olive/40'}`}></div>
-                  
-                  {/* Button content */}
-                  <div className={`relative flex items-center justify-center gap-2 xs:gap-2.5 sm:gap-3 px-5 xs:px-6 sm:px-7 md:px-9 lg:px-11 ${isDark ? 'text-white' : 'text-brand-olive-dark group-hover:text-brand-olive'}`}>
-                    <svg className="w-4 h-4 xs:w-4 xs:h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-6 lg:h-6 flex-shrink-0 group-hover:rotate-90 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    <span className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300 whitespace-nowrap leading-none">Tech Specs</span>
-                  </div>
-                </div>
+            <Link to="/owc" className="w-full xs:flex-1 lg:w-auto">
+                <GlassButton 
+                  variant="glass" 
+                  size="lg" 
+                  icon={Settings}
+                  className="w-full"
+                >
+                  Tech Specs
+                </GlassButton>
             </Link>
           </div>
         </div>
@@ -347,6 +418,20 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
 export const Home: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Track scroll progress
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const progress = (window.scrollY / totalHeight) * 100;
+      setScrollProgress(progress);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Dispatch event when slide changes to update Navbar color
   useEffect(() => {
@@ -354,6 +439,7 @@ export const Home: React.FC = () => {
         detail: { isDark: slides[currentIndex].isDark } 
     });
     window.dispatchEvent(event);
+    setCurrentImageIndex(0); // Reset image index when slide changes
   }, [currentIndex]);
 
   const slideVariants = {
@@ -397,8 +483,61 @@ export const Home: React.FC = () => {
         keywords="composting solutions for large waste generators in India, bulk waste generators, organic waste management India, on-site composting, hotel waste management, mall waste solutions, IT park composting, hospital waste management, institutional composting, SWM Rules compliance, waste to wealth India, zero waste India, ESG sustainability, EcoLoop, CompoGen, CyberSoil, Fahaka, composting machines India"
         type="website"
       />
+      
+      {/* Scroll Progress Indicator */}
+      <motion.div 
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-gold via-brand-gold-dark to-brand-gold z-50 origin-left"
+        style={{ scaleX: scrollProgress / 100 }}
+        initial={{ scaleX: 0 }}
+      />
+      
+      {/* Sticky CTA Button - Enhanced with Glass Morphism */}
+      <motion.div
+        className="fixed bottom-6 right-6 z-40"
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ 
+          opacity: scrollProgress > 10 ? 1 : 0,
+          y: scrollProgress > 10 ? 0 : 100
+        }}
+        transition={{ duration: 0.3 }}
+      >
+        <Link to="/contact">
+          <motion.div
+            className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/10 backdrop-blur-2xl border-2 border-white/20 shadow-2xl shadow-brand-gold/40 flex items-center justify-center cursor-pointer overflow-hidden group"
+            whileHover={{ scale: 1.15, rotate: 5 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            {/* Animated gradient background */}
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-br from-brand-gold via-brand-gold-dark to-brand-gold opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            />
+            
+            {/* Pulsing ring */}
+            <motion.div
+              className="absolute inset-0 rounded-full border-4 border-brand-gold"
+              animate={{
+                scale: [1, 1.4, 1],
+                opacity: [0.6, 0, 0.6]
+              }}
+              transition={{ duration: 2.5, repeat: Infinity }}
+            />
+            
+            {/* Icon */}
+            <Mail className="w-8 h-8 sm:w-10 sm:h-10 text-white relative z-10 group-hover:rotate-12 transition-transform duration-300" />
+            
+            {/* Tooltip */}
+            <div className="absolute right-full mr-4 px-4 py-2 bg-brand-dark text-white text-sm font-bold rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+              Request Site Visit
+            </div>
+          </motion.div>
+        </Link>
+      </motion.div>
+      
       {/* FULL SCREEN SLIDER SECTION */}
       <section className="relative h-screen overflow-hidden bg-black">
+        {/* Ambient animated blobs + subtle noise for premium background */}
+        <div className="ambient-blobs" aria-hidden="true" />
+        <div className="noise-overlay" aria-hidden="true" />
         <AnimatePresence initial={false} custom={direction} mode="popLayout">
           <motion.div
             key={currentIndex}
@@ -424,7 +563,7 @@ export const Home: React.FC = () => {
             }}
             className="absolute w-full h-full top-0 left-0"
           >
-            <SlideContent slide={slides[currentIndex]} />
+            <SlideContent slide={slides[currentIndex]} currentImageIndex={currentImageIndex} setCurrentImageIndex={setCurrentImageIndex} />
           </motion.div>
         </AnimatePresence>
 
@@ -467,106 +606,41 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* GOVERNMENT MANDATE SECTION - Enhanced responsive design */}
-      <section className="bg-brand-dark py-12 xs:py-14 sm:py-16 md:py-20 lg:py-24 xl:py-28 relative overflow-hidden border-t border-gray-700">
-         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-brand-olive-dark/30 to-transparent pointer-events-none"></div>
-         <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xs:gap-10 sm:gap-12 md:gap-14 lg:gap-16 xl:gap-20 items-center">
-               <div>
-                  <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-white mb-4 xs:mb-5 sm:mb-6 md:mb-7 lg:mb-8 uppercase leading-tight">
-                     Government <br/><span className="text-brand-gold">Mandate Ready</span>
-                  </h2>
-                  <p className="text-gray-300 text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl mb-6 xs:mb-7 sm:mb-8 md:mb-9 lg:mb-10 max-w-2xl leading-relaxed font-normal">
-                     100% Compliant with SWM Rules 2016 & NGT Orders. Don't risk penalties. Install a Solwaste system today.
-                  </p>
-                  <div className="grid grid-cols-2 gap-4 xs:gap-5 sm:gap-6 md:gap-7 lg:gap-8 mb-6 xs:mb-7 sm:mb-8 md:mb-10 lg:mb-12">
-                      <div className="p-4 sm:p-5 md:p-6 bg-brand-olive-dark/20 rounded-lg border-l-4 border-brand-gold">
-                          <div className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-1 sm:mb-2">500+</div>
-                          <div className="text-xs xs:text-sm sm:text-base text-brand-gold font-bold uppercase tracking-wider">Active Sites</div>
-                      </div>
-                      <div className="p-4 sm:p-5 md:p-6 bg-brand-olive-dark/20 rounded-lg border-l-4 border-brand-gold">
-                          <div className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-1 sm:mb-2">100%</div>
-                          <div className="text-xs xs:text-sm sm:text-base text-brand-gold font-bold uppercase tracking-wider">Legal Compliance</div>
-                      </div>
-                  </div>
-                  <a href="https://quark-cornflower-fe8.notion.site/2ef846625722805685eafe2642f29e0e?pvs=105" target="_blank" rel="noopener noreferrer" className="block xs:inline-block">
-                     <Button className="w-full xs:w-auto min-h-[48px] sm:min-h-[52px] md:min-h-[56px] bg-brand-gold text-white border-brand-gold hover:bg-white hover:text-brand-gold py-3.5 xs:py-4 sm:py-4.5 md:py-5 px-6 xs:px-7 sm:px-8 md:px-10 lg:px-12 text-sm xs:text-base sm:text-lg font-bold uppercase tracking-wider md:tracking-widest touch-manipulation active:scale-95 transition-transform">
-                        Get Compliance Audit
-                     </Button>
-                  </a>
-               </div>
-               
-               <div className="grid grid-cols-1 gap-4 xs:gap-4.5 sm:gap-5 md:gap-6 mt-6 lg:mt-0">
-                  {[
-                    { title: "SWM Rules 2016", desc: "Mandatory on-site processing for bulk generators (>100kg/day)." },
-                    { title: "NGT Compliance", desc: "Adherence to National Green Tribunal guidelines to avoid heavy fines." },
-                    { title: "Green Building", desc: "Earn LEED & GRIHA points for sustainable waste management." }
-                  ].map((item, i) => (
-                    <div key={i} className="p-5 xs:p-6 sm:p-7 md:p-8 lg:p-10 border-2 border-brand-gold-dark/50 hover:border-brand-gold transition-all duration-300 bg-brand-gold-dark/20 hover:bg-brand-gold-dark/30 group rounded-lg">
-                       <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl font-heading font-bold text-white mb-2 xs:mb-2.5 sm:mb-3 md:mb-4 uppercase group-hover:text-brand-gold transition-colors">{item.title}</h3>
-                       <p className="text-gray-300 text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">{item.desc}</p>
-                    </div>
-                  ))}
-               </div>
-            </div>
-         </div>
-      </section>
+      <GovernmentMandate />
+      <ImpactStats />
 
-      {/* ABOUT SECTION - Enhanced responsive design */}
-      <section className="py-12 xs:py-14 sm:py-16 md:py-20 lg:py-24 xl:py-28 2xl:py-32 bg-brand-light border-t border-gray-200">
+      <section className="py-12 xs:py-14 sm:py-16 md:py-20 lg:py-24 xl:py-28 bg-brand-light border-t border-gray-200">
         <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xs:gap-10 sm:gap-12 md:gap-14 lg:gap-16 xl:gap-20 items-center mb-12 xs:mb-14 sm:mb-16 md:mb-18 lg:mb-20 xl:mb-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             <div>
-               <div className="flex items-center gap-3 xs:gap-3.5 sm:gap-4 mb-4 xs:mb-4.5 sm:mb-5 md:mb-6">
-                  <div className="h-[2px] xs:h-[2.5px] sm:h-[3px] md:h-1 w-8 xs:w-10 sm:w-12 md:w-16 bg-brand-gold"></div>
-                  <span className="text-brand-gold font-bold uppercase tracking-wider sm:tracking-widest text-xs xs:text-sm sm:text-base md:text-lg">Our Expertise</span>
-              </div>
-              <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-brand-dark mb-5 xs:mb-6 sm:mb-7 md:mb-8 uppercase leading-tight">German Engineering. <br/><span className="text-brand-olive-dark">Indian Innovation.</span></h2>
-              <div className="space-y-3 xs:space-y-4 sm:space-y-5 md:space-y-6 text-brand-dark leading-relaxed md:leading-loose text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-normal">
-                <p>
-                  Solwaste was founded with a singular vision: to address the growing organic waste crisis in urban environments through reliable, scalable technology.
-                </p>
-                <p>
-                  Leveraging <strong>German engineering</strong> principles, we developed a suite of Organic Waste Composters (OWC) that offer superior efficiency and durability.
-                </p>
-                <p>
-                  Today, with over <strong>500 installations</strong> across commercial, institutional, and residential sectors, we are a trusted partner in India's journey towards the "Waste to Wealth" mission.
-                </p>
-              </div>
-              <div className="mt-6 xs:mt-7 sm:mt-8 md:mt-10 lg:mt-12">
-                 <Link to="/contact" className="block xs:inline-block">
-                    <Button variant="outline" className="w-full xs:w-auto min-h-[48px] sm:min-h-[52px] px-6 xs:px-7 sm:px-8 md:px-10 lg:px-12 py-3.5 xs:py-4 sm:py-4.5 text-xs xs:text-sm sm:text-base md:text-lg font-bold border-2 border-brand-gold-dark text-brand-gold-dark hover:border-brand-gold hover:bg-brand-gold hover:text-white uppercase tracking-wider md:tracking-widest touch-manipulation active:scale-95 transition-all duration-300">Read More</Button>
-                 </Link>
-              </div>
+              <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="h-1 w-12 bg-brand-gold"></div>
+                  <span className="text-brand-gold font-bold uppercase tracking-widest text-sm">Our Expertise</span>
+                </div>
+                <h2 className="text-2xl sm:text-4xl font-heading font-bold text-brand-dark mb-5 uppercase">German Engineering. <span className="text-brand-olive-dark">Indian Innovation.</span></h2>
+                <div className="space-y-3 text-brand-dark leading-relaxed">
+                  <p>Solwaste was founded with a singular vision: to address the growing organic waste crisis in urban environments through reliable, scalable technology.</p>
+                  <p>Leveraging <strong>German engineering</strong> principles, we developed a suite of Organic Waste Composters (OWC) that offer superior efficiency and durability.</p>
+                  <p>Today, with over <strong>500 installations</strong> across commercial, institutional, and residential sectors, we are a trusted partner in India's journey towards the "Waste to Wealth" mission.</p>
+                </div>
+                <div className="mt-6">
+                  <Link to="/contact" className="inline-block">
+                    <div className="relative overflow-hidden px-6 py-3.5 border-2 border-brand-gold-dark rounded-lg hover:shadow-lg">
+                      <div className="absolute inset-0 bg-brand-gold transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+                      <span className="relative z-10 text-sm font-bold uppercase">Read More</span>
+                    </div>
+                  </Link>
+                </div>
+              </motion.div>
             </div>
-            <div className="relative mt-6 lg:mt-0">
-                <div className="absolute top-0 right-0 -mr-3 sm:-mr-4 md:-mr-6 lg:-mr-8 -mt-3 sm:-mt-4 md:-mt-6 lg:-mt-8 w-20 h-20 xs:w-24 xs:h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 bg-white z-0 hidden xs:block rounded-lg"></div>
-                <img 
-                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop" 
-                    alt="Engineering Team" 
-                    className="shadow-2xl relative z-10 w-full grayscale hover:grayscale-0 transition-all duration-700 border-b-4 xs:border-b-6 sm:border-b-8 border-brand-gold rounded-sm"
-                />
-               <div className="absolute -bottom-3 sm:-bottom-4 md:-bottom-6 lg:-bottom-8 -left-3 sm:-left-4 md:-left-6 lg:-left-8 w-40 h-40 xs:w-48 xs:h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 border-l-4 xs:border-l-6 sm:border-l-8 border-b-4 xs:border-b-6 sm:border-b-8 border-brand-dark z-20 hidden sm:block"></div>
-            </div>
-          </div>
 
-          {/* Mission/Vision Grid - Improved responsive layout */}
-          <div className="grid grid-cols-1 xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 xs:gap-5.5 sm:gap-6 md:gap-7 lg:gap-8">
-            <Card 
-              icon={<Target size={32} className="xs:w-10 xs:h-10 sm:w-11 sm:h-11 md:w-12 md:h-12" />}
-              title="Our Mission"
-              text="To provide robust, zero-landfill solutions that empower communities to manage their waste at the source, reducing environmental impact and generating value."
-            />
-            <Card 
-              icon={<Globe size={32} className="xs:w-10 xs:h-10 sm:w-11 sm:h-11 md:w-12 md:h-12" />}
-              title="Vision 2047"
-              text="Supporting India's goal for sustainable cities by creating a circular economy where organic waste is universally viewed as a resource for energy and soil health."
-            />
-            <Card 
-              icon={<Award size={32} className="xs:w-10 xs:h-10 sm:w-11 sm:h-11 md:w-12 md:h-12" />}
-              title="Quality Promise"
-              text="We commit to German-engineered precision, ensuring our machines deliver maximum uptime, minimal maintenance, and optimal output quality."
-            />
+            <div>
+              <ProcessFlow />
+              <div className="mt-8">
+                <MissionGrid />
+              </div>
+            </div>
           </div>
         </div>
       </section>

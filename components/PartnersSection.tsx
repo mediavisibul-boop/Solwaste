@@ -2,27 +2,28 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const partners = [
-  { name: "Government of Kerala", logo: "/partnerLogo/kerela.png" },
-  { name: "LuLu Group", logo: "/partnerLogo/mall.png" },
-  { name: "ONGC", logo: "/partnerLogo/ongc.png" },
-  { name: "Petronet LNG", logo: "/partnerLogo/petronet.png" },
-  { name: "Adani, Ports and Logistics", logo: "/partnerLogo/adani.png" },
-  { name: "Aizwal Municipal Corporation, Mizoram", logo: "/partnerLogo/logo4.png" },
-  { name: "Assam Pollution Control Board, Nagaon, Assam", logo: "/partnerLogo/logo5.png" },
-  { name: "Defence colony, Shankar Vihar, New Delhi", logo: "/partnerLogo/logo6.jpg" },
-  { name: "Department of Urban Development & Housing Ziro Valley, Arunachal Pradesh", logo: "/partnerLogo/logo7.png" },
-  { name: "Kartarpur Land Port, Punjab", logo: "/partnerLogo/logo8.png" },
-  { name: "Don Boscho University, Guwahati, Assam", logo: "/partnerLogo/logo9.png" },
-  { name: "Ruby Clinic", logo: "/partnerLogo/logo10.png" },
-  { name: "Guntur Municipal Corporation, Andhra Pradesh", logo: "/partnerLogo/logo11.png" },
-  { name: "55 Engineer Regiment, Indian Army, Rajasthan", logo: "/partnerLogo/logo12.png" },
-  { name: "Indira Gandhi Centre for Atomic Research, Kalpakkam, Tamil Nadu.", logo: "/partnerLogo/logo13.png" },
-  { name: "IndLab Equipments Pvt. Ltd.", logo: "/partnerLogo/logo14.png" },
-  { name: "Kakinada Municipal Corporation, Andhra Pradesh", logo: "/partnerLogo/logo15.png" },
-  { name: "Numaligarh Refinery Limited, Assam", logo: "/partnerLogo/logo16.png" },
-  { name: "Sam Foundation for Eco friendly Environmental, Chennai, TN", logo: "/partnerLogo/logo17.png" },
-  { name: "Telangana Institute of Medical Science, Hyderabad", logo: "/partnerLogo/logo18.png" },
-  { name: "Tirupati Municipal Corporation, Tirupati", logo: "/partnerLogo/logo19.png" },
+  { name: "Government of Kerala", logo: "/partnerLogo/kerela.png", location: "Kerala", type: "Government", capacity: "500kg/day" },
+  { name: "LuLu Group", logo: "/partnerLogo/mall.png", location: "Pan India", type: "Retail", capacity: "1.5T/day" },
+  { name: "EAK", logo: "/partnerLogo/eak.svg", location: "Mumbai", type: "Corporate", capacity: "250kg/day" },
+  { name: "ONGC", logo: "/partnerLogo/ongc.png", location: "Multiple Sites", type: "PSU", capacity: "2T/day" },
+  { name: "Petronet LNG", logo: "/partnerLogo/petronet.png", location: "Kochi", type: "Industrial", capacity: "800kg/day" },
+  { name: "Adani, Ports and Logistics", logo: "/partnerLogo/adani.png", location: "Gujarat", type: "Infrastructure", capacity: "3T/day" },
+  { name: "Aizwal Municipal Corporation, Mizoram", logo: "/partnerLogo/logo4.png", location: "Aizwal", type: "Municipal", capacity: "5T/day" },
+  { name: "Assam Pollution Control Board, Nagaon, Assam", logo: "/partnerLogo/logo5.png", location: "Nagaon", type: "Government", capacity: "1T/day" },
+  { name: "Defence colony, Shankar Vihar, New Delhi", logo: "/partnerLogo/logo6.jpg", location: "New Delhi", type: "Residential", capacity: "300kg/day" },
+  { name: "Department of Urban Development & Housing Ziro Valley, Arunachal Pradesh", logo: "/partnerLogo/logo7.png", location: "Ziro Valley", type: "Government", capacity: "400kg/day" },
+  { name: "Kartarpur Land Port, Punjab", logo: "/partnerLogo/logo8.png", location: "Punjab", type: "Infrastructure", capacity: "600kg/day" },
+  { name: "Don Boscho University, Guwahati, Assam", logo: "/partnerLogo/logo9.png", location: "Guwahati", type: "Education", capacity: "750kg/day" },
+  { name: "Ruby Clinic", logo: "/partnerLogo/logo10.png", location: "Bangalore", type: "Healthcare", capacity: "150kg/day" },
+  { name: "Guntur Municipal Corporation, Andhra Pradesh", logo: "/partnerLogo/logo11.png", location: "Guntur", type: "Municipal", capacity: "4T/day" },
+  { name: "55 Engineer Regiment, Indian Army, Rajasthan", logo: "/partnerLogo/logo12.png", location: "Rajasthan", type: "Defence", capacity: "1T/day" },
+  { name: "Indira Gandhi Centre for Atomic Research, Kalpakkam, Tamil Nadu.", logo: "/partnerLogo/logo13.png", location: "Kalpakkam", type: "Research", capacity: "500kg/day" },
+  { name: "IndLab Equipments Pvt. Ltd.", logo: "/partnerLogo/logo14.png", location: "Chennai", type: "Corporate", capacity: "200kg/day" },
+  { name: "Kakinada Municipal Corporation, Andhra Pradesh", logo: "/partnerLogo/logo15.png", location: "Kakinada", type: "Municipal", capacity: "3.5T/day" },
+  { name: "Numaligarh Refinery Limited, Assam", logo: "/partnerLogo/logo16.png", location: "Numaligarh", type: "Industrial", capacity: "2.5T/day" },
+  { name: "Sam Foundation for Eco friendly Environmental, Chennai, TN", logo: "/partnerLogo/logo17.png", location: "Chennai", type: "NGO", capacity: "350kg/day" },
+  { name: "Telangana Institute of Medical Science, Hyderabad", logo: "/partnerLogo/logo18.png", location: "Hyderabad", type: "Healthcare", capacity: "900kg/day" },
+  { name: "Tirupati Municipal Corporation, Tirupati", logo: "/partnerLogo/logo19.png", location: "Tirupati", type: "Municipal", capacity: "6T/day" },
 ];
 
 const testimonials = [
@@ -114,14 +115,18 @@ const PartnersSection = () => {
                           return (
                               <div
                                   key={`row1-${partner.name}-${index}`}
-                                  className="flex flex-col items-center justify-start min-w-[180px] sm:min-w-[200px] md:min-w-[240px] lg:min-w-[260px] group cursor-pointer"
+                                  className="flex flex-col items-center justify-start min-w-[180px] sm:min-w-[200px] md:min-w-[240px] lg:min-w-[260px] group cursor-pointer relative partner-card"
                               >
-                                  <div className="relative w-full h-24 sm:h-28 md:h-32 lg:h-40 flex items-center justify-center p-3 sm:p-4 md:p-5 lg:p-6">
+                                  <div className="relative w-full h-24 sm:h-28 md:h-32 lg:h-40 flex items-center justify-center p-3 sm:p-4 md:p-5 lg:p-6 glass-card glass-logo">
                                       <img
                                           src={partner.logo}
                                           alt={partner.name}
-                                          className={`${sizeClass} object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-out group-hover:scale-110`}
+                                          className={`${sizeClass} object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 ease-out`}
                                       />
+
+                                      <div className="partner-info-bar">
+                                          <span className="text-xs text-[var(--text,#fff)]">{partner.location} • {partner.type} • <strong className="text-[var(--accent,#b78b2b)]">{partner.capacity}</strong></span>
+                                      </div>
                                   </div>
                                   <span className="opacity-0 group-hover:opacity-100 text-xs sm:text-sm font-medium text-brand-dark transition-opacity duration-300 mt-2 text-center px-2 h-6 flex items-center justify-center">
                                       {partner.name}
@@ -164,14 +169,18 @@ const PartnersSection = () => {
                           return (
                               <div
                                   key={`row2-${partner.name}-${index}`}
-                                  className="flex flex-col items-center justify-start min-w-[180px] sm:min-w-[200px] md:min-w-[240px] lg:min-w-[260px] group cursor-pointer"
+                                  className="flex flex-col items-center justify-start min-w-[180px] sm:min-w-[200px] md:min-w-[240px] lg:min-w-[260px] group cursor-pointer relative partner-card"
                               >
-                                  <div className="relative w-full h-24 sm:h-28 md:h-32 lg:h-40 flex items-center justify-center p-3 sm:p-4 md:p-5 lg:p-6">
+                                  <div className="relative w-full h-24 sm:h-28 md:h-32 lg:h-40 flex items-center justify-center p-3 sm:p-4 md:p-5 lg:p-6 glass-card glass-logo">
                                       <img
                                           src={partner.logo}
                                           alt={partner.name}
-                                          className={`${sizeClass} object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-out group-hover:scale-110`}
+                                          className={`${sizeClass} object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 ease-out`}
                                       />
+
+                                      <div className="partner-info-bar">
+                                          <span className="text-xs text-[var(--text,#fff)]">{partner.location} • {partner.type} • <strong className="text-[var(--accent,#b78b2b)]">{partner.capacity}</strong></span>
+                                      </div>
                                   </div>
                                   <span className="opacity-0 group-hover:opacity-100 text-xs sm:text-sm font-medium text-brand-dark transition-opacity duration-300 mt-2 text-center px-2 h-6 flex items-center justify-center">
                                       {partner.name}

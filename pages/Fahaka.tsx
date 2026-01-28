@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Zap, Recycle, ShieldCheck, Flame, Layers } from 'lucide-react';
+import { Zap, Recycle, ShieldCheck, Flame, Layers } from '../components/Icons';
 import { Button } from '../components/ui/Button';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
@@ -65,7 +65,7 @@ export const Fahaka: React.FC = () => {
                 
                 <p className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-200 max-w-4xl mx-auto mb-6 xs:mb-8 sm:mb-10 md:mb-12 lg:mb-16 leading-relaxed font-normal px-3 xs:px-4" style={{ textShadow: '0 2px 15px rgba(0,0,0,0.5), 0 4px 25px rgba(0,0,0,0.3)' }}>
                     Traditional composters fail at contamination. Fahaka thrives on it. <br className="hidden sm:block"/>
-                    The world's first unified processor for <span className="text-white font-bold">Food, Plastics, and Sanitary Waste</span>.
+                    The world's first unified processor for <span className="text-white font-bold">Food, Plastics, Sanitary, and Biochemical Waste</span>.
                 </p>
             </motion.div>
          </div>
@@ -121,7 +121,7 @@ export const Fahaka: React.FC = () => {
                             </div>
                             
                             {/* Waste Type Cards with Unsplash backgrounds - Mobile Optimized */}
-                            <div className="flex flex-wrap justify-center gap-3 xs:gap-3.5 sm:gap-4 md:gap-5 lg:gap-6">
+                            <div className="flex flex-row justify-center gap-3 xs:gap-3.5 sm:gap-4 md:gap-5 lg:gap-6">
                                 {[
                                     { 
                                         label: "Food Waste", 
@@ -137,6 +137,11 @@ export const Fahaka: React.FC = () => {
                                         label: "Sanitary", 
                                         image: "https://images.unsplash.com/photo-1585421514738-01798e348b17?w=400&q=80",
                                         overlay: "from-purple-900/90 via-purple-900/80 to-purple-800/70"
+                                    },
+                                    {
+                                        label: "Biochemical",
+                                        image: "https://images.unsplash.com/photo-1582719478250-3c46f6d4c73e?w=400&q=80",
+                                        overlay: "from-red-900/90 via-red-900/80 to-red-800/70"
                                     }
                                 ].map((item, idx) => (
                                     <motion.div 
@@ -157,7 +162,6 @@ export const Fahaka: React.FC = () => {
                                         
                                         {/* Content */}
                                         <div className="relative z-10 h-full flex flex-col items-center justify-center p-2 xs:p-3 sm:p-4 text-center">
-                                            <div className="text-2xl xs:text-3xl sm:text-4xl mb-1 xs:mb-2 group-hover:scale-110 transition-transform drop-shadow-lg">{item.emoji}</div>
                                             <div className="text-white text-[10px] xs:text-xs sm:text-sm font-light tracking-wide drop-shadow-md">{item.label}</div>
                                         </div>
                                     </motion.div>

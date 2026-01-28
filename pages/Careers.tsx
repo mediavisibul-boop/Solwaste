@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, Heart, Globe, Users, Zap, Layers, ChevronRight } from 'lucide-react';
+import { Briefcase, Heart, Globe, Users, Zap, Layers, ChevronRight } from '../components/Icons';
 import { Button } from '../components/ui/Button';
 import { SEO } from '../components/SEO';
 

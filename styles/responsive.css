@@ -1,0 +1,283 @@
+/* ============================================
+   RESPONSIVE DESIGN SYSTEM
+   Consistent spacing, typography, and layout
+   ============================================ */
+
+/* ============================================
+   1. CONTAINER & SECTION SPACING
+   ============================================ */
+.section-spacing {
+  @apply py-12 sm:py-16 md:py-20 lg:py-24;
+}
+
+.section-spacing-lg {
+  @apply py-16 sm:py-20 md:py-24 lg:py-32;
+}
+
+.container-padding {
+  @apply px-4 sm:px-6 md:px-8 lg:px-12;
+}
+
+.container-padding-sm {
+  @apply px-3 xs:px-4 sm:px-6;
+}
+
+/* Prevent horizontal overflow */
+.no-overflow-x {
+  @apply overflow-x-hidden max-w-full;
+}
+
+/* ============================================
+   2. TYPOGRAPHY SCALE (Mobile-First)
+   ============================================ */
+.heading-hero {
+  @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl;
+  @apply font-heading font-black leading-[1.1] tracking-tight;
+}
+
+.heading-xl {
+  @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
+  @apply font-heading font-bold leading-tight;
+}
+
+.heading-lg {
+  @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
+  @apply font-heading font-bold leading-tight;
+}
+
+.heading-md {
+  @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl;
+  @apply font-heading font-semibold leading-snug;
+}
+
+.heading-sm {
+  @apply text-lg sm:text-xl md:text-2xl;
+  @apply font-heading font-semibold leading-snug;
+}
+
+.body-lg {
+  @apply text-base sm:text-lg md:text-xl;
+  @apply leading-relaxed;
+}
+
+.body-md {
+  @apply text-sm sm:text-base md:text-lg;
+  @apply leading-relaxed;
+}
+
+.body-sm {
+  @apply text-xs sm:text-sm md:text-base;
+  @apply leading-normal;
+}
+
+/* ============================================
+   3. GRID & LAYOUT SYSTEMS
+   ============================================ */
+.grid-auto-fit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .grid-auto-fit {
+    gap: 2rem;
+  }
+}
+
+.grid-responsive-2 {
+  @apply grid grid-cols-1 md:grid-cols-2;
+  @apply gap-6 sm:gap-8 md:gap-10 lg:gap-12;
+}
+
+.grid-responsive-3 {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3;
+  @apply gap-6 sm:gap-8 md:gap-10;
+}
+
+.grid-responsive-4 {
+  @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4;
+  @apply gap-4 sm:gap-6 md:gap-8;
+}
+
+/* ============================================
+   4. CARD & COMPONENT SPACING
+   ============================================ */
+.card-padding {
+  @apply p-4 sm:p-6 md:p-8;
+}
+
+.card-padding-lg {
+  @apply p-6 sm:p-8 md:p-10 lg:p-12;
+}
+
+/* ============================================
+   5. BUTTON SIZING (Touch-Friendly)
+   ============================================ */
+.btn-touch-target {
+  @apply min-h-[48px] sm:min-h-[52px] md:min-h-[56px];
+  @apply px-6 sm:px-8 md:px-10;
+}
+
+/* ============================================
+   6. HERO SECTION STANDARDS
+   ============================================ */
+.hero-section {
+  @apply min-h-screen flex items-center justify-center;
+  @apply px-4 sm:px-6 py-16 sm:py-20 md:py-24;
+}
+
+.hero-content {
+  @apply max-w-7xl mx-auto text-center;
+}
+
+/* ============================================
+   7. SAFE AREA & OVERFLOW PREVENTION
+   ============================================ */
+.safe-padding-x {
+  padding-left: max(1rem, env(safe-area-inset-left));
+  padding-right: max(1rem, env(safe-area-inset-right));
+}
+
+.safe-padding-y {
+  padding-top: max(1rem, env(safe-area-inset-top));
+  padding-bottom: max(1rem, env(safe-area-inset-bottom));
+}
+
+/* Prevent content from extending beyond viewport */
+.contained {
+  @apply max-w-full overflow-hidden;
+}
+
+/* ============================================
+   8. IMAGE OPTIMIZATION
+   ============================================ */
+.img-cover {
+  @apply w-full h-full object-cover;
+}
+
+.img-contain {
+  @apply w-full h-full object-contain;
+}
+
+.aspect-video-safe {
+  @apply aspect-video w-full max-w-full;
+}
+
+.aspect-square-safe {
+  @apply aspect-square w-full max-w-full;
+}
+
+/* ============================================
+   9. SPACING UTILITIES (Consistent Gaps)
+   ============================================ */
+.gap-responsive-sm {
+  @apply gap-3 sm:gap-4 md:gap-5;
+}
+
+.gap-responsive-md {
+  @apply gap-4 sm:gap-6 md:gap-8;
+}
+
+.gap-responsive-lg {
+  @apply gap-6 sm:gap-8 md:gap-10 lg:gap-12;
+}
+
+/* ============================================
+   10. FULL-WIDTH SECTIONS (No Overflow)
+   ============================================ */
+.full-width-section {
+  @apply w-full max-w-full overflow-hidden;
+}
+
+/* ============================================
+   11. TEXT READABILITY
+   ============================================ */
+.text-readable {
+  @apply max-w-prose mx-auto;
+}
+
+.text-readable-wide {
+  @apply max-w-4xl mx-auto;
+}
+
+.text-readable-full {
+  @apply max-w-6xl mx-auto;
+}
+
+/* Line height for readability */
+.leading-comfortable {
+  line-height: 1.7;
+}
+
+/* ============================================
+   12. RESPONSIVE VISIBILITY
+   ============================================ */
+.mobile-only {
+  @apply block sm:hidden;
+}
+
+.tablet-up {
+  @apply hidden sm:block;
+}
+
+.desktop-only {
+  @apply hidden lg:block;
+}
+
+/* ============================================
+   13. Z-INDEX SYSTEM (Prevent Overlap Issues)
+   ============================================ */
+.z-base {
+  z-index: 1;
+}
+
+.z-content {
+  z-index: 10;
+}
+
+.z-sticky {
+  z-index: 20;
+}
+
+.z-header {
+  z-index: 30;
+}
+
+.z-overlay {
+  z-index: 40;
+}
+
+.z-modal {
+  z-index: 50;
+}
+
+/* ============================================
+   14. SMOOTH SCROLLING & ACCESSIBILITY
+   ============================================ */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================
+   15. FOCUS STATES (Accessibility)
+   ============================================ */
+*:focus-visible {
+  @apply outline-2 outline-offset-2 outline-brand-gold;
+}
+
+button:focus-visible,
+a:focus-visible {
+  @apply outline-2 outline-offset-2 outline-brand-gold;
+}

@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, MapPin, Factory, BarChart, Clock, Filter, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Search, MapPin, Factory, BarChart, Clock, Filter, CheckCircle2, AlertCircle } from '../components/Icons';
 import { SEO } from '../components/SEO';
 
 const projects = [

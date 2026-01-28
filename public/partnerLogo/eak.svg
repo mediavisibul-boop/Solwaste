@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="100%" height="100%" fill="#BED754"/>
+  <circle cx="100" cy="100" r="80" fill="#ffffff" opacity="0.08"/>
+  <text x="50%" y="55%" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="700" fill="#0F172A" text-anchor="middle">EAK</text>
+</svg>

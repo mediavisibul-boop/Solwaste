@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Check, ArrowRight, Download, Sliders, Battery } from 'lucide-react';
+import { Check, ArrowRight, Download, Sliders, Battery } from '../components/Icons';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '../components/ui/Button';
 import { Link } from 'react-router-dom';
