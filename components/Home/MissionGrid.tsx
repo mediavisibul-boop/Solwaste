@@ -58,22 +58,28 @@ export const MissionGrid: React.FC = () => {
         }}
       />
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="relative z-10">
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-16 px-4"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-5xl font-heading font-bold text-brand-dark mb-4 uppercase">
-            Our <span className="text-brand-gold">Values</span>
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="h-[2px] w-12 bg-gradient-to-r from-transparent to-brand-gold" />
+            <span className="text-brand-gold font-bold uppercase tracking-[0.3em] text-sm">Core Values</span>
+            <div className="h-[2px] w-12 bg-gradient-to-l from-transparent to-brand-gold" />
+          </div>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-heading font-black text-brand-dark mb-5 uppercase tracking-tight">
+            Building A <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-brand-gold-dark to-brand-gold">Sustainable Future</span>
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            Driven by purpose, defined by excellence
+          <p className="text-gray-600 max-w-3xl mx-auto text-base sm:text-lg md:text-xl leading-relaxed font-light">
+            Our mission is rooted in innovation, integrity, and impact—transforming waste into value while creating a cleaner tomorrow for generations to come
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {cards.map((card, i) => (
             <motion.div
               key={i}
@@ -141,6 +147,7 @@ export const MissionGrid: React.FC = () => {
               </GlassCard>
             </motion.div>
           ))}
+        </div>
         </div>
       </div>
     </section>
