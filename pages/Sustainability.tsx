@@ -53,7 +53,7 @@ export const Sustainability: React.FC = () => {
                 <div className="inline-block border border-brand-gold px-3 py-1 text-xs font-bold text-brand-gold uppercase tracking-widest mb-6 bg-white">
                     Our Commitment
                 </div>
-                <h1 className="text-5xl md:text-7xl font-heading font-bold text-brand-brown mb-8 uppercase max-w-4xl leading-none">
+                <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-bold text-brand-brown mb-6 sm:mb-8 md:mb-10 lg:mb-12 uppercase max-w-4xl lg:max-w-5xl leading-[1.1]">
                     Environmental & <br/><span className="text-gray-400">Sustainability Commitment</span>
                 </h1>
                 

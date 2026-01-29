@@ -228,10 +228,10 @@ export const Vision2047: React.FC = () => {
       <section className="py-32 bg-white text-center">
           <div className="container mx-auto px-6">
               <FadeIn>
-                  <h2 className="text-6xl md:text-8xl font-heading font-black text-brand-brown mb-6 uppercase">
+                  <h2 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-heading font-black text-brand-brown mb-4 sm:mb-6 md:mb-8 uppercase leading-[0.95] max-w-[90vw] mx-auto">
                       Act Now. <span className="text-brand-gold">Not in 2047.</span>
                   </h2>
-                  <p className="text-2xl text-gray-600 max-w-2xl mx-auto mb-12">
+                  <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-600 max-w-xl sm:max-w-2xl lg:max-w-3xl mx-auto mb-8 sm:mb-10 md:mb-12 px-4 leading-relaxed">
                       Because the future will not forgive us for the problems we had the technology to solve—but chose not to.
                   </p>
                   <Link to="/contact" className="inline-block group">

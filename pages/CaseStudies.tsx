@@ -132,7 +132,7 @@ export const CaseStudies: React.FC = () => {
                   Showing {filteredProjects.length} of {projects.length} installations
               </div>
 
-              <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 xs:gap-5 sm:gap-6">
                   <AnimatePresence>
                     {filteredProjects.map((project) => (
                         <motion.div

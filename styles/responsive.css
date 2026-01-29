@@ -1,25 +1,26 @@
 /* ============================================
    RESPONSIVE DESIGN SYSTEM
    Consistent spacing, typography, and layout
+   Mobile-first approach inspired by big tech
    ============================================ */
 
 /* ============================================
    1. CONTAINER & SECTION SPACING
    ============================================ */
 .section-spacing {
-  @apply py-12 sm:py-16 md:py-20 lg:py-24;
+  @apply py-10 xs:py-12 sm:py-14 md:py-16 lg:py-20 xl:py-24;
 }
 
 .section-spacing-lg {
-  @apply py-16 sm:py-20 md:py-24 lg:py-32;
+  @apply py-14 xs:py-16 sm:py-18 md:py-20 lg:py-28 xl:py-32;
 }
 
 .container-padding {
-  @apply px-4 sm:px-6 md:px-8 lg:px-12;
+  @apply px-4 xs:px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12;
 }
 
 .container-padding-sm {
-  @apply px-3 xs:px-4 sm:px-6;
+  @apply px-3 xs:px-4 sm:px-5 md:px-6;
 }
 
 /* Prevent horizontal overflow */
@@ -31,37 +32,37 @@
    2. TYPOGRAPHY SCALE (Mobile-First)
    ============================================ */
 .heading-hero {
-  @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl;
-  @apply font-heading font-black leading-[1.1] tracking-tight;
+  @apply text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl;
+  @apply font-heading font-black leading-[1.05] tracking-tight;
 }
 
 .heading-xl {
-  @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
+  @apply text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl;
   @apply font-heading font-bold leading-tight;
 }
 
 .heading-lg {
-  @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
+  @apply text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl;
   @apply font-heading font-bold leading-tight;
 }
 
 .heading-md {
-  @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl;
+  @apply text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl;
   @apply font-heading font-semibold leading-snug;
 }
 
 .heading-sm {
-  @apply text-lg sm:text-xl md:text-2xl;
+  @apply text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl;
   @apply font-heading font-semibold leading-snug;
 }
 
 .body-lg {
-  @apply text-base sm:text-lg md:text-xl;
+  @apply text-sm xs:text-base sm:text-lg md:text-xl;
   @apply leading-relaxed;
 }
 
 .body-md {
-  @apply text-sm sm:text-base md:text-lg;
+  @apply text-xs xs:text-sm sm:text-base md:text-lg;
   @apply leading-relaxed;
 }
 
@@ -75,48 +76,61 @@
    ============================================ */
 .grid-auto-fit {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+@media (min-width: 480px) {
+  .grid-auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
 }
 
 @media (min-width: 640px) {
+  .grid-auto-fit {
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
   .grid-auto-fit {
     gap: 2rem;
   }
 }
 
 .grid-responsive-2 {
-  @apply grid grid-cols-1 md:grid-cols-2;
-  @apply gap-6 sm:gap-8 md:gap-10 lg:gap-12;
+  @apply grid grid-cols-1 sm:grid-cols-2;
+  @apply gap-4 xs:gap-5 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12;
 }
 
 .grid-responsive-3 {
   @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3;
-  @apply gap-6 sm:gap-8 md:gap-10;
+  @apply gap-4 xs:gap-5 sm:gap-6 md:gap-8 lg:gap-10;
 }
 
 .grid-responsive-4 {
-  @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4;
-  @apply gap-4 sm:gap-6 md:gap-8;
+  @apply grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4;
+  @apply gap-3 xs:gap-4 sm:gap-5 md:gap-6 lg:gap-8;
 }
 
 /* ============================================
    4. CARD & COMPONENT SPACING
    ============================================ */
 .card-padding {
-  @apply p-4 sm:p-6 md:p-8;
+  @apply p-3 xs:p-4 sm:p-5 md:p-6 lg:p-8;
 }
 
 .card-padding-lg {
-  @apply p-6 sm:p-8 md:p-10 lg:p-12;
+  @apply p-4 xs:p-5 sm:p-6 md:p-8 lg:p-10 xl:p-12;
 }
 
 /* ============================================
    5. BUTTON SIZING (Touch-Friendly)
    ============================================ */
 .btn-touch-target {
-  @apply min-h-[48px] sm:min-h-[52px] md:min-h-[56px];
-  @apply px-6 sm:px-8 md:px-10;
+  @apply min-h-[48px] xs:min-h-[50px] sm:min-h-[52px] md:min-h-[54px] lg:min-h-[56px];
+  @apply px-4 xs:px-5 sm:px-6 md:px-8 lg:px-10;
 }
 
 /* ============================================
@@ -124,7 +138,7 @@
    ============================================ */
 .hero-section {
   @apply min-h-screen flex items-center justify-center;
-  @apply px-4 sm:px-6 py-16 sm:py-20 md:py-24;
+  @apply px-4 xs:px-5 sm:px-6 md:px-8 py-12 xs:py-14 sm:py-16 md:py-20 lg:py-24;
 }
 
 .hero-content {
@@ -172,15 +186,15 @@
    9. SPACING UTILITIES (Consistent Gaps)
    ============================================ */
 .gap-responsive-sm {
-  @apply gap-3 sm:gap-4 md:gap-5;
+  @apply gap-2 xs:gap-3 sm:gap-4 md:gap-5;
 }
 
 .gap-responsive-md {
-  @apply gap-4 sm:gap-6 md:gap-8;
+  @apply gap-3 xs:gap-4 sm:gap-5 md:gap-6 lg:gap-8;
 }
 
 .gap-responsive-lg {
-  @apply gap-6 sm:gap-8 md:gap-10 lg:gap-12;
+  @apply gap-4 xs:gap-5 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12;
 }
 
 /* ============================================

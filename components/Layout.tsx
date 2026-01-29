@@ -97,21 +97,21 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
       >
         <div className="container mx-auto px-3 xs:px-4 sm:px-6 flex justify-between items-center">
           {/* Logo - Clean design without borders */}
-          <Link to="/" className="flex items-center gap-0.5 sm:gap-1 group touch-manipulation">
+          <Link to="/" className="flex items-center gap-0.5 sm:gap-1 md:gap-1.5 group touch-manipulation">
             <img 
               src="/logo.png" 
               alt="Solwaste Logo" 
-              className="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 object-contain transition-all duration-500"
+              className="w-8 h-8 xs:w-9 xs:h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 object-contain transition-all duration-500"
             />
             <div className="flex flex-col leading-none select-none">
-              <span className="text-xl sm:text-2xl md:text-3xl font-heading font-bold tracking-tighter transition-colors duration-500">
+              <span className="text-lg xs:text-xl sm:text-2xl md:text-2xl lg:text-3xl font-heading font-bold tracking-tighter transition-colors duration-500">
                 <span className={isNavTransparent ? 'text-white' : 'text-brand-brown'}>SOL</span><span className="text-brand-gold">WASTE</span>
               </span>
             </div>
           </Link>
 
           {/* Desktop Nav - Enhanced color coordination */}
-          <div className="hidden md:flex items-center gap-6 lg:gap-8 xl:gap-12">
+          <div className="hidden md:flex items-center gap-4 lg:gap-6 xl:gap-8 2xl:gap-10">
             
             {/* OWC Link */}
             <Link
@@ -154,7 +154,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             {/* Get Quote Button */}
             <Link to="/contact">
                <Button 
-                className={`min-h-[40px] px-6 lg:px-8 py-2 lg:py-2.5 text-xs lg:text-sm uppercase tracking-widest font-heading font-bold shadow-lg hover:shadow-xl active:shadow-md transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 touch-manipulation ${
+                className={`min-h-[42px] md:min-h-[44px] lg:min-h-[46px] px-4 md:px-6 lg:px-8 py-2 md:py-2.5 text-xs md:text-sm uppercase tracking-widest font-heading font-bold shadow-lg hover:shadow-xl active:shadow-md transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 touch-manipulation ${
                   isNavTransparent 
                     ? 'bg-brand-gold text-white border-brand-gold hover:bg-white hover:text-brand-gold hover:border-white' 
                     : 'bg-brand-gold text-white border-brand-gold hover:bg-brand-dark hover:text-white hover:border-brand-dark'
@@ -167,7 +167,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 
           {/* Mobile Toggle - Enhanced touch target */}
           <button 
-            className={`md:hidden min-w-[44px] min-h-[44px] p-2.5 flex items-center justify-center transition-all duration-300 touch-manipulation active:scale-95 ${textColorClass} ${
+            className={`md:hidden min-w-[48px] min-h-[48px] p-3 flex items-center justify-center transition-all duration-300 touch-manipulation active:scale-95 ${textColorClass} ${
               isNavTransparent 
                 ? 'hover:bg-white/10 active:bg-white/20' 
                 : 'hover:bg-gray-100 active:bg-gray-200'
@@ -182,8 +182,8 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 
         {/* Mobile Menu - Enhanced responsive design */}
         <div className={`md:hidden absolute top-full left-0 w-full bg-white shadow-2xl border-t-2 border-gray-100 transition-all duration-300 ease-in-out origin-top ${isMobileMenuOpen ? 'max-h-screen opacity-100 visible' : 'max-h-0 opacity-0 invisible'}`}>
-          <div className="container mx-auto px-3 xs:px-4 sm:px-6">
-            <nav className="flex flex-col p-5 xs:p-6 sm:p-7 md:p-8 space-y-3 xs:space-y-4 sm:space-y-5" role="navigation" aria-label="Mobile navigation">
+          <div className="container mx-auto px-4 xs:px-5 sm:px-6">
+            <nav className="flex flex-col p-4 xs:p-5 sm:p-6 md:p-8 space-y-2 xs:space-y-3 sm:space-y-4" role="navigation" aria-label="Mobile navigation">
             <Link 
               to="/" 
               onClick={() => setIsMobileMenuOpen(false)} 
@@ -242,8 +242,8 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
              </div>
         </div>
 
-        <div className="container mx-auto px-3 xs:px-4 sm:px-6 relative z-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-8 mb-12 sm:mb-16 border-b border-gray-800 pb-10 sm:pb-12">
+        <div className="container mx-auto px-4 xs:px-5 sm:px-6 relative z-10">
+          <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 xs:gap-7 sm:gap-8 lg:gap-10 xl:gap-12 mb-10 sm:mb-12 md:mb-14 lg:mb-16 border-b border-gray-800 pb-8 sm:pb-10 md:pb-12 lg:pb-14">
             
             {/* Column 1: Contact Info */}
             <div className="space-y-4 sm:space-y-6">
@@ -335,8 +335,8 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
           </div>
           
           {/* Bottom Bar */}
-          <div className="flex flex-col md:flex-row justify-between items-center text-gray-400 text-xs sm:text-sm font-medium gap-4">
-            <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
+          <div className="flex flex-col md:flex-row justify-between items-center text-gray-400 text-xs sm:text-sm font-medium gap-3 xs:gap-4 sm:gap-5 md:gap-6">
+            <div className="flex flex-wrap justify-center gap-3 xs:gap-4 sm:gap-5 md:gap-6">
                <Link to="/privacy-policy" className="hover:text-brand-gold transition-colors touch-manipulation py-1">Privacy Policy</Link>
                <Link to="/accessibility-statement" className="hover:text-brand-gold transition-colors touch-manipulation py-1">Accessibility Statement</Link>
                <Link to="/sitemap" className="hover:text-brand-gold transition-colors touch-manipulation py-1">Sitemap</Link>

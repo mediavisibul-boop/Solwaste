@@ -23,9 +23,9 @@ export const Contact: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/90 via-brand-olive-dark/80 to-brand-dark/95"></div>
         </div>
         
-        <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-tight">GET IN TOUCH</h1>
-          <p className="text-gray-300 mt-4 sm:mt-6 text-base sm:text-lg md:text-xl px-4">Start your journey towards zero waste today.</p>
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 text-center relative z-10">
+          <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black uppercase leading-tight max-w-6xl mx-auto">GET IN TOUCH</h1>
+          <p className="text-gray-300 mt-3 xs:mt-4 sm:mt-5 md:mt-6 lg:mt-8 text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl px-4 sm:px-6 max-w-2xl lg:max-w-3xl mx-auto leading-relaxed">Start your journey towards zero waste today.</p>
         </div>
       </div>
 

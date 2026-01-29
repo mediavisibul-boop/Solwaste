@@ -67,7 +67,7 @@ const PressMedia = () => {
 
           {/* Press Items */}
           <div className="flex justify-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 max-w-md mx-auto md:max-w-none">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 xs:gap-5 sm:gap-6 md:gap-8 lg:gap-10 max-w-md mx-auto md:max-w-none">
               {pressItems.map((item, index) => (
               <motion.div
                 key={index}

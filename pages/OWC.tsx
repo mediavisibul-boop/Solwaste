@@ -180,9 +180,9 @@ export const OWC: React.FC = () => {
           {/* Premium white fade overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/25 to-black/30"></div>
         </div>
-        <div className="container mx-auto px-6 text-center relative z-10">
-          <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 uppercase" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.6), 0 6px 35px rgba(0,0,0,0.4)' }}>Organic Waste Composters</h1>
-          <p className="text-gray-300 max-w-3xl mx-auto text-xl md:text-2xl font-light" style={{ textShadow: '0 2px 15px rgba(0,0,0,0.5), 0 4px 25px rgba(0,0,0,0.3)' }}>High-performance composting solutions for every scale. From compact residential units to massive industrial processors.</p>
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 text-center relative z-10">
+          <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-bold mb-4 sm:mb-5 md:mb-6 lg:mb-8 uppercase leading-tight max-w-6xl mx-auto" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.6), 0 6px 35px rgba(0,0,0,0.4)' }}>Organic Waste Composters</h1>
+          <p className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-300 max-w-2xl lg:max-w-3xl xl:max-w-4xl mx-auto font-light leading-relaxed px-4 sm:px-6" style={{ textShadow: '0 2px 15px rgba(0,0,0,0.5), 0 4px 25px rgba(0,0,0,0.3)' }}>High-performance composting solutions for every scale. From compact residential units to massive industrial processors.</p>
         </div>
       </div>
 

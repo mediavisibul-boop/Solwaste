@@ -124,10 +124,10 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
                 style={{
                   objectPosition: 'center center'
                 }}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.7 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
               />
             </AnimatePresence>
           )}
@@ -221,8 +221,6 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
 
   // Get the current image (either from images array or single image)
   const currentImage = slide.images ? slide.images[currentImageIndex] : slide.image;
-  
-  console.log('Current slide:', slide.id, 'Current image:', currentImage); // Debug log
 
   const backgroundClass = currentImage ? 'bg-transparent' : (isDark ? 'bg-brand-dark' : 'bg-white');
 
@@ -237,39 +235,32 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
                 key={currentImage}
                 src={currentImage} 
                 alt={slide.title} 
-                className="w-full h-full object-cover object-center"
+                loading="eager"
+                className="w-full h-full object-cover object-center will-change-transform"
                 style={{
-                  objectPosition: 'center center'
+                  objectPosition: 'center center',
+                  transform: 'translateZ(0)' // Force GPU acceleration
                 }}
                 initial={{ opacity: 0, scale: 1.1 }}
                 animate={{ 
                   opacity: 1, 
-                  scale: 1,
-                  y: [0, -20, 0]
+                  scale: 1
                 }}
                 exit={{ opacity: 0, scale: 1.05 }}
                 transition={{ 
                   opacity: { duration: 0.5 },
-                  scale: { duration: 0.7 },
-                  y: { duration: 20, repeat: Infinity, ease: "easeInOut" }
+                  scale: { duration: 0.7 }
                 }}
-                onError={(e) => console.error('Image failed to load:', currentImage, e)}
-                onLoad={() => console.log('Image loaded:', currentImage)}
               />
             </motion.div>
           </AnimatePresence>
         )}
-        {/* Ambient glow effect */}
-        <motion.div 
+        {/* Static ambient glow effect - performance optimized */}
+        <div 
           className="absolute inset-0"
-          animate={{
-            background: [
-              'radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.15) 0%, transparent 50%)',
-              'radial-gradient(circle at 70% 50%, rgba(212, 175, 55, 0.15) 0%, transparent 50%)',
-              'radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.15) 0%, transparent 50%)'
-            ]
+          style={{
+            background: 'radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.12) 0%, transparent 50%)'
           }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
         {/* Premium white fade overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/25 to-black/30"></div>
@@ -302,45 +293,20 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
       <div className="relative z-10 container mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 pb-8 xs:pb-10 sm:pb-12 md:pb-16 lg:pb-20 xl:pb-24">
         <div className="flex flex-col lg:flex-row items-center lg:items-end justify-between gap-6 xs:gap-7 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16">
           {/* Visual Proof Blocks - Premium Glass Morphism Cards */}
-          <div className={`grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 xs:gap-3 sm:gap-4 md:gap-5 lg:gap-6 w-full lg:flex-1 ${hasBackgroundImage ? 'text-white' : (isDark ? 'text-white' : 'text-brand-brown')}`}>
+          <div className={`grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-2 xs:gap-2.5 sm:gap-3 md:gap-4 lg:gap-5 xl:gap-6 w-full lg:flex-1 ${hasBackgroundImage ? 'text-white' : (isDark ? 'text-white' : 'text-brand-brown')}`}>
             {slide.specs?.map((spec, idx) => (
               <motion.div 
                 key={idx} 
-                className="relative flex flex-col bg-white/5 backdrop-blur-2xl rounded-xl p-3 xs:p-4 border border-white/10 hover:border-brand-gold/60 hover:bg-white/10 transition-all duration-500 group overflow-hidden shadow-lg hover:shadow-xl hover:shadow-brand-gold/20"
+                className="relative flex flex-col bg-white/5 backdrop-blur-md rounded-lg xs:rounded-xl p-2.5 xs:p-3 sm:p-4 border border-white/10 hover:border-brand-gold/60 hover:bg-white/10 transition-all duration-300 group overflow-hidden shadow-lg hover:shadow-xl hover:shadow-brand-gold/20"
+                style={{ willChange: 'transform' }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: idx * 0.15, type: 'spring', stiffness: 100 }}
-                whileHover={{ scale: 1.08, y: -8, rotateY: 5 }}
+                transition={{ delay: idx * 0.05, duration: 0.3, ease: "easeOut" }}
+                whileHover={{ scale: 1.03, y: -2, transition: { duration: 0.2 } }}
               >
-                {/* Shimmer effect */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
-                  initial={{ x: '-100%' }}
-                  animate={{ x: '100%' }}
-                  transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
-                />
-                
-                {/* Animated background glow */}
-                <motion.div 
-                  className="absolute inset-0 bg-gradient-to-br from-brand-gold/0 via-brand-gold/10 to-brand-gold/0 opacity-0 group-hover:opacity-100 rounded-2xl"
-                  animate={{
-                    background: [
-                      'radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.15), transparent 50%)',
-                      'radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.15), transparent 50%)',
-                      'radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.15), transparent 50%)'
-                    ]
-                  }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                />
-                
-                {/* Icon with pulse animation */}
+                {/* Icon */}
                 <motion.div 
                   className="text-2xl xs:text-3xl sm:text-4xl mb-2 relative z-10 text-brand-gold"
-                  whileHover={{ 
-                    scale: 1.2,
-                    rotate: [0, -10, 10, 0],
-                    transition: { duration: 0.5 }
-                  }}
                 >
                   {getSpecIcon(spec.label)}
                 </motion.div>
@@ -353,16 +319,13 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
                 
                 {/* Label */}
                 <span className={`text-[10px] xs:text-xs sm:text-sm font-bold uppercase tracking-widest relative z-10 ${hasBackgroundImage ? 'text-gray-200' : (isDark ? 'text-gray-200' : 'text-gray-400')} group-hover:text-white transition-colors`} style={{ textShadow: '0 1px 8px rgba(0,0,0,0.3), 0 2px 12px rgba(0,0,0,0.2)' }}>{spec.label}</span>
-                
-                {/* Corner glow accent */}
-                <div className="absolute top-0 right-0 w-16 h-16 bg-brand-gold/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </motion.div>
             ))}
           </div>
 
           {/* Buttons - Premium Glass Morphism CTAs */}
-          <div className="flex flex-col xs:flex-row gap-4 w-full lg:w-auto lg:flex-shrink-0">
-             <Link to="/contact" className="w-full xs:flex-1 lg:w-auto">
+          <div className="flex flex-col xs:flex-row gap-3 xs:gap-3.5 sm:gap-4 w-full lg:w-auto lg:flex-shrink-0">
+             <Link to="/contact" className="w-full xs:flex-1 lg:w-auto lg:min-w-[180px]">
                 <GlassButton 
                   variant="primary" 
                   size="lg" 
@@ -374,7 +337,7 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
                 </GlassButton>
             </Link>
             
-            <Link to={`/owc#${slide.id}`} className="w-full xs:flex-1 lg:w-auto">
+            <Link to={`/owc#${slide.id}`} className="w-full xs:flex-1 lg:w-auto lg:min-w-[180px]">
                 <GlassButton 
                   variant="glass" 
                   size="lg" 
@@ -421,7 +384,7 @@ export const Home: React.FC = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Track scroll progress
+  // Track scroll progress - optimized with passive listener
   useEffect(() => {
     const handleScroll = () => {
       const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -429,7 +392,7 @@ export const Home: React.FC = () => {
       setScrollProgress(progress);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -503,7 +466,7 @@ export const Home: React.FC = () => {
       >
         <Link to="/contact">
           <motion.div
-            className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/10 backdrop-blur-2xl border-2 border-white/20 shadow-2xl shadow-brand-gold/40 flex items-center justify-center cursor-pointer overflow-hidden group"
+            className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/10 backdrop-blur-md border-2 border-white/20 shadow-2xl shadow-brand-gold/40 flex items-center justify-center cursor-pointer overflow-hidden group"
             whileHover={{ scale: 1.15, rotate: 5 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -512,15 +475,8 @@ export const Home: React.FC = () => {
               className="absolute inset-0 bg-gradient-to-br from-brand-gold via-brand-gold-dark to-brand-gold opacity-0 group-hover:opacity-100 transition-opacity duration-500"
             />
             
-            {/* Pulsing ring */}
-            <motion.div
-              className="absolute inset-0 rounded-full border-4 border-brand-gold"
-              animate={{
-                scale: [1, 1.4, 1],
-                opacity: [0.6, 0, 0.6]
-              }}
-              transition={{ duration: 2.5, repeat: Infinity }}
-            />
+            {/* Static ring - performance optimized */}
+            <div className="absolute inset-0 rounded-full border-2 border-brand-gold/60" />
             
             {/* Icon */}
             <Mail className="w-8 h-8 sm:w-10 sm:h-10 text-white relative z-10 group-hover:rotate-12 transition-transform duration-300" />
@@ -547,8 +503,8 @@ export const Home: React.FC = () => {
             animate="center"
             exit="exit"
             transition={{
-              x: { type: "spring", stiffness: 200, damping: 25 },
-              opacity: { duration: 0.4 }
+              x: { type: "tween", duration: 0.4, ease: "easeInOut" },
+              opacity: { duration: 0.3 }
             }}
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}

@@ -61,10 +61,10 @@ export const PartnerWithUs: React.FC = () => {
                 <div className="inline-block border border-brand-gold px-4 py-1 text-sm font-bold text-brand-gold uppercase tracking-widest mb-6 bg-white/10 backdrop-blur-md rounded-full">
                     Join The Movement
                 </div>
-                <h1 className="text-6xl md:text-8xl font-heading font-black mb-6 uppercase leading-none">
+                <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-heading font-black mb-4 sm:mb-5 md:mb-6 lg:mb-8 uppercase leading-[0.95] max-w-6xl">
                     Partner With Us
                 </h1>
-                <p className="text-2xl md:text-3xl text-gray-200 font-bold mb-8 max-w-2xl">
+                <p className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-200 font-bold mb-6 sm:mb-8 md:mb-10 max-w-3xl lg:max-w-4xl leading-tight">
                     Help us bring real waste solutions to more people.
                 </p>
                 <div className="w-24 h-2 bg-brand-gold mb-10"></div>
