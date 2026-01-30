@@ -71,25 +71,21 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   useEffect(() => {
     setIsMobileMenuOpen(false);
     
+    // Handle hash-based scrolling for in-page navigation
     const hash = location.hash.replace('#', '');
-    
     if (hash) {
-      // Scroll to hash element after content loads
       setTimeout(() => {
         const element = document.getElementById(hash);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       }, 300);
-    } else {
-      // Immediately scroll to top for new pages
-      window.scrollTo(0, 0);
     }
     
     if (!isHomePage) {
         setIsSlideDark(false); 
     }
-  }, [location, isHomePage]);
+  }, [location.hash, isHomePage]);
 
   const isNavTransparent = isHomePage && isHeroVisible;
   
@@ -166,16 +162,12 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                  <a href="https://www.linkedin.com/company/solwaste/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-brand-gold transition-colors transform hover:-translate-y-1 duration-300 touch-manipulation" aria-label="LinkedIn">
                      <Linkedin size={22} className="sm:w-6 sm:h-6" />
                  </a>
-                 <a href="#" className="text-gray-400 hover:text-brand-gold transition-colors transform hover:-translate-y-1 duration-300 touch-manipulation" aria-label="Youtube">
-                     <Youtube size={22} className="sm:w-6 sm:h-6" />
-                 </a>
               </div>
             </div>
 
             <div className="lg:pl-8">
               <ul className="space-y-2 sm:space-y-3 font-heading font-medium text-base sm:text-lg text-gray-400">
                 {[
-                  { name: 'Blog', path: '#' },
                   { name: 'Sustainability', path: '/sustainability' },
                   { name: 'Vision 2047', path: '/vision-2047' }
                 ].map((item) => (

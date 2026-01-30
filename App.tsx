@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Layout } from './components/Layout';
+import { ScrollToTop } from './components/ScrollToTop';
 import { Home } from './pages/Home';
 
 // Lazy load all secondary pages for better performance
@@ -32,6 +33,7 @@ const PageLoader = () => (
 const App: React.FC = () => {
   return (
     <Router>
+      <ScrollToTop />
       <Layout>
         <Suspense fallback={<PageLoader />}>
           <Routes>
