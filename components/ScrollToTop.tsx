@@ -11,11 +11,22 @@ export const ScrollToTop: React.FC = () => {
   useEffect(() => {
     // Only scroll to top if there's no hash (anchor link)
     if (!hash) {
-      // Immediately scroll to top
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: 'auto'
+      // Immediately scroll to top - multiple approaches for reliability
+      window.scrollTo(0, 0);
+      
+      // Also use setTimeout to ensure DOM is ready
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+      }, 0);
+      
+      // And another one slightly delayed to catch late renders
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+      }, 10);
+      
+      // Use requestAnimationFrame for good measure
+      requestAnimationFrame(() => {
+        window.scrollTo(0, 0);
       });
     }
   }, [pathname, hash]);
