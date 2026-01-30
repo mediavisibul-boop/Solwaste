@@ -386,9 +386,8 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
 
 export const Home: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [imageIndices, setImageIndices] = useState<number[]>(slides.map(() => 0));
 
   // Track scroll progress - optimized with passive listener
   useEffect(() => {
@@ -402,45 +401,37 @@ export const Home: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Dispatch event when slide changes to update Navbar color
+  // Track which slide is visible using IntersectionObserver
   useEffect(() => {
-    const event = new CustomEvent('solwaste-slide-change', { 
-        detail: { isDark: slides[currentIndex].isDark } 
-    });
-    window.dispatchEvent(event);
-    setCurrentImageIndex(0); // Reset image index when slide changes
-  }, [currentIndex]);
+    const slidesEl = document.querySelectorAll('[data-slide]');
 
-  const slideVariants = {
-    enter: (direction: number) => ({
-      x: direction > 0 ? '100%' : '-100%',
-      opacity: 1,
-      zIndex: 10 // Entering slide on top
-    }),
-    center: {
-      zIndex: 10,
-      x: 0,
-      opacity: 1
-    },
-    exit: (direction: number) => ({
-      zIndex: 5, // Exiting slide below but still visible
-      x: direction < 0 ? '100%' : '-100%',
-      opacity: 1
-    })
-  };
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const index = Number(entry.target.getAttribute('data-index'));
+            setCurrentIndex(index);
 
-  const swipeConfidenceThreshold = 10000;
-  const swipePower = (offset: number, velocity: number) => {
-    return Math.abs(offset) * velocity;
-  };
+            window.dispatchEvent(
+              new CustomEvent('solwaste-slide-change', {
+                detail: { isDark: slides[index].isDark }
+              })
+            );
+          }
+        });
+      },
+      { threshold: 0.6 }
+    );
 
-  const paginate = (newDirection: number) => {
-    setDirection(newDirection);
-    setCurrentIndex((prevIndex) => {
-        let nextIndex = prevIndex + newDirection;
-        if (nextIndex < 0) nextIndex = slides.length - 1;
-        if (nextIndex >= slides.length) nextIndex = 0;
-        return nextIndex;
+    slidesEl.forEach(slide => observer.observe(slide));
+    return () => observer.disconnect();
+  }, []);
+
+  const setCurrentImageIndex = (index: number) => {
+    setImageIndices(prev => {
+      const newIndices = [...prev];
+      newIndices[currentIndex] = index;
+      return newIndices;
     });
   };
 
@@ -500,39 +491,54 @@ export const Home: React.FC = () => {
         {/* Ambient animated blobs + subtle noise for premium background */}
         <div className="ambient-blobs" aria-hidden="true" />
         <div className="noise-overlay" aria-hidden="true" />
-        <AnimatePresence initial={false} custom={direction} mode="sync">
-          <motion.div
-            key={currentIndex}
-            custom={direction}
-            variants={slideVariants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{
-              x: { type: "spring", stiffness: 300, damping: 30 },
-              opacity: { duration: 0 }
-            }}
-            drag="x"
-            dragConstraints={{ left: 0, right: 0 }}
-            dragElastic={1}
-            onDragEnd={(e, { offset, velocity }) => {
-              const swipe = swipePower(offset.x, velocity.x);
-              if (swipe < -swipeConfidenceThreshold) {
-                paginate(1);
-              } else if (swipe > swipeConfidenceThreshold) {
-                paginate(-1);
-              }
-            }}
-            className="absolute w-full h-full top-0 left-0"
-          >
-            <SlideContent slide={slides[currentIndex]} currentImageIndex={currentImageIndex} setCurrentImageIndex={setCurrentImageIndex} />
-          </motion.div>
-        </AnimatePresence>
+        
+        {/* Native Horizontal Scroll with Snap */}
+        <div
+          className="
+            hero-scroll
+            h-full
+            w-full
+            overflow-x-auto
+            overflow-y-hidden
+            flex
+            snap-x
+            snap-mandatory
+            scroll-smooth
+          "
+          style={{
+            WebkitOverflowScrolling: 'touch',
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none'
+          }}
+        >
+          {slides.map((slide, index) => (
+            <div
+              key={slide.id}
+              data-slide
+              data-index={index}
+              className="
+                h-screen
+                w-screen
+                flex-shrink-0
+                snap-start
+              "
+            >
+              <SlideContent
+                slide={slide}
+                currentImageIndex={imageIndices[index]}
+                setCurrentImageIndex={setCurrentImageIndex}
+              />
+            </div>
+          ))}
+        </div>
 
         {/* CONTROLS - Hidden on small mobile, visible on tablet+ */}
         <div className="absolute top-1/2 -translate-y-1/2 left-3 sm:left-4 md:left-6 lg:left-8 z-20 hidden sm:block">
             <button 
-                onClick={() => paginate(-1)} 
+                onClick={() => {
+                  const targetIndex = currentIndex - 1 < 0 ? slides.length - 1 : currentIndex - 1;
+                  document.querySelector(`[data-index="${targetIndex}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+                }} 
                 className="min-w-[56px] min-h-[56px] md:min-w-[64px] md:min-h-[64px] lg:min-w-[72px] lg:min-h-[72px] p-3 md:p-4 lg:p-5 bg-white/15 hover:bg-white/25 active:bg-white/30 text-white rounded-full backdrop-blur-lg border-2 border-white/20 hover:border-white/30 transition-all duration-300 hover:scale-110 active:scale-95 group shadow-2xl shadow-white/10 touch-manipulation cursor-pointer"
                 aria-label="Previous slide"
                 type="button"
@@ -542,7 +548,10 @@ export const Home: React.FC = () => {
         </div>
         <div className="absolute top-1/2 -translate-y-1/2 right-3 sm:right-4 md:right-6 lg:right-8 z-20 hidden sm:block">
             <button 
-                onClick={() => paginate(1)} 
+                onClick={() => {
+                  const targetIndex = currentIndex + 1 >= slides.length ? 0 : currentIndex + 1;
+                  document.querySelector(`[data-index="${targetIndex}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+                }} 
                 className="min-w-[56px] min-h-[56px] md:min-w-[64px] md:min-h-[64px] lg:min-w-[72px] lg:min-h-[72px] p-3 md:p-4 lg:p-5 bg-white/15 hover:bg-white/25 active:bg-white/30 text-white rounded-full backdrop-blur-lg border-2 border-white/20 hover:border-white/30 transition-all duration-300 hover:scale-110 active:scale-95 group shadow-2xl shadow-white/10 touch-manipulation cursor-pointer"
                 aria-label="Next slide"
                 type="button"
@@ -557,8 +566,7 @@ export const Home: React.FC = () => {
                  <button 
                     key={idx}
                     onClick={() => {
-                        setDirection(idx > currentIndex ? 1 : -1);
-                        setCurrentIndex(idx);
+                        document.querySelector(`[data-index="${idx}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
                     }}
                     className={`min-w-[40px] min-h-[40px] xs:min-w-[44px] xs:min-h-[44px] flex items-center justify-center p-1.5 xs:p-2 rounded-full transition-all duration-300 ease-in-out touch-manipulation active:scale-90 cursor-pointer ${idx === currentIndex ? 'scale-110' : 'scale-100 hover:scale-105'}`}
                     aria-label={`Go to slide ${idx + 1}: ${slides[idx].title}`}

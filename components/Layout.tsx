@@ -71,21 +71,10 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   useEffect(() => {
     setIsMobileMenuOpen(false);
     
-    // Handle hash-based scrolling for in-page navigation
-    const hash = location.hash.replace('#', '');
-    if (hash) {
-      setTimeout(() => {
-        const element = document.getElementById(hash);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }, 300);
-    }
-    
     if (!isHomePage) {
         setIsSlideDark(false); 
     }
-  }, [location.hash, isHomePage]);
+  }, [location.pathname, isHomePage]);
 
   const isNavTransparent = isHomePage && isHeroVisible;
   
