@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle, Box, DollarSign, BookOpen, ShieldCheck, TrendingUp, UserPlus, Phone, Rocket } from '../components/Icons';
+import { CheckCircle, Box, DollarSign, BookOpen, ShieldCheck, TrendingUp, UserPlus, Phone, Rocket, ArrowRight } from '../components/Icons';
 import { Button } from '../components/ui/Button';
 import { SEO } from '../components/SEO';
 import { ScrollReveal, StaggerContainer, StaggerItem } from '../components/ui/ScrollReveal';
@@ -45,23 +45,20 @@ export const PartnerWithUs: React.FC = () => {
       />
       
       {/* Hero Section */}
-      <section className="bg-brand-dark text-white min-h-screen flex items-center relative overflow-hidden">
+      <section className="bg-brand-dark text-white min-h-[50vh] flex items-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2032&auto=format&fit=crop')] bg-cover bg-center"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-white/35 via-white/25 to-transparent"></div>
         
         <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal variant="fadeInLeft" viewport={{ once: true, amount: 0.3 }}>
-                <div className="inline-block border border-brand-gold px-4 py-1 text-sm font-bold text-brand-gold uppercase tracking-widest mb-6 bg-white/10 backdrop-blur-md rounded-full">
-                    Join The Movement
-                </div>
-                <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-heading font-black mb-4 sm:mb-5 md:mb-6 lg:mb-8 uppercase leading-[0.95] max-w-6xl">
+                <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-black mb-3 sm:mb-4 md:mb-5 uppercase leading-[0.95] max-w-5xl">
                     Partner With Us
                 </h1>
-                <p className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-200 font-bold mb-6 sm:mb-8 md:mb-10 max-w-3xl lg:max-w-4xl leading-tight">
+                <p className="text-base xs:text-lg sm:text-xl md:text-2xl text-gray-200 font-bold mb-4 sm:mb-5 md:mb-6 max-w-2xl lg:max-w-3xl leading-tight">
                     Help us bring real waste solutions to more people.
                 </p>
-                <div className="w-24 h-2 bg-brand-gold mb-10"></div>
-                <p className="text-xl text-gray-300 max-w-2xl leading-relaxed mb-10 font-light">
+                <div className="w-20 h-1.5 bg-brand-gold mb-6"></div>
+                <p className="text-lg text-gray-300 max-w-2xl leading-relaxed mb-6 font-light">
                     We make composting machines. You know people who need them. Let's work together.
                 </p>
                 <button onClick={() => window.open('https://quark-cornflower-fe8.notion.site/2cc84662572280d786f1f62594f9327f?pvs=105', '_blank')} className="relative overflow-hidden min-h-[60px] xs:min-h-[64px] sm:min-h-[68px] flex items-center justify-center rounded-xl bg-gradient-to-r from-white to-gray-100 hover:from-gray-100 hover:to-white shadow-[0_0_25px_rgba(255,255,255,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.6)] active:scale-[0.98] hover:scale-[1.03] transition-all duration-300 touch-manipulation group">
@@ -217,3 +214,5 @@ export const PartnerWithUs: React.FC = () => {
     </div>
   );
 };
+
+export default PartnerWithUs;

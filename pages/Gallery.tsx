@@ -78,7 +78,7 @@ const Gallery = () => {
       />
       
       {/* Header */}
-      <div className="bg-brand-dark text-white min-h-screen flex items-center relative overflow-hidden">
+      <div className="bg-brand-dark text-white min-h-[50vh] flex items-center relative overflow-hidden">
         {/* Background image grid */}
         <div className="absolute inset-0 grid grid-cols-5 gap-1 opacity-20">
           {galleryImages.map((img, idx) => (

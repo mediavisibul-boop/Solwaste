@@ -231,19 +231,25 @@ export const Vision2047: React.FC = () => {
                       Because the future will not forgive us for the problems we had the technology to solve—but chose not to.
                   </p>
                   <Link to="/contact" className="inline-block group">
-                    <div className="relative overflow-hidden min-h-[68px] xs:min-h-[72px] sm:min-h-[76px] md:min-h-[80px] flex items-center justify-center rounded-2xl bg-gradient-to-r from-brand-dark via-[#2d3e1f] to-brand-dark border-2 border-brand-gold/30 hover:border-brand-gold shadow-[0_0_40px_rgba(212,175,55,0.3),0_10px_30px_rgba(0,0,0,0.3)] hover:shadow-[0_0_60px_rgba(212,175,55,0.6),0_15px_40px_rgba(0,0,0,0.4)] active:scale-[0.97] hover:scale-[1.05] transition-all duration-500 touch-manipulation group-hover:from-[#2d3e1f] group-hover:via-brand-dark group-hover:to-[#2d3e1f]">
-                      {/* Animated border glow */}
-                      <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-transparent via-brand-gold/20 to-transparent animate-pulse"></div>
+                    <div className="relative overflow-hidden min-h-[68px] xs:min-h-[72px] sm:min-h-[76px] md:min-h-[80px] flex items-center justify-center rounded-2xl bg-gradient-to-br from-brand-gold/90 to-brand-olive/90 backdrop-blur-md border-2 border-brand-gold/40 hover:border-brand-gold shadow-2xl shadow-brand-gold/20 hover:shadow-brand-gold/40 active:scale-[0.97] hover:scale-[1.02] transition-all duration-300 touch-manipulation">
+                      
+                      {/* Animated gradient background */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-brand-gold via-brand-olive to-brand-gold opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
                       
                       {/* Shine effect */}
-                      <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1200 ease-in-out bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+                      <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-white/30 to-transparent rounded-2xl"></div>
+                      
+                      {/* Corner accents */}
+                      <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-white/40 rounded-tr-lg group-hover:border-white/60 transition-colors"></div>
+                      <div className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 border-white/40 rounded-bl-lg group-hover:border-white/60 transition-colors"></div>
                       
                       {/* Button content */}
-                      <div className="relative flex items-center justify-center gap-3 xs:gap-4 sm:gap-5 px-10 xs:px-12 sm:px-14 md:px-16 text-white">
-                        <span className="text-base xs:text-lg sm:text-xl md:text-2xl font-black uppercase tracking-widest group-hover:tracking-[0.25em] transition-all duration-500 leading-none whitespace-nowrap drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] group-hover:drop-shadow-[0_2px_12px_rgba(212,175,55,0.8)]">Start Your Waste-Free Journey</span>
+                      <div className="relative flex items-center justify-center gap-3 xs:gap-4 sm:gap-5 px-10 xs:px-12 sm:px-14 md:px-16 z-10">
+                        <span className="text-base xs:text-lg sm:text-xl md:text-2xl font-heading font-black uppercase tracking-wide group-hover:tracking-wider text-brand-dark drop-shadow-sm transition-all duration-300 leading-none">Start Your Waste-Free Journey</span>
                         <div className="relative">
-                          <ArrowRight className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 flex-shrink-0 group-hover:translate-x-2 transition-transform duration-500 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]" strokeWidth={2.5} />
-                          <div className="absolute inset-0 bg-brand-gold/40 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                          <ArrowRight className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 text-brand-dark flex-shrink-0 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" strokeWidth={2.5} />
+                          {/* Icon glow */}
+                          <div className="absolute inset-0 bg-brand-dark/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
                       </div>
                     </div>

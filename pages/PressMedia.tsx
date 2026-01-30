@@ -26,7 +26,7 @@ const PressMedia = () => {
       />
       
       {/* Header */}
-      <div className="bg-brand-dark text-white min-h-screen flex items-center relative overflow-hidden">
+      <div className="bg-brand-dark text-white min-h-[50vh] flex items-center relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-brand-dark via-brand-olive-dark to-brand-dark opacity-90"></div>
         <div className="container mx-auto px-4 sm:px-6 max-w-6xl text-center relative z-10 py-16 sm:py-20">
           <ScrollReveal variant="fadeInUp" viewport={{ once: true, amount: 0.3 }}>
