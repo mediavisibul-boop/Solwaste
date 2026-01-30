@@ -79,10 +79,11 @@ export const GlassButton: React.FC<GlassButtonProps> = ({
         )}
       </span>
       
-      {/* Ripple effect */}
+      {/* Ripple effect - only visible on tap */}
       <motion.div 
-        className="absolute inset-0 rounded-full bg-white/20"
-        initial={{ scale: 0, opacity: 0.5 }}
+        className="absolute inset-0 bg-white/20 pointer-events-none"
+        style={{ borderRadius: 'inherit' }}
+        initial={{ scale: 0, opacity: 0 }}
         whileTap={{ scale: 2, opacity: 0 }}
         transition={{ duration: 0.5 }}
       />
