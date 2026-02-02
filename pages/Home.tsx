@@ -271,17 +271,15 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
 
       {/* Header Content - Mobile Optimized Spacing */}
       <div className={`relative z-20 container mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 pt-20 xs:pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-40 text-center`}>
-        <motion.div
-           initial={{ opacity: 0, y: 30 }}
-           animate={{ opacity: 1, y: 0 }}
-           transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
+        <div
            className="max-w-6xl mx-auto"
            style={{ 
              WebkitFontSmoothing: 'antialiased',
              WebkitTextSizeAdjust: '100%',
              transform: 'translate3d(0,0,0)',
              isolation: 'isolate',
-             willChange: 'auto'
+             opacity: 1,
+             visibility: 'visible'
            }}
         >
             {/* badge removed from slides */}
@@ -294,7 +292,7 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
           <p className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white max-w-5xl mx-auto leading-relaxed md:leading-loose font-semibold px-3 xs:px-4 sm:px-6 md:px-8" style={{ textShadow: '0 3px 15px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.9)', WebkitFontSmoothing: 'antialiased', WebkitTextSizeAdjust: '100%' }}>
             {slide.description}
           </p>
-        </motion.div>
+        </div>
       </div>
 
       {/* Footer Specs & CTA - Mobile Optimized */}
