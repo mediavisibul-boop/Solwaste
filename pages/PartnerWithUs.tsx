@@ -75,6 +75,7 @@ export const PartnerWithUs: React.FC = () => {
                     <ArrowRight className="w-6 h-6 xs:w-7 xs:h-7 flex-shrink-0 group-hover:translate-x-1 transition-transform duration-300" strokeWidth={2.5} />
                   </div>
                 </button>
+              </div>
             </ScrollReveal>
         </div>
       </section>
