@@ -270,7 +270,7 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
       </div>
 
       {/* Header Content - Mobile Optimized Spacing */}
-      <div className={`relative z-10 container mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 pt-20 xs:pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-40 text-center`}>
+      <div className={`relative z-20 container mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 pt-20 xs:pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-40 text-center`}>
         <motion.div
            initial={{ opacity: 0, y: 30 }}
            animate={{ opacity: 1, y: 0 }}
@@ -279,7 +279,8 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
            style={{ 
              WebkitFontSmoothing: 'antialiased',
              WebkitTextSizeAdjust: '100%',
-             transform: 'translateZ(0)',
+             transform: 'translate3d(0,0,0)',
+             isolation: 'isolate',
              willChange: 'auto'
            }}
         >
@@ -304,7 +305,7 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
             {slide.specs?.map((spec, idx) => (
               <motion.div 
                 key={idx} 
-                className="relative flex flex-col bg-black/40 backdrop-blur-md rounded-lg xs:rounded-xl p-2.5 xs:p-3 sm:p-4 border border-white/20 hover:border-brand-gold/60 hover:bg-black/50 transition-all duration-300 group overflow-hidden shadow-lg hover:shadow-xl hover:shadow-brand-gold/20"
+                className="relative flex flex-col bg-black/50 rounded-lg xs:rounded-xl p-2.5 xs:p-3 sm:p-4 border border-white/20 hover:border-brand-gold/60 hover:bg-black/60 transition-all duration-300 group overflow-hidden shadow-lg hover:shadow-xl hover:shadow-brand-gold/20"
                 style={{ willChange: 'transform' }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
