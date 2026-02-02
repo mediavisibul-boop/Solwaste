@@ -54,7 +54,7 @@ export const GovernmentMandate: React.FC = () => {
                 <span className="text-brand-gold drop-shadow-[0_2px_15px_rgba(212,175,55,0.5)]">Mandate Ready</span>
               </h2>
               <p className="text-gray-800 text-lg max-w-3xl mx-auto leading-relaxed font-medium">
-                100% Compliant with SWM Rules 2016 & NGT Orders. Don't risk penalties. Install a Solwaste system today.
+                100% Compliant with SWM Rules 2026 (Effective 1 April 2026). India is taking a strong step towards sustainable urban living. Don't risk penalties. Install a Solwaste system today.
               </p>
             </ScrollReveal>
 
@@ -66,27 +66,28 @@ export const GovernmentMandate: React.FC = () => {
               viewport={{ once: true, amount: 0.3 }}
             >
               {[
-                { label: 'SWM 2016', icon: Building2 }, 
-                { label: 'NGT', icon: Scale }, 
-                { label: 'LEED', icon: Leaf }, 
-                { label: 'GRIHA', icon: Building2 }
+                { label: 'SWM 2026', desc: 'Waste Management Rules', icon: Building2 }, 
+                { label: 'NGT', desc: 'National Green Tribunal', icon: Scale }, 
+                { label: 'LEED', desc: 'Green Building Cert.', icon: Leaf }, 
+                { label: 'GRIHA', desc: 'India Green Rating', icon: Building2 }
               ].map((badge, i) => (
                 <motion.div 
                   key={i} 
                   className="relative group cursor-pointer"
-                  whileHover={{ scale: 1.08, y: -5 }}
+                  whileHover={{ scale: 1.05, y: -5 }}
                   transition={{ type: 'spring', stiffness: 300 }}
                 >
-                  <GlassCard className="p-6 flex flex-col items-center justify-center aspect-square">
+                  <GlassCard className="p-5 flex flex-col items-center justify-center min-h-[140px]">
                     {/* Animated icon */}
                     <motion.div
                       className="text-brand-gold mb-3"
                       whileHover={{ rotate: [0, -10, 10, 0] }}
                       transition={{ duration: 0.5 }}
                     >
-                      <badge.icon size={36} strokeWidth={2} />
+                      <badge.icon size={32} strokeWidth={2} />
                     </motion.div>
-                    <span className="text-gray-800 font-bold text-base uppercase tracking-wider">{badge.label}</span>
+                    <div className="text-gray-800 font-bold text-base uppercase tracking-wider text-center leading-tight mb-2 block">{badge.label}</div>
+                    <div className="text-gray-600 text-xs text-center leading-relaxed block">{badge.desc}</div>
                     
                     {/* Corner accents */}
                     <div className="absolute top-2 right-2 w-2 h-2 border-t-2 border-r-2 border-brand-gold/40" />

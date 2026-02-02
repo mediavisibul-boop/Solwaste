@@ -205,7 +205,7 @@ export const Vision2047: React.FC = () => {
                               <li><span className="text-white">Soil Fertility</span> by discarding what could regenerate it.</li>
                           </ul>
                           <p className="text-white font-bold pt-4 text-2xl">
-                              And perhaps most dangerously—we lose time.
+                              And perhaps most dangerously, we lose time.
                           </p>
                       </div>
                   </FadeIn>
@@ -228,7 +228,7 @@ export const Vision2047: React.FC = () => {
                       Act Now. <span className="text-brand-gold">Not in 2047.</span>
                   </h2>
                   <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-600 max-w-xl sm:max-w-2xl lg:max-w-3xl mx-auto mb-8 sm:mb-10 md:mb-12 px-4 leading-relaxed">
-                      Because the future will not forgive us for the problems we had the technology to solve—but chose not to.
+                      Because the future will not forgive us for the problems we had the technology to solve but chose not to.
                   </p>
                   <Link to="/contact" className="inline-block group">
                     <div className="relative overflow-hidden min-h-[68px] xs:min-h-[72px] sm:min-h-[76px] md:min-h-[80px] flex items-center justify-center rounded-2xl bg-gradient-to-br from-brand-gold/90 to-brand-olive/90 backdrop-blur-md border-2 border-brand-gold/40 hover:border-brand-gold shadow-2xl shadow-brand-gold/20 hover:shadow-brand-gold/40 active:scale-[0.97] hover:scale-[1.02] transition-all duration-300 touch-manipulation">

@@ -166,8 +166,8 @@ export const OWC: React.FC = () => {
     <div>
       <SEO 
         title="Organic Waste Composters (OWC) for Hotels, Malls & Large Generators"
-        description="Complete composting solutions for large waste generators in India. EcoLoop for hotels & societies (50kg-1000kg), CompoGen for malls & industries (1.5-50 tons), CyberSoil for offices (2-10kg). Reduce costs, ensure SWM compliance, achieve ESG goals. German engineering, zero odor, maximum ROI."
-        keywords="organic waste composter India, OWC machine, composting solutions for large waste generators, hotel waste management, mall composting solution, industrial composter, EcoLoop hotel composter, CompoGen bulk waste, CyberSoil office composter, on-site waste management, SWM Rules compliance, waste to wealth, zero landfill technology, HEPA filtration composter"
+        description="Complete composting solutions for bulk waste generators (BWGs) in India. EcoLoop for hotels & societies (50kg-1000kg), CompoGen for malls & industries (1.5-50 tons), CyberSoil for offices (2-10kg). Reduce costs, ensure SWM Rules 2026 compliance, achieve ESG goals. German engineering, zero odor, maximum ROI."
+        keywords="organic waste composter India, OWC machine, composting solutions for bulk waste generators, BWG, hotel waste management, mall composting solution, industrial composter, EcoLoop hotel composter, CompoGen bulk waste, CyberSoil office composter, on-site waste management, SWM Rules 2026 compliance, waste to wealth, zero landfill technology, HEPA filtration composter"
         type="product"
       />
       {/* Header */}

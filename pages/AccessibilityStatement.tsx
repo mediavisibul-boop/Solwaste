@@ -38,7 +38,7 @@ const AccessibilityStatement = () => {
             <section className="mb-10">
               <h2 className="text-2xl sm:text-3xl font-heading font-bold text-brand-dark mb-4 border-b-2 border-brand-gold pb-2">1. Our Commitment to Accessibility</h2>
               <p className="text-base sm:text-lg text-gray-700 mb-4">
-                We believe accessibility is an essential part of inclusion, sustainability, and responsible innovation. Solwaste strives to ensure that individuals with disabilities — including visual, auditory, motor, cognitive, and neurological impairments — can access our digital platforms with ease and dignity.
+                We believe accessibility is an essential part of inclusion, sustainability, and responsible innovation. Solwaste strives to ensure that individuals with disabilities (including visual, auditory, motor, cognitive, and neurological impairments) can access our digital platforms with ease and dignity.
               </p>
               <p className="text-base sm:text-lg text-gray-700">
                 Our approach to accessibility is guided by internationally recognised standards and best practices.

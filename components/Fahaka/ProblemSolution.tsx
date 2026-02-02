@@ -164,7 +164,7 @@ export const ProblemSolution: React.FC = () => {
 
                 {/* Content */}
                 <p className="text-gray-300 text-sm sm:text-base lg:text-lg mb-8 leading-relaxed">
-                  Proprietary <span className="text-brand-gold font-bold bg-brand-gold/10 px-1.5 py-0.5 rounded">Multi-Stage Thermal Decomposition</span>. We don't just compost—we break down molecular bonds.
+                  Proprietary <span className="text-brand-gold font-bold bg-brand-gold/10 px-1.5 py-0.5 rounded">Multi-Stage Thermal Decomposition</span>. We don't just compost, we break down molecular bonds.
                 </p>
 
                 {/* Feature Cards */}

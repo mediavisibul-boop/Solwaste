@@ -20,7 +20,7 @@ export const About: React.FC = () => {
       <SEO 
         title="About Us - Leading Waste Management Company in India"
         description="Solwaste provides composting solutions for large waste generators in India. We help organizations implement on-site composting solutions that reduce waste costs, ensure compliance, and support long-term sustainability goals. Trusted by 500+ clients including hotels, malls, IT parks, hospitals, and institutions."
-        keywords="about solwaste, waste management company India, composting solutions for large waste generators, bulk waste generators, organic waste solutions, on-site composting, composting technology, sustainable waste management, waste compliance India, zero waste India, environmental solutions, green technology India, SWM Rules compliance, ESG sustainability"
+        keywords="about solwaste, waste management company India, composting solutions for large waste generators, bulk waste generators, BWG, SWM Rules 2026, organic waste solutions, on-site composting, composting technology, sustainable waste management, waste compliance India, zero waste India, environmental solutions, green technology India, ESG sustainability"
         type="website"
       />
       {/* Header - Mobile Optimized */}
@@ -60,7 +60,7 @@ export const About: React.FC = () => {
                   Solwaste was founded with a singular vision: to address the growing organic waste crisis in urban environments through reliable, scalable, compliance-ready technology.
                 </p>
                 <p>
-                  Leveraging <strong>German engineering</strong> principles, we developed a suite of Organic Waste Composters (OWC) that offer superior efficiency and durability compared to conventional methods. Our composting solutions help <strong>large waste generators in India</strong>—hotels, malls, IT parks, hospitals, educational institutions, and food processing units—stay compliant with India's Solid Waste Management Rules while reducing costs.
+                  Leveraging <strong>German engineering</strong> principles, we developed a suite of Organic Waste Composters (OWC) that offer superior efficiency and durability compared to conventional methods. Our composting solutions help <strong>bulk waste generators (BWGs) in India</strong> including hotels, malls, IT parks, hospitals, educational institutions, and food processing units stay compliant with India's Solid Waste Management Rules 2026 (effective 1 April 2026) while reducing costs.
                 </p>
                 <p>
                   Today, with over <strong>500 installations</strong> across commercial, institutional, and residential sectors, we are a trusted partner in India's journey towards the "Waste to Wealth" and "Clean India" missions. Our on-site composting solutions reduce waste hauling costs, ensure compliance, and help organizations achieve their ESG and sustainability goals.

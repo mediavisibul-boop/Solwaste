@@ -7,7 +7,7 @@ import { ChevronLeft as ChevronLeftIcon, ChevronRight as ChevronRightIcon, Zap, 
 import { Link } from 'react-router-dom';
 import PartnersSection from '../components/PartnersSection';
 import { SEO } from '../components/SEO';
-import { GovernmentMandate, ImpactStats, ProcessFlow, MissionGrid } from '../components/Home';
+import { GovernmentMandate, BWGInfo, ImpactStats, ProcessFlow, MissionGrid } from '../components/Home';
 
 // Re-export some icons for backwards compatibility
 const ChevronLeft = ChevronLeftIcon;
@@ -439,8 +439,8 @@ export const Home: React.FC = () => {
     <>
       <SEO 
         title="Composting Solutions for Large Waste Generators in India"
-        description="Solwaste provides composting solutions for large waste generators in India - hotels, malls, IT parks, hospitals & institutions. On-site waste management that reduces costs, ensures compliance with SWM Rules, and supports ESG goals. Process 100kg to several tons daily with proven German engineering. Zero landfill, maximum ROI."
-        keywords="composting solutions for large waste generators in India, bulk waste generators, organic waste management India, on-site composting, hotel waste management, mall waste solutions, IT park composting, hospital waste management, institutional composting, SWM Rules compliance, waste to wealth India, zero waste India, ESG sustainability, EcoLoop, CompoGen, CyberSoil, Fahaka, composting machines India"
+        description="Solwaste provides composting solutions for bulk waste generators in India - hotels, malls, IT parks, hospitals & institutions. On-site waste management that reduces costs, ensures compliance with SWM Rules 2026 (Effective 1 April 2026), and supports ESG goals. BWGs include facilities with 20,000+ sq.m area, 40,000L/day water use, or 100kg/day waste. Process waste at source with proven German engineering. Zero landfill, maximum ROI."
+        keywords="composting solutions for large waste generators in India, bulk waste generators, BWG, SWM Rules 2026, organic waste management India, on-site composting, hotel waste management, mall waste solutions, IT park composting, hospital waste management, institutional composting, waste to wealth India, zero waste India, ESG sustainability, EcoLoop, CompoGen, CyberSoil, Fahaka, composting machines India"
         type="website"
       />
       
@@ -580,6 +580,7 @@ export const Home: React.FC = () => {
       </section>
 
       <GovernmentMandate />
+      <BWGInfo />
       <ImpactStats />
 
       {/* Our Expertise Section - Full Width */}

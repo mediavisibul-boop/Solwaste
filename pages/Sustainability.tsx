@@ -48,7 +48,7 @@ export const Sustainability: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12">
                     <div className="md:col-span-2 text-xl text-gray-800 leading-relaxed font-medium">
                         <p className="mb-6">
-                            At Solwaste Innovations Private Limited, sustainability is not an add-on — it is the foundation of our purpose, our technology, and our operations. We are committed to advancing responsible waste management, environmental protection, and resource efficiency through innovation, integrity, and measurable impact.
+                            At Solwaste Innovations Private Limited, sustainability is not an add-on, it is the foundation of our purpose, our technology, and our operations. We are committed to advancing responsible waste management, environmental protection, and resource efficiency through innovation, integrity, and measurable impact.
                         </p>
                         <p className="text-sm text-gray-500 font-bold uppercase tracking-wide">
                             Last Updated: 12 December 2025

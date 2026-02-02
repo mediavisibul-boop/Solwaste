@@ -125,7 +125,7 @@ export const PartnerWithUs: React.FC = () => {
                   <BenefitCard 
                     icon={<Box size={32}/>}
                     title="Zero inventory responsibility"
-                    text="Manufacturing, logistics, installation, warranties — handled end to end by us."
+                    text="Manufacturing, logistics, installation, warranties handled end to end by us."
                   />
                   <BenefitCard 
                     icon={<DollarSign size={32}/>}

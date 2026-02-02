@@ -189,7 +189,7 @@ export const Careers: React.FC = () => {
                           <Step 
                             number="2" 
                             title="Shortlisted candidates contacted" 
-                            text="Via email or WhatsApp — usually within a week of application." 
+                            text="Via email or WhatsApp, usually within a week of application." 
                           />
                           <Step 
                             number="3" 
@@ -200,7 +200,7 @@ export const Careers: React.FC = () => {
                   </div>
                   <div className="bg-brand-gold p-12 text-center text-white rounded-sm shadow-2xl relative overflow-hidden transform hover:-translate-y-2 transition-transform duration-500">
                       <div className="relative z-10">
-                          <h3 className="text-3xl font-heading font-bold mb-6 uppercase">Let's build a cleaner future — together ♻️</h3>
+                          <h3 className="text-3xl font-heading font-bold mb-6 uppercase">Let's build a cleaner future together ♻️</h3>
                           <p className="text-white/90 text-lg mb-10 font-medium">
                               Ready to make a difference? Apply now and start your journey with Solwaste.
                           </p>
