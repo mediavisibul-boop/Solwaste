@@ -134,8 +134,8 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
               />
             </AnimatePresence>
           )}
-          {/* Premium white fade overlay for elegant look */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/25 to-black/30"></div>
+          {/* Strong dark overlay for text visibility on all devices */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/65"></div>
         </div>
 
         {/* Content - Better mobile spacing */}
@@ -146,13 +146,13 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
              transition={{ delay: 0.3 }}
            >
              {/* badge removed from slides */}
-             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-black text-white mb-2 tracking-tighter leading-none drop-shadow-2xl">
+             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-black text-white mb-2 tracking-tighter leading-none" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.9), 0 0 30px rgba(0,0,0,0.6)' }}>
                {slide.title}
              </h1>
-             <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-gray-200 mb-6 sm:mb-8 uppercase tracking-widest drop-shadow-lg">
+             <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-white mb-6 sm:mb-8 uppercase tracking-widest" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.9)' }}>
                {slide.subtitle}
              </p>
-             <p className="text-gray-200 text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed font-normal px-4 drop-shadow-md">
+             <p className="text-white text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed font-semibold px-4" style={{ textShadow: '0 3px 15px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.9)' }}>
                Breaking the barriers of organic waste. <br className="hidden sm:block"/>
                Processing <span className="font-bold text-white">Food, Plastics, and Sanitary Waste</span> into sterile resources.
              </p>
@@ -265,10 +265,8 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
             background: 'radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.12) 0%, transparent 50%)'
           }}
         />
-        {/* Premium white fade overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/25 to-black/30"></div>
-        {/* Light tinted overlay */}
-        <div className={`absolute inset-0 ${isDark ? 'bg-gradient-to-b from-white/18 via-transparent to-white/22' : 'bg-gradient-to-b from-white/22 via-transparent to-white/28'}`}></div>
+        {/* Strong dark overlay for text visibility */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/65"></div>
       </div>
 
       {/* Header Content - Mobile Optimized Spacing */}
@@ -280,13 +278,13 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
            className="max-w-6xl mx-auto"
         >
             {/* badge removed from slides */}
-          <h1 className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-heading font-bold ${textColor} mb-2 xs:mb-3 sm:mb-4 md:mb-5 lg:mb-6 tracking-tight leading-[1.1] xs:leading-[1.15] sm:leading-tight px-1 xs:px-2 md:px-4`} style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5), 0 4px 30px rgba(0,0,0,0.3)' }}>
+          <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-heading font-bold text-white mb-2 xs:mb-3 sm:mb-4 md:mb-5 lg:mb-6 tracking-tight leading-[1.1] xs:leading-[1.15] sm:leading-tight px-1 xs:px-2 md:px-4" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.9), 0 0 30px rgba(0,0,0,0.6)' }}>
             {slide.title}
           </h1>
-          <h2 className={`text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold uppercase tracking-wide sm:tracking-wider md:tracking-widest ${subColor} mb-3 xs:mb-4 sm:mb-5 md:mb-6 lg:mb-7 opacity-90 px-1 xs:px-2 md:px-4 leading-snug`} style={{ textShadow: '0 2px 15px rgba(0,0,0,0.4), 0 4px 25px rgba(0,0,0,0.2)' }}>
+          <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold uppercase tracking-wide sm:tracking-wider md:tracking-widest text-white mb-3 xs:mb-4 sm:mb-5 md:mb-6 lg:mb-7 px-1 xs:px-2 md:px-4 leading-snug" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.9)' }}>
             {slide.subtitle}
           </h2>
-          <p className={`text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl ${descColor} max-w-5xl mx-auto leading-relaxed md:leading-loose font-semibold px-3 xs:px-4 sm:px-6 md:px-8`} style={{ textShadow: '0 2px 12px rgba(0,0,0,0.4), 0 3px 20px rgba(0,0,0,0.2)' }}>
+          <p className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white max-w-5xl mx-auto leading-relaxed md:leading-loose font-semibold px-3 xs:px-4 sm:px-6 md:px-8" style={{ textShadow: '0 3px 15px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.9)' }}>
             {slide.description}
           </p>
         </motion.div>
@@ -296,11 +294,11 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
       <div className="relative z-10 container mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 pb-8 xs:pb-10 sm:pb-12 md:pb-16 lg:pb-20 xl:pb-24">
         <div className="flex flex-col lg:flex-row items-stretch lg:items-end justify-between gap-6 xs:gap-7 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16">
           {/* Visual Proof Blocks - Premium Glass Morphism Cards */}
-          <div className={`grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-2 xs:gap-2.5 sm:gap-3 md:gap-4 lg:gap-5 xl:gap-6 w-full lg:flex-1 ${hasBackgroundImage ? 'text-white' : (isDark ? 'text-white' : 'text-brand-brown')}`}>
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-2 xs:gap-2.5 sm:gap-3 md:gap-4 lg:gap-5 xl:gap-6 w-full lg:flex-1 text-white">
             {slide.specs?.map((spec, idx) => (
               <motion.div 
                 key={idx} 
-                className="relative flex flex-col bg-white/5 backdrop-blur-md rounded-lg xs:rounded-xl p-2.5 xs:p-3 sm:p-4 border border-white/10 hover:border-brand-gold/60 hover:bg-white/10 transition-all duration-300 group overflow-hidden shadow-lg hover:shadow-xl hover:shadow-brand-gold/20"
+                className="relative flex flex-col bg-black/40 backdrop-blur-md rounded-lg xs:rounded-xl p-2.5 xs:p-3 sm:p-4 border border-white/20 hover:border-brand-gold/60 hover:bg-black/50 transition-all duration-300 group overflow-hidden shadow-lg hover:shadow-xl hover:shadow-brand-gold/20"
                 style={{ willChange: 'transform' }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -309,19 +307,19 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
               >
                 {/* Icon */}
                 <motion.div 
-                  className="text-2xl xs:text-3xl sm:text-4xl mb-2 relative z-10 text-brand-gold"
+                  className="text-2xl xs:text-3xl sm:text-4xl mb-2 relative z-10 text-brand-gold drop-shadow-lg"
                 >
                   {getSpecIcon(spec.label)}
                 </motion.div>
                 
                 {/* Value */}
-                <div className="flex items-baseline gap-1 relative z-10 mb-1" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.4), 0 3px 15px rgba(0,0,0,0.2)' }}>
-                   <span className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-heading font-black leading-none group-hover:text-brand-gold transition-colors duration-300">{spec.value}</span>
-                   {spec.unit && <span className="text-xs xs:text-sm font-bold text-brand-gold/80 group-hover:text-brand-gold">{spec.unit}</span>}
+                <div className="flex items-baseline gap-1 relative z-10 mb-1" style={{ textShadow: '0 3px 12px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.9)' }}>
+                   <span className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-heading font-black leading-none text-white group-hover:text-brand-gold transition-colors duration-300">{spec.value}</span>
+                   {spec.unit && <span className="text-xs xs:text-sm font-bold text-brand-gold group-hover:text-white">{spec.unit}</span>}
                 </div>
                 
                 {/* Label */}
-                <span className={`text-[10px] xs:text-xs sm:text-sm font-bold uppercase tracking-widest relative z-10 ${hasBackgroundImage ? 'text-gray-200' : (isDark ? 'text-gray-200' : 'text-gray-400')} group-hover:text-white transition-colors`} style={{ textShadow: '0 1px 8px rgba(0,0,0,0.3), 0 2px 12px rgba(0,0,0,0.2)' }}>{spec.label}</span>
+                <span className="text-[10px] xs:text-xs sm:text-sm font-bold uppercase tracking-widest relative z-10 text-white group-hover:text-brand-gold transition-colors" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.8), 0 1px 6px rgba(0,0,0,0.9)' }}>{spec.label}</span>
               </motion.div>
             ))}
           </div>
@@ -620,7 +618,43 @@ export const Home: React.FC = () => {
       <section className="py-12 xs:py-14 sm:py-16 md:py-20 lg:py-24 xl:py-28 bg-brand-light border-t border-gray-200">
         <div className="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
-            <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+            {/* Image - Shows first on mobile, second on desktop */}
+            <motion.div 
+              className="relative order-1 lg:order-2"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-gray-200">
+                <img 
+                  src="/about.webp" 
+                  alt="German Engineering Indian Innovation"
+                  className="h-64 sm:h-80 lg:h-96 w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+              </div>
+              
+              {/* Floating badge */}
+              <motion.div
+                className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 lg:-bottom-6 lg:-right-6 bg-white backdrop-blur-xl border-2 border-brand-gold/50 px-3 py-2 sm:px-4 sm:py-3 lg:px-6 lg:py-4 rounded-xl lg:rounded-2xl shadow-xl"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 3, repeat: Infinity }}
+              >
+                <div className="text-brand-gold font-bold text-xs sm:text-sm uppercase tracking-wider">
+                  500+ Installations
+                </div>
+              </motion.div>
+            </motion.div>
+
+            {/* Text - Shows second on mobile, first on desktop */}
+            <motion.div 
+              className="order-2 lg:order-1"
+              initial={{ opacity: 0, x: -30 }} 
+              whileInView={{ opacity: 1, x: 0 }} 
+              transition={{ duration: 0.6 }} 
+              viewport={{ once: true }}
+            >
               <div className="flex items-center gap-3 mb-4">
                 <div className="h-1 w-12 bg-brand-gold"></div>
                 <span className="text-brand-gold font-bold uppercase tracking-widest text-sm">Our Expertise</span>
@@ -631,42 +665,6 @@ export const Home: React.FC = () => {
                 <p>Leveraging <strong>German engineering</strong> principles, we developed a suite of Organic Waste Composters (OWC) that offer superior efficiency and durability.</p>
                 <p>Today, with over <strong>500 installations</strong> across commercial, institutional, and residential sectors, we are a trusted partner in India's journey towards the "Waste to Wealth" mission.</p>
               </div>
-              <div className="mt-6">
-                <Link to="/contact" className="inline-block">
-                  <div className="relative overflow-hidden px-6 py-3.5 border-2 border-brand-gold-dark rounded-lg hover:shadow-lg">
-                    <div className="absolute inset-0 bg-brand-gold transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
-                    <span className="relative z-10 text-sm font-bold uppercase">Read More</span>
-                  </div>
-                </Link>
-              </div>
-            </motion.div>
-
-            <motion.div 
-              className="hidden lg:block relative"
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-gray-200">
-                <img 
-                  src="/about.webp" 
-                  alt="German Engineering Indian Innovation"
-                  className="h-96 w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
-              </div>
-              
-              {/* Floating badge */}
-              <motion.div
-                className="absolute -bottom-6 -right-6 bg-white backdrop-blur-xl border-2 border-brand-gold/50 px-6 py-4 rounded-2xl shadow-xl"
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3, repeat: Infinity }}
-              >
-                <div className="text-brand-gold font-bold text-sm uppercase tracking-wider">
-                  500+ Installations
-                </div>
-              </motion.div>
             </motion.div>
           </div>
         </div>

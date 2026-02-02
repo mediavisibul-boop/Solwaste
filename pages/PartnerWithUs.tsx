@@ -47,18 +47,19 @@ export const PartnerWithUs: React.FC = () => {
       {/* Hero Section */}
       <section className="bg-brand-dark text-white min-h-screen flex items-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2032&auto=format&fit=crop')] bg-cover bg-center"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-white/35 via-white/25 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/50 to-black/40"></div>
         
         <div className="container mx-auto px-6 relative z-10 py-24 sm:py-28 md:py-32 lg:py-36">
             <ScrollReveal variant="fadeInLeft" viewport={{ once: true, amount: 0.3 }}>
-                <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-black mb-3 sm:mb-4 md:mb-5 uppercase leading-[0.95] max-w-5xl">
+              <div className="max-w-4xl">
+                <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-black mb-3 sm:mb-4 md:mb-5 uppercase leading-[0.95]" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.9)' }}>
                     Partner With Us
                 </h1>
-                <p className="text-base xs:text-lg sm:text-xl md:text-2xl text-gray-200 font-bold mb-4 sm:mb-5 md:mb-6 max-w-2xl lg:max-w-3xl leading-tight">
+                <p className="text-base xs:text-lg sm:text-xl md:text-2xl text-white font-bold mb-4 sm:mb-5 md:mb-6 max-w-2xl lg:max-w-3xl leading-tight" style={{ textShadow: '0 3px 15px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.9)' }}>
                     Help us bring real waste solutions to more people.
                 </p>
                 <div className="w-20 h-1.5 bg-brand-gold mb-6"></div>
-                <p className="text-lg text-gray-300 max-w-2xl leading-relaxed mb-6 font-light">
+                <p className="text-lg text-white max-w-2xl leading-relaxed mb-6" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.8), 0 1px 6px rgba(0,0,0,0.9)' }}>
                     We make composting machines. You know people who need them. Let's work together.
                 </p>
                 <button onClick={() => window.open('https://quark-cornflower-fe8.notion.site/2cc84662572280d786f1f62594f9327f?pvs=105', '_blank')} className="relative overflow-hidden min-h-[60px] xs:min-h-[64px] sm:min-h-[68px] flex items-center justify-center rounded-xl bg-gradient-to-r from-white to-gray-100 hover:from-gray-100 hover:to-white shadow-[0_0_25px_rgba(255,255,255,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.6)] active:scale-[0.98] hover:scale-[1.03] transition-all duration-300 touch-manipulation group">

@@ -47,7 +47,7 @@ export const Careers: React.FC = () => {
       {/* Hero */}
       <section className="bg-brand-dark text-white min-h-screen flex items-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/35 via-black/25 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/50 to-black/40"></div>
         
         <div className="container mx-auto px-6 relative z-10 py-24 sm:py-28 md:py-32 lg:py-36">
             <motion.div
@@ -56,14 +56,14 @@ export const Careers: React.FC = () => {
                 transition={{ duration: 0.8 }}
                 className="max-w-4xl"
             >
-                <h1 className="text-4xl md:text-6xl font-heading font-black mb-4 uppercase leading-none">
+                <h1 className="text-4xl md:text-6xl font-heading font-black mb-4 uppercase leading-none" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.9)' }}>
                     Join Solwaste
                 </h1>
-                <p className="text-lg md:text-xl text-gray-200 font-medium mb-5">
+                <p className="text-lg md:text-xl text-white font-bold mb-5" style={{ textShadow: '0 3px 15px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.9)' }}>
                     Careers | Internships | Volunteering
                 </p>
                 <div className="w-20 h-1.5 bg-brand-gold mb-6"></div>
-                <p className="text-lg text-gray-300 max-w-2xl leading-relaxed mb-6">
+                <p className="text-lg text-white max-w-2xl leading-relaxed mb-6" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.8), 0 1px 6px rgba(0,0,0,0.9)' }}>
                     We're not just managing waste. We're redesigning how cities think about it. 
                     If sustainability excites you, climate action matters to you, and you want real-world exposure (not just certificates), you're in the right place.
                 </p>
