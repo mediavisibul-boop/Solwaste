@@ -294,7 +294,7 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
 
       {/* Footer Specs & CTA - Mobile Optimized */}
       <div className="relative z-10 container mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 pb-8 xs:pb-10 sm:pb-12 md:pb-16 lg:pb-20 xl:pb-24">
-        <div className="flex flex-col lg:flex-row items-center lg:items-end justify-between gap-6 xs:gap-7 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16">
+        <div className="flex flex-col lg:flex-row items-stretch lg:items-end justify-between gap-6 xs:gap-7 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16">
           {/* Visual Proof Blocks - Premium Glass Morphism Cards */}
           <div className={`grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-2 xs:gap-2.5 sm:gap-3 md:gap-4 lg:gap-5 xl:gap-6 w-full lg:flex-1 ${hasBackgroundImage ? 'text-white' : (isDark ? 'text-white' : 'text-brand-brown')}`}>
             {slide.specs?.map((spec, idx) => (
@@ -327,26 +327,26 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
           </div>
 
           {/* Buttons - Premium Glass Morphism CTAs */}
-          <div className="flex flex-col xs:flex-row gap-3 xs:gap-3.5 sm:gap-4 w-full lg:w-auto lg:flex-shrink-0">
-             <Link to="/contact" className="w-full xs:flex-1 lg:w-auto lg:min-w-[180px]">
+          <div className="flex flex-col xs:flex-row gap-3 xs:gap-3.5 sm:gap-4 w-full lg:w-auto lg:flex-shrink-0 lg:self-end">
+             <Link to="/contact" className="w-full xs:flex-1 lg:w-auto lg:min-w-[200px]">
                 <GlassButton 
                   variant="primary" 
                   size="lg" 
                   icon={ArrowRight}
                   glow={true}
-                  className="w-full"
+                  className="w-full h-full"
                   asChild
                 >
                   Order Now
                 </GlassButton>
             </Link>
             
-            <Link to={`/owc#${slide.id}`} className="w-full xs:flex-1 lg:w-auto lg:min-w-[180px]">
+            <Link to={`/owc#${slide.id}`} className="w-full xs:flex-1 lg:w-auto lg:min-w-[200px]">
                 <GlassButton 
                   variant="glass" 
                   size="lg" 
                   icon={Settings}
-                  className="w-full"
+                  className="w-full h-full"
                   asChild
                 >
                   Tech Specs

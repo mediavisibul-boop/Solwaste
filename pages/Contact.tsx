@@ -85,7 +85,7 @@ export const Contact: React.FC = () => {
                 <div className="mt-8 xs:mt-9 sm:mt-10 md:mt-12 lg:mt-14 xl:mt-16 p-5 xs:p-6 sm:p-7 md:p-8 lg:p-10 bg-gradient-to-br from-brand-light to-white border-2 border-gray-200 rounded-xl shadow-lg">
                 <h4 className="font-bold text-brand-brown mb-3 xs:mb-3.5 sm:mb-4 text-sm xs:text-base sm:text-lg md:text-xl uppercase tracking-wider">Service Areas</h4>
                 <p className="text-gray-700 text-sm xs:text-base sm:text-lg md:text-xl leading-relaxed">
-                  We currently serve clients across major metropolitan areas in India including Delhi NCR, Mumbai, Bangalore, Pune, and Hyderabad.
+                  We are delivering pan India with our comprehensive waste management solutions, serving clients across all states and union territories.
                 </p>
               </div>
               </ScrollReveal>
@@ -107,7 +107,7 @@ export const Contact: React.FC = () => {
                       type="text" 
                       required
                       className="w-full min-h-[48px] sm:min-h-[52px] md:min-h-[56px] px-4 xs:px-4.5 sm:px-5 md:px-6 py-3.5 xs:py-4 sm:py-4.5 md:py-5 bg-brand-light border-2 border-gray-200 rounded-lg text-base xs:text-lg sm:text-xl focus:outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/20 hover:border-gray-300 transition-all duration-200 touch-manipulation" 
-                      placeholder="John" 
+                      placeholder="Rajesh" 
                     />
                   </div>
                   <div>
@@ -117,7 +117,7 @@ export const Contact: React.FC = () => {
                       type="text" 
                       required
                       className="w-full min-h-[48px] sm:min-h-[52px] md:min-h-[56px] px-4 xs:px-4.5 sm:px-5 md:px-6 py-3.5 xs:py-4 sm:py-4.5 md:py-5 bg-brand-light border-2 border-gray-200 rounded-lg text-base xs:text-lg sm:text-xl focus:outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/20 hover:border-gray-300 transition-all duration-200 touch-manipulation" 
-                      placeholder="Doe" 
+                      placeholder="Kumar" 
                     />
                   </div>
                 </div>
@@ -131,7 +131,7 @@ export const Contact: React.FC = () => {
                     inputMode="email"
                     autoComplete="email"
                     className="w-full min-h-[48px] sm:min-h-[52px] md:min-h-[56px] px-4 xs:px-4.5 sm:px-5 md:px-6 py-3.5 xs:py-4 sm:py-4.5 md:py-5 bg-brand-light border-2 border-gray-200 rounded-lg text-base xs:text-lg sm:text-xl focus:outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/20 hover:border-gray-300 transition-all duration-200 touch-manipulation" 
-                    placeholder="john@company.com" 
+                    placeholder="rajesh@company.com" 
                   />
                 </div>
 

@@ -18,6 +18,22 @@ export default defineConfig(({ mode }) => {
         alias: {
           '@': path.resolve(__dirname, '.'),
         }
+      },
+      build: {
+        rollupOptions: {
+          output: {
+            manualChunks: {
+              // Separate Framer Motion into its own chunk (largest dependency)
+              'framer-motion': ['framer-motion'],
+              // Separate React/React-DOM into vendor chunk
+              'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+              // Separate Lucide icons
+              'lucide-icons': ['lucide-react'],
+            }
+          }
+        },
+        // Optimize chunk size
+        chunkSizeWarningLimit: 1000,
       }
     };
 });
