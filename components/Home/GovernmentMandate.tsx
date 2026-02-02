@@ -7,7 +7,7 @@ import { ScrollReveal } from '../ui/ScrollReveal';
 
 export const GovernmentMandate: React.FC = () => {
   return (
-    <section className="bg-gradient-to-br from-brand-dark via-brand-olive-dark/40 to-brand-dark py-16 sm:py-20 relative overflow-hidden border-t border-brand-gold/20">
+    <section className="bg-gradient-to-br from-brand-dark via-brand-olive-dark/40 to-brand-dark py-16 sm:py-20 relative overflow-hidden border-t border-brand-gold/20" data-government-mandate id="government-mandate">
       {/* Animated grid background */}
       <div className="absolute inset-0 opacity-5" style={{
         backgroundImage: 'linear-gradient(rgba(212,175,55,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(212,175,55,0.3) 1px, transparent 1px)',

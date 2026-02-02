@@ -13,7 +13,7 @@ export const Contact: React.FC = () => {
         keywords="contact solwaste, waste management quote, composter price, OWC enquiry, waste management consultation, composting machine dealers, India waste solutions"
         type="website"
       />
-       <div className="relative bg-brand-dark text-white min-h-screen flex items-center justify-center overflow-hidden">
+       <div className="relative bg-brand-dark text-white min-h-[50vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img 

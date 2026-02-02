@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { ScrollToTop } from './components/ScrollToTop';
+import { SWMPopup } from './components/SWMPopup';
 import { Home } from './pages/Home';
 
 // Lazy load all secondary pages for better performance
@@ -34,6 +35,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <ScrollToTop />
+      <SWMPopup />
       <Layout>
         <Suspense fallback={<PageLoader />}>
           <Routes>
