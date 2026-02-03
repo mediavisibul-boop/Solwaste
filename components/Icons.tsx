@@ -82,5 +82,7 @@ export const ZoomIn = make('ZoomIn');
 export const Apple = make('Apple');
 export const Bottle = make('Bottle');
 export const Pill = make('Pill');
+export const Sun = make('Sun');
+export const Moon = make('Moon');
 
 export default {} as any;

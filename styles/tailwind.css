@@ -1,3 +1,129 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Dark Mode Styles */
+@layer base {
+  /* Light Mode (default) */
+  :root {
+    --bg-primary: #FAF7F2;
+    --bg-secondary: #F5F5F0;
+    --bg-card: #FAF7F2;
+    --text-primary: #2d2d2d;
+    --text-secondary: #4a4a4a;
+    --text-muted: #6b7280;
+    --border-color: #e5e7eb;
+    --shadow: rgba(0, 0, 0, 0.08);
+  }
+
+  /* Dark Mode */
+  .dark {
+    --bg-primary: #0f0f0f;
+    --bg-secondary: #1a1a1a;
+    --bg-card: #171717;
+    --text-primary: #f0f0f0;
+    --text-secondary: #d4d4d4;
+    --text-muted: #a3a3a3;
+    --border-color: #2d2d2d;
+    --shadow: rgba(0, 0, 0, 0.5);
+  }
+
+  /* Smooth transitions for theme elements */
+  body,
+  section,
+  nav,
+  .card {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Apply dark mode styles */
+  .dark body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+  }
+
+  /* Dark mode for common elements */
+  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+    color: var(--text-primary) !important;
+  }
+
+  .dark p {
+    color: var(--text-secondary) !important;
+  }
+
+  .dark span {
+    color: var(--text-secondary) !important;
+  }
+
+  .dark div {
+    color: var(--text-secondary);
+  }
+
+  /* Dark mode for cards and sections */
+  .dark section {
+    background-color: var(--bg-primary);
+  }
+
+  .dark .bg-white,
+  .dark .bg-\[\#FAF7F2\],
+  .dark .bg-\[\#FCF5EE\] {
+    background-color: var(--bg-card) !important;
+  }
+
+  .dark .bg-gray-50,
+  .dark .bg-gray-100,
+  .dark .bg-brand-light,
+  .dark .bg-brand-cream {
+    background-color: var(--bg-secondary) !important;
+  }
+
+  .dark .text-gray-600,
+  .dark .text-gray-700,
+  .dark .text-gray-800,
+  .dark .text-gray-900 {
+    color: var(--text-secondary) !important;
+  }
+
+  .dark .text-gray-500,
+  .dark .text-gray-400 {
+    color: var(--text-muted) !important;
+  }
+
+  .dark .text-brand-brown,
+  .dark .text-brand-dark,
+  .dark .text-\[\#2d2d2d\] {
+    color: var(--text-primary) !important;
+  }
+
+  /* Dark mode for borders */
+  .dark .border,
+  .dark .border-gray-200,
+  .dark .border-gray-300 {
+    border-color: var(--border-color) !important;
+  }
+
+  /* Dark mode for inputs */
+  .dark input,
+  .dark textarea,
+  .dark select {
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+  }
+
+  .dark input::placeholder,
+  .dark textarea::placeholder {
+    color: var(--text-muted);
+  }
+
+  /* Dark mode for navigation */
+  .dark nav.bg-white {
+    background-color: var(--bg-card) !important;
+  }
+
+  /* Dark mode for footer */
+  .dark footer {
+    background-color: var(--bg-secondary);
+    color: var(--text-secondary);
+  }
+}

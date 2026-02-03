@@ -92,7 +92,7 @@ export const ProblemSolution: React.FC = () => {
                 </div>
 
                 {/* Content */}
-                <p className="text-gray-300 text-sm sm:text-base lg:text-lg mb-8 leading-relaxed">
+                <p className="text-white text-sm sm:text-base lg:text-lg mb-8 leading-relaxed">
                   In real-world scenarios, <span className="text-white font-bold bg-brand-olive-dark/20 px-1.5 py-0.5 rounded">segregation is never 100%</span>. A single plastic wrapper or sanitary napkin can jam traditional composters or contaminate the output manure.
                 </p>
 
@@ -109,7 +109,7 @@ export const ProblemSolution: React.FC = () => {
                       transition={{ type: "spring", stiffness: 300 }}
                     >
                       <div className="text-3xl font-heading font-black text-brand-olive mb-2">{stat.value}</div>
-                      <div className="text-xs text-gray-600 uppercase tracking-wide font-semibold">{stat.label}</div>
+                      <div className="text-xs text-white uppercase tracking-wide font-semibold">{stat.label}</div>
                     </motion.div>
                   ))}
                 </div>
@@ -124,7 +124,7 @@ export const ProblemSolution: React.FC = () => {
                   ].map((item, i) => (
                     <motion.li 
                       key={i} 
-                      className="flex items-start text-sm text-gray-600 list-none"
+                      className="flex items-start text-sm text-white list-none"
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}

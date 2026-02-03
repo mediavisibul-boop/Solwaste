@@ -70,7 +70,7 @@ export const PartnerWithUs: React.FC = () => {
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brand-gold/10 animate-pulse"></div>
                   
                   {/* Button content */}
-                  <div className="relative flex items-center justify-center gap-2.5 px-10 xs:px-12 sm:px-14 text-brand-dark">
+                  <div className="relative flex items-center justify-center gap-2.5 px-10 xs:px-12 sm:px-14 text-brand-dark dark:text-gray-900">
                     <span className="text-lg xs:text-xl sm:text-2xl font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300 leading-none">Apply Now</span>
                     <ArrowRight className="w-6 h-6 xs:w-7 xs:h-7 flex-shrink-0 group-hover:translate-x-1 transition-transform duration-300" strokeWidth={2.5} />
                   </div>
@@ -205,7 +205,7 @@ export const PartnerWithUs: React.FC = () => {
                           <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
                           
                           {/* Button content */}
-                          <div className="relative flex items-center justify-center gap-3 px-8 text-brand-dark">
+                          <div className="relative flex items-center justify-center gap-3 px-8 text-brand-dark dark:text-gray-900">
                             <span className="text-xl sm:text-2xl font-bold uppercase tracking-wider transition-all duration-300 leading-none">Apply Now</span>
                             <ArrowRight className="w-6 h-6 flex-shrink-0 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" strokeWidth={2.5} />
                           </div>

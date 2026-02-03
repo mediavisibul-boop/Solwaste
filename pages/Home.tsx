@@ -92,7 +92,7 @@ const slides: Slide[] = [
 
 // About Section Component with Touch of Grey
 const Card: React.FC<{ icon: React.ReactNode, title: string, text: string }> = ({ icon, title, text }) => (
-    <div className="bg-white p-6 sm:p-8 border border-gray-100 shadow-sm hover:border-brand-gold hover:shadow-xl transition-all duration-500 group rounded-sm">
+    <div className="bg-brand-cream dark:bg-gray-800 p-6 sm:p-8 border border-gray-100 dark:border-gray-700 shadow-sm hover:border-brand-gold hover:shadow-xl transition-all duration-500 group rounded-sm">
       <div className="text-gray-400 group-hover:text-brand-gold mb-4 sm:mb-6 transition-colors duration-300 transform group-hover:scale-110 origin-left">{icon}</div>
       <h3 className="text-xl sm:text-2xl font-heading font-bold text-brand-brown mb-3 sm:mb-4 uppercase tracking-wide">{title}</h3>
       <p className="text-gray-700 leading-relaxed font-normal text-base sm:text-lg">{text}</p>
@@ -227,7 +227,7 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
   // Get the current image (either from images array or single image)
   const currentImage = slide.images ? slide.images[currentImageIndex] : slide.image;
 
-  const backgroundClass = currentImage ? 'bg-transparent' : (isDark ? 'bg-brand-dark' : 'bg-white');
+  const backgroundClass = currentImage ? 'bg-transparent' : (isDark ? 'bg-brand-dark' : 'bg-brand-cream');
 
   return (
     <div className={`relative w-full h-full flex flex-col justify-between ${backgroundClass}`}>
@@ -642,7 +642,7 @@ export const Home: React.FC = () => {
               
               {/* Floating badge */}
               <motion.div
-                className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 lg:-bottom-6 lg:-right-6 bg-white backdrop-blur-xl border-2 border-brand-gold/50 px-3 py-2 sm:px-4 sm:py-3 lg:px-6 lg:py-4 rounded-xl lg:rounded-2xl shadow-xl"
+                className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 lg:-bottom-6 lg:-right-6 bg-brand-cream dark:bg-gray-800 backdrop-blur-xl border-2 border-brand-gold/50 px-3 py-2 sm:px-4 sm:py-3 lg:px-6 lg:py-4 rounded-xl lg:rounded-2xl shadow-xl"
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 3, repeat: Infinity }}
               >

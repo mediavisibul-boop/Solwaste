@@ -7,7 +7,7 @@ import { ScrollReveal, StaggerContainer, StaggerItem } from '../components/ui/Sc
 
 const BenefitCard: React.FC<{ title: string; text: string; icon: React.ReactNode }> = ({ title, text, icon }) => (
   <StaggerItem>
-    <div className="bg-gray-50 p-8 border-l-4 border-transparent hover:border-brand-gold hover:bg-white hover:shadow-xl transition-all duration-300 group">
+    <div className="bg-gray-50 dark:bg-gray-800 p-8 border-l-4 border-transparent hover:border-brand-gold hover:bg-brand-cream dark:hover:bg-gray-700 hover:shadow-xl transition-all duration-300 group">
       <div className="text-gray-600 group-hover:text-brand-gold mb-4 transition-colors">{icon}</div>
       <h3 className="text-xl font-heading font-bold text-brand-brown mb-3 uppercase">{title}</h3>
       <p className="text-gray-700 text-base leading-relaxed">{text}</p>
@@ -75,7 +75,7 @@ export const Careers: React.FC = () => {
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brand-gold/10 animate-pulse"></div>
                   
                   {/* Button content */}
-                  <div className="relative flex items-center justify-center gap-2.5 px-10 xs:px-12 sm:px-14 text-brand-dark">
+                  <div className="relative flex items-center justify-center gap-2.5 px-10 xs:px-12 sm:px-14 text-brand-dark dark:text-gray-900">
                     <span className="text-base xs:text-lg sm:text-xl font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300 leading-none">View Open Roles</span>
                     <ChevronDown className="w-5 h-5 xs:w-6 xs:h-6 flex-shrink-0 group-hover:translate-y-1 transition-transform duration-300" strokeWidth={2.5} />
                   </div>
@@ -164,7 +164,7 @@ export const Careers: React.FC = () => {
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brand-gold/10 animate-pulse"></div>
                     
                     {/* Button content */}
-                    <div className="relative flex items-center justify-center gap-2 px-8 xs:px-10 text-brand-dark">
+                    <div className="relative flex items-center justify-center gap-2 px-8 xs:px-10 text-brand-dark dark:text-gray-900">
                       <span className="text-base xs:text-lg font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300 leading-none">Apply Now</span>
                       <ArrowRight className="w-5 h-5 xs:w-6 xs:h-6 flex-shrink-0 group-hover:translate-x-1 transition-transform duration-300" strokeWidth={2.5} />
                     </div>
@@ -212,7 +212,7 @@ export const Careers: React.FC = () => {
                             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brand-gold/10 animate-pulse"></div>
                             
                             {/* Button content */}
-                            <div className="relative flex items-center justify-center gap-2.5 px-8 text-brand-dark">
+                            <div className="relative flex items-center justify-center gap-2.5 px-8 text-brand-dark dark:text-gray-900">
                               <span className="text-lg xs:text-xl sm:text-2xl font-bold uppercase tracking-widest group-hover:tracking-[0.3em] transition-all duration-300 leading-none">Apply Now</span>
                               <ArrowRight className="w-6 h-6 xs:w-7 xs:h-7 flex-shrink-0 group-hover:translate-x-1 transition-transform duration-300" strokeWidth={2.5} />
                             </div>

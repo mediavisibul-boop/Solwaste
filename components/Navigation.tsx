@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X } from './Icons';
+import { Menu, X, Sun, Moon } from './Icons';
 import { Button } from './ui/Button';
+import { useTheme } from '../utils/ThemeContext';
 
 interface NavigationProps {
   isNavTransparent: boolean;
@@ -18,6 +19,8 @@ export const Navigation: React.FC<NavigationProps> = ({
   setIsMobileMenuOpen,
   textColorClass,
 }) => {
+  const { theme, toggleTheme } = useTheme();
+  
   return (
     <nav 
       className={[
@@ -45,6 +48,26 @@ export const Navigation: React.FC<NavigationProps> = ({
 
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-4 xl:gap-6 2xl:gap-8">
+          {/* Theme Toggle Button */}
+          <button
+            onClick={toggleTheme}
+            className={[
+              "min-w-[40px] min-h-[40px] p-2 flex items-center justify-center rounded-lg",
+              "transition-all duration-300 hover:scale-110 active:scale-95",
+              isNavTransparent
+                ? "text-white hover:bg-white/10 active:bg-white/20"
+                : "text-brand-brown hover:bg-gray-100 active:bg-gray-200"
+            ].join(" ")}
+            aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+            title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+          >
+            {theme === 'light' ? (
+              <Moon size={20} className="transition-transform duration-300" />
+            ) : (
+              <Sun size={20} className="transition-transform duration-300" />
+            )}
+          </button>
+          
           <Link
             to="/owc"
             className={[
@@ -91,28 +114,46 @@ export const Navigation: React.FC<NavigationProps> = ({
           </Link>
         </div>
 
-        {/* Mobile Toggle */}
-        <button 
+        {/* Mobile Actions - Theme Toggle + Menu */}
+        <div className="lg:hidden flex items-center gap-2">
+          {/* Mobile Theme Toggle */}
+          <button
+            onClick={toggleTheme}
+            className={[
+              "min-w-[44px] min-h-[44px] p-2.5 flex items-center justify-center rounded-lg",
+              "transition-all duration-300 active:scale-95",
+              isNavTransparent
+                ? "text-white hover:bg-white/10 active:bg-white/20"
+                : "text-brand-brown hover:bg-gray-100 active:bg-gray-200"
+            ].join(" ")}
+            aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+          >
+            {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+          </button>
+
+          {/* Mobile Toggle */}
+          <button 
           type="button"
           className={[
-            "lg:hidden min-w-[44px] min-h-[44px] sm:min-w-[48px] sm:min-h-[48px] p-2.5 sm:p-3 flex items-center justify-center",
-            "transition-all duration-300 touch-manipulation active:scale-95 flex-shrink-0",
-            textColorClass,
-            isNavTransparent 
-              ? "hover:bg-white hover:bg-opacity-10 active:bg-white active:bg-opacity-20" 
-              : "hover:bg-gray-100 active:bg-gray-200",
-            "rounded-lg"
-          ].join(" ")}
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label={isMobileMenuOpen ? "Close Menu" : "Open Menu"}
-          aria-expanded={isMobileMenuOpen}
-        >
-          {isMobileMenuOpen ? (
-            <X size={24} className="w-6 h-6 sm:w-7 sm:h-7" />
-          ) : (
-            <Menu size={24} className="w-6 h-6 sm:w-7 sm:h-7" />
-          )}
-        </button>
+              "min-w-[44px] min-h-[44px] sm:min-w-[48px] sm:min-h-[48px] p-2.5 sm:p-3 flex items-center justify-center",
+              "transition-all duration-300 touch-manipulation active:scale-95 flex-shrink-0",
+              textColorClass,
+              isNavTransparent 
+                ? "hover:bg-white hover:bg-opacity-10 active:bg-white active:bg-opacity-20" 
+                : "hover:bg-gray-100 active:bg-gray-200",
+              "rounded-lg"
+            ].join(" ")}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? "Close Menu" : "Open Menu"}
+            aria-expanded={isMobileMenuOpen}
+          >
+            {isMobileMenuOpen ? (
+              <X size={24} className="w-6 h-6 sm:w-7 sm:h-7" />
+            ) : (
+              <Menu size={24} className="w-6 h-6 sm:w-7 sm:h-7" />
+            )}
+          </button>
+        </div>
       </div>
     </nav>
   );

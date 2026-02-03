@@ -6,7 +6,7 @@ import { ScrollReveal, StaggerContainer, StaggerItem } from '../components/ui/Sc
 
 const Card: React.FC<{ icon: React.ReactNode, title: string, text: string }> = ({ icon, title, text }) => (
   <StaggerItem>
-    <div className="bg-brand-light p-5 sm:p-6 md:p-7 lg:p-8 border-l-4 border-gray-200 hover:border-brand-gold hover:bg-white hover:shadow-xl transition-all duration-300">
+    <div className="bg-brand-light dark:bg-gray-800 p-5 sm:p-6 md:p-7 lg:p-8 border-l-4 border-gray-200 dark:border-gray-700 hover:border-brand-gold hover:bg-brand-cream dark:hover:bg-gray-700 hover:shadow-xl transition-all duration-300">
       <div className="text-brand-gold mb-4 sm:mb-5 md:mb-6">{icon}</div>
       <h3 className="text-xl sm:text-2xl font-heading font-bold text-brand-brown mb-3 sm:mb-4 uppercase leading-tight">{title}</h3>
       <p className="text-gray-700 leading-relaxed font-light text-sm sm:text-base">{text}</p>
@@ -49,7 +49,7 @@ export const About: React.FC = () => {
       </div>
 
       {/* Main Content - Mobile Optimized */}
-      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-brand-cream dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 items-center mb-12 sm:mb-16 md:mb-20 lg:mb-24">
             <ScrollReveal variant="fadeInLeft" viewport={{ once: true, amount: 0.3 }}>
@@ -119,7 +119,7 @@ export const About: React.FC = () => {
                { icon: <Store size={32} className="sm:w-9 sm:h-9" />, label: "Malls & Municipalities", desc: "Commercial & Government" },
              ].map((client, idx) => (
                <StaggerItem key={idx}>
-                 <div className="p-5 sm:p-6 md:p-7 lg:p-8 bg-white border-b-4 border-transparent hover:border-brand-gold shadow-sm hover:shadow-xl transition-all group">
+                 <div className="p-5 sm:p-6 md:p-7 lg:p-8 bg-brand-cream dark:bg-gray-800 border-b-4 border-transparent hover:border-brand-gold shadow-sm hover:shadow-xl transition-all group">
                    <div className="mb-4 sm:mb-5 md:mb-6 text-brand-brown group-hover:text-brand-gold transition-colors flex justify-center items-center mx-auto">{client.icon}</div>
                    <h4 className="font-heading font-bold text-base sm:text-lg md:text-xl text-brand-brown text-center mb-1.5 sm:mb-2 uppercase leading-tight">{client.label}</h4>
                    <p className="text-center text-gray-600 text-xs sm:text-sm">{client.desc}</p>

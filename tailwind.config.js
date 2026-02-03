@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: [
     "./index.html",
     "./index.tsx",
@@ -25,6 +26,7 @@ export default {
           red: '#BED754',
           gray: '#F5F5F0',
           'gold-dark': '#A0C13F',
+          cream: '#FAF7F2',
         },
       },
       screens: {

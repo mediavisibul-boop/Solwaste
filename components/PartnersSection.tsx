@@ -60,7 +60,7 @@ const PartnersSection = () => {
   const duplicatedPartnersRow2 = [...partnersRow2, ...partnersRow2, ...partnersRow2];
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white border-t border-gray-200 overflow-hidden">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-brand-cream dark:bg-[#0f0f0f] border-t border-gray-200 dark:border-gray-800 overflow-hidden">
       <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -68,16 +68,13 @@ const PartnersSection = () => {
               viewport={{ once: true }}
               className="text-center mb-8 sm:mb-10 md:mb-12"
           >
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-brand-dark">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-brand-dark dark:text-gray-100">
                 Trusted By Leading Organizations
               </h2>
           </motion.div>
           
           {/* Three-Row Infinite Scrolling Marquee */}
           <div className="relative space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
-              {/* Gradient Overlays for Premium Effect */}
-              <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-20 md:w-24 lg:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-              <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-20 md:w-24 lg:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
               
               {/* Row 1: Partners (11 logos) - Left to Right */}
               <div className="overflow-hidden py-2 sm:py-3 md:py-4">
@@ -110,16 +107,18 @@ const PartnersSection = () => {
                           return (
                               <div
                                   key={`row1-${partner.name}-${index}`}
-                                  className="flex flex-col items-center justify-center min-w-[180px] sm:min-w-[200px] md:min-w-[240px] lg:min-w-[260px] group cursor-pointer"
+                                  className="flex flex-col items-center justify-start min-w-[180px] sm:min-w-[200px] md:min-w-[240px] lg:min-w-[260px] group cursor-pointer"
                               >
-                                  <img
-                                      src={partner.logo}
-                                      alt={partner.name}
-                                      width="200"
-                                      height="100"
-                                      className={`${sizeClass} object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 ease-out group-hover:scale-110`}
-                                  />
-                                  <span className="opacity-0 group-hover:opacity-100 text-xs sm:text-sm font-medium text-brand-dark transition-opacity duration-300 mt-2 text-center px-2 h-6 flex items-center justify-center">
+                                  <div className="h-[100px] sm:h-[120px] md:h-[140px] lg:h-[160px] flex items-center justify-center mb-2">
+                                      <img
+                                          src={partner.logo}
+                                          alt={partner.name}
+                                          width="200"
+                                          height="100"
+                                          className={`${sizeClass} object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 ease-out group-hover:scale-110`}
+                                      />
+                                  </div>
+                                  <span className="opacity-0 group-hover:opacity-100 text-xs sm:text-sm font-medium text-brand-dark dark:text-gray-300 transition-opacity duration-300 text-center px-2 h-6 flex items-center justify-center">
                                       {partner.name}
                                   </span>
                               </div>
@@ -160,16 +159,18 @@ const PartnersSection = () => {
                           return (
                               <div
                                   key={`row2-${partner.name}-${index}`}
-                                  className="flex flex-col items-center justify-center min-w-[180px] sm:min-w-[200px] md:min-w-[240px] lg:min-w-[260px] group cursor-pointer"
+                                  className="flex flex-col items-center justify-start min-w-[180px] sm:min-w-[200px] md:min-w-[240px] lg:min-w-[260px] group cursor-pointer"
                               >
-                                  <img
-                                      src={partner.logo}
-                                      alt={partner.name}
-                                      width="200"
-                                      height="100"
-                                      className={`${sizeClass} object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 ease-out group-hover:scale-110`}
-                                  />
-                                  <span className="opacity-0 group-hover:opacity-100 text-xs sm:text-sm font-medium text-brand-dark transition-opacity duration-300 mt-2 text-center px-2 h-6 flex items-center justify-center">
+                                  <div className="h-[100px] sm:h-[120px] md:h-[140px] lg:h-[160px] flex items-center justify-center mb-2">
+                                      <img
+                                          src={partner.logo}
+                                          alt={partner.name}
+                                          width="200"
+                                          height="100"
+                                          className={`${sizeClass} object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 ease-out group-hover:scale-110`}
+                                      />
+                                  </div>
+                                  <span className="opacity-0 group-hover:opacity-100 text-xs sm:text-sm font-medium text-brand-dark dark:text-gray-300 transition-opacity duration-300 text-center px-2 h-6 flex items-center justify-center">
                                       {partner.name}
                                   </span>
                               </div>

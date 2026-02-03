@@ -57,7 +57,7 @@ export const Vision2047: React.FC = () => {
       </section>
 
       {/* THE MIRROR - Mobile Optimized */}
-      <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-brand-cream dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 items-center">
                 <FadeIn>
@@ -199,7 +199,7 @@ export const Vision2047: React.FC = () => {
                       <h2 className="text-5xl font-heading font-bold uppercase mb-8">What are we <br/>really losing?</h2>
                       <div className="space-y-6 text-xl text-gray-300">
                           <p>When organic waste is ignored, we lose more than just aesthetics.</p>
-                          <ul className="space-y-4 list-disc pl-6 text-gray-600">
+                          <ul className="space-y-4 list-disc pl-6 text-gray-300">
                               <li><span className="text-white">Public Health</span> to preventable diseases.</li>
                               <li><span className="text-white">Children's Safety</span> to vector-borne infections.</li>
                               <li><span className="text-white">Soil Fertility</span> by discarding what could regenerate it.</li>

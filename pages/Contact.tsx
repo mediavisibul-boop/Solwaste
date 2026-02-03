@@ -183,7 +183,7 @@ export const Contact: React.FC = () => {
                     
                     {/* Button content */}
                     <div className="relative flex items-center justify-center gap-3 xs:gap-3.5 sm:gap-4 px-6 xs:px-7 sm:px-8 z-10">
-                      <span className="text-base xs:text-lg sm:text-xl md:text-2xl font-heading font-black uppercase tracking-wide group-hover:tracking-wider text-brand-dark drop-shadow-sm transition-all duration-300 leading-none">Send Message</span>
+                      <span className="text-base xs:text-lg sm:text-xl md:text-2xl font-heading font-black uppercase tracking-wide group-hover:tracking-wider text-brand-dark dark:text-gray-900 drop-shadow-sm transition-all duration-300 leading-none">Send Message</span>
                       <div className="relative">
                         <Send className="w-5 h-5 xs:w-6 xs:h-6 sm:w-7 sm:h-7 text-brand-dark flex-shrink-0 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" strokeWidth={2.5} />
                         {/* Icon glow */}

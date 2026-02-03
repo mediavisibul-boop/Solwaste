@@ -11,7 +11,7 @@ const SpecTable: React.FC<{ specs: {label: string, value: string}[] }> = ({ spec
     {specs.map((s, i) => (
       <StaggerItem key={i}>
         <div className="relative group">
-        <div className="bg-white border-2 border-gray-100 rounded-xl p-5 sm:p-6 hover:border-brand-gold/40 hover:shadow-lg transition-all duration-300">
+        <div className="bg-brand-cream dark:bg-gray-800 border-2 border-gray-100 dark:border-gray-700 rounded-xl p-5 sm:p-6 hover:border-brand-gold/40 hover:shadow-lg transition-all duration-300">
           {/* Decorative corner accent */}
           <div className="absolute top-0 right-0 w-12 h-12 bg-gradient-to-br from-brand-gold/10 to-transparent rounded-tr-xl rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           
