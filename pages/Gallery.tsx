@@ -14,6 +14,12 @@ const Gallery = () => {
     "/gallery/img4.webp",
     "/gallery/img5.webp",
     "/gallery/img6.webp",
+    "/gallery/img7.webp",
+    "/gallery/img8.webp",
+    "/gallery/img9.webp",
+    "/gallery/img10.webp",
+    "/gallery/img11.webp",
+    "/gallery/img12.webp",
   ];
 
   const openLightbox = (index: number) => {
@@ -61,8 +67,8 @@ const Gallery = () => {
       {/* Header */}
       <div className="bg-brand-dark text-white min-h-screen flex items-center relative overflow-hidden">
         {/* Background image grid */}
-        <div className="absolute inset-0 grid grid-cols-5 gap-1 opacity-20">
-          {galleryImages.map((img, idx) => (
+        <div className="absolute inset-0 grid grid-cols-3 gap-1 opacity-20">
+          {galleryImages.slice(0, 3).map((img, idx) => (
             <motion.div
               key={idx}
               className="relative overflow-hidden"
@@ -112,31 +118,29 @@ const Gallery = () => {
 
           {/* Gallery Grid */}
           <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 xs:gap-4 sm:gap-5 md:gap-6 lg:gap-8">
-            {galleryImages.map((image, index) => (
+            {galleryImages.slice().reverse().map((image, index) => {
+              const originalIndex = galleryImages.length - 1 - index;
+              return (
               <motion.div
-                key={index}
+                key={originalIndex}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer aspect-square bg-gray-100"
-                onClick={() => openLightbox(index)}
+                onClick={() => openLightbox(originalIndex)}
               >
                 <img 
                   src={image} 
-                  alt={`Gallery image ${index + 1}`}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  alt={`Gallery image ${originalIndex + 1}`}
+                  className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700"
                 />
                 
                 {/* Hover overlay */}
                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                {/* Click hint */}
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <ZoomIn className="w-5 h-5 text-brand-dark" strokeWidth={2} />
-                </div>
               </motion.div>
-            ))}
+              );
+            })}
           </div>
 
           {/* Info Message */}
