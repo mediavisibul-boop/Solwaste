@@ -14,8 +14,6 @@ const Gallery = () => {
     "/gallery/img4.webp",
     "/gallery/img5.webp",
     "/gallery/img6.webp",
-    "/gallery/img7.webp",
-    "/gallery/img8.webp",
     "/gallery/img9.webp",
     "/gallery/img10.webp",
     "/gallery/img11.webp",
