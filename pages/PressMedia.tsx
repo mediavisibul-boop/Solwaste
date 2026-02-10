@@ -125,7 +125,7 @@ const PressMedia = () => {
             className="mt-16 sm:mt-20 md:mt-24 bg-brand-dark text-white p-8 sm:p-10 md:p-12 rounded-2xl"
           >
             <div className="max-w-3xl mx-auto text-center">
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold mb-4">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-white mb-4">
                 Media Inquiries
               </h3>
               <p className="text-base sm:text-lg text-gray-300 mb-6 sm:mb-8 leading-relaxed">
