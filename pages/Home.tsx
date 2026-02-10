@@ -559,6 +559,22 @@ export const Home: React.FC = () => {
         </div>
 
         {/* BOTTOM INDICATORS - Mobile Optimized with Better Touch Targets */}
+        <div className="absolute bottom-4 xs:bottom-5 sm:bottom-6 md:bottom-8 lg:bottom-10 left-1/2 transform -translate-x-1/2 z-20 flex gap-1.5 xs:gap-2 sm:gap-2.5 md:gap-3">
+             {slides.map((_, idx) => (
+                 <button 
+                    key={idx}
+                    onClick={() => {
+                        document.querySelector(`[data-index="${idx}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+                    }}
+                    className={`min-w-[40px] min-h-[40px] xs:min-w-[44px] xs:min-h-[44px] flex items-center justify-center p-1.5 xs:p-2 rounded-full transition-all duration-300 ease-in-out touch-manipulation active:scale-90 cursor-pointer ${idx === currentIndex ? 'scale-110' : 'scale-100 hover:scale-105'}`}
+                    aria-label={`Go to slide ${idx + 1}: ${slides[idx].title}`}
+                    aria-current={idx === currentIndex ? 'true' : 'false'}
+                    type="button"
+                 >
+                    <span className={`block rounded-full transition-all duration-300 ${idx === currentIndex ? 'h-1.5 xs:h-2 sm:h-2.5 md:h-3 w-10 xs:w-12 sm:w-14 md:w-18 lg:w-20 bg-brand-gold shadow-lg shadow-brand-gold/50' : 'h-1.5 xs:h-2 sm:h-2.5 md:h-3 w-1.5 xs:w-2 sm:w-2.5 md:w-3 bg-white/40 hover:bg-white/70 active:bg-white'}`}></span>
+                 </button>
+             ))}
+        </div>
       </section>
 
       {/* Homesol Image Section */}

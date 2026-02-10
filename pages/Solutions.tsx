@@ -56,6 +56,24 @@ const ProductDetail: React.FC<{
               transition={{ duration: 0.5 }}
             />
           </AnimatePresence>
+          
+          {/* Image indicators */}
+          {images.length > 1 && (
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
+              {images.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentImageIndex(idx)}
+                  className={`rounded-full transition-all duration-300 ${
+                    idx === currentImageIndex
+                      ? 'h-2.5 w-10 bg-brand-gold shadow-lg shadow-brand-gold/50'
+                      : 'h-2.5 w-2.5 bg-white/60 hover:bg-white/80'
+                  }`}
+                  aria-label={`View image ${idx + 1}`}
+                />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     <div className="lg:w-1/2 w-full">

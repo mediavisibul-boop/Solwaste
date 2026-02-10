@@ -37,6 +37,22 @@ export const FahakaHero: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/35"></div>
       </div>
       
+      {/* Image indicators */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2 z-30">
+        {fahakaImages.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => setCurrentImageIndex(idx)}
+            className={`rounded-full transition-all duration-300 ${
+              idx === currentImageIndex
+                ? 'h-2.5 w-10 bg-brand-gold shadow-lg shadow-brand-gold/50'
+                : 'h-2.5 w-2.5 bg-white/60 hover:bg-white/80'
+            }`}
+            aria-label={`View image ${idx + 1}`}
+          />
+        ))}
+      </div>
+      
       <div className="relative z-20 max-w-5xl px-4 sm:px-6 py-24 sm:py-28 md:py-32 lg:py-36">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
