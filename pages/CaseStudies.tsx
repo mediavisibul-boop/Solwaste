@@ -61,7 +61,7 @@ export const CaseStudies: React.FC = () => {
                 transition={{ duration: 0.8 }}
                 className="max-w-3xl"
             >
-                <h1 className="text-5xl md:text-7xl font-heading font-black mb-6 uppercase leading-none">
+                <h1 className="text-5xl md:text-7xl font-heading font-black text-white mb-6 uppercase leading-none">
                     Real Impact
                 </h1>
                 <p className="text-xl text-gray-300 max-w-xl leading-relaxed mb-10">

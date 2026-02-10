@@ -35,7 +35,7 @@ export const About: React.FC = () => {
                 <div className="h-1 w-12 sm:w-16 bg-brand-primary rounded-full"></div>
                 <span className="text-brand-primary font-semibold uppercase tracking-wider text-sm">About Solwaste</span>
             </div>
-            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold mb-6 sm:mb-7 md:mb-8 leading-tight">
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold text-white mb-6 sm:mb-7 md:mb-8 leading-tight">
               Engineering A <br className="hidden sm:block"/> Sustainable Tomorrow
             </h1>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl max-w-3xl leading-relaxed border-l-4 border-brand-primary/50 pl-6">

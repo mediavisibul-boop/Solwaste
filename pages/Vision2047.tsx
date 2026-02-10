@@ -91,7 +91,7 @@ export const Vision2047: React.FC = () => {
          <div className="container mx-auto px-4 sm:px-6 relative z-10">
             <FadeIn>
                 <div className="text-center max-w-4xl mx-auto mb-10 sm:mb-12 md:mb-16 lg:mb-20">
-                    <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-4 sm:mb-5 md:mb-6 uppercase leading-tight">The Invisible Crisis</h2>
+                    <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-4 sm:mb-5 md:mb-6 uppercase leading-tight">The Invisible Crisis</h2>
                     <p className="text-gray-300 text-sm sm:text-base md:text-lg lg:text-xl">
                         When organic waste is left unattended or mixed with dry waste, it triggers a chain reaction of environmental collapse.
                     </p>

@@ -88,7 +88,7 @@ const Gallery = () => {
             <span className="inline-block py-2 px-6 mb-4 sm:mb-6 text-xs sm:text-sm font-bold uppercase tracking-widest border-2 border-brand-gold text-brand-gold bg-brand-dark/70 backdrop-blur-md rounded-lg">
               Our Work
             </span>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-4 sm:mb-6" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.6)' }}>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-4 sm:mb-6" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.6)' }}>
               Project Gallery
             </h1>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed" style={{ textShadow: '0 2px 15px rgba(0,0,0,0.5)' }}>

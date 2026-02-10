@@ -25,7 +25,7 @@ export const Contact: React.FC = () => {
         </div>
         
         <div className="container mx-auto px-4 sm:px-6 md:px-8 text-center relative z-10 py-20 sm:py-24 md:py-28">
-          <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-tight max-w-5xl mx-auto">GET IN TOUCH</h1>
+          <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white uppercase leading-tight max-w-5xl mx-auto">GET IN TOUCH</h1>
           <p className="text-gray-300 mt-3 xs:mt-4 sm:mt-5 text-sm xs:text-base sm:text-lg md:text-xl px-4 sm:px-6 max-w-2xl mx-auto leading-relaxed">Start your journey towards zero waste today.</p>
         </div>
       </div>

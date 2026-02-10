@@ -149,7 +149,7 @@ export const Solutions: React.FC = () => {
       <div className="bg-brand-dark text-white min-h-screen flex items-center justify-center">
         <ScrollReveal variant="fadeInUp" viewport={{ once: true, amount: 0.3 }}>
           <div className="container mx-auto px-4 sm:px-6 text-center">
-            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold mb-4 sm:mb-5 md:mb-6 uppercase leading-tight">Product Catalog</h1>
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-4 sm:mb-5 md:mb-6 uppercase leading-tight">Product Catalog</h1>
             <p className="text-gray-300 text-base sm:text-lg md:text-xl lg:text-2xl font-light">German Engineering. Indian Tenacity. World Class Results.</p>
           </div>
         </ScrollReveal>

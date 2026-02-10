@@ -56,7 +56,7 @@ export const Careers: React.FC = () => {
                 transition={{ duration: 0.8 }}
                 className="max-w-4xl"
             >
-                <h1 className="text-4xl md:text-6xl font-heading font-black mb-4 uppercase leading-none" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.9)' }}>
+                <h1 className="text-4xl md:text-6xl font-heading font-black text-white mb-4 uppercase leading-none" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.9)' }}>
                     Join Solwaste
                 </h1>
                 <p className="text-lg md:text-xl text-white font-bold mb-5" style={{ textShadow: '0 3px 15px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.9)' }}>
