@@ -63,7 +63,7 @@ export const ProcessFlow: React.FC = () => {
                 </div>
                 
                 {/* Icon */}
-                <step.icon className="w-10 h-10 text-brand-gold mb-3" />
+                <step.icon className="w-10 h-10 text-black dark:text-white mb-3" />
                 
                 {/* Content */}
                 <h4 className="text-lg font-bold text-brand-charcoal dark:text-white mb-2">{step.title}</h4>
