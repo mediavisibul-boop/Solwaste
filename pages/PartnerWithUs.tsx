@@ -52,7 +52,7 @@ export const PartnerWithUs: React.FC = () => {
         <div className="container mx-auto px-6 relative z-10 py-24 sm:py-28 md:py-32 lg:py-36">
             <ScrollReveal variant="fadeInLeft" viewport={{ once: true, amount: 0.3 }}>
               <div className="max-w-4xl">
-                <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-black mb-3 sm:mb-4 md:mb-5 uppercase leading-[0.95]" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.9)' }}>
+                <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-black text-white mb-3 sm:mb-4 md:mb-5 uppercase leading-[0.95]" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.9)' }}>
                     Partner With Us
                 </h1>
                 <p className="text-base xs:text-lg sm:text-xl md:text-2xl text-white font-bold mb-4 sm:mb-5 md:mb-6 max-w-2xl lg:max-w-3xl leading-tight" style={{ textShadow: '0 3px 15px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.9)' }}>
