@@ -196,9 +196,9 @@ export const Vision2047: React.FC = () => {
           <div className="container mx-auto px-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                   <FadeIn>
-                      <h2 className="text-5xl font-heading font-bold uppercase mb-8">What are we <br/>really losing?</h2>
+                      <h2 className="text-5xl font-heading font-bold text-white uppercase mb-8">What are we <br/>really losing?</h2>
                       <div className="space-y-6 text-xl text-gray-300">
-                          <p>When organic waste is ignored, we lose more than just aesthetics.</p>
+                          <p className="text-white">When organic waste is ignored, we lose more than just aesthetics.</p>
                           <ul className="space-y-4 list-disc pl-6 text-gray-300">
                               <li><span className="text-white">Public Health</span> to preventable diseases.</li>
                               <li><span className="text-white">Children's Safety</span> to vector-borne infections.</li>
