@@ -63,28 +63,47 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
     <!-- Google Fonts with font-display swap for better performance -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     
     <style>
       body {
-        font-family: 'Inter', sans-serif;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
       h1, h2, h3, h4, h5, h6 {
-        font-family: 'Oswald', sans-serif;
+        font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+        font-weight: 700;
+        letter-spacing: -0.02em;
       }
-      /* Custom Scrollbar */
+      /* Custom Premium Scrollbar */
       ::-webkit-scrollbar {
-        width: 8px;
+        width: 10px;
+        height: 10px;
       }
       ::-webkit-scrollbar-track {
-        background: #F5F5F0;
+        background: #fafafa;
+        border-left: 1px solid #e5e5e5;
       }
       ::-webkit-scrollbar-thumb {
-        background: #BED754;
-        border-radius: 4px;
+        background: linear-gradient(180deg, #BED754 0%, #A0C13F 100%);
+        border-radius: 6px;
+        border: 2px solid #fafafa;
       }
       ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(180deg, #A0C13F 0%, #8BAF35 100%);
+      }
+      ::-webkit-scrollbar-thumb:active {
         background: #7F9762;
+      }
+      /* Dark mode scrollbar */
+      .dark ::-webkit-scrollbar-track {
+        background: #1a1a1a;
+        border-left: 1px solid #2d2d2d;
+      }
+      .dark ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, #BED754 0%, #A0C13F 100%);
+        border: 2px solid #1a1a1a;
       }
     </style>
     

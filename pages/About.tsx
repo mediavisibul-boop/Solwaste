@@ -6,10 +6,10 @@ import { ScrollReveal, StaggerContainer, StaggerItem } from '../components/ui/Sc
 
 const Card: React.FC<{ icon: React.ReactNode, title: string, text: string }> = ({ icon, title, text }) => (
   <StaggerItem>
-    <div className="bg-brand-light dark:bg-gray-800 p-5 sm:p-6 md:p-7 lg:p-8 border-l-4 border-gray-200 dark:border-gray-700 hover:border-brand-gold hover:bg-brand-cream dark:hover:bg-gray-700 hover:shadow-xl transition-all duration-300">
-      <div className="text-brand-gold mb-4 sm:mb-5 md:mb-6">{icon}</div>
-      <h3 className="text-xl sm:text-2xl font-heading font-bold text-brand-brown mb-3 sm:mb-4 uppercase leading-tight">{title}</h3>
-      <p className="text-gray-700 leading-relaxed font-light text-sm sm:text-base">{text}</p>
+    <div className="bg-white dark:bg-gray-800 p-6 sm:p-7 md:p-8 border-l-4 border-gray-200 dark:border-gray-700 hover:border-brand-primary rounded-r-premium shadow-premium hover:shadow-premium-lg hover:bg-brand-cream/30 dark:hover:bg-gray-700 transition-all duration-400">
+      <div className="text-brand-primary mb-5 sm:mb-6">{icon}</div>
+      <h3 className="text-xl sm:text-2xl font-heading font-bold text-brand-charcoal dark:text-white mb-3 sm:mb-4 uppercase tracking-wide leading-tight">{title}</h3>
+      <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm sm:text-base">{text}</p>
     </div>
   </StaggerItem>
 );
@@ -31,14 +31,14 @@ export const About: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-4xl"
           >
-             <div className="flex items-center space-x-3 sm:space-x-4 mb-4 sm:mb-5 md:mb-6">
-                <div className="h-[2px] w-8 sm:w-10 md:w-12 bg-brand-gold"></div>
-                <span className="text-brand-gold font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-xs sm:text-sm">About Solwaste</span>
+             <div className="flex items-center space-x-4 mb-6">
+                <div className="h-1 w-12 sm:w-16 bg-brand-primary rounded-full"></div>
+                <span className="text-brand-primary font-semibold uppercase tracking-wider text-sm">About Solwaste</span>
             </div>
-            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold mb-5 sm:mb-6 md:mb-7 lg:mb-8 uppercase leading-tight sm:leading-none">
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold mb-6 sm:mb-7 md:mb-8 leading-tight">
               Engineering A <br className="hidden sm:block"/> Sustainable Tomorrow
             </h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-xl max-w-2xl leading-relaxed font-light border-l-2 sm:border-l-4 border-gray-700 pl-4 sm:pl-5 md:pl-6">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl max-w-3xl leading-relaxed border-l-4 border-brand-primary/50 pl-6">
               We help organizations across India implement on-site composting solutions that reduce waste costs, ensure compliance, and support long-term sustainability goals. Through proven technology, turnkey installation, and compliance-ready systems, we turn environmental challenges into economic resources.
             </p>
           </motion.div>
@@ -53,17 +53,19 @@ export const About: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 items-center mb-12 sm:mb-16 md:mb-20 lg:mb-24">
             <ScrollReveal variant="fadeInLeft" viewport={{ once: true, amount: 0.3 }}>
-              <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-4xl lg:text-4xl font-heading font-bold text-brand-brown mb-4 sm:mb-5 md:mb-6 uppercase leading-tight">Our Story & Expertise</h2>
-              <div className="w-16 sm:w-20 md:w-24 h-0.5 sm:h-1 bg-brand-gold mb-5 sm:mb-6 md:mb-7 lg:mb-8"></div>
-              <div className="space-y-4 sm:space-y-5 md:space-y-6 text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg">
+              <h2 className="text-3xl xs:text-4xl sm:text-5xl font-heading font-bold text-brand-charcoal dark:text-white mb-5 leading-tight">
+                Our Story & Expertise
+              </h2>
+              <div className="w-20 sm:w-24 h-1 bg-brand-primary rounded-full mb-6 sm:mb-7 md:mb-8"></div>
+              <div className="space-y-5 sm:space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed text-base sm:text-lg">
                 <p>
                   Solwaste was founded with a singular vision: to address the growing organic waste crisis in urban environments through reliable, scalable, compliance-ready technology.
                 </p>
                 <p>
-                  Leveraging <strong>German engineering</strong> principles, we developed a suite of Organic Waste Composters (OWC) that offer superior efficiency and durability compared to conventional methods. Our composting solutions help <strong>bulk waste generators (BWGs) in India</strong> including hotels, malls, IT parks, hospitals, educational institutions, and food processing units stay compliant with India's Solid Waste Management Rules 2026 (effective 1 April 2026) while reducing costs.
+                  Leveraging <strong className="font-semibold text-brand-charcoal dark:text-white">German engineering</strong> principles, we developed a suite of Organic Waste Composters (OWC) that offer superior efficiency and durability compared to conventional methods. Our composting solutions help <strong className="font-semibold text-brand-charcoal dark:text-white">bulk waste generators (BWGs) in India</strong> including hotels, malls, IT parks, hospitals, educational institutions, and food processing units stay compliant with India's Solid Waste Management Rules 2026 (effective 1 April 2026) while reducing costs.
                 </p>
                 <p>
-                  Today, with over <strong>500 installations</strong> across commercial, institutional, and residential sectors, we are a trusted partner in India's journey towards the "Waste to Wealth" and "Clean India" missions. Our on-site composting solutions reduce waste hauling costs, ensure compliance, and help organizations achieve their ESG and sustainability goals.
+                  Today, with over <strong className="font-semibold text-brand-charcoal dark:text-white">500 installations</strong> across commercial, institutional, and residential sectors, we are a trusted partner in India's journey towards the "Waste to Wealth" and "Clean India" missions. Our on-site composting solutions reduce waste hauling costs, ensure compliance, and help organizations achieve their ESG and sustainability goals.
                 </p>
               </div>
             </ScrollReveal>
@@ -105,9 +107,9 @@ export const About: React.FC = () => {
       <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-brand-light border-t border-gray-200">
         <div className="container mx-auto px-4 sm:px-6">
            <ScrollReveal variant="fadeInDown" delay={0.1} viewport={{ once: true, amount: 0.5 }}>
-             <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 md:mb-14 lg:mb-16">
-                <h2 className="text-2xl xs:text-3xl sm:text-4xl font-heading font-bold text-brand-brown mb-3 sm:mb-4 uppercase leading-tight">Who We Serve</h2>
-                <div className="w-12 sm:w-14 md:w-16 h-0.5 sm:h-1 bg-brand-gold mx-auto"></div>
+             <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14 md:mb-16 lg:mb-18">
+                <h2 className="text-3xl xs:text-4xl sm:text-5xl font-heading font-bold text-brand-charcoal dark:text-white mb-4 uppercase tracking-wide leading-tight">Who We Serve</h2>
+                <div className="w-16 sm:w-20 h-1 bg-brand-primary rounded-full mx-auto"></div>
              </div>
            </ScrollReveal>
            
@@ -119,10 +121,10 @@ export const About: React.FC = () => {
                { icon: <Store size={32} className="sm:w-9 sm:h-9" />, label: "Malls & Municipalities", desc: "Commercial & Government" },
              ].map((client, idx) => (
                <StaggerItem key={idx}>
-                 <div className="p-5 sm:p-6 md:p-7 lg:p-8 bg-brand-cream dark:bg-gray-800 border-b-4 border-transparent hover:border-brand-gold shadow-sm hover:shadow-xl transition-all group">
-                   <div className="mb-4 sm:mb-5 md:mb-6 text-brand-brown group-hover:text-brand-gold transition-colors flex justify-center items-center mx-auto">{client.icon}</div>
-                   <h4 className="font-heading font-bold text-base sm:text-lg md:text-xl text-brand-brown text-center mb-1.5 sm:mb-2 uppercase leading-tight">{client.label}</h4>
-                   <p className="text-center text-gray-600 text-xs sm:text-sm">{client.desc}</p>
+                 <div className="p-6 sm:p-7 md:p-8 bg-white dark:bg-gray-800 rounded-premium border-b-4 border-transparent hover:border-brand-primary shadow-premium hover:shadow-premium-lg transition-all duration-400 group">
+                   <div className="mb-5 sm:mb-6 text-brand-charcoal-light dark:text-gray-400 group-hover:text-brand-primary transition-colors flex justify-center items-center mx-auto">{client.icon}</div>
+                   <h4 className="font-heading font-bold text-base sm:text-lg md:text-xl text-brand-charcoal dark:text-white text-center mb-2 uppercase tracking-wide leading-tight">{client.label}</h4>
+                   <p className="text-center text-gray-600 dark:text-gray-400 text-xs sm:text-sm">{client.desc}</p>
                  </div>
                </StaggerItem>
              ))}

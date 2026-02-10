@@ -32,16 +32,16 @@ export const Navigation: React.FC<NavigationProps> = ({
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-1 sm:gap-1.5 md:gap-2 group touch-manipulation">
+        <Link to="/" className="flex items-center gap-2 sm:gap-2.5 group touch-manipulation">
           <img 
             src="/logo.png" 
             alt="Solwaste Logo" 
-            className="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 object-contain transition-all duration-500 flex-shrink-0"
+            className="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 object-contain transition-all duration-300 flex-shrink-0 group-hover:scale-105"
           />
           <div className="flex flex-col leading-none select-none">
-            <span className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-heading font-bold tracking-tighter transition-colors duration-500 whitespace-nowrap">
-              <span className={isNavTransparent ? 'text-white' : 'text-brand-brown'}>SOL</span>
-              <span className="text-brand-gold">WASTE</span>
+            <span className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-heading font-bold tracking-tight transition-colors duration-300 whitespace-nowrap">
+              <span className={isNavTransparent ? 'text-white' : 'text-brand-charcoal'}>SOL</span>
+              <span className="text-brand-primary">WASTE</span>
             </span>
           </div>
         </Link>
@@ -71,44 +71,46 @@ export const Navigation: React.FC<NavigationProps> = ({
           <Link
             to="/owc"
             className={[
-              "font-heading font-bold text-sm xl:text-base uppercase tracking-[0.15em] whitespace-nowrap",
-              "hover:text-brand-gold active:text-brand-gold transition-all duration-300 relative group",
-              isNavTransparent ? "text-white" : "text-brand-brown"
+              "font-heading font-semibold text-sm xl:text-base uppercase tracking-wider whitespace-nowrap",
+              "hover:text-brand-primary transition-all duration-300 relative group",
+              isNavTransparent ? "text-white" : "text-brand-charcoal"
             ].join(" ")}
           >
             OWC
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-gold group-hover:w-full transition-all duration-300"></span>
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-primary group-hover:w-full transition-all duration-300"></span>
           </Link>
 
           <Link
             to="/fahaka"
             className={[
-              "font-heading font-bold text-sm xl:text-base uppercase tracking-[0.15em]",
-              "transition-all duration-300 flex items-center gap-2 group whitespace-nowrap",
-              isNavTransparent ? "text-white" : "text-brand-brown"
+              "font-heading font-semibold text-sm xl:text-base uppercase tracking-wider",
+              "transition-all duration-300 flex items-center gap-2.5 group whitespace-nowrap",
+              isNavTransparent ? "text-white" : "text-brand-charcoal"
             ].join(" ")}
           >
-            <span className="relative px-2 py-0.5 text-[9px] xl:text-[10px] font-bold rounded-md bg-gradient-to-r from-red-600 to-red-500 text-white badge-blink shadow-md shadow-red-500/40">
+            <span className="relative px-2.5 py-1 text-[10px] xl:text-[11px] font-bold rounded-md bg-gradient-to-br from-red-600 to-red-500 text-white badge-blink shadow-md shadow-red-500/30 uppercase tracking-wide">
               NEW
             </span>
-            <span className="group-hover:text-brand-gold transition-colors relative">
+            <span className="group-hover:text-brand-primary transition-colors relative">
               Fahaka
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-gold group-hover:w-full transition-all duration-300"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-primary group-hover:w-full transition-all duration-300"></span>
             </span>
           </Link>
 
           <Link to="/contact">
-            <Button className={[
-              "min-h-[40px] xl:min-h-[44px]",
-              "px-4 xl:px-6 2xl:px-8 py-2 xl:py-2.5",
-              "text-xs xl:text-sm uppercase tracking-widest font-heading font-bold whitespace-nowrap",
-              "shadow-lg hover:shadow-xl active:shadow-md",
-              "transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0",
-              "touch-manipulation",
-              isNavTransparent 
-                ? "bg-brand-gold text-black border-brand-gold hover:bg-white hover:text-black hover:border-white" 
-                : "bg-brand-gold text-black border-brand-gold hover:bg-brand-dark hover:text-black hover:border-brand-dark"
-            ].join(" ")}>
+            <Button 
+              variant="primary"
+              size="md"
+              className={[
+                "uppercase tracking-wide",
+                "shadow-md hover:shadow-lg",
+                "transition-all duration-300 transform hover:-translate-y-0.5",
+                "touch-manipulation",
+                isNavTransparent 
+                  ? "bg-brand-primary hover:bg-white hover:text-brand-charcoal border-brand-primary hover:border-white" 
+                  : ""
+              ].join(" ")}
+            >
               Get Quote
             </Button>
           </Link>

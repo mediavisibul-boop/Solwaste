@@ -54,11 +54,11 @@ export const MissionGrid: React.FC = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8 }}
         >
-          <span className="text-brand-gold font-bold uppercase tracking-[0.3em] text-xs sm:text-sm mb-4 sm:mb-6 inline-block">Core Values</span>
-          <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-black mb-4 sm:mb-5 md:mb-6 uppercase tracking-tight text-brand-dark">
-            Building A <span className="text-brand-gold">Sustainable Future</span>
+          <span className="text-brand-primary font-semibold uppercase tracking-wider text-sm mb-6 inline-block">Core Values</span>
+          <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold mb-5 tracking-tight text-brand-charcoal dark:text-white leading-tight">
+            Building A <span className="text-brand-primary">Sustainable Future</span>
           </h2>
-          <p className="text-gray-600 max-w-2xl lg:max-w-3xl mx-auto text-base sm:text-lg font-light">
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl lg:max-w-3xl mx-auto text-lg sm:text-xl font-normal">
             Innovation. Integrity. Impact.
           </p>
         </motion.div>
@@ -78,21 +78,21 @@ export const MissionGrid: React.FC = () => {
                 {/* Icon */}
                 <motion.div 
                   className="inline-flex items-center justify-center mb-6 sm:mb-8"
-                  whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }}
-                  transition={{ type: 'spring', stiffness: 400 }}
+                  whileHover={{ scale: 1.08, rotate: [0, -3, 3, 0] }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                 >
-                  <div className={`w-24 h-24 xs:w-28 xs:h-28 sm:w-32 sm:h-32 rounded-full bg-white flex items-center justify-center shadow-2xl group-hover:shadow-3xl transition-all duration-500 border-4 border-gray-200`}>
-                    <card.icon size={56} strokeWidth={2.5} className="text-brand-dark drop-shadow-lg" />
+                  <div className="w-24 h-24 xs:w-28 xs:h-28 sm:w-32 sm:h-32 rounded-full bg-white dark:bg-gray-800 flex items-center justify-center shadow-premium-lg group-hover:shadow-premium-xl transition-all duration-400 border-4 border-gray-100 dark:border-gray-700 group-hover:border-brand-primary">
+                    <card.icon size={56} strokeWidth={2.5} className="text-brand-charcoal dark:text-white drop-shadow-sm" />
                   </div>
                 </motion.div>
 
                 {/* Title */}
-                <h3 className="text-xl xs:text-2xl sm:text-3xl font-heading font-bold mb-3 sm:mb-4 uppercase tracking-wide text-brand-dark">
+                <h3 className="text-xl xs:text-2xl sm:text-3xl font-heading font-bold mb-3 sm:mb-4 uppercase tracking-wide text-brand-charcoal dark:text-white leading-tight">
                   {card.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-600 leading-relaxed text-sm xs:text-base sm:text-lg font-light max-w-sm md:max-w-md mx-auto">
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm xs:text-base sm:text-lg max-w-sm md:max-w-md mx-auto">
                   {card.text}
                 </p>
               </div>

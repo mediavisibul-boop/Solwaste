@@ -2,38 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Dark Mode Styles */
+/* Premium Dark Mode System */
 @layer base {
   /* Light Mode (default) */
   :root {
     --bg-primary: #FAF7F2;
     --bg-secondary: #F5F5F0;
-    --bg-card: #FAF7F2;
-    --text-primary: #2d2d2d;
-    --text-secondary: #4a4a4a;
+    --bg-card: #ffffff;
+    --text-primary: #1A1A1A;
+    --text-secondary: #5A5A64;
     --text-muted: #6b7280;
-    --border-color: #e5e7eb;
-    --shadow: rgba(0, 0, 0, 0.08);
+    --border-color: rgba(0, 0, 0, 0.08);
+    --shadow: rgba(0, 0, 0, 0.06);
   }
 
   /* Dark Mode */
   .dark {
     --bg-primary: #0f0f0f;
     --bg-secondary: #1a1a1a;
-    --bg-card: #171717;
-    --text-primary: #f0f0f0;
-    --text-secondary: #d4d4d4;
+    --bg-card: #1f1f1f;
+    --text-primary: #f5f5f5;
+    --text-secondary: #d1d1d1;
     --text-muted: #a3a3a3;
-    --border-color: #2d2d2d;
-    --shadow: rgba(0, 0, 0, 0.5);
+    --border-color: rgba(255, 255, 255, 0.08);
+    --shadow: rgba(0, 0, 0, 0.4);
   }
 
   /* Smooth transitions for theme elements */
-  body,
-  section,
-  nav,
-  .card {
-    transition: background-color 0.3s ease, color 0.3s ease;
+  *,
+  *::before,
+  *::after {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Disable transitions for specific elements */
+  button,
+  a,
+  input,
+  textarea,
+  select {
+    transition-property: background-color, border-color, color, box-shadow, transform;
   }
 
   /* Apply dark mode styles */
@@ -42,21 +52,31 @@
     color: var(--text-primary);
   }
 
-  /* Dark mode for common elements */
-  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
-    color: var(--text-primary) !important;
+  /* Dark mode typography (less aggressive, better hierarchy) */
+  .dark h1, 
+  .dark h2, 
+  .dark h3, 
+  .dark h4, 
+  .dark h5, 
+  .dark h6 {
+    color: var(--text-primary);
   }
 
   .dark p {
-    color: var(--text-secondary) !important;
-  }
-
-  .dark span:not(button span, a span) {
-    color: var(--text-secondary) !important;
-  }
-
-  .dark div {
     color: var(--text-secondary);
+  }
+
+  /* Only apply to direct text elements, not nested components */
+  .dark .text-primary {
+    color: var(--text-primary);
+  }
+  
+  .dark .text-secondary {
+    color: var(--text-secondary);
+  }
+  
+  .dark .text-muted {
+    color: var(--text-muted);
   }
 
   /* Dark mode for cards and sections */
@@ -64,47 +84,48 @@
     background-color: var(--bg-primary);
   }
 
-  .dark .bg-white,
-  .dark .bg-\[\#FAF7F2\],
-  .dark .bg-\[\#FCF5EE\] {
-    background-color: var(--bg-card) !important;
+  .dark .bg-white {
+    background-color: var(--bg-card);
   }
 
   .dark .bg-gray-50,
   .dark .bg-gray-100,
   .dark .bg-brand-light,
   .dark .bg-brand-cream {
-    background-color: var(--bg-secondary) !important;
+    background-color: var(--bg-secondary);
   }
 
+  /* Dark mode text colors - more selective */
   .dark .text-gray-600,
   .dark .text-gray-700,
-  .dark .text-gray-800 {
-    color: var(--text-secondary) !important;
-  }
-
-  /* Keep text-gray-900 (black) as black in buttons */
-  .dark button .text-gray-900,
-  .dark a .text-gray-900 {
-    color: #111827 !important;
+  .dark .text-gray-800,
+  .dark .text-brand-brown,
+  .dark .text-brand-charcoal {
+    color: var(--text-secondary);
   }
 
   .dark .text-gray-500,
   .dark .text-gray-400 {
-    color: var(--text-muted) !important;
+    color: var(--text-muted);
   }
 
-  .dark .text-brand-brown,
-  .dark .text-brand-dark,
-  .dark .text-\[\#2d2d2d\] {
-    color: var(--text-primary) !important;
+  /* Preserve button text colors */
+  .dark button .text-gray-900,
+  .dark a .text-gray-900,
+  .dark button .text-black,
+  .dark a .text-black {
+    color: #000000;
   }
 
   /* Dark mode for borders */
   .dark .border,
   .dark .border-gray-200,
   .dark .border-gray-300 {
-    border-color: var(--border-color) !important;
+    border-color: var(--border-color);
+  }
+  
+  .dark .border-gray-800 {
+    border-color: rgba(255, 255, 255, 0.12);
   }
 
   /* Dark mode for inputs */

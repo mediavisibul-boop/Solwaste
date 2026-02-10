@@ -89,12 +89,12 @@ const slides: Slide[] = [
   }
 ];
 
-// About Section Component with Touch of Grey
+// Premium Card Component
 const Card: React.FC<{ icon: React.ReactNode, title: string, text: string }> = ({ icon, title, text }) => (
-    <div className="bg-brand-cream dark:bg-gray-800 p-6 sm:p-8 border border-gray-100 dark:border-gray-700 shadow-sm hover:border-brand-gold hover:shadow-xl transition-all duration-500 group rounded-sm">
-      <div className="text-gray-400 group-hover:text-brand-gold mb-4 sm:mb-6 transition-colors duration-300 transform group-hover:scale-110 origin-left">{icon}</div>
-      <h3 className="text-xl sm:text-2xl font-heading font-bold text-brand-brown mb-3 sm:mb-4 uppercase tracking-wide">{title}</h3>
-      <p className="text-gray-700 leading-relaxed font-normal text-base sm:text-lg">{text}</p>
+    <div className="bg-white dark:bg-gray-800 p-6 sm:p-8 border border-gray-100 dark:border-gray-700 rounded-premium shadow-premium hover:shadow-premium-lg hover:border-brand-primary transition-all duration-400 group">
+      <div className="text-brand-charcoal-light dark:text-gray-400 group-hover:text-brand-primary mb-4 sm:mb-6 transition-all duration-300 transform group-hover:scale-105 origin-left">{icon}</div>
+      <h3 className="text-xl sm:text-2xl font-heading font-bold text-brand-charcoal dark:text-white mb-3 sm:mb-4 uppercase tracking-wide leading-tight">{title}</h3>
+      <p className="text-gray-600 dark:text-gray-300 leading-relaxed font-normal text-base sm:text-lg">{text}</p>
     </div>
   );
 
@@ -145,15 +145,15 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
              transition={{ delay: 0.3 }}
            >
              {/* badge removed from slides */}
-             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-black text-white mb-2 tracking-tighter leading-none" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.9), 0 0 30px rgba(0,0,0,0.6)' }}>
+             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-extrabold text-white mb-3 tracking-tight leading-none text-shadow-lg">
                {slide.title}
              </h1>
-             <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-white mb-6 sm:mb-8 uppercase tracking-widest" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.9)' }}>
+             <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-heading font-semibold text-white mb-6 sm:mb-8 uppercase tracking-wide text-shadow-md">
                {slide.subtitle}
              </p>
-             <p className="text-white text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed font-semibold px-4" style={{ textShadow: '0 3px 15px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.9)' }}>
+             <p className="text-white text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed font-medium px-4 text-shadow-md">
                Breaking the barriers of organic waste. <br className="hidden sm:block"/>
-               Processing <span className="font-bold text-white">Food, Plastics, and Sanitary Waste</span> into sterile resources.
+               Processing <span className="font-semibold text-white">Food, Plastics, and Sanitary Waste</span> into sterile resources.
              </p>
              
              <Link to="/fahaka" className="inline-block">
@@ -282,13 +282,13 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
            }}
         >
             {/* badge removed from slides */}
-          <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-heading font-bold text-white mb-2 xs:mb-3 sm:mb-4 md:mb-5 lg:mb-6 tracking-tight leading-[1.1] xs:leading-[1.15] sm:leading-tight px-1 xs:px-2 md:px-4" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.9), 0 0 30px rgba(0,0,0,0.6)', WebkitFontSmoothing: 'antialiased', WebkitTextSizeAdjust: '100%' }}>
+          <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-heading font-extrabold text-white mb-2 xs:mb-3 sm:mb-4 md:mb-5 lg:mb-6 tracking-tight leading-[1.05] xs:leading-[1.1] sm:leading-tight px-1 xs:px-2 md:px-4 text-shadow-lg">
             {slide.title}
           </h1>
-          <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold uppercase tracking-wide sm:tracking-wider md:tracking-widest text-white mb-3 xs:mb-4 sm:mb-5 md:mb-6 lg:mb-7 px-1 xs:px-2 md:px-4 leading-snug" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.9)', WebkitFontSmoothing: 'antialiased', WebkitTextSizeAdjust: '100%' }}>
+          <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold uppercase tracking-wide sm:tracking-wider text-white mb-3 xs:mb-4 sm:mb-5 md:mb-6 lg:mb-7 px-1 xs:px-2 md:px-4 leading-snug text-shadow-md">
             {slide.subtitle}
           </h2>
-          <p className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white max-w-5xl mx-auto leading-relaxed md:leading-loose font-semibold px-3 xs:px-4 sm:px-6 md:px-8" style={{ textShadow: '0 3px 15px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.9)', WebkitFontSmoothing: 'antialiased', WebkitTextSizeAdjust: '100%' }}>
+          <p className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white max-w-5xl mx-auto leading-relaxed md:leading-loose font-medium px-3 xs:px-4 sm:px-6 md:px-8 text-shadow-md">
             {slide.description}
           </p>
         </div>
@@ -311,19 +311,19 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
               >
                 {/* Icon */}
                 <motion.div 
-                  className="text-2xl xs:text-3xl sm:text-4xl mb-2 relative z-10 text-brand-gold drop-shadow-lg"
+                  className="text-2xl xs:text-3xl sm:text-4xl mb-2 relative z-10 text-brand-primary drop-shadow-lg"
                 >
                   {getSpecIcon(spec.label)}
                 </motion.div>
                 
                 {/* Value */}
-                <div className="flex items-baseline gap-1 relative z-10 mb-1" style={{ textShadow: '0 3px 12px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.9)' }}>
-                   <span className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-heading font-black leading-none text-white group-hover:text-brand-gold transition-colors duration-300">{spec.value}</span>
-                   {spec.unit && <span className="text-xs xs:text-sm font-bold text-brand-gold group-hover:text-white">{spec.unit}</span>}
+                <div className="flex items-baseline gap-1 relative z-10 mb-1 text-shadow-sm">
+                   <span className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-heading font-extrabold leading-none text-white group-hover:text-brand-primary transition-colors duration-300">{spec.value}</span>
+                   {spec.unit && <span className="text-xs xs:text-sm font-semibold text-brand-primary group-hover:text-white">{spec.unit}</span>}
                 </div>
                 
                 {/* Label */}
-                <span className="text-[10px] xs:text-xs sm:text-sm font-bold uppercase tracking-widest relative z-10 text-white group-hover:text-brand-gold transition-colors" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.8), 0 1px 6px rgba(0,0,0,0.9)' }}>{spec.label}</span>
+                <span className="text-[10px] xs:text-xs sm:text-sm font-semibold uppercase tracking-wider relative z-10 text-white group-hover:text-brand-primary transition-colors text-shadow-sm">{spec.label}</span>
               </motion.div>
             ))}
           </div>
@@ -641,11 +641,11 @@ export const Home: React.FC = () => {
               
               {/* Floating badge */}
               <motion.div
-                className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 lg:-bottom-6 lg:-right-6 bg-brand-cream dark:bg-gray-800 backdrop-blur-xl border-2 border-brand-gold/50 px-3 py-2 sm:px-4 sm:py-3 lg:px-6 lg:py-4 rounded-xl lg:rounded-2xl shadow-xl"
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3, repeat: Infinity }}
+                className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 bg-white dark:bg-gray-800 backdrop-blur-xl border-2 border-brand-primary px-4 py-3 sm:px-6 sm:py-4 rounded-premium-lg shadow-premium-xl"
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
               >
-                <div className="text-brand-gold font-bold text-xs sm:text-sm uppercase tracking-wider">
+                <div className="text-brand-primary font-heading font-bold text-sm sm:text-base uppercase tracking-wide">
                   500+ Installations
                 </div>
               </motion.div>
@@ -659,15 +659,17 @@ export const Home: React.FC = () => {
               transition={{ duration: 0.6 }} 
               viewport={{ once: true }}
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="h-1 w-12 bg-brand-gold"></div>
-                <span className="text-brand-gold font-bold uppercase tracking-widest text-sm">Our Expertise</span>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="h-1 w-16 bg-brand-primary rounded-full"></div>
+                <span className="text-brand-primary font-semibold uppercase tracking-wide text-sm">Our Expertise</span>
               </div>
-              <h2 className="text-2xl sm:text-4xl font-heading font-bold text-brand-dark mb-5 uppercase">German Engineering. <span className="text-brand-olive-dark">Indian Innovation.</span></h2>
-              <div className="space-y-3 text-brand-dark leading-relaxed">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-brand-charcoal dark:text-white mb-6 leading-tight">
+                German Engineering. <span className="text-brand-olive">Indian Innovation.</span>
+              </h2>
+              <div className="space-y-4 text-brand-charcoal-light dark:text-gray-300 leading-relaxed text-base sm:text-lg">
                 <p>Solwaste was founded with a singular vision: to address the growing organic waste crisis in urban environments through reliable, scalable technology.</p>
-                <p>Leveraging <strong>German engineering</strong> principles, we developed a suite of Organic Waste Composters (OWC) that offer superior efficiency and durability.</p>
-                <p>Today, with over <strong>500 installations</strong> across commercial, institutional, and residential sectors, we are a trusted partner in India's journey towards the "Waste to Wealth" mission.</p>
+                <p>Leveraging <strong className="font-semibold text-brand-charcoal dark:text-white">German engineering</strong> principles, we developed a suite of Organic Waste Composters (OWC) that offer superior efficiency and durability.</p>
+                <p>Today, with over <strong className="font-semibold text-brand-charcoal dark:text-white">500 installations</strong> across commercial, institutional, and residential sectors, we are a trusted partner in India's journey towards the "Waste to Wealth" mission.</p>
               </div>
             </motion.div>
           </div>
