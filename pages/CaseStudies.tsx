@@ -1,8 +1,8 @@
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, MapPin, Factory, BarChart, Clock, Filter, CheckCircle2, AlertCircle } from '../components/Icons';
+import { Search, MapPin, Factory, BarChart, Filter, CheckCircle2, AlertCircle } from '../components/Icons';
 import { SEO } from '../components/SEO';
-import { ScrollReveal, StaggerContainer, StaggerItem } from '../components/ui/ScrollReveal';
+import { ScrollReveal } from '../components/ui/ScrollReveal';
 
 const projects = [
   { id: 1, client: "Indira Gandhi Centre for Atomic Research", location: "Kalpakkam, Tamil Nadu", capacity: "1 TPD", type: "MSW", status: "Installed" },
@@ -26,20 +26,6 @@ const projects = [
   { id: 19, client: "Tirupati Municipal Corporation", location: "Tirupati", capacity: "1 TPD", type: "MSW", status: "To be Installed" },
   { id: 20, client: "IndLab Equipment Pvt. Ltd.", location: "Bengaluru", capacity: "1 TPD", type: "Mixed Waste", status: "Installed" },
 ];
-
-const StatCard: React.FC<{ value: string; label: string; icon: React.ReactNode }> = ({ value, label, icon }) => (
-    <StaggerItem>
-      <div className="bg-black/10 backdrop-blur-md border border-white/10 p-6 flex items-center space-x-4">
-        <div className="bg-brand-gold p-3 text-white rounded-full">
-            {icon}
-        </div>
-        <div>
-            <div className="text-3xl font-heading font-bold text-white">{value}</div>
-            <div className="text-gray-200 text-sm uppercase tracking-wider font-medium">{label}</div>
-        </div>
-      </div>
-    </StaggerItem>
-);
 
 export const CaseStudies: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -69,27 +55,19 @@ export const CaseStudies: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-white/35 via-white/25 to-transparent"></div>
         
         <div className="container mx-auto px-6 relative z-10 py-24 sm:py-28 md:py-32 lg:py-36">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                >
-                    <h1 className="text-5xl md:text-7xl font-heading font-black mb-6 uppercase leading-none">
-                        Real Impact
-                    </h1>
-                    <p className="text-xl text-gray-300 max-w-xl leading-relaxed mb-10">
-                        From government institutions to municipal corporations, our waste management solutions are transforming how India handles organic waste.
-                    </p>
-                </motion.div>
-                
-                <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-4" staggerDelay={0.1} viewport={{ once: true, amount: 0.3 }}>
-                    <StatCard value="20" label="Total Installations" icon={<CheckCircle2 />} />
-                    <StatCard value="8.3" label="TPD Capacity" icon={<BarChart />} />
-                    <StatCard value="10" label="States Covered" icon={<MapPin />} />
-                    <StatCard value="3" label="Upcoming Projects" icon={<Clock />} />
-                </StaggerContainer>
-            </div>
+            <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="max-w-3xl"
+            >
+                <h1 className="text-5xl md:text-7xl font-heading font-black mb-6 uppercase leading-none">
+                    Real Impact
+                </h1>
+                <p className="text-xl text-gray-300 max-w-xl leading-relaxed mb-10">
+                    From government institutions to municipal corporations, our waste management solutions are transforming how India handles organic waste.
+                </p>
+            </motion.div>
         </div>
       </section>
 
@@ -99,8 +77,8 @@ export const CaseStudies: React.FC = () => {
               <ScrollReveal variant="fadeInUp" viewport={{ once: true, amount: 0.4 }}>
                 <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
                   <div>
-                      <h2 className="text-4xl font-heading font-bold text-brand-brown uppercase mb-2">Installation Showcase</h2>
-                      <p className="text-gray-500">Explore our footprint across the nation.</p>
+                      <h2 className="text-4xl font-heading font-bold text-brand-charcoal dark:text-white uppercase mb-2">Installation Showcase</h2>
+                      <p className="text-gray-500 dark:text-gray-400">Explore our footprint across the nation.</p>
                   </div>
                   
                   <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto">
@@ -109,7 +87,7 @@ export const CaseStudies: React.FC = () => {
                           <input 
                             type="text" 
                             placeholder="Search by name or location..." 
-                            className="pl-12 pr-4 py-3 bg-white border border-gray-200 rounded-sm w-full md:w-80 focus:outline-none focus:border-brand-gold transition-colors"
+                            className="pl-12 pr-4 py-3 bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 rounded-sm w-full md:w-80 focus:outline-none focus:border-brand-gold transition-colors"
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                           />
@@ -117,7 +95,7 @@ export const CaseStudies: React.FC = () => {
                       <div className="relative">
                           <Filter className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-600" size={20} />
                           <select 
-                             className="pl-12 pr-10 py-3 bg-white border border-gray-200 rounded-sm appearance-none focus:outline-none focus:border-brand-gold transition-colors cursor-pointer"
+                             className="pl-12 pr-10 py-3 bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 rounded-sm appearance-none focus:outline-none focus:border-brand-gold transition-colors cursor-pointer"
                              value={statusFilter}
                              onChange={(e) => setStatusFilter(e.target.value)}
                           >
@@ -144,7 +122,7 @@ export const CaseStudies: React.FC = () => {
                             exit={{ opacity: 0, scale: 0.9 }}
                             key={project.id}
                             whileHover={{ scale: 1.05, y: -5 }}
-                            className="bg-white border border-gray-200 p-6 hover:shadow-2xl hover:border-brand-gold transition-all duration-300 group cursor-pointer"
+                            className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 hover:shadow-2xl hover:border-brand-gold transition-all duration-300 group cursor-pointer"
                         >
                             <div className="flex justify-between items-start mb-4">
                                 <span className="font-heading font-bold text-3xl text-gray-200 group-hover:text-brand-gold/40 transition-colors">#{project.id}</span>
@@ -152,10 +130,10 @@ export const CaseStudies: React.FC = () => {
                                     {project.status === 'Installed' ? 'Installed' : 'In Progress'}
                                 </span>
                             </div>
-                            <h3 className="font-heading font-bold text-brand-brown text-lg leading-tight mb-3 min-h-[3rem] group-hover:text-brand-gold transition-colors">
+                            <h3 className="font-heading font-bold text-brand-charcoal dark:text-white text-lg leading-tight mb-3 min-h-[3rem] group-hover:text-brand-gold transition-colors">
                                 {project.client}
                             </h3>
-                            <div className="space-y-2 text-sm text-gray-700">
+                            <div className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
                                 <div className="flex items-center group-hover:translate-x-1 transition-transform">
                                     <MapPin size={16} className="text-brand-gold mr-2 group-hover:scale-125 transition-transform" />
                                     {project.location}
@@ -177,16 +155,16 @@ export const CaseStudies: React.FC = () => {
       </section>
 
       {/* Table View */}
-      <section className="py-20 bg-white border-t border-gray-200">
+      <section className="py-20 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
           <div className="container mx-auto px-6">
              <div className="text-center mb-12">
-                  <h2 className="text-4xl font-heading font-bold text-brand-brown uppercase mb-2">Complete Database</h2>
-                  <p className="text-gray-500">Full project list for reference.</p>
+                  <h2 className="text-4xl font-heading font-bold text-brand-charcoal dark:text-white uppercase mb-2">Complete Database</h2>
+                  <p className="text-gray-500 dark:text-gray-400">Full project list for reference.</p>
              </div>
 
-             <div className="overflow-x-auto shadow-sm border border-gray-200">
-                 <table className="w-full text-left border-collapse">
-                     <thead className="bg-gray-900 text-white">
+             <div className="overflow-x-auto shadow-sm border border-gray-200 dark:border-gray-700">
+                 <table className="w-full text-left border-collapse bg-white dark:bg-gray-800">
+                     <thead className="bg-gray-900 dark:bg-gray-950 text-white">
                          <tr>
                              <th className="p-4 font-heading font-bold uppercase tracking-wider text-sm">S.No</th>
                              <th className="p-4 font-heading font-bold uppercase tracking-wider text-sm">Client Name</th>
@@ -196,11 +174,11 @@ export const CaseStudies: React.FC = () => {
                              <th className="p-4 font-heading font-bold uppercase tracking-wider text-sm">Status</th>
                          </tr>
                      </thead>
-                     <tbody className="divide-y divide-gray-200 text-sm text-gray-700">
+                     <tbody className="divide-y divide-gray-200 dark:divide-gray-700 text-sm text-gray-700 dark:text-gray-300">
                          {projects.map((project, idx) => (
-                             <tr key={project.id} className="hover:bg-gray-50 transition-colors">
-                                 <td className="p-4 font-bold text-gray-500">{idx + 1}</td>
-                                 <td className="p-4 font-bold text-brand-brown">{project.client}</td>
+                             <tr key={project.id} className="hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                                 <td className="p-4 font-bold text-gray-500 dark:text-gray-400">{idx + 1}</td>
+                                 <td className="p-4 font-bold text-brand-charcoal dark:text-white">{project.client}</td>
                                  <td className="p-4">{project.location}</td>
                                  <td className="p-4 whitespace-nowrap">{project.capacity}</td>
                                  <td className="p-4 whitespace-nowrap">

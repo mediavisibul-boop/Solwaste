@@ -23,10 +23,10 @@ const Gallery = lazy(() => import('./pages/Gallery'));
 
 // Loading fallback component
 const PageLoader = () => (
-  <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-brand-light to-white">
+  <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-white">
     <div className="text-center">
-      <div className="w-16 h-16 border-4 border-brand-gold border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-      <p className="text-brand-dark font-heading text-lg">Loading...</p>
+      <div className="w-16 h-16 border-4 border-[#BED754] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+      <p className="text-[#44444E] font-heading text-lg">Loading...</p>
     </div>
   </div>
 );

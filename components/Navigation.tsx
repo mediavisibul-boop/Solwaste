@@ -36,20 +36,20 @@ export const Navigation: React.FC<NavigationProps> = ({
           <img 
             src="/logo.png" 
             alt="Solwaste Logo" 
-            className="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 object-contain transition-all duration-300 flex-shrink-0 group-hover:scale-105"
+            className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 lg:w-10 lg:h-10 object-contain transition-all duration-300 flex-shrink-0 group-hover:scale-105"
           />
           <div className="flex flex-col leading-none select-none">
-            <span className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-heading font-bold tracking-tight transition-colors duration-300 whitespace-nowrap">
-              <span className={isNavTransparent ? 'text-white' : 'text-brand-charcoal'}>SOL</span>
-              <span className="text-brand-primary">WASTE</span>
+            <span className="text-lg sm:text-xl md:text-xl lg:text-2xl font-heading font-bold tracking-tight transition-colors duration-300 whitespace-nowrap">
+              <span className={isNavTransparent ? 'text-white' : 'text-[#44444E]'}>SOL</span>
+              <span className="text-[#BED754]">WASTE</span>
             </span>
           </div>
         </Link>
 
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-4 xl:gap-6 2xl:gap-8">
-          {/* Theme Toggle Button */}
-          <button
+          {/* Theme Toggle Button - TEMPORARILY DISABLED */}
+          {/* <button
             onClick={toggleTheme}
             className={[
               "min-w-[40px] min-h-[40px] p-2 flex items-center justify-center rounded-lg",
@@ -66,14 +66,14 @@ export const Navigation: React.FC<NavigationProps> = ({
             ) : (
               <Sun size={20} className="transition-transform duration-300" />
             )}
-          </button>
+          </button> */}
           
           <Link
             to="/owc"
             className={[
               "font-heading font-semibold text-sm xl:text-base uppercase tracking-wider whitespace-nowrap",
-              "hover:text-brand-primary transition-all duration-300 relative group",
-              isNavTransparent ? "text-white" : "text-brand-charcoal"
+              "hover:text-[#BED754] transition-all duration-300 relative group",
+              isNavTransparent ? "text-white" : "text-[#44444E]"
             ].join(" ")}
           >
             OWC
@@ -85,15 +85,15 @@ export const Navigation: React.FC<NavigationProps> = ({
             className={[
               "font-heading font-semibold text-sm xl:text-base uppercase tracking-wider",
               "transition-all duration-300 flex items-center gap-2.5 group whitespace-nowrap",
-              isNavTransparent ? "text-white" : "text-brand-charcoal"
+              isNavTransparent ? "text-white" : "text-[#44444E]"
             ].join(" ")}
           >
             <span className="relative px-2.5 py-1 text-[10px] xl:text-[11px] font-bold rounded-md bg-gradient-to-br from-red-600 to-red-500 text-white badge-blink shadow-md shadow-red-500/30 uppercase tracking-wide">
               NEW
             </span>
-            <span className="group-hover:text-brand-primary transition-colors relative">
+            <span className="group-hover:text-[#BED754] transition-colors relative">
               Fahaka
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-primary group-hover:w-full transition-all duration-300"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#BED754] group-hover:w-full transition-all duration-300"></span>
             </span>
           </Link>
 
@@ -107,7 +107,7 @@ export const Navigation: React.FC<NavigationProps> = ({
                 "transition-all duration-300 transform hover:-translate-y-0.5",
                 "touch-manipulation",
                 isNavTransparent 
-                  ? "bg-brand-primary hover:bg-white hover:text-brand-charcoal border-brand-primary hover:border-white" 
+                  ? "bg-[#BED754] hover:bg-white hover:text-[#44444E] border-[#BED754] hover:border-white" 
                   : ""
               ].join(" ")}
             >
@@ -116,10 +116,10 @@ export const Navigation: React.FC<NavigationProps> = ({
           </Link>
         </div>
 
-        {/* Mobile Actions - Theme Toggle + Menu */}
+        {/* Mobile Actions - Menu Only */}
         <div className="lg:hidden flex items-center gap-2">
-          {/* Mobile Theme Toggle */}
-          <button
+          {/* Mobile Theme Toggle - TEMPORARILY DISABLED */}
+          {/* <button
             onClick={toggleTheme}
             className={[
               "min-w-[44px] min-h-[44px] p-2.5 flex items-center justify-center rounded-lg",
@@ -131,7 +131,7 @@ export const Navigation: React.FC<NavigationProps> = ({
             aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
           >
             {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
-          </button>
+          </button> */}
 
           {/* Mobile Toggle */}
           <button 

@@ -105,7 +105,7 @@ const Gallery = () => {
           {/* Section Title */}
           <ScrollReveal variant="fadeInUp" viewport={{ once: true, amount: 0.4 }}>
             <div className="text-center mb-10 sm:mb-12 md:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-brand-dark mb-3 sm:mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-brand-charcoal dark:text-white mb-3 sm:mb-4">
               Installations & Projects
             </h2>
             <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">

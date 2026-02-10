@@ -47,8 +47,8 @@ export default {
           accent: '#BED754',       // For CTAs and highlights
           'accent-dark': '#A0C13F',
           
-          // Neutral Colors
-          dark: '#1A1A1A',         // Dark backgrounds
+          // Neutral Colors - Softer for dark mode (easy on eyes)
+          dark: '#1A1A1A',         // Dark backgrounds (softer than pure black)
           'dark-muted': '#2D2D2D',
           'dark-lighter': '#3A3A3A',
           
@@ -68,6 +68,20 @@ export default {
           // Additional Colors
           slate: '#5A7C8D',        // Cool accent
           'slate-dark': '#4A6B7B',
+        },
+        // Override default gray scale with softer dark mode colors
+        gray: {
+          50: '#fafafa',
+          100: '#f5f5f5',
+          200: '#e5e5e5',
+          300: '#d4d4d4',
+          400: '#a3a3a3',
+          500: '#737373',
+          600: '#525252',
+          700: '#3f3f3f',
+          800: '#262626',   // Softer than default #1f2937
+          900: '#1a1a1a',   // Softer than default #111827 - easy on eyes
+          950: '#121212',   // Ultra dark but not pure black
         },
       },
 

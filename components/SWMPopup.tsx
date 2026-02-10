@@ -6,28 +6,23 @@ export const SWMPopup: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    // For testing: uncomment the line below to always show popup
-    sessionStorage.removeItem('swm-popup-seen');
-    
-    // Check if popup was already shown in this session
-    const hasSeenPopup = sessionStorage.getItem('swm-popup-seen');
+    // Check if popup was already shown (using localStorage for persistence across sessions)
+    const hasSeenPopup = localStorage.getItem('swm-popup-seen');
     
     if (!hasSeenPopup) {
-      // Show popup after 500ms delay
+      // Show popup after 1.5 seconds delay (after page loads)
       const timer = setTimeout(() => {
         setIsOpen(true);
-        console.log('SWM Popup opened');
-      }, 500);
+      }, 1500);
 
       return () => clearTimeout(timer);
-    } else {
-      console.log('SWM Popup already seen this session');
     }
   }, []);
 
   const handleClose = () => {
     setIsOpen(false);
-    sessionStorage.setItem('swm-popup-seen', 'true');
+    // Save to localStorage so popup shows only once ever
+    localStorage.setItem('swm-popup-seen', 'true');
   };
 
   return (

@@ -12,7 +12,7 @@ const Section: React.FC<{ number: string; title: string; children: React.ReactNo
             {icon}
             <span className="font-heading font-bold text-4xl opacity-20">{number}</span>
         </div>
-        <h3 className="text-2xl font-heading font-bold text-brand-brown uppercase leading-tight pr-4">
+        <h3 className="text-2xl font-heading font-bold text-brand-charcoal dark:text-white uppercase leading-tight pr-4">
             {title}
         </h3>
       </div>
@@ -41,7 +41,7 @@ export const Sustainability: React.FC = () => {
                 <div className="inline-block border border-brand-gold px-3 py-1 text-xs font-bold text-brand-gold uppercase tracking-widest mb-6 bg-white">
                     Our Commitment
                 </div>
-                <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-bold text-brand-brown mb-6 sm:mb-8 md:mb-10 lg:mb-12 uppercase max-w-4xl lg:max-w-5xl leading-[1.1]">
+                <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-bold text-brand-charcoal dark:text-white mb-6 sm:mb-8 md:mb-10 lg:mb-12 uppercase max-w-4xl lg:max-w-5xl leading-[1.1]">
                     Environmental & <br/><span className="text-gray-400">Sustainability Commitment</span>
                 </h1>
                 

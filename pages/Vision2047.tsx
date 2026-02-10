@@ -61,7 +61,7 @@ export const Vision2047: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 items-center">
                 <FadeIn>
-                    <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-brand-brown mb-5 sm:mb-6 md:mb-7 lg:mb-8 uppercase leading-tight">
+                    <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-brand-charcoal dark:text-white mb-5 sm:mb-6 md:mb-7 lg:mb-8 uppercase leading-tight">
                         Waste is a <span className="text-brand-gold underline decoration-2 sm:decoration-4 underline-offset-4 sm:underline-offset-8">Mirror</span>.
                     </h2>
                     <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-800 leading-relaxed font-medium border-l-2 sm:border-l-4 border-brand-brown pl-4 sm:pl-5 md:pl-6 mb-5 sm:mb-6 md:mb-7 lg:mb-8">
@@ -121,7 +121,7 @@ export const Vision2047: React.FC = () => {
       <section className="py-32 bg-gray-50">
         <div className="container mx-auto px-6">
             <FadeIn delay={0.2}>
-                <h2 className="text-5xl md:text-7xl font-heading font-bold text-center text-brand-brown mb-24 uppercase">
+                <h2 className="text-5xl md:text-7xl font-heading font-bold text-center text-brand-charcoal dark:text-white mb-24 uppercase">
                     Segregation is not a habit.<br/>
                     <span className="text-brand-gold">It is Infrastructure.</span>
                 </h2>
@@ -129,8 +129,8 @@ export const Vision2047: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <FadeIn>
-                    <div className="bg-white p-10 shadow-lg border-t-4 border-gray-300 h-full hover:shadow-2xl hover:scale-105 transition-all duration-500 group cursor-pointer">
-                        <h3 className="text-3xl font-heading font-bold text-gray-400 mb-6 uppercase group-hover:text-gray-600 transition-colors">The Old Way <br/><span className="text-brand-brown text-xl">(Vermicompost Pits)</span></h3>
+                    <div className="bg-white dark:bg-gray-800 p-10 shadow-lg border-t-4 border-gray-300 dark:border-gray-600 h-full hover:shadow-2xl hover:scale-105 transition-all duration-500 group cursor-pointer">
+                        <h3 className="text-3xl font-heading font-bold text-gray-400 dark:text-gray-400 mb-6 uppercase group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors">The Old Way <br/><span className="text-brand-charcoal dark:text-white text-xl">(Vermicompost Pits)</span></h3>
                         <p className="text-lg text-gray-600 mb-6 font-medium">Why it fails at scale:</p>
                         <ul className="space-y-4">
                             {[
@@ -151,7 +151,7 @@ export const Vision2047: React.FC = () => {
                 <FadeIn delay={0.2}>
                     <div className="bg-white p-10 shadow-2xl border-t-4 border-brand-gold h-full transform md:-translate-y-4 hover:shadow-3xl hover:scale-105 hover:border-t-8 transition-all duration-500 group cursor-pointer">
                         <div className="flex justify-between items-start mb-6">
-                            <h3 className="text-3xl font-heading font-bold text-brand-gold mb-0 uppercase group-hover:text-brand-gold-dark transition-colors">The Future <br/><span className="text-brand-brown text-xl">(Machine Composting)</span></h3>
+                            <h3 className="text-3xl font-heading font-bold text-brand-gold mb-0 uppercase group-hover:text-brand-gold-dark transition-colors">The Future <br/><span className="text-brand-charcoal dark:text-white text-xl">(Machine Composting)</span></h3>
                             <Settings className="text-brand-gold group-hover:rotate-180 transition-transform duration-700" size={32} />
                         </div>
                         <p className="text-lg text-gray-600 mb-6 font-medium">Why it is essential infrastructure:</p>
@@ -163,7 +163,7 @@ export const Vision2047: React.FC = () => {
                                 "Convert waste to safe compost in hours",
                                 "Minimize human handling & health risks"
                             ].map((text, i) => (
-                                <li key={i} className="flex items-start text-brand-brown font-medium group-hover:text-brand-dark transition-colors">
+                                <li key={i} className="flex items-start text-gray-700 dark:text-gray-300 font-medium group-hover:text-brand-charcoal dark:group-hover:text-white transition-colors">
                                     <span className="text-brand-gold mr-3 text-xl group-hover:scale-125 transition-transform inline-block">✓</span> {text}
                                 </li>
                             ))}
@@ -224,7 +224,7 @@ export const Vision2047: React.FC = () => {
       <section className="py-32 bg-white text-center">
           <div className="container mx-auto px-6">
               <FadeIn>
-                  <h2 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-heading font-black text-brand-brown mb-4 sm:mb-6 md:mb-8 uppercase leading-[0.95] max-w-[90vw] mx-auto">
+                  <h2 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-heading font-black text-brand-charcoal dark:text-white mb-4 sm:mb-6 md:mb-8 uppercase leading-[0.95] max-w-[90vw] mx-auto">
                       Act Now. <span className="text-brand-gold">Not in 2047.</span>
                   </h2>
                   <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-600 max-w-xl sm:max-w-2xl lg:max-w-3xl mx-auto mb-8 sm:mb-10 md:mb-12 px-4 leading-relaxed">

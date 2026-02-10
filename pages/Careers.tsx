@@ -7,10 +7,10 @@ import { ScrollReveal, StaggerContainer, StaggerItem } from '../components/ui/Sc
 
 const BenefitCard: React.FC<{ title: string; text: string; icon: React.ReactNode }> = ({ title, text, icon }) => (
   <StaggerItem>
-    <div className="bg-gray-50 dark:bg-gray-800 p-8 border-l-4 border-transparent hover:border-brand-gold hover:bg-brand-cream dark:hover:bg-gray-700 hover:shadow-xl transition-all duration-300 group">
-      <div className="text-gray-600 group-hover:text-brand-gold mb-4 transition-colors">{icon}</div>
-      <h3 className="text-xl font-heading font-bold text-brand-brown mb-3 uppercase">{title}</h3>
-      <p className="text-gray-700 text-base leading-relaxed">{text}</p>
+    <div className="bg-gray-50 dark:bg-gray-800 p-6 border-l-4 border-transparent hover:border-brand-gold hover:bg-brand-cream dark:hover:bg-gray-700 hover:shadow-xl transition-all duration-300 group h-full flex flex-col">
+      <div className="text-gray-600 dark:text-gray-400 group-hover:text-brand-gold mb-4 transition-colors flex-shrink-0">{icon}</div>
+      <h3 className="text-lg font-heading font-bold text-brand-brown dark:text-white mb-3 uppercase flex-shrink-0">{title}</h3>
+      <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed flex-grow">{text}</p>
     </div>
   </StaggerItem>
 );
@@ -22,7 +22,7 @@ const Step: React.FC<{ number: string; title: string; text: string }> = ({ numbe
             {number}
         </div>
         <div>
-            <h4 className="text-xl font-heading font-bold text-brand-brown mb-2">{title}</h4>
+            <h4 className="text-xl font-heading font-bold text-brand-charcoal dark:text-white mb-2">{title}</h4>
             <p className="text-gray-700 font-medium">{text}</p>
         </div>
       </div>
@@ -88,7 +88,7 @@ export const Careers: React.FC = () => {
       <section className="py-24 bg-white">
           <div className="container mx-auto px-6">
               <div className="text-center max-w-3xl mx-auto mb-20">
-                  <h2 className="text-4xl md:text-5xl font-heading font-bold text-brand-brown mb-6 uppercase">Why Join Us?</h2>
+                  <h2 className="text-4xl md:text-5xl font-heading font-bold text-brand-charcoal dark:text-white mb-6 uppercase">Why Join Us?</h2>
                   <p className="text-xl text-gray-600 font-light">
                     No greenwashing. No vanity projects. Just real impact, real learning, and work you can be proud of.
                   </p>
@@ -133,7 +133,7 @@ export const Careers: React.FC = () => {
       <section id="roles" className="py-24 bg-gray-50 border-y border-gray-200">
           <div className="container mx-auto px-6">
               <ScrollReveal variant="fadeInUp" viewport={{ once: true, amount: 0.5 }}>
-                <h2 className="text-4xl md:text-5xl font-heading font-bold text-brand-brown mb-12 uppercase">Open Roles</h2>
+                <h2 className="text-4xl md:text-5xl font-heading font-bold text-brand-charcoal dark:text-white mb-12 uppercase">Open Roles</h2>
               </ScrollReveal>
               <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.06} viewport={{ once: true, amount: 0.1 }}>
                   {roles.map((role, idx) => (
@@ -144,7 +144,7 @@ export const Careers: React.FC = () => {
                           rel="noopener noreferrer"
                           className="bg-white p-6 border border-gray-200 flex justify-between items-center group hover:border-brand-gold transition-all cursor-pointer shadow-sm hover:shadow-md"
                         >
-                            <span className="font-heading font-bold text-lg text-brand-brown group-hover:text-brand-gold transition-colors">{role}</span>
+                            <span className="font-heading font-bold text-lg text-brand-charcoal dark:text-white group-hover:text-brand-gold transition-colors">{role}</span>
                             <ChevronRight className="text-gray-300 group-hover:text-brand-gold transition-colors" />
                         </a>
                       </StaggerItem>
@@ -179,7 +179,7 @@ export const Careers: React.FC = () => {
           <div className="container mx-auto px-6">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                   <div>
-                      <h2 className="text-4xl md:text-5xl font-heading font-bold text-brand-brown mb-10 uppercase">What Happens Next?</h2>
+                      <h2 className="text-4xl md:text-5xl font-heading font-bold text-brand-charcoal dark:text-white mb-10 uppercase">What Happens Next?</h2>
                       <div className="space-y-12">
                           <Step 
                             number="1" 

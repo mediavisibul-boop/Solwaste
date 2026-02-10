@@ -32,7 +32,7 @@ export const BWGInfo: React.FC = () => {
                 </span>
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-6 uppercase leading-tight">
-                <span className="text-brand-dark">Bulk Waste</span> <br/>
+                <span className="text-brand-charcoal dark:text-white">Bulk Waste</span> <br/>
                 <span className="text-brand-olive">Generators (BWGs)</span>
               </h2>
               <p className="text-gray-700 text-lg max-w-3xl mx-auto leading-relaxed">
@@ -74,10 +74,10 @@ export const BWGInfo: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Left Column - Key Responsibilities */}
             <ScrollReveal variant="fadeInLeft" viewport={{ once: true, amount: 0.2 }}>
-              <div className="bg-gradient-to-br from-brand-light to-white p-6 rounded-lg border border-gray-200 shadow-lg h-full">
+              <div className="bg-gradient-to-br from-brand-light to-white dark:from-gray-800 dark:to-gray-700 p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow-lg h-full">
                 <div className="flex items-center gap-3 mb-4">
                   <CheckCircle className="text-brand-olive" size={24} strokeWidth={2} />
-                  <h3 className="text-xl font-heading font-bold text-brand-dark uppercase">Key Responsibilities</h3>
+                  <h3 className="text-xl font-heading font-bold text-brand-charcoal dark:text-white uppercase">Key Responsibilities</h3>
                 </div>
                 <ul className="space-y-2 text-sm">
                   {[
@@ -88,7 +88,7 @@ export const BWGInfo: React.FC = () => {
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-2">
                       <div className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-brand-olive mt-1.5"></div>
-                      <span className="text-gray-700">{item}</span>
+                      <span className="text-gray-700 dark:text-gray-300">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -97,10 +97,10 @@ export const BWGInfo: React.FC = () => {
 
             {/* Right Column - Additional Duties for BWGs */}
             <ScrollReveal variant="fadeInRight" viewport={{ once: true, amount: 0.2 }}>
-              <div className="bg-gradient-to-br from-brand-olive-dark/5 to-white p-6 rounded-lg border-2 border-brand-olive/30 shadow-lg h-full">
+              <div className="bg-gradient-to-br from-brand-olive-dark/5 to-white dark:from-gray-800 dark:to-gray-700 p-6 rounded-lg border-2 border-brand-olive/30 dark:border-brand-olive/50 shadow-lg h-full">
                 <div className="flex items-center gap-3 mb-4">
                   <FileCheck className="text-brand-olive-dark" size={24} strokeWidth={2} />
-                  <h3 className="text-xl font-heading font-bold text-brand-dark uppercase">Additional for BWGs</h3>
+                  <h3 className="text-xl font-heading font-bold text-brand-charcoal dark:text-white uppercase">Additional for BWGs</h3>
                 </div>
                 <ul className="space-y-2 text-sm">
                   {[
@@ -111,7 +111,7 @@ export const BWGInfo: React.FC = () => {
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-2">
                       <div className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-brand-olive-dark mt-1.5"></div>
-                      <span className="text-gray-700">{item}</span>
+                      <span className="text-gray-700 dark:text-gray-300">{item}</span>
                     </li>
                   ))}
                 </ul>

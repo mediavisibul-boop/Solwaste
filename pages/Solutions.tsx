@@ -11,7 +11,7 @@ const SpecTable: React.FC<{ specs: {label: string, value: string}[] }> = ({ spec
     {specs.map((s, i) => (
       <div key={i} className="flex justify-between border-b border-gray-200 pb-2 sm:pb-3">
         <span className="font-bold text-gray-600 uppercase text-xs tracking-wider">{s.label}</span>
-        <span className="font-bold text-brand-brown text-base sm:text-lg">{s.value}</span>
+        <span className="font-bold text-brand-charcoal dark:text-white text-base sm:text-lg">{s.value}</span>
       </div>
     ))}
   </div>
@@ -56,35 +56,17 @@ const ProductDetail: React.FC<{
               transition={{ duration: 0.5 }}
             />
           </AnimatePresence>
-          
-          {/* Image indicators */}
-          {images.length > 1 && (
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
-              {images.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setCurrentImageIndex(idx)}
-                  className={`rounded-full transition-all duration-300 ${
-                    idx === currentImageIndex
-                      ? 'h-2.5 w-10 bg-brand-gold shadow-lg shadow-brand-gold/50'
-                      : 'h-2.5 w-2.5 bg-white/60 hover:bg-white/80'
-                  }`}
-                  aria-label={`View image ${idx + 1}`}
-                />
-              ))}
-            </div>
-          )}
         </div>
       </div>
     <div className="lg:w-1/2 w-full">
       <div className="inline-block text-brand-gold font-bold uppercase tracking-widest text-xs sm:text-sm mb-2 sm:mb-3 border-2 border-brand-gold px-3 py-1">
         {tagline}
       </div>
-      <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-brand-brown mb-3 sm:mb-4 md:mb-5 uppercase leading-tight">{name}</h2>
+      <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-brand-charcoal dark:text-white mb-3 sm:mb-4 md:mb-5 uppercase leading-tight">{name}</h2>
       <p className="text-gray-800 text-base sm:text-lg md:text-xl mb-5 sm:mb-6 md:mb-7 leading-relaxed font-normal">{description}</p>
       
       <div className="mb-5 sm:mb-6 md:mb-7">
-        <h4 className="font-heading font-bold uppercase text-brand-brown mb-3 sm:mb-4 text-sm sm:text-base tracking-wide">Key Features</h4>
+        <h4 className="font-heading font-bold uppercase text-brand-charcoal dark:text-white mb-3 sm:mb-4 text-sm sm:text-base tracking-wide">Key Features</h4>
         <ul className="space-y-2 sm:space-y-3">
           {features.map((feature, i) => (
             <li key={i} className="flex items-start">
@@ -96,7 +78,7 @@ const ProductDetail: React.FC<{
       </div>
 
       <div className="bg-gray-50 p-5 sm:p-6 md:p-7 lg:p-8 border border-gray-200 rounded-sm">
-         <h4 className="font-heading font-bold uppercase text-brand-brown mb-3 sm:mb-4 text-sm sm:text-base tracking-wide">Technical Specifications</h4>
+         <h4 className="font-heading font-bold uppercase text-brand-charcoal dark:text-white mb-3 sm:mb-4 text-sm sm:text-base tracking-wide">Technical Specifications</h4>
          <SpecTable specs={specs} />
       </div>
 

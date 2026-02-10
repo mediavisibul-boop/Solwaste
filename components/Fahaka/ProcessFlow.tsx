@@ -35,14 +35,14 @@ export const ProcessFlow: React.FC = () => {
   ];
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-white">
+    <section className="py-12 sm:py-16 lg:py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-3 xs:px-4 sm:px-6">
         {/* Section Header */}
         <div className="text-center mb-8 sm:mb-12">
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-dark mb-2">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-charcoal dark:text-white mb-2">
             The Process
           </h3>
-          <p className="text-gray-600">From contaminated input to sterile output</p>
+          <p className="text-gray-600 dark:text-gray-400">From contaminated input to sterile output</p>
         </div>
 
         {/* Process Steps */}
@@ -56,9 +56,9 @@ export const ProcessFlow: React.FC = () => {
               transition={{ delay: index * 0.1 }}
               className="relative"
             >
-              <div className="h-full p-6 rounded-xl bg-gray-50 border border-gray-200 hover:border-brand-gold transition-all duration-300 shadow-sm hover:shadow-md flex flex-col">
+              <div className="h-full p-6 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-brand-gold transition-all duration-300 shadow-sm hover:shadow-md flex flex-col">
                 {/* Step Number */}
-                <div className="w-12 h-12 rounded-full bg-brand-gold text-brand-dark font-bold text-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-full bg-brand-gold text-brand-charcoal font-bold text-lg flex items-center justify-center mb-4">
                   {step.number}
                 </div>
                 
@@ -66,8 +66,8 @@ export const ProcessFlow: React.FC = () => {
                 <step.icon className="w-10 h-10 text-brand-gold mb-3" />
                 
                 {/* Content */}
-                <h4 className="text-lg font-bold text-brand-dark mb-2">{step.title}</h4>
-                <p className="text-sm text-gray-600 flex-grow">{step.description}</p>
+                <h4 className="text-lg font-bold text-brand-charcoal dark:text-white mb-2">{step.title}</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-400 flex-grow">{step.description}</p>
               </div>
               
               {/* Arrow (Desktop) */}

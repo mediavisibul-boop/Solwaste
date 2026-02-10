@@ -7,18 +7,18 @@ import { ScrollReveal, StaggerContainer, StaggerItem } from '../components/ui/Sc
 
 const BenefitCard: React.FC<{ title: string; text: string; icon: React.ReactNode }> = ({ title, text, icon }) => (
   <StaggerItem>
-    <div className="bg-gray-50 p-8 border-l-4 border-transparent hover:border-brand-gold hover:bg-white hover:shadow-xl transition-all duration-300 group">
-      <div className="text-gray-600 group-hover:text-brand-gold mb-4 transition-colors">{icon}</div>
-      <h3 className="text-xl font-heading font-bold text-brand-brown mb-3 uppercase">{title}</h3>
-      <p className="text-gray-700 text-base leading-relaxed">{text}</p>
+    <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-[#BED754] shadow-sm hover:shadow-md transition-all duration-300 group h-full flex flex-col">
+      <div className="text-gray-500 dark:text-gray-400 group-hover:text-[#BED754] mb-4 transition-colors">{icon}</div>
+      <h3 className="text-lg font-heading font-bold text-[#44444E] dark:text-white mb-3 uppercase tracking-wide">{title}</h3>
+      <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed flex-grow">{text}</p>
     </div>
   </StaggerItem>
 );
 
 const PersonaTag: React.FC<{ label: string }> = ({ label }) => (
-    <div className="bg-white border border-gray-200 px-6 py-4 flex items-center shadow-sm hover:shadow-md hover:border-brand-gold transition-all duration-300">
-        <CheckCircle className="text-brand-gold mr-3 w-5 h-5" />
-        <span className="font-heading font-bold text-lg text-brand-brown uppercase tracking-wide">{label}</span>
+    <div className="bg-white border border-gray-200 px-4 py-3.5 flex items-center h-full min-h-[60px] shadow-sm hover:shadow-md hover:border-[#BED754] transition-all duration-300">
+        <CheckCircle className="text-[#BED754] mr-2.5 w-5 h-5 flex-shrink-0" />
+        <span className="font-heading font-semibold text-base text-[#44444E] dark:text-white uppercase tracking-wide">{label}</span>
     </div>
 );
 
@@ -28,7 +28,7 @@ const Step: React.FC<{ number: string; title: string; text: string }> = ({ numbe
             {number}
         </div>
         <div className="pt-1">
-            <h4 className="text-xl font-heading font-bold text-brand-dark mb-2">{title}</h4>
+            <h4 className="text-xl font-heading font-bold text-brand-charcoal dark:text-white mb-2">{title}</h4>
             <p className="text-gray-700 font-medium">{text}</p>
         </div>
     </div>
@@ -84,20 +84,20 @@ export const PartnerWithUs: React.FC = () => {
       <section className="py-24 bg-gray-50 border-b border-gray-200">
         <div className="container mx-auto px-6">
             <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-heading font-bold text-brand-brown mb-4 uppercase">Is This You?</h2>
+                <h2 className="text-4xl md:text-5xl font-heading font-bold text-brand-charcoal dark:text-white mb-4 uppercase">Is This You?</h2>
                 <div className="w-16 h-1 bg-brand-gold mx-auto"></div>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
                 {[
-                    "Sustainability Enthusiasts",
                     "Students",
                     "Consultants",
+                    "Freelancers",
+                    "Entrepreneurs",
+                    "Sustainability Enthusiasts",
                     "Housing Society Connectors",
                     "Sales Professionals",
-                    "Environmental Activists",
-                    "Freelancers",
-                    "Entrepreneurs"
+                    "Environmental Activists"
                 ].map((label, idx) => (
                     <motion.div
                         key={idx}
@@ -117,7 +117,7 @@ export const PartnerWithUs: React.FC = () => {
       <section className="py-24 bg-white">
           <div className="container mx-auto px-6">
               <div className="text-center max-w-3xl mx-auto mb-20">
-                  <h2 className="text-4xl md:text-5xl font-heading font-bold text-brand-brown mb-6 uppercase">A Partnership That <br/><span className="text-brand-gold">Actually Makes Sense</span></h2>
+                  <h2 className="text-4xl md:text-5xl font-heading font-bold text-brand-charcoal dark:text-white mb-6 uppercase">A Partnership That <br/><span className="text-brand-gold">Actually Makes Sense</span></h2>
                   <p className="text-xl text-gray-600 font-light">
                     No fluff. No empty promises. Just a clean, scalable way to earn while contributing to real environmental impact.
                   </p>
@@ -159,13 +159,13 @@ export const PartnerWithUs: React.FC = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-24 bg-gray-50 text-brand-dark relative overflow-hidden">
+      <section className="py-24 bg-gray-50 dark:bg-gray-900 text-brand-charcoal dark:text-white relative overflow-hidden">
          <div className="absolute -left-20 -bottom-20 w-96 h-96 bg-brand-gold rounded-full opacity-10 blur-[120px]"></div>
          <div className="absolute -right-32 -top-32 w-96 h-96 bg-brand-olive rounded-full opacity-10 blur-[120px]"></div>
           <div className="container mx-auto px-6 relative z-10">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                   <div>
-                      <h2 className="text-4xl md:text-5xl font-heading font-bold mb-10 uppercase text-brand-dark">What happens after you apply?</h2>
+                      <h2 className="text-4xl md:text-5xl font-heading font-bold mb-10 uppercase text-brand-charcoal dark:text-white">What happens after you apply?</h2>
                       <div className="space-y-12 pl-4 border-l-4 border-brand-gold/60">
                           <Step 
                             number="1" 
@@ -185,7 +185,7 @@ export const PartnerWithUs: React.FC = () => {
                       </div>
                   </div>
                   
-                  <div className="bg-white text-brand-dark p-10 rounded-sm shadow-2xl">
+                  <div className="bg-white dark:bg-gray-800 text-brand-charcoal dark:text-white p-10 rounded-sm shadow-2xl">
                         <div className="flex items-center mb-6">
                             <Rocket className="text-brand-gold mr-4" size={40} />
                             <h3 className="text-3xl font-heading font-bold uppercase">Ready to Start?</h3>

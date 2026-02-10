@@ -3,11 +3,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '../components/ui/Button';
 import { GlassButton } from '../components/ui/GlassButton';
 import { FloatingCard, AnimatedIcon, GlassCard } from '../components/ui/AnimatedComponents';
-import { ChevronLeft as ChevronLeftIcon, ChevronRight as ChevronRightIcon, Zap, ShieldCheck, Recycle, Target, Globe, Award, Box as BoxIcon, Clock, Settings, Battery, Leaf, Check, X, Building2, Scale, Flame, Layers, CloudFog, RefreshCw, FileText, TrendingUp, CheckCircle, Factory, Briefcase, Rocket, ArrowRight, Mail, Sparkles, Package, Timer, Shield, Gauge } from 'lucide-react';
+import { ChevronLeft as ChevronLeftIcon, ChevronRight as ChevronRightIcon, Zap, ShieldCheck, Recycle, Target, Globe, Award, Box as BoxIcon, Clock, Settings, Battery, Leaf, Check, X, Building2, Scale, Flame, Layers, CloudFog, RefreshCw, FileText, TrendingUp, CheckCircle, Factory, Briefcase, Rocket, ArrowRight, Mail, Phone, Sparkles, Package, Timer, Shield, Gauge } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PartnersSection from '../components/PartnersSection';
 import { SEO, addSchemaToPage, generateFAQSchema } from '../components/SEO';
-import { GovernmentMandate, BWGInfo, ImpactStats, ProcessFlow, MissionGrid } from '../components/Home';
+import { GovernmentMandate, BWGInfo, ImpactStats, ProcessAndValues } from '../components/Home';
 
 // Re-export some icons for backwards compatibility
 const ChevronLeft = ChevronLeftIcon;
@@ -110,26 +110,27 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
     const currentImage = slide.images ? slide.images[currentImageIndex] : undefined;
 
     return (
-      <div className="relative w-full h-full flex flex-col justify-between bg-black text-center px-3 xs:px-4 sm:px-6 overflow-hidden">
-        {/* Background Image Slideshow - Optimized for Mobile */}
+      <div className="relative w-full h-full flex flex-col justify-between text-center overflow-hidden">
+        {/* Background Image Slideshow - Full Viewport Cover */}
         <div className="absolute inset-0 z-0">
           {currentImage && (
             <AnimatePresence>
-              <motion.img 
+              <motion.div 
                 key={currentImage}
-                src={currentImage} 
-                alt={slide.title} 
-                className="absolute inset-0 w-full h-full object-cover object-center md:object-contain lg:object-cover"
+                className="absolute inset-0 w-full h-full"
                 style={{
-                  objectPosition: 'center center',
+                  backgroundImage: `url(${currentImage})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
                   transform: 'translateZ(0)',
                   backfaceVisibility: 'hidden',
                   WebkitBackfaceVisibility: 'hidden'
                 }}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.6, ease: "easeInOut" }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
               />
             </AnimatePresence>
           )}
@@ -138,8 +139,9 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
         </div>
 
         {/* Content - Better mobile spacing */}
-        <div className="relative z-10 max-w-5xl mx-auto pt-24 xs:pt-28 sm:pt-32 md:pt-36 px-3 xs:px-4 flex-grow flex flex-col justify-center">
+        <div className="relative z-10 w-full h-full flex flex-col justify-center items-center px-4 sm:px-6 py-24">
            <motion.div
+             className="max-w-5xl mx-auto"
              initial={{ opacity: 0, y: 30 }}
              animate={{ opacity: 1, y: 0 }}
              transition={{ delay: 0.3 }}
@@ -151,7 +153,7 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
              <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-heading font-semibold text-white mb-6 sm:mb-8 uppercase tracking-wide text-shadow-md">
                {slide.subtitle}
              </p>
-             <p className="text-white text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed font-medium px-4 text-shadow-md">
+             <p className="text-white text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed font-medium text-shadow-md">
                Breaking the barriers of organic waste. <br className="hidden sm:block"/>
                Processing <span className="font-semibold text-white">Food, Plastics, and Sanitary Waste</span> into sterile resources.
              </p>
@@ -170,27 +172,6 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
              </Link>
            </motion.div>
         </div>
-
-        {/* Image Slideshow Indicators */}
-        {slide.images && slide.images.length > 1 && (
-          <div className="relative z-10 pb-6 sm:pb-8">
-            <div className="flex justify-center gap-2 sm:gap-2.5">
-              {slide.images.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setCurrentImageIndex(idx)}
-                  className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 touch-manipulation cursor-pointer ${
-                    idx === currentImageIndex 
-                      ? 'w-6 sm:w-8 bg-brand-gold' 
-                      : 'w-1.5 sm:w-2 bg-white/30 hover:bg-white/50'
-                  }`}
-                  aria-label={`View image ${idx + 1}`}
-                  type="button"
-                />
-              ))}
-            </div>
-          </div>
-        )}
       </div>
     );
   }
@@ -230,18 +211,18 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
 
   return (
     <div className={`relative w-full h-full flex flex-col justify-between ${backgroundClass}`}>
-       {/* Background Image with Slideshow + Parallax - Mobile Optimized */}
+       {/* Background Image with Slideshow - Full Viewport Cover */}
        <div className="absolute inset-0 z-0">
         {currentImage && (
           <AnimatePresence>
-            <motion.img 
+            <motion.div 
               key={currentImage}
-              src={currentImage} 
-              alt={slide.title} 
-              loading="eager"
-              className="absolute inset-0 w-full h-full object-cover object-center"
+              className="absolute inset-0 w-full h-full"
               style={{
-                objectPosition: 'center center',
+                backgroundImage: `url(${currentImage})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
                 transform: 'translateZ(0)', // Force GPU acceleration
                 backfaceVisibility: 'hidden',
                 WebkitBackfaceVisibility: 'hidden'
@@ -356,31 +337,6 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
             </Link>
           </div>
         </div>
-        
-        {/* Image Slideshow Indicators - Mobile Optimized */}
-        {slide.images && slide.images.length > 1 && (
-          <div className="flex justify-center items-center gap-1.5 xs:gap-2 sm:gap-2.5 mt-4 xs:mt-5 sm:mt-6 md:mt-7 lg:mt-8">
-            {slide.images.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setCurrentImageIndex(idx)}
-                className={`rounded-full transition-all duration-300 ease-in-out touch-manipulation cursor-pointer min-w-[40px] min-h-[40px] xs:min-w-[44px] xs:min-h-[44px] flex items-center justify-center p-1.5 xs:p-2 active:scale-90 ${
-                  idx === currentImageIndex 
-                    ? 'scale-110'
-                    : 'scale-100 hover:scale-105'
-                }`}
-                aria-label={`View image ${idx + 1}`}
-                type="button"
-              >
-                <span className={`block rounded-full transition-all duration-300 ${
-                  idx === currentImageIndex
-                    ? `h-1.5 xs:h-2 sm:h-2.5 md:h-3 w-6 xs:w-8 sm:w-10 md:w-12 ${isDark ? 'bg-white shadow-lg shadow-white/50' : 'bg-brand-dark shadow-lg shadow-brand-dark/50'}`
-                    : `h-1.5 xs:h-2 sm:h-2.5 md:h-3 w-1.5 xs:w-2 sm:w-2.5 md:w-3 ${isDark ? 'bg-white/40 hover:bg-white/60' : 'bg-brand-dark/40 hover:bg-brand-dark/60'}`
-                }`}></span>
-              </button>
-            ))}
-          </div>
-        )}
       </div>
     </div>
   );
@@ -479,13 +435,6 @@ export const Home: React.FC = () => {
         type="website"
       />
       
-      {/* Scroll Progress Indicator */}
-      <motion.div 
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-gold via-brand-gold-dark to-brand-gold z-50 origin-left"
-        style={{ scaleX: scrollProgress / 100 }}
-        initial={{ scaleX: 0 }}
-      />
-      
       {/* Sticky CTA Button - Enhanced with Glass Morphism */}
       <motion.div
         className="fixed bottom-6 right-6 z-40 touch-manipulation"
@@ -496,9 +445,9 @@ export const Home: React.FC = () => {
         }}
         transition={{ duration: 0.3 }}
       >
-        <Link to="/contact" className="block">
+        <a href="tel:+919429691308" className="block">
           <motion.div
-            className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/10 backdrop-blur-md border-2 border-white/20 shadow-2xl shadow-brand-gold/40 flex items-center justify-center cursor-pointer overflow-hidden group touch-manipulation"
+            className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white backdrop-blur-md border-3 border-gray-900 shadow-2xl shadow-gray-900/30 flex items-center justify-center cursor-pointer overflow-hidden group touch-manipulation"
             whileHover={{ scale: 1.15, rotate: 5 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -511,18 +460,29 @@ export const Home: React.FC = () => {
             <div className="absolute inset-0 rounded-full border-2 border-brand-gold/60" />
             
             {/* Icon */}
-            <Mail className="w-8 h-8 sm:w-10 sm:h-10 text-white relative z-10 group-hover:rotate-12 transition-transform duration-300" />
+            <Phone className="w-8 h-8 sm:w-10 sm:h-10 text-gray-900 relative z-10 group-hover:text-white group-hover:rotate-12 transition-all duration-300" />
             
             {/* Tooltip */}
             <div className="absolute right-full mr-4 px-4 py-2 bg-brand-dark text-white text-sm font-bold rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-              Request Site Visit
+              Call Us Now
             </div>
           </motion.div>
-        </Link>
+        </a>
       </motion.div>
       
       {/* FULL SCREEN SLIDER SECTION */}
-      <section className="relative h-screen overflow-hidden" data-hero-section>
+      <section 
+        className="relative overflow-hidden" 
+        data-hero-section 
+        style={{ 
+          height: '100vh',
+          width: '100vw',
+          margin: 0,
+          padding: 0,
+          maxWidth: '100vw',
+          position: 'relative'
+        }}
+      >
         {/* Ambient animated blobs + subtle noise for premium background */}
         <div className="ambient-blobs" aria-hidden="true" />
         <div className="noise-overlay" aria-hidden="true" />
@@ -531,16 +491,16 @@ export const Home: React.FC = () => {
         <div
           className="
             hero-scroll
-            h-full
-            w-full
-            overflow-x-auto
-            overflow-y-hidden
             flex
             snap-x
             snap-mandatory
             scroll-smooth
           "
           style={{
+            height: '100%',
+            width: '100%',
+            overflowX: 'auto',
+            overflowY: 'hidden',
             WebkitOverflowScrolling: 'touch',
             scrollbarWidth: 'none',
             msOverflowStyle: 'none'
@@ -551,12 +511,15 @@ export const Home: React.FC = () => {
               key={slide.id}
               data-slide
               data-index={index}
-              className="
-                h-screen
-                w-screen
-                flex-shrink-0
-                snap-start
-              "
+              className="flex-shrink-0 snap-start"
+              style={{
+                height: '100vh',
+                width: '100vw',
+                minWidth: '100vw',
+                maxWidth: '100vw',
+                margin: 0,
+                padding: 0
+              }}
             >
               <SlideContent
                 slide={slide}
@@ -596,22 +559,17 @@ export const Home: React.FC = () => {
         </div>
 
         {/* BOTTOM INDICATORS - Mobile Optimized with Better Touch Targets */}
-        <div className="absolute bottom-4 xs:bottom-5 sm:bottom-6 md:bottom-8 lg:bottom-10 left-1/2 transform -translate-x-1/2 z-20 flex gap-1.5 xs:gap-2 sm:gap-2.5 md:gap-3">
-             {slides.map((_, idx) => (
-                 <button 
-                    key={idx}
-                    onClick={() => {
-                        document.querySelector(`[data-index="${idx}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
-                    }}
-                    className={`min-w-[40px] min-h-[40px] xs:min-w-[44px] xs:min-h-[44px] flex items-center justify-center p-1.5 xs:p-2 rounded-full transition-all duration-300 ease-in-out touch-manipulation active:scale-90 cursor-pointer ${idx === currentIndex ? 'scale-110' : 'scale-100 hover:scale-105'}`}
-                    aria-label={`Go to slide ${idx + 1}: ${slides[idx].title}`}
-                    aria-current={idx === currentIndex ? 'true' : 'false'}
-                    type="button"
-                 >
-                    <span className={`block rounded-full transition-all duration-300 ${idx === currentIndex ? 'h-1.5 xs:h-2 sm:h-2.5 md:h-3 w-10 xs:w-12 sm:w-14 md:w-18 lg:w-20 bg-brand-gold shadow-lg shadow-brand-gold/50' : 'h-1.5 xs:h-2 sm:h-2.5 md:h-3 w-1.5 xs:w-2 sm:w-2.5 md:w-3 bg-white/40 hover:bg-white/70 active:bg-white'}`}></span>
-                 </button>
-             ))}
-        </div>
+      </section>
+
+      {/* Homesol Image Section */}
+      <section className="w-full" style={{ margin: 0, padding: 0 }}>
+        <img 
+          src="/homesol.png" 
+          alt="Solwaste Solutions"
+          className="w-full h-auto object-cover"
+          style={{ display: 'block', margin: 0, padding: 0 }}
+          loading="lazy"
+        />
       </section>
 
       <GovernmentMandate />
@@ -676,11 +634,8 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Process Flow Section - Full Width */}
-      <ProcessFlow />
-
-      {/* Mission Grid Section - Full Width */}
-      <MissionGrid />
+      {/* Process & Values Section - Merged and Compact */}
+      <ProcessAndValues />
 
       {/* Partners and Testimonials Section */}
       <PartnersSection />

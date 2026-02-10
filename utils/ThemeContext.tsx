@@ -10,7 +10,12 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  // TEMPORARILY DISABLED: Dark mode forced to light until fixes are complete
   const [theme, setTheme] = useState<Theme>(() => {
+    // Force light mode for now
+    return 'light';
+    
+    /* ORIGINAL CODE - Re-enable when dark mode is ready
     // Safe check for browser environment
     if (typeof window === 'undefined') {
       return 'light';
@@ -37,11 +42,16 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     }
     
     return 'light';
+    */
   });
 
   useEffect(() => {
     const root = document.documentElement;
     
+    // TEMPORARILY DISABLED: Force remove dark class
+    root.classList.remove('dark');
+    
+    /* ORIGINAL CODE - Re-enable when dark mode is ready
     if (theme === 'dark') {
       root.classList.add('dark');
     } else {
@@ -53,6 +63,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     } catch (error) {
       console.error('Error saving theme to localStorage:', error);
     }
+    */
   }, [theme]);
 
   const toggleTheme = () => {

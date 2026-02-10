@@ -4,6 +4,7 @@ import App from './App';
 import { ThemeProvider } from './utils/ThemeContext';
 import './styles/tailwind.css';
 import './styles/premium.css';
+import './styles/unified-cards.css';
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {

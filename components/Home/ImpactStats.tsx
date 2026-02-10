@@ -22,7 +22,7 @@ export const ImpactStats: React.FC = () => {
       
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <ScrollReveal variant="fadeInUp" viewport={{ once: true, amount: 0.4 }}>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-brand-dark mb-3 sm:mb-4 uppercase text-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-brand-charcoal dark:text-white mb-3 sm:mb-4 uppercase text-center">
             Our <span className="text-brand-gold">Impact</span>
           </h2>
           <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto mb-6 sm:mb-8 text-center">
@@ -64,7 +64,7 @@ export const ImpactStats: React.FC = () => {
                 
                 {/* Value with counter animation */}
                 <motion.div 
-                  className="text-3xl sm:text-4xl md:text-5xl font-heading font-black text-brand-dark mb-1 sm:mb-2 group-hover:text-brand-gold transition-colors"
+                  className="text-3xl sm:text-4xl md:text-5xl font-heading font-black text-brand-charcoal dark:text-white mb-1 sm:mb-2 group-hover:text-brand-gold transition-colors"
                   initial={{ scale: 0.5, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
                   transition={{ delay: i * 0.1 + 0.2, type: 'spring', stiffness: 200 }}
@@ -74,7 +74,7 @@ export const ImpactStats: React.FC = () => {
                 </motion.div>
                 
                 {/* Label */}
-                <div className="text-xs sm:text-sm font-bold text-gray-600 uppercase tracking-wider group-hover:text-brand-dark transition-colors">
+                <div className="text-xs sm:text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wider group-hover:text-brand-charcoal dark:group-hover:text-white transition-colors">
                   {stat.label}
                 </div>
                 

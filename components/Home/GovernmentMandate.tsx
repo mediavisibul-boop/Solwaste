@@ -50,7 +50,7 @@ export const GovernmentMandate: React.FC = () => {
                 </span>
               </div>
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold mb-6 uppercase leading-tight">
-                <span className="text-brand-dark drop-shadow-[0_2px_10px_rgba(0,0,0,0.3)]">Government</span> <br/>
+                <span className="text-brand-charcoal dark:text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.3)]">Government</span> <br/>
                 <span className="text-brand-gold drop-shadow-[0_2px_15px_rgba(212,175,55,0.5)]">Mandate Ready</span>
               </h2>
               <p className="text-gray-800 text-lg max-w-3xl mx-auto leading-relaxed font-medium">
@@ -78,20 +78,12 @@ export const GovernmentMandate: React.FC = () => {
                   transition={{ type: 'spring', stiffness: 300 }}
                 >
                   <GlassCard className="p-5 flex flex-col items-center justify-center min-h-[140px]">
-                    {/* Animated icon */}
-                    <motion.div
-                      className="text-brand-gold mb-3"
-                      whileHover={{ rotate: [0, -10, 10, 0] }}
-                      transition={{ duration: 0.5 }}
-                    >
+                    {/* Icon - No animation */}
+                    <div className="text-brand-gold mb-3">
                       <badge.icon size={32} strokeWidth={2} />
-                    </motion.div>
+                    </div>
                     <div className="text-gray-800 font-bold text-base uppercase tracking-wider text-center leading-tight mb-2 block">{badge.label}</div>
                     <div className="text-gray-600 text-xs text-center leading-relaxed block">{badge.desc}</div>
-                    
-                    {/* Corner accents */}
-                    <div className="absolute top-2 right-2 w-2 h-2 border-t-2 border-r-2 border-brand-gold/40" />
-                    <div className="absolute bottom-2 left-2 w-2 h-2 border-b-2 border-l-2 border-brand-gold/40" />
                   </GlassCard>
                 </motion.div>
               ))}

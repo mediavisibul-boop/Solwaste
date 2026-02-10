@@ -16,11 +16,11 @@ const SpecTable: React.FC<{ specs: {label: string, value: string}[] }> = ({ spec
           <div className="absolute top-0 right-0 w-12 h-12 bg-gradient-to-br from-brand-gold/10 to-transparent rounded-tr-xl rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           
           <div className="relative">
-            <div className="text-xs sm:text-sm font-bold text-gray-500 uppercase tracking-widest mb-2 sm:mb-3 flex items-center gap-2">
+            <div className="text-xs sm:text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-2 sm:mb-3 flex items-center gap-2">
               <div className="w-1 h-1 rounded-full bg-brand-gold" />
               {s.label}
             </div>
-            <div className="text-xl sm:text-2xl md:text-3xl font-heading font-black text-brand-dark group-hover:text-brand-gold transition-colors duration-300">
+            <div className="text-xl sm:text-2xl md:text-3xl font-heading font-black text-brand-charcoal dark:text-white group-hover:text-brand-gold transition-colors duration-300">
               {s.value}
             </div>
           </div>
@@ -57,11 +57,11 @@ const ProductDetail: React.FC<{
   }, [images.length]);
 
   return (
-    <div className="py-12 sm:py-16 md:py-20 border-b border-gray-200 last:border-0">
+      <div className="py-12 sm:py-16 md:py-20 border-b border-gray-200 dark:border-gray-700 last:border-0">
       {/* Product Details - Image + Description Side by Side */}
       <div className={`flex flex-col ${reversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-8 sm:gap-10 md:gap-12 lg:gap-16 px-4 sm:px-6 lg:px-8 mb-12`}>
         <div className="lg:w-1/2 w-full">
-          <div className="relative group overflow-hidden bg-gray-100 rounded-sm shadow-xl aspect-[4/3]">
+          <div className="relative group overflow-hidden bg-gray-100 dark:bg-gray-800 rounded-sm shadow-xl aspect-[4/3]">
             <AnimatePresence mode="wait">
               <motion.img
                 key={currentImageIndex}
@@ -74,38 +74,20 @@ const ProductDetail: React.FC<{
                 transition={{ duration: 0.5 }}
               />
             </AnimatePresence>
-            
-            {/* Image indicators */}
-            {images.length > 1 && (
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
-                {images.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setCurrentImageIndex(idx)}
-                    className={`rounded-full transition-all duration-300 ${
-                      idx === currentImageIndex
-                        ? 'h-2.5 w-10 bg-brand-gold shadow-lg shadow-brand-gold/50'
-                        : 'h-2.5 w-2.5 bg-white/60 hover:bg-white/80'
-                    }`}
-                    aria-label={`View image ${idx + 1}`}
-                  />
-                ))}
-              </div>
-            )}
           </div>
         </div>
         
         <div className="lg:w-1/2 w-full">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-brand-brown mb-3 sm:mb-4 md:mb-5 uppercase leading-tight">{name}</h2>
-          <p className="text-gray-800 text-base sm:text-lg md:text-xl mb-5 sm:mb-6 md:mb-7 leading-relaxed font-normal">{description}</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-brand-charcoal dark:text-white mb-3 sm:mb-4 md:mb-5 uppercase leading-tight">{name}</h2>
+          <p className="text-gray-700 dark:text-gray-300 text-base sm:text-lg md:text-xl mb-5 sm:mb-6 md:mb-7 leading-relaxed font-normal">{description}</p>
           
           <div>
-            <h4 className="font-heading font-bold uppercase text-brand-brown mb-3 sm:mb-4 text-sm sm:text-base tracking-wide">Key Features</h4>
+            <h4 className="font-heading font-bold uppercase text-brand-charcoal dark:text-white mb-3 sm:mb-4 text-sm sm:text-base tracking-wide">Key Features</h4>
             <ul className="space-y-2 sm:space-y-3">
               {features.map((feature, i) => (
                 <li key={i} className="flex items-start">
                   <Check className="text-brand-gold mr-3 sm:mr-4 mt-1 flex-shrink-0" size={18} />
-                  <span className="text-gray-900 font-semibold text-base sm:text-lg">{feature}</span>
+                  <span className="text-gray-800 dark:text-gray-200 font-semibold text-base sm:text-lg">{feature}</span>
                 </li>
               ))}
             </ul>
@@ -114,7 +96,7 @@ const ProductDetail: React.FC<{
       </div>
 
       {/* Specifications Section - Full Width */}
-      <div className="bg-gradient-to-br from-brand-light via-white to-brand-light/50 py-8 sm:py-10 lg:py-12 px-4 sm:px-6 border-t-2 border-gray-100 relative overflow-hidden">
+      <div className="bg-gradient-to-br from-brand-light via-white to-brand-light/50 dark:from-[#1e1e1e] dark:via-[#252525] dark:to-[#1e1e1e] py-8 sm:py-10 lg:py-12 px-4 sm:px-6 border-t-2 border-gray-100 dark:border-gray-700 relative overflow-hidden">
         {/* Subtle pattern background */}
         <div className="absolute inset-0 opacity-[0.02]" style={{
           backgroundImage: 'radial-gradient(circle at 2px 2px, #000 1px, transparent 1px)',
@@ -133,10 +115,10 @@ const ProductDetail: React.FC<{
               <h4 className="text-xs sm:text-sm font-bold text-brand-gold uppercase tracking-[0.2em]">Specifications</h4>
               <div className="h-1 w-8 sm:w-12 bg-gradient-to-l from-brand-gold to-brand-gold-dark rounded-full" />
             </div>
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-brand-dark uppercase tracking-tight">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-brand-charcoal dark:text-white uppercase tracking-tight">
               Technical Details
             </h3>
-            <p className="text-gray-600 mt-3 sm:mt-4 text-sm sm:text-base max-w-2xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-400 mt-3 sm:mt-4 text-sm sm:text-base max-w-2xl mx-auto">
               Precision-engineered specifications for optimal performance and reliability
             </p>
           </div>

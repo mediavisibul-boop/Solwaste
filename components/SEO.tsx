@@ -16,7 +16,7 @@ export const SEO: React.FC<SEOProps> = ({
   title,
   description,
   keywords = 'composting solutions for large waste generators in India, organic waste management, bulk waste generators India, BWG, SWM Rules 2026, on-site composting, composting machines, waste management solutions, EcoLoop, CompoGen, CyberSoil, Fahaka, organic waste composter, sustainable waste management, waste compliance India, zero waste India, ESG sustainability, waste to wealth India',
-  image = '/logo.png',
+  image = '/homesol.png',
   type = 'website',
   author = 'Solwaste',
   publishedTime,
@@ -62,6 +62,7 @@ export const SEO: React.FC<SEOProps> = ({
     updateMetaTag('og:image:width', '1200', true);
     updateMetaTag('og:image:height', '630', true);
     updateMetaTag('og:image:alt', title, true);
+    updateMetaTag('og:image:type', 'image/png', true);
     updateMetaTag('og:site_name', 'Solwaste', true);
     updateMetaTag('og:locale', 'en_US', true);
 
@@ -134,7 +135,7 @@ export const SEO: React.FC<SEOProps> = ({
       alternateName: 'Solwaste - Sustainable Waste Management Solutions',
       url: siteUrl,
       logo: `${siteUrl}/logo.png`,
-      image: `${siteUrl}/logo.png`,
+      image: `${siteUrl}/homesol.png`,
       description: 'Leading sustainable waste management solutions provider in India. Offering organic waste composters for bulk waste generators (BWGs), industrial composting machines, and innovative waste processing technology. Serving hotels, malls, IT parks, hospitals, and institutions across India.',
       foundingDate: '2015',
       address: {

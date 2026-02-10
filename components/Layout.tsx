@@ -83,7 +83,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
     : 'text-brand-brown';
 
   return (
-    <div className="flex flex-col min-h-screen font-sans overflow-x-hidden max-w-full bg-gray-50">
+    <div className="flex flex-col min-h-screen font-sans overflow-x-hidden max-w-full bg-gray-50 dark:bg-[#1a1a1a]">
       <style>{`
             @keyframes marquee {
                 0% { transform: translateX(0); }
@@ -115,7 +115,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
         setIsMobileMenuOpen={setIsMobileMenuOpen}
       />
 
-      <main className="flex-grow">
+      <main className={`flex-grow ${isHomePage ? 'mt-0 pt-0' : ''}`}>
         {children}
       </main>
 

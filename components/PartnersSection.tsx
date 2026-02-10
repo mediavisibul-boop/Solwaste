@@ -60,7 +60,7 @@ const PartnersSection = () => {
   const duplicatedPartnersRow2 = [...partnersRow2, ...partnersRow2, ...partnersRow2];
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-brand-cream dark:bg-[#0f0f0f] border-t border-gray-200 dark:border-gray-800 overflow-hidden">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-brand-cream dark:bg-[#1a1a1a] border-t border-gray-200 dark:border-gray-700 overflow-hidden">
       <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -197,14 +197,14 @@ const PartnersSection = () => {
                       {[...testimonials, ...testimonials, ...testimonials].map((testimonial, index) => (
                           <div
                               key={`testimonial-${index}`}
-                              className="relative min-w-[280px] sm:min-w-[320px] md:min-w-[360px] p-4 sm:p-5 bg-gradient-to-br from-white to-brand-light/50 rounded-lg sm:rounded-xl border-l-4 border-brand-gold/30 hover:border-brand-gold transition-all hover:shadow-lg group cursor-pointer"
+                              className="relative min-w-[280px] sm:min-w-[320px] md:min-w-[360px] p-4 sm:p-5 bg-gradient-to-br from-white to-brand-light/50 dark:from-gray-800 dark:to-gray-700 rounded-lg sm:rounded-xl border-l-4 border-brand-gold/30 hover:border-brand-gold transition-all hover:shadow-lg group cursor-pointer"
                           >
-                              <p className="text-xs sm:text-sm text-brand-dark/80 leading-relaxed mb-2 sm:mb-3 italic">
+                              <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 leading-relaxed mb-2 sm:mb-3 italic">
                                   "{testimonial.quote}"
                               </p>
                               <div className="pt-2 border-t border-brand-gold/10">
-                                  <p className="font-bold text-brand-dark text-xs sm:text-sm">{testimonial.name}</p>
-                                  <p className="text-[10px] sm:text-xs text-brand-dark/60 mt-1">{testimonial.role}</p>
+                                  <p className="font-bold text-brand-charcoal dark:text-white text-xs sm:text-sm">{testimonial.name}</p>
+                                  <p className="text-[10px] sm:text-xs text-gray-600 dark:text-gray-400 mt-1">{testimonial.role}</p>
                               </div>
                           </div>
                       ))}
@@ -212,7 +212,7 @@ const PartnersSection = () => {
               </div>
           </div>
               
-          <p className="text-xs sm:text-sm text-brand-dark/50 mt-6 sm:mt-8 md:mt-10 text-center px-4">
+          <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-500 mt-6 sm:mt-8 md:mt-10 text-center px-4">
             Hotels • Builders • Institutions • Corporate Clients • Government Bodies
           </p>
       </div>
