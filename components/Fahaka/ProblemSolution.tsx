@@ -188,7 +188,7 @@ export const ProblemSolution: React.FC = () => {
                         <item.icon className="w-8 h-8 text-brand-gold mb-3 group-hover/card:drop-shadow-[0_0_8px_rgba(190,215,84,0.6)]" />
                       </motion.div>
                       <div className="text-sm font-bold text-white mb-1 font-heading uppercase tracking-wide">{item.label}</div>
-                      <div className="text-xs text-gray-600">{item.sub}</div>
+                      <div className="text-xs text-white">{item.sub}</div>
                     </motion.div>
                   ))}
                 </div>
