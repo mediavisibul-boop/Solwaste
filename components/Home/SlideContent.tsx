@@ -191,7 +191,7 @@ export const SlideContent: React.FC<SlideContentProps> = ({
       </div>
 
       {/* Header Content */}
-      <div className={`relative z-20 container mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 pt-20 xs:pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-40 text-center`}>
+      <div className={`relative z-20 container mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 pt-16 xs:pt-20 sm:pt-24 md:pt-28 lg:pt-32 xl:pt-36 text-center`}>
         <div
            className="max-w-6xl mx-auto"
            style={{ 
@@ -210,17 +210,17 @@ export const SlideContent: React.FC<SlideContentProps> = ({
            }}
         >
           <motion.div variants={{ visible: { opacity: 1, y: 0 }, hidden: { opacity: 0, y: 20 } }} transition={{ ease: [0.16, 1, 0.3, 1], duration: 0.6 }} className="overflow-hidden pb-[0.2em]">
-            <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-heading font-extrabold text-white mb-2 xs:mb-3 sm:mb-4 md:mb-5 lg:mb-6 tracking-tight leading-[1.05] xs:leading-[1.1] sm:leading-tight px-1 xs:px-2 md:px-4 text-shadow-lg">
+            <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-heading font-extrabold text-white mb-1.5 xs:mb-2 sm:mb-3 md:mb-4 lg:mb-5 tracking-tight leading-[1.05] xs:leading-[1.1] sm:leading-tight px-1 xs:px-2 md:px-4 text-shadow-lg">
               {slide.title}
             </h1>
           </motion.div>
           <motion.div variants={{ visible: { opacity: 1, y: 0 }, hidden: { opacity: 0, y: 20 } }} transition={{ ease: [0.16, 1, 0.3, 1], duration: 0.6 }} className="overflow-hidden pb-[0.2em]">
-            <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold uppercase tracking-wide sm:tracking-wider text-white mb-3 xs:mb-4 sm:mb-5 md:mb-6 lg:mb-7 px-1 xs:px-2 md:px-4 leading-snug text-shadow-md">
+            <h2 className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-semibold uppercase tracking-wide sm:tracking-wider text-white mb-2 xs:mb-3 sm:mb-4 md:mb-5 lg:mb-6 px-1 xs:px-2 md:px-4 leading-snug text-shadow-md">
               {slide.subtitle}
             </h2>
           </motion.div>
           <motion.div variants={{ visible: { opacity: 1, y: 0 }, hidden: { opacity: 0, y: 20 } }} transition={{ ease: [0.16, 1, 0.3, 1], duration: 0.6 }} className="overflow-hidden pb-[0.2em]">
-            <p className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white max-w-5xl mx-auto leading-relaxed md:leading-loose font-medium text-shadow-md">
+            <p className="text-[10px] xs:text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-white max-w-5xl mx-auto leading-relaxed md:leading-loose font-medium text-shadow-md line-clamp-2 sm:line-clamp-none">
               {slide.description}
             </p>
           </motion.div>
@@ -228,14 +228,14 @@ export const SlideContent: React.FC<SlideContentProps> = ({
       </div>
 
       {/* Footer Specs & CTA */}
-      <div className="relative z-10 container mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 pb-8 xs:pb-10 sm:pb-12 md:pb-16 lg:pb-20 xl:pb-24">
-        <div className="flex flex-col lg:flex-row items-stretch lg:items-end justify-between gap-8 sm:gap-10 md:gap-12 lg:gap-14 xl:gap-16">
+      <div className="relative z-10 container mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 pb-3 xs:pb-4 sm:pb-6 md:pb-10 lg:pb-14 xl:pb-18">
+        <div className="flex flex-col lg:flex-row items-stretch lg:items-end justify-between gap-2.5 xs:gap-3 sm:gap-5 md:gap-7 lg:gap-9 xl:gap-11">
           {/* Visual Proof Blocks */}
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-3 xs:gap-4 sm:gap-4 md:gap-5 lg:gap-6 w-full lg:flex-1 text-white">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-1.5 xs:gap-2 sm:gap-3 md:gap-4 lg:gap-5 xl:gap-6 w-full lg:flex-1 text-white">
             {slide.specs?.map((spec, idx) => (
               <motion.div 
                 key={idx} 
-                className="relative flex flex-col items-center justify-between bg-white/10 backdrop-blur-md rounded-lg sm:rounded-xl p-3 xs:p-4 sm:p-5 md:p-5 lg:p-6 border-2 border-white/30 hover:border-white/80 hover:bg-white/15 transition-all duration-300 group overflow-hidden shadow-xl hover:shadow-2xl aspect-square"
+                className="relative flex flex-col items-center justify-center bg-white/10 backdrop-blur-md rounded-md xs:rounded-lg sm:rounded-xl p-2 xs:p-2.5 sm:p-3 md:p-4 lg:p-5 xl:p-6 border border-white/30 xs:border-2 hover:border-white/80 hover:bg-white/15 transition-all duration-300 group overflow-hidden shadow-lg hover:shadow-xl"
                 style={{ willChange: 'transform' }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -243,47 +243,47 @@ export const SlideContent: React.FC<SlideContentProps> = ({
                 whileHover={{ scale: 1.05, y: -4, transition: { duration: 0.2 } }}
               >
                 <motion.div 
-                  className="text-2xl xs:text-3xl sm:text-4xl md:text-4xl lg:text-5xl relative z-10 text-white drop-shadow-lg flex-shrink-0"
+                  className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl relative z-10 text-white drop-shadow-lg flex-shrink-0 mb-1 xs:mb-1.5 sm:mb-2 md:mb-3"
                   whileHover={{ rotate: [0, -10, 10, 0], transition: { duration: 0.5 } }}
                 >
                   {getSpecIcon(spec.label)}
                 </motion.div>
                 
-                <div className="flex flex-col items-center gap-0.5 relative z-10 flex-grow justify-center">
-                   <div className="flex items-baseline gap-1 text-shadow-sm">
-                     <span className="text-xl xs:text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-heading font-extrabold leading-none text-white group-hover:scale-105 transition-transform duration-300">{spec.value}</span>
-                     {spec.unit && <span className="text-xs xs:text-sm sm:text-base font-semibold text-white opacity-90">{spec.unit}</span>}
+                <div className="flex flex-col items-center gap-0 xs:gap-0.5 sm:gap-1 relative z-10">
+                   <div className="flex items-baseline gap-0.5 text-shadow-sm">
+                     <span className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-heading font-extrabold leading-none text-white group-hover:scale-105 transition-transform duration-300">{spec.value}</span>
+                     {spec.unit && <span className="text-[10px] xs:text-xs sm:text-sm md:text-base lg:text-lg font-semibold text-white opacity-90">{spec.unit}</span>}
                    </div>
-                   <span className="text-[9px] xs:text-[10px] sm:text-xs font-bold uppercase tracking-wide relative z-10 text-white text-center leading-tight opacity-90 mt-1">{spec.label}</span>
+                   <span className="text-[9px] xs:text-[10px] sm:text-xs md:text-sm lg:text-base font-bold uppercase tracking-tight xs:tracking-wide relative z-10 text-white text-center leading-tight opacity-90 mt-0.5 px-1">{spec.label}</span>
                 </div>
               </motion.div>
             ))}
           </div>
 
           {/* Buttons */}
-          <div className="flex flex-col xs:flex-row gap-3 xs:gap-4 sm:gap-4 w-full lg:w-auto lg:flex-shrink-0 lg:self-end">
-             <Link to="/contact" className="w-full xs:flex-1 lg:w-auto">
+          <div className="flex flex-row gap-2 xs:gap-2.5 sm:gap-3 md:gap-4 w-full lg:w-auto lg:flex-shrink-0 lg:self-end">
+             <Link to="/contact" className="flex-1 lg:flex-initial">
                 <GlassButton 
                   variant="primary" 
                   size="lg" 
                   icon={ArrowRight}
                   glow={true}
-                  className="w-full h-full min-h-[56px] sm:min-h-[64px] px-6 sm:px-8 lg:min-w-[220px] text-base sm:text-lg"
+                  className="w-full h-[44px] xs:h-[48px] sm:h-[52px] md:h-[56px] lg:h-[60px] px-3 xs:px-4 sm:px-5 md:px-6 lg:px-8 lg:min-w-[180px] text-xs xs:text-sm sm:text-base md:text-lg"
                   asChild
                 >
                   Order Now
                 </GlassButton>
             </Link>
             
-            <Link to={`/owc#${slide.id}`} className="w-full xs:flex-1 lg:w-auto">
+            <Link to={`/owc#${slide.id}`} className="flex-1 lg:flex-initial">
                 <GlassButton 
                   variant="glass" 
                   size="lg" 
                   icon={Settings}
-                  className="w-full h-full min-h-[56px] sm:min-h-[64px] px-6 sm:px-8 lg:min-w-[220px] text-base sm:text-lg"
+                  className="w-full h-[44px] xs:h-[48px] sm:h-[52px] md:h-[56px] lg:h-[60px] px-3 xs:px-4 sm:px-5 md:px-6 lg:px-8 lg:min-w-[180px] text-xs xs:text-sm sm:text-base md:text-lg"
                   asChild
                 >
-                  Tech Specs
+                  Specs
                 </GlassButton>
             </Link>
           </div>
