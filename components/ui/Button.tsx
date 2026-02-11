@@ -19,7 +19,7 @@ export const Button: React.FC<ButtonProps> = ({
     inline-flex items-center justify-center 
     rounded-lg font-heading font-semibold
     transition-all duration-300 ease-out
-    focus:outline-none focus:ring-2 focus:ring-[#BED754] focus:ring-offset-2
+    focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2
     active:transform active:scale-[0.98]
     disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none
   `.trim().replace(/\s+/g, ' ');
@@ -33,33 +33,31 @@ export const Button: React.FC<ButtonProps> = ({
 
   const variants: Record<string, string> = {
     primary: `
-      bg-[#BED754] text-black border border-[#BED754]
-      hover:bg-[#A0C13F] hover:border-[#A0C13F]
+      bg-gray-900 text-white border border-gray-700
+      hover:bg-gray-800 hover:border-gray-600
       shadow-md hover:shadow-lg
     `.trim().replace(/\s+/g, ' '),
     
     secondary: `
-      bg-[#44444E] text-white border border-[#44444E]
-      hover:bg-[#2D2D2D] hover:border-[#2D2D2D]
+      bg-gray-700 text-white border border-gray-600
+      hover:bg-gray-600 hover:border-gray-500
       shadow-md hover:shadow-lg
     `.trim().replace(/\s+/g, ' '),
     
     outline: `
-      bg-transparent text-[#44444E] border-2 border-[#44444E]
-      hover:bg-[#44444E] hover:text-white
-      dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black
+      bg-transparent text-gray-900 border-2 border-gray-900
+      hover:bg-gray-900 hover:text-white
     `.trim().replace(/\s+/g, ' '),
     
     white: `
-      bg-white text-[#44444E] border border-gray-200
+      bg-white text-black border border-gray-200
       hover:bg-gray-50 hover:border-gray-300
       shadow-sm hover:shadow-md
     `.trim().replace(/\s+/g, ' '),
     
     ghost: `
-      bg-transparent text-[#44444E] border border-transparent
+      bg-transparent text-black border border-transparent
       hover:bg-black/5 hover:border-black/10
-      dark:text-white dark:hover:bg-white/10 dark:hover:border-white/20
     `.trim().replace(/\s+/g, ' '),
   };
 

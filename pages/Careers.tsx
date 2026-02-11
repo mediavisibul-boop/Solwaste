@@ -7,10 +7,10 @@ import { ScrollReveal, StaggerContainer, StaggerItem } from '../components/ui/Sc
 
 const BenefitCard: React.FC<{ title: string; text: string; icon: React.ReactNode }> = ({ title, text, icon }) => (
   <StaggerItem>
-    <div className="bg-gray-50 dark:bg-gray-800 p-6 border-l-4 border-transparent hover:border-brand-gold hover:bg-brand-cream dark:hover:bg-gray-700 hover:shadow-xl transition-all duration-300 group h-full flex flex-col">
-      <div className="text-gray-600 dark:text-gray-400 group-hover:text-brand-gold mb-4 transition-colors flex-shrink-0">{icon}</div>
-      <h3 className="text-lg font-heading font-bold text-brand-brown dark:text-white mb-3 uppercase flex-shrink-0">{title}</h3>
-      <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed flex-grow">{text}</p>
+    <div className="bg-white p-6 border-2 border-gray-200 hover:border-gray-900 hover:bg-gray-50 hover:shadow-xl transition-all duration-300 group h-full flex flex-col">
+      <div className="text-gray-900 group-hover:text-gray-700 mb-4 transition-colors flex-shrink-0">{icon}</div>
+      <h3 className="text-lg font-heading font-bold text-gray-900 mb-3 uppercase flex-shrink-0">{title}</h3>
+      <p className="text-gray-700 text-sm leading-relaxed flex-grow">{text}</p>
     </div>
   </StaggerItem>
 );
@@ -18,11 +18,11 @@ const BenefitCard: React.FC<{ title: string; text: string; icon: React.ReactNode
 const Step: React.FC<{ number: string; title: string; text: string }> = ({ number, title, text }) => (
     <StaggerItem>
       <div className="flex items-start space-x-6">
-        <div className="flex-shrink-0 w-12 h-12 bg-brand-gold text-white flex items-center justify-center font-heading font-bold text-xl rounded-full shadow-lg">
+        <div className="flex-shrink-0 w-12 h-12 bg-gray-900 text-white flex items-center justify-center font-heading font-bold text-xl rounded-full shadow-lg">
             {number}
         </div>
         <div>
-            <h4 className="text-xl font-heading font-bold text-brand-charcoal dark:text-white mb-2">{title}</h4>
+            <h4 className="text-xl font-heading font-bold text-gray-900 mb-2">{title}</h4>
             <p className="text-gray-700 font-medium">{text}</p>
         </div>
       </div>
@@ -45,9 +45,8 @@ export const Careers: React.FC = () => {
         type="website"
       />
       {/* Hero */}
-      <section className="bg-brand-dark text-white min-h-screen flex items-center relative overflow-hidden">
+      <section className="bg-gray-900 text-white min-h-screen flex items-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/50 to-black/40"></div>
         
         <div className="container mx-auto px-6 relative z-10 py-24 sm:py-28 md:py-32 lg:py-36">
             <motion.div
@@ -62,7 +61,7 @@ export const Careers: React.FC = () => {
                 <p className="text-lg md:text-xl text-white font-bold mb-5" style={{ textShadow: '0 3px 15px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.9)' }}>
                     Careers | Internships | Volunteering
                 </p>
-                <div className="w-20 h-1.5 bg-brand-gold mb-6"></div>
+                <div className="w-20 h-1.5 bg-white mb-6"></div>
                 <p className="text-lg text-white max-w-2xl leading-relaxed mb-6" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.8), 0 1px 6px rgba(0,0,0,0.9)' }}>
                     We're not just managing waste. We're redesigning how cities think about it. 
                     If sustainability excites you, climate action matters to you, and you want real-world exposure (not just certificates), you're in the right place.
@@ -72,10 +71,10 @@ export const Careers: React.FC = () => {
                   <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
                   
                   {/* Glow pulse */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brand-gold/10 animate-pulse"></div>
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gray-900/10 animate-pulse"></div>
                   
                   {/* Button content */}
-                  <div className="relative flex items-center justify-center gap-2.5 px-10 xs:px-12 sm:px-14 text-brand-dark dark:text-gray-900">
+                  <div className="relative flex items-center justify-center gap-2.5 px-10 xs:px-12 sm:px-14 text-gray-900">
                     <span className="text-base xs:text-lg sm:text-xl font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300 leading-none">View Open Roles</span>
                     <ChevronDown className="w-5 h-5 xs:w-6 xs:h-6 flex-shrink-0 group-hover:translate-y-1 transition-transform duration-300" strokeWidth={2.5} />
                   </div>
@@ -85,10 +84,10 @@ export const Careers: React.FC = () => {
       </section>
 
       {/* Why Join Us */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-gray-50">
           <div className="container mx-auto px-6">
               <div className="text-center max-w-3xl mx-auto mb-20">
-                  <h2 className="text-4xl md:text-5xl font-heading font-bold text-brand-charcoal dark:text-white mb-6 uppercase">Why Join Us?</h2>
+                  <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-6 uppercase">Why Join Us?</h2>
                   <p className="text-xl text-gray-600 font-light">
                     No greenwashing. No vanity projects. Just real impact, real learning, and work you can be proud of.
                   </p>
@@ -130,10 +129,10 @@ export const Careers: React.FC = () => {
       </section>
 
       {/* Roles */}
-      <section id="roles" className="py-24 bg-gray-50 border-y border-gray-200">
+      <section id="roles" className="py-24 bg-white border-y border-gray-200">
           <div className="container mx-auto px-6">
               <ScrollReveal variant="fadeInUp" viewport={{ once: true, amount: 0.5 }}>
-                <h2 className="text-4xl md:text-5xl font-heading font-bold text-brand-charcoal dark:text-white mb-12 uppercase">Open Roles</h2>
+                <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-12 uppercase">Open Roles</h2>
               </ScrollReveal>
               <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.06} viewport={{ once: true, amount: 0.1 }}>
                   {roles.map((role, idx) => (
@@ -142,29 +141,29 @@ export const Careers: React.FC = () => {
                           href="https://quark-cornflower-fe8.notion.site/2cc84662572280318ff3ff2d5f2f0fee?pvs=105"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="bg-white p-6 border border-gray-200 flex justify-between items-center group hover:border-brand-gold transition-all cursor-pointer shadow-sm hover:shadow-md"
+                          className="bg-gray-50 p-6 border-2 border-gray-200 flex justify-between items-center group hover:border-gray-900 hover:bg-white transition-all cursor-pointer shadow-sm hover:shadow-md"
                         >
-                            <span className="font-heading font-bold text-lg text-brand-charcoal dark:text-white group-hover:text-brand-gold transition-colors">{role}</span>
-                            <ChevronRight className="text-gray-300 group-hover:text-brand-gold transition-colors" />
+                            <span className="font-heading font-bold text-lg text-gray-900 group-hover:text-gray-700 transition-colors">{role}</span>
+                            <ChevronRight className="text-gray-400 group-hover:text-gray-900 transition-colors" />
                         </a>
                       </StaggerItem>
                   ))}
               </StaggerContainer>
                <ScrollReveal variant="scaleIn" delay={0.3} viewport={{ once: true, amount: 0.8 }}>
-                 <div className="mt-12 p-8 bg-brand-dark text-white rounded-sm flex flex-col md:flex-row items-center justify-between shadow-xl">
+                 <div className="mt-12 p-8 bg-gray-900 text-white rounded-sm flex flex-col md:flex-row items-center justify-between shadow-xl">
                   <div className="mb-6 md:mb-0">
-                      <h3 className="text-2xl font-heading font-bold mb-2">Don't see your role?</h3>
-                      <p className="text-gray-600">We are always looking for exceptional talent. Pitch us your role.</p>
+                      <h3 className="text-2xl font-heading font-bold mb-2 text-white">Don't see your role?</h3>
+                      <p className="text-gray-300">We are always looking for exceptional talent. Pitch us your role.</p>
                   </div>
                   <button onClick={() => window.open('https://quark-cornflower-fe8.notion.site/2cc84662572280318ff3ff2d5f2f0fee?pvs=105', '_blank')} className="relative overflow-hidden min-h-[52px] xs:min-h-[56px] flex items-center justify-center rounded-xl bg-gradient-to-r from-white to-gray-100 hover:from-gray-100 hover:to-white shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_35px_rgba(255,255,255,0.6)] active:scale-[0.98] hover:scale-[1.03] transition-all duration-300 touch-manipulation group">
                     {/* Shine effect */}
                     <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
                     
                     {/* Glow pulse */}
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brand-gold/10 animate-pulse"></div>
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gray-900/10 animate-pulse"></div>
                     
                     {/* Button content */}
-                    <div className="relative flex items-center justify-center gap-2 px-8 xs:px-10 text-brand-dark dark:text-gray-900">
+                    <div className="relative flex items-center justify-center gap-2 px-8 xs:px-10 text-gray-900">
                       <span className="text-base xs:text-lg font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300 leading-none">Apply Now</span>
                       <ArrowRight className="w-5 h-5 xs:w-6 xs:h-6 flex-shrink-0 group-hover:translate-x-1 transition-transform duration-300" strokeWidth={2.5} />
                     </div>
@@ -175,11 +174,11 @@ export const Careers: React.FC = () => {
       </section>
 
       {/* Process */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-gray-50">
           <div className="container mx-auto px-6">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                   <div>
-                      <h2 className="text-4xl md:text-5xl font-heading font-bold text-brand-charcoal dark:text-white mb-10 uppercase">What Happens Next?</h2>
+                      <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-10 uppercase">What Happens Next?</h2>
                       <div className="space-y-12">
                           <Step 
                             number="1" 
@@ -198,10 +197,10 @@ export const Careers: React.FC = () => {
                           />
                       </div>
                   </div>
-                  <div className="bg-brand-gold p-12 text-center text-white rounded-sm shadow-2xl relative overflow-hidden transform hover:-translate-y-2 transition-transform duration-500">
+                  <div className="bg-gray-900 p-12 text-center text-white rounded-sm shadow-2xl relative overflow-hidden transform hover:-translate-y-2 transition-transform duration-500">
                       <div className="relative z-10">
-                          <h3 className="text-3xl font-heading font-bold mb-6 uppercase">Let's build a cleaner future together ♻️</h3>
-                          <p className="text-white/90 text-lg mb-10 font-medium">
+                          <h3 className="text-3xl font-heading font-bold mb-6 uppercase text-white">Let's build a cleaner future together ♻️</h3>
+                          <p className="text-gray-200 text-lg mb-10 font-medium">
                               Ready to make a difference? Apply now and start your journey with Solwaste.
                           </p>
                           <button onClick={() => window.open('https://quark-cornflower-fe8.notion.site/2cc84662572280318ff3ff2d5f2f0fee?pvs=105', '_blank')} className="relative overflow-hidden w-full min-h-[60px] xs:min-h-[64px] sm:min-h-[68px] flex items-center justify-center rounded-xl bg-gradient-to-r from-white to-gray-100 hover:from-gray-100 hover:to-white shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:shadow-[0_0_50px_rgba(255,255,255,0.7)] active:scale-[0.98] hover:scale-[1.03] transition-all duration-300 touch-manipulation group">
@@ -209,10 +208,10 @@ export const Careers: React.FC = () => {
                             <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
                             
                             {/* Glow pulse */}
-                            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brand-gold/10 animate-pulse"></div>
+                            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gray-900/10 animate-pulse"></div>
                             
                             {/* Button content */}
-                            <div className="relative flex items-center justify-center gap-2.5 px-8 text-brand-dark dark:text-gray-900">
+                            <div className="relative flex items-center justify-center gap-2.5 px-8 text-gray-900">
                               <span className="text-lg xs:text-xl sm:text-2xl font-bold uppercase tracking-widest group-hover:tracking-[0.3em] transition-all duration-300 leading-none">Apply Now</span>
                               <ArrowRight className="w-6 h-6 xs:w-7 xs:h-7 flex-shrink-0 group-hover:translate-x-1 transition-transform duration-300" strokeWidth={2.5} />
                             </div>

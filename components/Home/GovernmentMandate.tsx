@@ -7,30 +7,12 @@ import { ScrollReveal } from '../ui/ScrollReveal';
 
 export const GovernmentMandate: React.FC = () => {
   return (
-    <section className="bg-gradient-to-br from-brand-dark via-brand-olive-dark/40 to-brand-dark py-16 sm:py-20 relative overflow-hidden border-t border-brand-gold/20" data-government-mandate id="government-mandate">
+    <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-16 sm:py-20 relative overflow-hidden border-t border-gray-700" data-government-mandate id="government-mandate">
       {/* Animated grid background */}
       <div className="absolute inset-0 opacity-5" style={{
-        backgroundImage: 'linear-gradient(rgba(212,175,55,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(212,175,55,0.3) 1px, transparent 1px)',
+        backgroundImage: 'linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px)',
         backgroundSize: '50px 50px'
       }}></div>
-      
-      {/* Floating orbs */}
-      <motion.div 
-        className="absolute top-20 right-10 w-32 h-32 bg-brand-gold/10 rounded-full blur-3xl"
-        animate={{ 
-          y: [0, 30, 0],
-          x: [0, 20, 0]
-        }}
-        transition={{ duration: 8, repeat: Infinity }}
-      />
-      <motion.div 
-        className="absolute bottom-20 left-10 w-40 h-40 bg-brand-gold/10 rounded-full blur-3xl"
-        animate={{ 
-          y: [0, -30, 0],
-          x: [0, -20, 0]
-        }}
-        transition={{ duration: 10, repeat: Infinity }}
-      />
       
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 relative z-10">
         <div className="max-w-6xl mx-auto">
@@ -38,22 +20,22 @@ export const GovernmentMandate: React.FC = () => {
             <ScrollReveal variant="fadeInUp" viewport={{ once: true, amount: 0.3 }}>
               <div className="flex items-center gap-3 mb-6 justify-center">
                 <motion.div 
-                  className="h-1 bg-brand-gold"
+                  className="h-1 bg-white"
                   initial={{ width: 0 }}
                   whileInView={{ width: 48 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
                   viewport={{ once: true }}
                 />
-                <span className="text-brand-gold font-bold uppercase tracking-widest text-sm flex items-center gap-2">
+                <span className="text-white font-bold uppercase tracking-widest text-sm flex items-center gap-2">
                   <Shield size={16} />
                   Legal Authority
                 </span>
               </div>
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold mb-6 uppercase leading-tight">
-                <span className="text-brand-charcoal dark:text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.3)]">Government</span> <br/>
-                <span className="text-brand-gold drop-shadow-[0_2px_15px_rgba(212,175,55,0.5)]">Mandate Ready</span>
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold mb-6 uppercase leading-tight text-white">
+                Government <br/>
+                <span className="text-gray-300">Mandate Ready</span>
               </h2>
-              <p className="text-gray-800 text-lg max-w-3xl mx-auto leading-relaxed font-medium">
+              <p className="text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed font-medium">
                 100% Compliant with SWM Rules 2026 (Effective 1 April 2026). India is taking a strong step towards sustainable urban living. Don't risk penalties. Install a Solwaste system today.
               </p>
             </ScrollReveal>
@@ -77,14 +59,13 @@ export const GovernmentMandate: React.FC = () => {
                   whileHover={{ scale: 1.05, y: -5 }}
                   transition={{ type: 'spring', stiffness: 300 }}
                 >
-                  <GlassCard className="p-5 flex flex-col items-center justify-center min-h-[140px]">
-                    {/* Icon - No animation */}
-                    <div className="text-brand-gold mb-3">
+                  <div className="p-5 flex flex-col items-center justify-center min-h-[140px] bg-white/10 backdrop-blur-sm border-2 border-white/20 rounded-lg hover:bg-white/15 hover:border-white/30 transition-all duration-300">
+                    <div className="text-white mb-3">
                       <badge.icon size={32} strokeWidth={2} />
                     </div>
-                    <div className="text-gray-800 font-bold text-base uppercase tracking-wider text-center leading-tight mb-2 block">{badge.label}</div>
-                    <div className="text-gray-600 text-xs text-center leading-relaxed block">{badge.desc}</div>
-                  </GlassCard>
+                    <div className="text-white font-bold text-base uppercase tracking-wider text-center leading-tight mb-2 block">{badge.label}</div>
+                    <div className="text-gray-200 text-xs text-center leading-relaxed block">{badge.desc}</div>
+                  </div>
                 </motion.div>
               ))}
             </motion.div>

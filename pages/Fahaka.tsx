@@ -4,7 +4,7 @@ import { FahakaHero, ProblemSolution, ProcessFlow, TechSpecs } from '../componen
 
 export const Fahaka: React.FC = () => {
   return (
-    <div className="bg-brand-dark text-white min-h-screen">
+    <div className="bg-white text-black min-h-screen">
       <SEO 
         title="Fahaka - Universal Waste Decomposer for Large Generators | Food, Plastic & Sanitary"
         description="Revolutionary Fahaka technology for large waste generators in India. Processes food waste, plastic bottles & sanitary waste into sterile resources. Ideal for hospitals, institutions, food courts, and municipalities. Plasma pyrolysis technology, 850°C thermal decomposition, zero landfill, complete compliance. The future of sustainable waste management."

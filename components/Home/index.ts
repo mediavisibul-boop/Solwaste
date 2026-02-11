@@ -4,4 +4,8 @@ export { ImpactStats } from './ImpactStats';
 export { ProcessFlow } from './ProcessFlow';
 export { MissionGrid } from './MissionGrid';
 export { ProcessAndValues } from './ProcessAndValues';
+export { HeroSlider } from './HeroSlider';
+export { SlideContent } from './SlideContent';
+export { StickyCTA } from './StickyCTA';
+export { ExpertiseSection } from './ExpertiseSection';
 export default {};

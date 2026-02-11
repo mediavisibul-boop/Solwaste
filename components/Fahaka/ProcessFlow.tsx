@@ -35,49 +35,38 @@ export const ProcessFlow: React.FC = () => {
   ];
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-white dark:bg-gray-900">
-      <div className="container mx-auto px-3 xs:px-4 sm:px-6">
-        {/* Section Header */}
-        <div className="text-center mb-8 sm:mb-12">
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-charcoal dark:text-white mb-2">
+    <section className="py-20 bg-gray-50 text-black">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl sm:text-5xl font-bold font-heading mb-2">
             The Process
-          </h3>
-          <p className="text-gray-600 dark:text-gray-400">From contaminated input to sterile output</p>
+          </h2>
+          <p className="text-gray-600 text-lg">From contaminated input to sterile output in four simple steps.</p>
         </div>
 
-        {/* Process Steps */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {steps.map((step, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="relative"
-            >
-              <div className="h-full p-6 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-brand-gold transition-all duration-300 shadow-sm hover:shadow-md flex flex-col">
-                {/* Step Number */}
-                <div className="w-12 h-12 rounded-full bg-brand-gold text-brand-charcoal font-bold text-lg flex items-center justify-center mb-4">
-                  {step.number}
+        <div className="relative">
+          {/* Dotted line for desktop */}
+          <div className="hidden lg:block absolute top-1/2 left-0 w-full h-px bg-gray-300" style={{ transform: 'translateY(-50%)' }}></div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+            {steps.map((step, index) => (
+              <div
+                key={index}
+                className="text-center"
+              >
+                <div className="relative mb-4 inline-block">
+                  <div className="w-20 h-20 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center">
+                    <step.icon className="w-8 h-8 text-black" />
+                  </div>
+                  <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-black text-white flex items-center justify-center font-bold text-sm">
+                    {step.number}
+                  </div>
                 </div>
-                
-                {/* Icon */}
-                <step.icon className="w-10 h-10 text-black dark:text-white mb-3" />
-                
-                {/* Content */}
-                <h4 className="text-lg font-bold text-brand-charcoal dark:text-white mb-2">{step.title}</h4>
-                <p className="text-sm text-gray-600 dark:text-gray-400 flex-grow">{step.description}</p>
+                <h3 className="text-xl font-bold mb-2 text-black">{step.title}</h3>
+                <p className="text-gray-600">{step.description}</p>
               </div>
-              
-              {/* Arrow (Desktop) */}
-              {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2 text-brand-gold">
-                  <ArrowRight className="w-6 h-6" />
-                </div>
-              )}
-            </motion.div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

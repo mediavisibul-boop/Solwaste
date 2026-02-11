@@ -10,37 +10,39 @@ interface MobileMenuProps {
 export const MobileMenu: React.FC<MobileMenuProps> = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
   return (
     <div className={[
-      "lg:hidden fixed top-[60px] sm:top-[64px] md:top-[72px] left-0 w-full bg-white dark:bg-gray-900 shadow-2xl border-t-2 border-gray-100 dark:border-gray-700 z-[60]",
+      "lg:hidden fixed left-0 w-full bg-white shadow-2xl border-t-2 border-gray-200 z-40",
       "transition-all duration-300 ease-in-out origin-top overflow-hidden",
       isMobileMenuOpen ? "max-h-screen opacity-100 visible" : "max-h-0 opacity-0 invisible"
-    ].join(" ")}>
+    ].join(" ")}
+    style={{ top: 'calc(3rem + 48px)' }}
+    >
       <div className="container mx-auto px-4 sm:px-6">
-        <nav className="flex flex-col p-4 sm:p-6 md:p-8 space-y-2 sm:space-y-3 md:space-y-4" role="navigation" aria-label="Mobile navigation">
+        <nav className="flex flex-col p-6 sm:p-8 space-y-3" role="navigation" aria-label="Mobile navigation">
           <Link 
             to="/" 
             onClick={() => setIsMobileMenuOpen(false)} 
-            className="min-h-[48px] flex items-center justify-center text-base sm:text-lg md:text-xl font-heading font-bold uppercase tracking-wider text-brand-charcoal dark:text-white hover:text-brand-gold active:text-brand-gold transition-all duration-200 py-3 sm:py-3.5 px-4 rounded-lg hover:bg-brand-light/50 dark:hover:bg-gray-800 active:bg-brand-light dark:active:bg-gray-700 active:scale-98 touch-manipulation"
+            className="min-h-[56px] flex items-center justify-center text-lg sm:text-xl font-heading font-bold uppercase tracking-wider text-gray-900 hover:text-gray-600 active:text-gray-700 transition-all duration-200 py-4 px-6 rounded-xl hover:bg-gray-50 active:bg-gray-100 active:scale-98 touch-manipulation border-2 border-transparent hover:border-gray-200"
           >
             Home
           </Link>
           <Link 
             to="/owc" 
             onClick={() => setIsMobileMenuOpen(false)} 
-            className="min-h-[48px] flex items-center justify-center text-base sm:text-lg md:text-xl font-heading font-bold uppercase tracking-wider text-brand-charcoal dark:text-white hover:text-brand-gold active:text-brand-gold transition-all duration-200 py-3 sm:py-3.5 px-4 rounded-lg hover:bg-brand-light/50 dark:hover:bg-gray-800 active:bg-brand-light dark:active:bg-gray-700 active:scale-98 touch-manipulation"
+            className="min-h-[56px] flex items-center justify-center text-lg sm:text-xl font-heading font-bold uppercase tracking-wider text-gray-900 hover:text-gray-600 active:text-gray-700 transition-all duration-200 py-4 px-6 rounded-xl hover:bg-gray-50 active:bg-gray-100 active:scale-98 touch-manipulation border-2 border-transparent hover:border-gray-200"
           >
             OWC Machines
           </Link>
           <Link 
             to="/fahaka" 
             onClick={() => setIsMobileMenuOpen(false)} 
-            className="min-h-[48px] flex items-center justify-center text-base sm:text-lg md:text-xl font-heading font-bold uppercase tracking-wider text-brand-gold bg-brand-light hover:bg-brand-gold hover:text-white active:bg-brand-gold/90 transition-all duration-200 py-3 sm:py-3.5 px-4 rounded-lg active:scale-98 touch-manipulation relative"
+            className="min-h-[56px] flex items-center justify-center text-lg sm:text-xl font-heading font-bold uppercase tracking-wider text-gray-900 bg-gray-50 hover:bg-gray-100 active:bg-gray-200 transition-all duration-200 py-4 px-6 rounded-xl active:scale-98 touch-manipulation relative border-2 border-gray-200 hover:border-gray-900"
           >
             Fahaka 
-            <span className="text-[10px] sm:text-xs bg-gradient-to-r from-red-600 to-red-500 text-white px-2 py-1 rounded-md ml-2 badge-blink font-bold absolute -top-1 -right-1 shadow-md shadow-red-500/40">NEW</span>
+            <span className="text-xs bg-gradient-to-r from-red-600 to-red-500 text-white px-2.5 py-1 rounded-md ml-3 badge-blink font-bold shadow-lg shadow-red-500/40 uppercase">NEW</span>
           </Link>
-          <div className="pt-2">
+          <div className="pt-3">
             <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="block">
-              <Button className="w-full min-h-[52px] uppercase font-heading py-4 sm:py-4.5 md:py-5 text-base sm:text-lg md:text-xl font-bold shadow-lg hover:shadow-xl active:scale-98 transition-all touch-manipulation">
+              <Button variant="primary" className="w-full min-h-[60px] uppercase font-heading py-4 text-lg sm:text-xl font-bold shadow-xl hover:shadow-2xl active:scale-98 transition-all touch-manipulation bg-gray-900 hover:bg-gray-800 text-white">
                 Get Quote
               </Button>
             </Link>

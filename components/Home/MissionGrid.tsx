@@ -35,7 +35,7 @@ export const MissionGrid: React.FC = () => {
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-gray-50 to-white relative overflow-hidden py-12 sm:py-16 md:py-20">
       {/* Simplified gradient overlay */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-tr from-brand-gold/5 via-transparent to-brand-olive/5"
+        className="absolute inset-0 bg-gradient-to-tr from-gray-900/5 via-transparent to-gray-900/5"
         animate={{
           opacity: [0.3, 0.5, 0.3]
         }}
@@ -55,8 +55,8 @@ export const MissionGrid: React.FC = () => {
           transition={{ duration: 0.8 }}
         >
           <span className="text-brand-primary font-semibold uppercase tracking-wider text-sm mb-6 inline-block">Core Values</span>
-          <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold mb-5 tracking-tight text-brand-charcoal dark:text-white leading-tight">
-            Building A <span className="text-brand-primary">Sustainable Future</span>
+          <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold mb-5 tracking-tight text-gray-900 dark:text-white leading-tight">
+            Building A <span className="text-gray-700">Sustainable Future</span>
           </h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl lg:max-w-3xl mx-auto text-lg sm:text-xl font-normal">
             Innovation. Integrity. Impact.
@@ -81,13 +81,13 @@ export const MissionGrid: React.FC = () => {
                   whileHover={{ scale: 1.08, rotate: [0, -3, 3, 0] }}
                   transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                 >
-                  <div className="w-24 h-24 xs:w-28 xs:h-28 sm:w-32 sm:h-32 rounded-full bg-white dark:bg-gray-800 flex items-center justify-center shadow-premium-lg group-hover:shadow-premium-xl transition-all duration-400 border-4 border-gray-100 dark:border-gray-700 group-hover:border-brand-primary">
-                    <card.icon size={56} strokeWidth={2.5} className="text-brand-charcoal dark:text-white drop-shadow-sm" />
+                  <div className="w-24 h-24 xs:w-28 xs:h-28 sm:w-32 sm:h-32 rounded-full bg-white dark:bg-gray-800 flex items-center justify-center shadow-premium-lg group-hover:shadow-premium-xl transition-all duration-400 border-4 border-gray-100 dark:border-gray-700 group-hover:border-gray-900">
+                    <card.icon size={56} strokeWidth={2.5} className="text-gray-900 dark:text-white drop-shadow-sm" />
                   </div>
                 </motion.div>
 
                 {/* Title */}
-                <h3 className="text-xl xs:text-2xl sm:text-3xl font-heading font-bold mb-3 sm:mb-4 uppercase tracking-wide text-brand-charcoal dark:text-white leading-tight">
+                <h3 className="text-xl xs:text-2xl sm:text-3xl font-heading font-bold mb-3 sm:mb-4 uppercase tracking-wide text-gray-900 dark:text-white leading-tight">
                   {card.title}
                 </h3>
 

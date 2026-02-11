@@ -23,7 +23,7 @@ export const FahakaCTA: React.FC = () => {
           className="w-full h-full object-cover object-center"
           style={{ objectPosition: 'center center' }}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-brand-gold/30 to-white/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-white/30 to-white/40"></div>
       </div>
       
       <div className="container mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 text-center relative z-10">

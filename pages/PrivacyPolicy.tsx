@@ -12,9 +12,9 @@ const PrivacyPolicy = () => {
       />
       
       {/* Header */}
-      <div className="bg-brand-dark text-white py-16 sm:py-20 md:py-24">
+      <div className="bg-gray-900 text-white py-16 sm:py-20 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 max-w-4xl text-center">
-          <p className="text-brand-gold text-sm sm:text-base font-semibold uppercase tracking-wider mb-3">Your Privacy Matters</p>
+          <p className="text-gray-200 text-sm sm:text-base font-semibold uppercase tracking-wider mb-3">Your Privacy Matters</p>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold">Privacy & Data Protection Policy</h1>
         </div>
       </div>
@@ -28,7 +28,7 @@ const PrivacyPolicy = () => {
               Solwaste Innovations Private Limited is committed to protecting the privacy, confidentiality, and security of personal and business information entrusted to us. This Policy explains how we collect, use, store, process, disclose, and safeguard information when you interact with our services.
             </p>
 
-            <div className="bg-gray-50 border-l-4 border-brand-gold p-4 sm:p-6 mb-8">
+            <div className="bg-gray-50 border-l-4 border-gray-900 p-4 sm:p-6 mb-8">
               <p className="text-sm sm:text-base font-semibold text-gray-800 mb-2">Last Updated: 12 December 2025</p>
               <p className="text-sm sm:text-base text-gray-700">
                 This Policy applies globally to all users, customers, partners, vendors, employees, and visitors, with specific compliance to applicable Indian laws and internationally accepted data-protection principles.
@@ -36,15 +36,15 @@ const PrivacyPolicy = () => {
             </div>
 
             <section className="mb-10">
-              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-brand-dark mb-4 border-b-2 border-brand-gold pb-2">1. Company Information</h2>
+              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 mb-4 border-b-2 border-gray-900 pb-2">1. Company Information</h2>
               <p className="text-base sm:text-lg text-gray-700 mb-3"><strong>Legal Entity:</strong> Solwaste Innovations Private Limited</p>
               <p className="text-base sm:text-lg text-gray-700 mb-3"><strong>Registered Office:</strong> 1st Floor, 264–265, Dr. Annie Besant Road, Worli, Mumbai, Maharashtra – 400025, India</p>
-              <p className="text-base sm:text-lg text-gray-700 mb-3"><strong>Website:</strong> <a href="https://www.solwaste.co" className="text-brand-gold hover:underline">www.solwaste.co</a></p>
+              <p className="text-base sm:text-lg text-gray-700 mb-3"><strong>Website:</strong> <a href="https://www.solwaste.co" className="text-gray-900 hover:underline">www.solwaste.co</a></p>
               <p className="text-base sm:text-lg text-gray-700"><strong>Mobile Application:</strong> Solwaste</p>
             </section>
 
             <section className="mb-10">
-              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-brand-dark mb-4 border-b-2 border-brand-gold pb-2">2. Information We Collect</h2>
+              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 mb-4 border-b-2 border-gray-900 pb-2">2. Information We Collect</h2>
               <p className="text-base sm:text-lg text-gray-700 mb-4">
                 We may collect and process the following categories of information depending on your interaction with us:
               </p>
@@ -62,7 +62,7 @@ const PrivacyPolicy = () => {
             </section>
 
             <section className="mb-10">
-              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-brand-dark mb-4 border-b-2 border-brand-gold pb-2">3. How We Use Information</h2>
+              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 mb-4 border-b-2 border-gray-900 pb-2">3. How We Use Information</h2>
               <p className="text-base sm:text-lg text-gray-700 mb-4">
                 Your information is used for legitimate business purposes, including but not limited to:
               </p>
@@ -78,7 +78,7 @@ const PrivacyPolicy = () => {
             </section>
 
             <section className="mb-10">
-              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-brand-dark mb-4 border-b-2 border-brand-gold pb-2">4. Cookies, Analytics & Tracking Technologies</h2>
+              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 mb-4 border-b-2 border-gray-900 pb-2">4. Cookies, Analytics & Tracking Technologies</h2>
               <p className="text-base sm:text-lg text-gray-700 mb-4">
                 We use cookies and similar technologies to enhance user experience, analyze traffic, and improve our digital services. These may include:
               </p>
@@ -94,7 +94,7 @@ const PrivacyPolicy = () => {
             </section>
 
             <section className="mb-10">
-              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-brand-dark mb-4 border-b-2 border-brand-gold pb-2">5. Data Sharing & Disclosure</h2>
+              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 mb-4 border-b-2 border-gray-900 pb-2">5. Data Sharing & Disclosure</h2>
               <p className="text-base sm:text-lg text-gray-700 mb-4">
                 Solwaste does not sell or rent personal data. We may share information only under the following circumstances:
               </p>
@@ -108,7 +108,7 @@ const PrivacyPolicy = () => {
             </section>
 
             <section className="mb-10">
-              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-brand-dark mb-4 border-b-2 border-brand-gold pb-2">6. Data Storage, Security & Retention</h2>
+              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 mb-4 border-b-2 border-gray-900 pb-2">6. Data Storage, Security & Retention</h2>
               <p className="text-base sm:text-lg text-gray-700 mb-4">
                 We implement appropriate technical, administrative, and physical safeguards to protect personal data against unauthorized access, loss, misuse, or disclosure.
               </p>
@@ -118,14 +118,14 @@ const PrivacyPolicy = () => {
             </section>
 
             <section className="mb-10">
-              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-brand-dark mb-4 border-b-2 border-brand-gold pb-2">7. International Data Transfers</h2>
+              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 mb-4 border-b-2 border-gray-900 pb-2">7. International Data Transfers</h2>
               <p className="text-base sm:text-lg text-gray-700">
                 As a globally oriented organization, your information may be transferred across borders. Such transfers are conducted in compliance with applicable data-protection laws and with adequate safeguards in place.
               </p>
             </section>
 
             <section className="mb-10">
-              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-brand-dark mb-4 border-b-2 border-brand-gold pb-2">8. Your Rights</h2>
+              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 mb-4 border-b-2 border-gray-900 pb-2">8. Your Rights</h2>
               <p className="text-base sm:text-lg text-gray-700 mb-4">
                 Subject to applicable laws, you may have the right to:
               </p>
@@ -142,33 +142,33 @@ const PrivacyPolicy = () => {
             </section>
 
             <section className="mb-10">
-              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-brand-dark mb-4 border-b-2 border-brand-gold pb-2">9. Minors</h2>
+              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 mb-4 border-b-2 border-gray-900 pb-2">9. Minors</h2>
               <p className="text-base sm:text-lg text-gray-700">
                 Our services are not intended for individuals under 18 years of age. We do not knowingly collect personal data from minors.
               </p>
             </section>
 
             <section className="mb-10">
-              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-brand-dark mb-4 border-b-2 border-brand-gold pb-2">10. Policy Updates</h2>
+              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 mb-4 border-b-2 border-gray-900 pb-2">10. Policy Updates</h2>
               <p className="text-base sm:text-lg text-gray-700">
                 We may update this Policy periodically to reflect changes in legal requirements or business practices. Continued use of our services constitutes acceptance of the updated Policy.
               </p>
             </section>
 
             <section className="mb-10">
-              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-brand-dark mb-4 border-b-2 border-brand-gold pb-2">11. Contact – Data Protection Officer</h2>
+              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 mb-4 border-b-2 border-gray-900 pb-2">11. Contact – Data Protection Officer</h2>
               <p className="text-base sm:text-lg text-gray-700 mb-4">
                 For privacy-related questions, requests, or concerns, please contact:
               </p>
-              <div className="bg-brand-dark text-white p-6 rounded-lg">
+              <div className="bg-gray-900 text-white p-6 rounded-lg">
                 <p className="text-lg font-semibold mb-3">Data Protection Officer</p>
                 <p className="mb-2">Solwaste Innovations Private Limited</p>
                 <p className="mb-2">1st Floor, 264–265, Dr. Annie Besant Road, Worli, Mumbai, Maharashtra – 400025, India</p>
                 <p className="mb-2">
-                  <strong>Email:</strong> <a href="mailto:privacy@solwaste.co" className="text-brand-gold hover:underline">privacy@solwaste.co</a>
+                  <strong>Email:</strong> <a href="mailto:privacy@solwaste.co" className="text-white hover:underline">privacy@solwaste.co</a>
                 </p>
                 <p>
-                  <strong>Phone:</strong> <a href="tel:+919429691308" className="text-brand-gold hover:underline">+91-9429691308</a>
+                  <strong>Phone:</strong> <a href="tel:+919429691308" className="text-white hover:underline">+91-9429691308</a>
                 </p>
               </div>
             </section>

@@ -15,8 +15,8 @@ export const FahakaHero: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden">
-      {/* Background Image Slideshow - Mobile Optimized */}
+    <section className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden bg-white">
+      {/* Background Image Slideshow */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="wait">
           <motion.img 
@@ -33,8 +33,8 @@ export const FahakaHero: React.FC = () => {
             transition={{ duration: 0.8 }}
           />
         </AnimatePresence>
-        {/* Premium white fade overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/35"></div>
+        {/* Simple overlay */}
+        <div className="absolute inset-0 bg-black/20"></div>
       </div>
       
       {/* Image indicators */}
@@ -45,7 +45,7 @@ export const FahakaHero: React.FC = () => {
             onClick={() => setCurrentImageIndex(idx)}
             className={`rounded-full transition-all duration-300 ${
               idx === currentImageIndex
-                ? 'h-2.5 w-10 bg-brand-gold shadow-lg shadow-brand-gold/50'
+                ? 'h-2.5 w-10 bg-white'
                 : 'h-2.5 w-2.5 bg-white/60 hover:bg-white/80'
             }`}
             aria-label={`View image ${idx + 1}`}
@@ -59,14 +59,14 @@ export const FahakaHero: React.FC = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[9rem] font-heading font-black text-white mb-2 xs:mb-3 sm:mb-4 tracking-tighter leading-[1.1] xs:leading-none" style={{ textShadow: '0 4px 25px rgba(0,0,0,0.6), 0 8px 40px rgba(0,0,0,0.4)' }}>
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-black text-white mb-4 tracking-tighter">
             FAHAKA
           </h1>
-          <p className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-heading font-bold text-gray-300 mb-5 xs:mb-6 sm:mb-8 md:mb-10 lg:mb-12 uppercase tracking-wide" style={{ textShadow: '0 3px 20px rgba(0,0,0,0.5), 0 6px 30px rgba(0,0,0,0.3)' }}>
+          <p className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-gray-200 mb-8 uppercase tracking-wide">
             The Universal Decomposer
           </p>
           
-          <p className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-200 max-w-4xl mx-auto mb-6 xs:mb-8 sm:mb-10 md:mb-12 lg:mb-16 leading-relaxed font-normal px-3 xs:px-4" style={{ textShadow: '0 2px 15px rgba(0,0,0,0.5), 0 4px 25px rgba(0,0,0,0.3)' }}>
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-100 max-w-4xl mx-auto leading-relaxed font-normal">
             Traditional composters fail at contamination. Fahaka thrives on it. <br className="hidden sm:block"/>
             The world's first unified processor for <span className="text-white font-bold">Food, Plastics, Sanitary, and Biochemical Waste</span>.
           </p>

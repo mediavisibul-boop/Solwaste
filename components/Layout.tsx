@@ -119,7 +119,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
         {children}
       </main>
 
-      <footer className="relative bg-brand-dark text-white pt-12 sm:pt-16 md:pt-20 pb-8 sm:pb-10 overflow-hidden border-t border-gray-800">
+      <footer className="relative bg-gray-900 text-white pt-12 sm:pt-16 md:pt-20 pb-8 sm:pb-10 overflow-hidden border-t border-gray-800">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-[0.03] z-0 flex items-center select-none">
              <div className="whitespace-nowrap animate-marquee flex">
                 <span className="text-[15vw] font-heading font-black text-white leading-none mx-8">WASTE REVOLUTION • ZERO LANDFILL •</span>
@@ -133,8 +133,8 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             
             <div className="space-y-4 sm:space-y-6">
               <div className="space-y-2">
-                 <a href="tel:+919429691308" className="block text-white font-heading font-bold text-xl sm:text-2xl tracking-wide hover:text-brand-gold transition-colors">+91-9429691308</a>
-                 <a href="mailto:hello@solwaste.co" className="block text-white font-heading font-bold text-xl sm:text-2xl tracking-wide hover:text-brand-gold transition-colors break-all">hello@solwaste.co</a>
+                 <a href="tel:+919429691308" className="block text-white font-heading font-bold text-xl sm:text-2xl tracking-wide hover:text-gray-300 transition-colors">+91-9429691308</a>
+                 <a href="mailto:hello@solwaste.co" className="block text-white font-heading font-bold text-xl sm:text-2xl tracking-wide hover:text-gray-300 transition-colors break-all">hello@solwaste.co</a>
                  <p className="text-gray-300 text-base sm:text-lg leading-relaxed mt-4 font-medium">
                    Worli, 1st floor, 264-265, <br />
                    Dr. Annie Besant Road, <br />
@@ -142,13 +142,13 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                  </p>
               </div>
               <div className="flex space-x-4 sm:space-x-5 pt-2">
-                 <a href="https://www.instagram.com/solwaste?igsh=MXVsMXVpMmZkOWh3Yg==" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-brand-gold transition-colors transform hover:-translate-y-1 duration-300 touch-manipulation" aria-label="Instagram">
+                 <a href="https://www.instagram.com/solwaste?igsh=MXVsMXVpMmZkOWh3Yg==" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors transform hover:-translate-y-1 duration-300 touch-manipulation" aria-label="Instagram">
                      <Instagram size={22} className="sm:w-6 sm:h-6" />
                  </a>
-                 <a href="https://x.com/SolwasteCo" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-brand-gold transition-colors transform hover:-translate-y-1 duration-300 touch-manipulation" aria-label="X (Twitter)">
+                 <a href="https://x.com/SolwasteCo" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors transform hover:-translate-y-1 duration-300 touch-manipulation" aria-label="X (Twitter)">
                      <X size={22} className="sm:w-6 sm:h-6" />
                  </a>
-                 <a href="https://www.linkedin.com/company/solwaste/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-brand-gold transition-colors transform hover:-translate-y-1 duration-300 touch-manipulation" aria-label="LinkedIn">
+                 <a href="https://www.linkedin.com/company/solwaste/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors transform hover:-translate-y-1 duration-300 touch-manipulation" aria-label="LinkedIn">
                      <Linkedin size={22} className="sm:w-6 sm:h-6" />
                  </a>
               </div>
@@ -214,9 +214,9 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
           
           <div className="flex flex-col md:flex-row justify-between items-center text-gray-400 text-xs sm:text-sm font-medium gap-3 xs:gap-4 sm:gap-5 md:gap-6">
             <div className="flex flex-wrap justify-center gap-3 xs:gap-4 sm:gap-5 md:gap-6">
-               <Link to="/privacy-policy" className="hover:text-brand-gold transition-colors touch-manipulation py-1">Privacy Policy</Link>
-               <Link to="/accessibility-statement" className="hover:text-brand-gold transition-colors touch-manipulation py-1">Accessibility Statement</Link>
-               <Link to="/sitemap" className="hover:text-brand-gold transition-colors touch-manipulation py-1">Sitemap</Link>
+               <Link to="/privacy-policy" className="hover:text-white transition-colors touch-manipulation py-1">Privacy Policy</Link>
+               <Link to="/accessibility-statement" className="hover:text-white transition-colors touch-manipulation py-1">Accessibility Statement</Link>
+               <Link to="/sitemap" className="hover:text-white transition-colors touch-manipulation py-1">Sitemap</Link>
             </div>
             <div className="tracking-wide text-center text-gray-400">
                &copy; 2026 Solwaste. All rights reserved.

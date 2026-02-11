@@ -18,23 +18,20 @@ export const ProcessAndValues: React.FC = () => {
   ];
 
   return (
-    <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-b from-white via-gray-50 to-white dark:from-[#1a1a1a] dark:via-[#1e1e1e] dark:to-[#1a1a1a] relative overflow-hidden">
+    <section className="py-12 md:py-16 lg:py-20 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Process Flow - Compact Timeline */}
         <div className="mb-16">
           <div className="text-center mb-10">
-            <span className="text-[#BED754] font-semibold uppercase tracking-wide text-xs sm:text-sm">The Process</span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-gray-900 dark:text-gray-100 mt-2 mb-3">
-              How It <span className="text-[#BED754]">Works</span>
+            <span className="text-gray-500 font-semibold uppercase tracking-wide text-xs sm:text-sm">The Process</span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-gray-900 mt-2 mb-3">
+              How It <span className="text-gray-700">Works</span>
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">Five stages. Zero complexity.</p>
+            <p className="text-gray-600 text-sm sm:text-base">Five stages. Zero complexity.</p>
           </div>
 
-          {/* Timeline */}
           <div className="relative">
-            {/* Connecting line - desktop */}
-            <div className="hidden lg:block absolute left-0 right-0 top-10 h-0.5 bg-gray-200 dark:bg-gray-700"></div>
+            <div className="hidden lg:block absolute left-0 right-0 top-10 h-0.5 bg-gray-200"></div>
             
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8">
               {steps.map((step, i) => (
@@ -46,21 +43,18 @@ export const ProcessAndValues: React.FC = () => {
                   transition={{ delay: i * 0.1, duration: 0.5 }}
                   viewport={{ once: true }}
                 >
-                  {/* Step number */}
-                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-[#BED754] text-gray-900 text-xs font-bold flex items-center justify-center shadow-md">
+                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-gray-900 text-white text-xs font-bold flex items-center justify-center shadow-md border border-gray-700">
                     {i + 1}
                   </div>
 
-                  {/* Icon */}
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-3 rounded-full bg-white dark:bg-[#2a2a2a] border-2 border-gray-200 dark:border-gray-700 flex items-center justify-center shadow-sm group-hover:border-[#BED754] group-hover:shadow-md transition-all duration-300">
-                    <step.icon size={28} className="text-gray-700 dark:text-gray-300" strokeWidth={2} />
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-3 rounded-full bg-white border-2 border-gray-200 flex items-center justify-center shadow-sm group-hover:border-gray-900 transition-all duration-300">
+                    <step.icon size={28} className="text-gray-700" strokeWidth={2} />
                   </div>
 
-                  {/* Text */}
-                  <h3 className="text-sm sm:text-base font-heading font-semibold text-gray-900 dark:text-gray-100 mb-1">
+                  <h3 className="text-sm sm:text-base font-heading font-semibold text-gray-900 mb-1">
                     {step.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
+                  <p className="text-xs sm:text-sm text-gray-600">
                     {step.desc}
                   </p>
                 </motion.div>
@@ -69,12 +63,11 @@ export const ProcessAndValues: React.FC = () => {
           </div>
         </div>
 
-        {/* Core Values - Compact Cards */}
         <div>
           <div className="text-center mb-8">
-            <span className="text-[#BED754] font-semibold uppercase tracking-wide text-xs sm:text-sm">Core Values</span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-gray-900 dark:text-gray-100 mt-2">
-              Building A <span className="text-[#BED754]">Sustainable Future</span>
+            <span className="text-gray-500 font-semibold uppercase tracking-wide text-xs sm:text-sm">Core Values</span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-gray-900 mt-2">
+              Building A <span className="text-gray-700">Sustainable Future</span>
             </h2>
           </div>
 
@@ -82,24 +75,23 @@ export const ProcessAndValues: React.FC = () => {
             {values.map((value, i) => (
               <motion.div
                 key={i}
-                className="bg-white dark:bg-[#252525] p-6 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-[#BED754] dark:hover:border-[#BED754] shadow-sm hover:shadow-md transition-all duration-300 group"
+                className="relative bg-white p-6 rounded-lg border border-gray-200 hover:border-gray-900 shadow-sm hover:shadow-md transition-all duration-300 group overflow-hidden"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
                 viewport={{ once: true }}
+                whileHover={{ scale: 1.02 }}
               >
-                {/* Icon */}
-                <div className="w-12 h-12 mb-4 rounded-full bg-gray-50 dark:bg-[#2a2a2a] flex items-center justify-center group-hover:bg-[#BED754]/10 transition-colors">
-                  <value.icon size={24} className="text-gray-700 dark:text-gray-300 group-hover:text-[#BED754]" strokeWidth={2} />
+                <div className="absolute left-0 top-0 h-0 w-0.5 bg-gray-900 group-hover:h-full transition-all duration-300 ease-out" />
+                <div className="w-12 h-12 mb-4 rounded-full bg-gray-50 flex items-center justify-center group-hover:bg-gray-100 transition-colors">
+                  <value.icon size={24} className="text-gray-700 group-hover:text-gray-900" strokeWidth={2} />
                 </div>
 
-                {/* Title */}
-                <h3 className="text-base sm:text-lg font-heading font-bold text-gray-900 dark:text-gray-100 mb-2 uppercase tracking-wide">
+                <h3 className="text-base sm:text-lg font-heading font-bold text-gray-900 mb-2 uppercase tracking-wide">
                   {value.title}
                 </h3>
 
-                {/* Description */}
-                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                <p className="text-sm text-gray-600 leading-relaxed">
                   {value.text}
                 </p>
               </motion.div>

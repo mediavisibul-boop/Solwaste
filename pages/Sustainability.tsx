@@ -6,13 +6,13 @@ import { ScrollReveal, StaggerContainer, StaggerItem } from '../components/ui/Sc
 
 const Section: React.FC<{ number: string; title: string; children: React.ReactNode; icon: React.ReactNode }> = ({ number, title, children, icon }) => (
   <ScrollReveal variant="fadeInUp">
-    <div className="flex flex-col md:flex-row gap-6 md:gap-10 border-t border-brand-olive/20 py-12 first:border-t-0 rounded-lg px-4 md:px-6 hover:bg-brand-light/50 transition-colors duration-500">
+    <div className="flex flex-col md:flex-row gap-6 md:gap-10 border-t border-gray-200 py-12 first:border-t-0 rounded-lg px-4 md:px-6 hover:bg-gray-50 transition-colors duration-500">
       <div className="md:w-1/4 flex-shrink-0">
         <div className="flex items-center space-x-3 mb-3 text-green-500">
             {icon}
             <span className="font-heading font-bold text-4xl opacity-20">{number}</span>
         </div>
-        <h3 className="text-2xl font-heading font-bold text-brand-charcoal dark:text-white uppercase leading-tight pr-4">
+        <h3 className="text-2xl font-heading font-bold text-gray-900 dark:text-white uppercase leading-tight pr-4">
             {title}
         </h3>
       </div>
@@ -38,10 +38,10 @@ export const Sustainability: React.FC = () => {
       <div className="bg-gray-50 min-h-screen flex items-center border-b border-gray-200">
         <div className="container mx-auto px-6 py-24 sm:py-28 md:py-32 lg:py-36">
             <ScrollReveal variant="fadeInUp" viewport={{ once: true, amount: 0.3 }}>
-                <div className="inline-block border border-brand-gold px-3 py-1 text-xs font-bold text-brand-gold uppercase tracking-widest mb-6 bg-white">
+                <div className="inline-block border border-gray-900 px-3 py-1 text-xs font-bold text-gray-900 uppercase tracking-widest mb-6 bg-white">
                     Our Commitment
                 </div>
-                <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-bold text-brand-charcoal dark:text-white mb-6 sm:mb-8 md:mb-10 lg:mb-12 uppercase max-w-4xl lg:max-w-5xl leading-[1.1]">
+                <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-bold text-gray-900 mb-6 sm:mb-8 md:mb-10 lg:mb-12 uppercase max-w-4xl lg:max-w-5xl leading-[1.1]">
                     Environmental & <br/><span className="text-gray-400">Sustainability Commitment</span>
                 </h1>
                 
@@ -54,7 +54,7 @@ export const Sustainability: React.FC = () => {
                             Last Updated: 12 December 2025
                         </p>
                     </div>
-                    <div className="bg-white p-6 border-l-4 border-brand-gold shadow-sm">
+                    <div className="bg-white p-6 border-l-4 border-gray-900 shadow-sm">
                         <p className="text-gray-600 text-sm italic">
                             "This commitment outlines how we integrate environmental responsibility into our products, services, operations, partnerships, and decision-making processes."
                         </p>
@@ -171,7 +171,7 @@ export const Sustainability: React.FC = () => {
       </div>
 
       {/* Footer Contact Section */}
-      <div className="bg-brand-dark text-white py-20">
+      <div className="bg-gray-900 text-white py-20">
           <div className="container mx-auto px-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                   <div>
@@ -182,7 +182,7 @@ export const Sustainability: React.FC = () => {
                       
                       <div className="space-y-6">
                           <div className="flex items-start">
-                              <MapPin className="text-brand-gold mt-1 mr-4 flex-shrink-0" />
+                              <MapPin className="text-white mt-1 mr-4 flex-shrink-0" />
                               <p className="text-gray-300">
                                   Solwaste Innovations Private Limited<br/>
                                   1st Floor, 264–265, Dr. Annie Besant Road,<br/>
@@ -190,11 +190,11 @@ export const Sustainability: React.FC = () => {
                               </p>
                           </div>
                           <div className="flex items-center">
-                              <Mail className="text-brand-gold mr-4" />
+                              <Mail className="text-white mr-4" />
                               <a href="mailto:privacy@solwaste.co" className="text-gray-300 hover:text-white transition-colors">privacy@solwaste.co</a>
                           </div>
                           <div className="flex items-center">
-                              <Phone className="text-brand-gold mr-4" />
+                              <Phone className="text-white mr-4" />
                               <a href="tel:+919429691308" className="text-gray-300 hover:text-white transition-colors">+91 9429691308</a>
                           </div>
                       </div>

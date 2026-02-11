@@ -9,14 +9,6 @@ export default {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    screens: {
-      'xs': '475px',    // Extra small devices (large phones, 475px and up)
-      'sm': '640px',    // Small devices (tablets, 640px and up)
-      'md': '768px',    // Medium devices (tablets, 768px and up)
-      'lg': '1024px',   // Large devices (desktops, 1024px and up)
-      'xl': '1280px',   // Extra large devices (large desktops, 1280px and up)
-      '2xl': '1536px',  // 2X large devices (larger desktops, 1536px and up)
-    },
     extend: {
       // Typography System
       fontFamily: {
@@ -121,10 +113,13 @@ export default {
         'glow-gold-lg': '0 0 40px rgba(190, 215, 84, 0.4)',
       },
 
-      // Animation Timings
+      // Animation Timings & Easing (Haptaq-inspired premium feel)
       transitionDuration: {
         '400': '400ms',
         '600': '600ms',
+      },
+      transitionTimingFunction: {
+        'out-expo': 'cubic-bezier(0.16, 1, 0.3, 1)',
       },
 
       // Border Radius for Consistency
