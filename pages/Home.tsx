@@ -61,7 +61,7 @@ export const Home: React.FC = () => {
       <HeroSlider />
 
       {/* Homesol Image Section */}
-      <section className="w-full" style={{ margin: 0, padding: 0 }}>
+      <section className="w-full -mt-1" style={{ margin: 0, padding: 0 }}>
         <img 
           src="/homesol.png" 
           alt="Solwaste Solutions"
