@@ -228,47 +228,53 @@ export const SlideContent: React.FC<SlideContentProps> = ({
       </div>
 
       {/* Footer Specs & CTA */}
-      <div className="relative z-10 container mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 pb-3 xs:pb-4 sm:pb-6 md:pb-10 lg:pb-14 xl:pb-18">
-        <div className="flex flex-col lg:flex-row items-stretch lg:items-end justify-between gap-2.5 xs:gap-3 sm:gap-5 md:gap-7 lg:gap-9 xl:gap-11">
+      <div className="relative z-10 w-full px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 pb-3 xs:pb-4 sm:pb-6 md:pb-10 lg:pb-14 xl:pb-18">
+        <div className="flex flex-col lg:flex-row items-stretch lg:items-end justify-between gap-2.5 xs:gap-3 sm:gap-4 md:gap-5 lg:gap-6">
           {/* Visual Proof Blocks */}
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-1.5 xs:gap-2 sm:gap-3 md:gap-4 lg:gap-5 xl:gap-6 w-full lg:flex-1 text-white">
+          <div 
+            className={`grid gap-2 xs:gap-2.5 sm:gap-3 md:gap-4 w-full lg:flex-1 text-white ${
+              slide.specs && slide.specs.length === 3 ? 'grid-cols-3' : 
+              slide.specs && slide.specs.length === 4 ? 'grid-cols-2 sm:grid-cols-4' : 
+              'grid-cols-2 sm:grid-cols-2 md:grid-cols-4'
+            }`}
+          >
             {slide.specs?.map((spec, idx) => (
               <motion.div 
                 key={idx} 
-                className="relative flex flex-col items-center justify-center bg-white/10 backdrop-blur-md rounded-md xs:rounded-lg sm:rounded-xl p-2 xs:p-2.5 sm:p-4 md:p-5 lg:p-6 xl:p-7 border border-white/30 xs:border-2 hover:border-white/80 hover:bg-white/15 transition-all duration-300 group overflow-hidden shadow-lg hover:shadow-xl min-h-[70px] xs:min-h-[80px] sm:min-h-[120px] md:min-h-[150px] lg:min-h-[180px] xl:min-h-[200px]"
+                className="relative flex flex-row items-center justify-start gap-2 xs:gap-2.5 sm:gap-3 bg-white/10 backdrop-blur-md rounded-md xs:rounded-lg sm:rounded-xl p-2 xs:p-2.5 sm:p-3 md:p-3.5 lg:p-4 border border-white/30 xs:border-2 hover:border-white/80 hover:bg-white/15 transition-all duration-300 group shadow-lg hover:shadow-xl min-h-[60px] xs:min-h-[65px] sm:min-h-[70px] md:min-h-[75px] lg:min-h-[80px]"
                 style={{ willChange: 'transform' }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.05, duration: 0.3, ease: "easeOut" }}
-                whileHover={{ scale: 1.05, y: -4, transition: { duration: 0.2 } }}
+                whileHover={{ scale: 1.02, y: -2, transition: { duration: 0.2 } }}
               >
                 <motion.div 
-                  className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl relative z-10 text-white drop-shadow-lg flex-shrink-0 mb-1 xs:mb-1.5 sm:mb-2 md:mb-3 lg:mb-4"
+                  className="text-xl xs:text-2xl sm:text-3xl md:text-3xl lg:text-4xl relative z-10 text-white drop-shadow-lg flex-shrink-0"
                   whileHover={{ rotate: [0, -10, 10, 0], transition: { duration: 0.5 } }}
                 >
                   {getSpecIcon(spec.label)}
                 </motion.div>
                 
-                <div className="flex flex-col items-center gap-0 xs:gap-0.5 sm:gap-1 relative z-10">
-                   <div className="flex items-baseline gap-0.5 text-shadow-sm">
-                     <span className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-heading font-extrabold leading-none text-white group-hover:scale-105 transition-transform duration-300">{spec.value}</span>
-                     {spec.unit && <span className="text-[10px] xs:text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-semibold text-white opacity-90">{spec.unit}</span>}
+                <div className="flex flex-col items-start justify-center gap-0.5 relative z-10 flex-1 min-w-0">
+                   <div className="flex items-baseline gap-1 text-shadow-sm flex-wrap">
+                     <span className="text-lg xs:text-xl sm:text-2xl md:text-2xl lg:text-3xl font-heading font-extrabold leading-none text-white group-hover:scale-105 transition-transform duration-300 break-words">{spec.value}</span>
+                     {spec.unit && <span className="text-[10px] xs:text-xs sm:text-sm md:text-sm lg:text-base font-semibold text-white opacity-90 whitespace-nowrap">{spec.unit}</span>}
                    </div>
-                   <span className="text-[9px] xs:text-[10px] sm:text-xs md:text-sm lg:text-base xl:text-lg font-bold uppercase tracking-tight xs:tracking-wide relative z-10 text-white text-center leading-tight opacity-90 mt-0.5 px-1">{spec.label}</span>
+                   <span className="text-[9px] xs:text-[10px] sm:text-xs md:text-xs lg:text-sm font-bold uppercase tracking-tight relative z-10 text-white leading-tight opacity-90 break-words w-full">{spec.label}</span>
                 </div>
               </motion.div>
             ))}
           </div>
 
           {/* Buttons */}
-          <div className="flex flex-row gap-2 xs:gap-2.5 sm:gap-3 md:gap-4 w-full lg:w-auto lg:flex-shrink-0 lg:self-end">
+          <div className="flex flex-row gap-2 xs:gap-2.5 sm:gap-3 md:gap-4 w-full lg:w-auto lg:flex-shrink-0 lg:self-end lg:ml-4">
              <Link to="/contact" className="flex-1 lg:flex-initial">
                 <GlassButton 
                   variant="primary" 
                   size="lg" 
                   icon={ArrowRight}
                   glow={true}
-                  className="w-full h-[44px] xs:h-[48px] sm:h-[52px] md:h-[56px] lg:h-[60px] xl:h-[64px] px-3 xs:px-4 sm:px-5 md:px-6 lg:px-8 xl:px-10 lg:min-w-[180px] xl:min-w-[200px] text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl"
+                  className="w-full h-[60px] xs:h-[65px] sm:h-[70px] md:h-[75px] lg:h-[80px] px-4 xs:px-5 sm:px-6 md:px-7 lg:px-8 lg:min-w-[180px] xl:min-w-[200px] text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl"
                   asChild
                 >
                   Order Now
@@ -280,7 +286,7 @@ export const SlideContent: React.FC<SlideContentProps> = ({
                   variant="glass" 
                   size="lg" 
                   icon={Settings}
-                  className="w-full h-[44px] xs:h-[48px] sm:h-[52px] md:h-[56px] lg:h-[60px] xl:h-[64px] px-3 xs:px-4 sm:px-5 md:px-6 lg:px-8 xl:px-10 lg:min-w-[180px] xl:min-w-[200px] text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl"
+                  className="w-full h-[60px] xs:h-[65px] sm:h-[70px] md:h-[75px] lg:h-[80px] px-4 xs:px-5 sm:px-6 md:px-7 lg:px-8 lg:min-w-[180px] xl:min-w-[200px] text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl"
                   asChild
                 >
                   Specs
