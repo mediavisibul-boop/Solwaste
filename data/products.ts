@@ -98,31 +98,4 @@ export const products: ProductData[] = [
       brand: 'Solwaste'
     }
   },
-  {
-    id: "kafka",
-    name: "Kafka",
-    tagline: "Universal Decomposer",
-    description: "A revolutionary step forward in waste management. Kafka doesn't discriminate. It processes food waste, plastics, and sanitary napkins simultaneously, creating a sterile output.",
-    images: ["https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?q=80&w=2070&auto=format&fit=crop"],
-    features: [
-      "Multi-Material Processing (Food + Plastic + Sanitary)",
-      "High-Temperature Sterilization",
-      "Industrial Shredding Capability",
-      "Zero Landfill Contribution"
-    ],
-    specs: [
-      { label: "Capacity", value: "Custom Config" },
-      { label: "Input Types", value: "Mixed Organic/Inorganic" },
-      { label: "Temp Range", value: "High Heat" },
-      { label: "Application", value: "Specialized Zones" }
-    ],
-    reversed: true,
-    seoData: {
-      name: 'Kafka - Universal Waste Decomposer',
-      description: 'Revolutionary multi-material waste processing system handling food waste, plastics, and sanitary napkins. High-temperature sterilization with zero landfill contribution.',
-      image: 'https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?q=80&w=2070&auto=format&fit=crop',
-      sku: 'KAFKA-UNIVERSAL',
-      brand: 'Solwaste'
-    }
-  }
 ];
