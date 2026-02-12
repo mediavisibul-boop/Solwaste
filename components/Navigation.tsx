@@ -41,7 +41,7 @@ export const Navigation: React.FC<NavigationProps> = ({
           <div className="flex flex-col leading-none select-none">
             <span className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-heading font-bold tracking-tight transition-colors duration-300 whitespace-nowrap">
               <span className={isNavTransparent ? 'text-white' : 'text-gray-900'}>SOL</span>
-              <span className={isNavTransparent ? 'text-white' : 'text-gray-900'}>WASTE</span>
+              <span className={isNavTransparent ? 'text-white' : 'text-[#C5D86D]'}>WASTE</span>
             </span>
           </div>
         </Link>

@@ -43,7 +43,7 @@ export const SlideContent: React.FC<SlideContentProps> = ({
     const currentImage = slide.images ? slide.images[currentImageIndex] : undefined;
 
     return (
-      <div className="relative w-full min-h-screen flex flex-col justify-between text-center overflow-hidden">
+      <div className="relative w-full h-full flex flex-col justify-between text-center overflow-hidden">
         {/* Background Image Slideshow */}
         <div className="absolute inset-0 z-0">
           {currentImage && (
@@ -139,7 +139,7 @@ export const SlideContent: React.FC<SlideContentProps> = ({
   const backgroundClass = currentImage ? 'bg-transparent' : 'bg-white';
 
   return (
-    <div className={`relative w-full min-h-screen flex flex-col justify-between ${backgroundClass}`}>
+    <div className={`relative w-full h-full flex flex-col justify-between ${backgroundClass}`}>
        {/* Background Image with Slideshow */}
        <div className="absolute inset-0 z-0">
         {currentImage && (
@@ -191,7 +191,7 @@ export const SlideContent: React.FC<SlideContentProps> = ({
       </div>
 
       {/* Header Content */}
-      <div className={`relative z-20 container mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 pt-16 xs:pt-20 sm:pt-24 md:pt-28 lg:pt-32 xl:pt-36 text-center`}>
+      <div className={`relative z-20 container mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 pt-20 sm:pt-24 md:pt-28 text-center`}>
         <div
            className="max-w-6xl mx-auto"
            style={{ 
@@ -228,7 +228,7 @@ export const SlideContent: React.FC<SlideContentProps> = ({
       </div>
 
       {/* Footer Specs & CTA */}
-      <div className="relative z-10 w-full px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 pb-4 sm:pb-5 md:pb-6">
+      <div className="absolute bottom-0 left-0 right-0 z-10 w-full px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 pb-6 sm:pb-8 md:pb-10">
         <div className="flex flex-col lg:flex-row items-stretch lg:items-end justify-between gap-2.5 xs:gap-3 sm:gap-4 md:gap-5 lg:gap-6">
           {/* Visual Proof Blocks */}
           <div 

@@ -58,14 +58,16 @@ export const Home: React.FC = () => {
       <StickyCTA />
       
       {/* Hero Slider Section */}
-      <HeroSlider />
+      <div data-hero-section style={{ margin: 0, padding: 0, display: 'block', lineHeight: 0 }}>
+        <HeroSlider />
+      </div>
 
       {/* Homesol Image Section */}
-      <section className="w-full -mt-1" style={{ margin: 0, padding: 0 }}>
+      <section className="w-full h-screen -mt-px" style={{ margin: 0, padding: 0, display: 'block', lineHeight: 0 }}>
         <img 
           src="/homesol.png" 
           alt="Solwaste Solutions"
-          className="w-full h-auto object-cover"
+          className="w-full h-full object-cover"
           style={{ display: 'block', margin: 0, padding: 0 }}
           loading="lazy"
         />

@@ -508,10 +508,11 @@ button:active, .btn:active {
 
 /* Hero Section - Full Viewport from Top */
 [data-hero-section] {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
   position: relative;
   top: 0;
+  display: block;
 }
 
 /* Hide scrollbar on hero section */

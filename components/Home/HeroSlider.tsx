@@ -77,24 +77,24 @@ export const HeroSlider: React.FC = () => {
 
   return (
     <section
-      className="relative min-h-screen w-screen overflow-hidden"
+      className="relative h-screen w-screen overflow-hidden"
       data-hero-section
+      style={{ margin: 0, padding: 0 }}
     >
       {/* Background Effects */}
       <div className="ambient-blobs pointer-events-none absolute inset-0" />
       <div className="noise-overlay pointer-events-none absolute inset-0" />
 
       {/* Horizontal Scroll Container */}
-      <div className="hero-scroll flex snap-x snap-mandatory scroll-smooth w-full min-h-screen overflow-x-auto overflow-y-hidden">
+      <div className="hero-scroll flex snap-x snap-mandatory scroll-smooth w-full h-full overflow-x-auto overflow-y-hidden">
         {slides.map((slide, index) => (
           <div
             key={slide.id}
             data-slide
             data-index={index}
-            className="snap-start flex-shrink-0 w-screen min-h-screen flex"
+            className="snap-start flex-shrink-0 w-screen h-full flex"
           >
-            {/* ❗ REMOVE h-full HERE */}
-            <div className="flex-1 w-full">
+            <div className="flex-1 w-full h-full">
               <SlideContent
                 slide={slide}
                 currentImageIndex={imageIndices[index]}

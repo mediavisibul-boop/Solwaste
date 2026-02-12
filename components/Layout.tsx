@@ -43,19 +43,17 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Hero is visible if more than 20% of it is in viewport
-        setIsHeroVisible(entry.isIntersecting && entry.intersectionRatio > 0.2);
+        // Hero is visible if more than 10% of it is in viewport
+        setIsHeroVisible(entry.isIntersecting && entry.intersectionRatio > 0.1);
       },
       {
-        threshold: [0, 0.2, 0.5, 1],
-        rootMargin: '-80px 0px 0px 0px' // Account for header height
+        threshold: [0, 0.1, 0.2, 0.5],
+        rootMargin: '0px 0px 0px 0px'
       }
     );
 
     // Find hero section - it should have an id or specific class
-    const heroSection = document.querySelector('[data-hero-section]') || 
-                        document.querySelector('.hero-section') ||
-                        document.querySelector('main > div:first-child');
+    const heroSection = document.querySelector('[data-hero-section]');
     
     if (heroSection) {
       observer.observe(heroSection);

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle, Box, DollarSign, BookOpen, ShieldCheck, TrendingUp, UserPlus, Phone, Rocket, ArrowRight } from '../components/Icons';
+import { CheckCircle, Box, IndianRupee, BookOpen, ShieldCheck, TrendingUp, UserPlus, Phone, Rocket, ArrowRight } from '../components/Icons';
 import { Button } from '../components/ui/Button';
 import { SEO } from '../components/SEO';
 import { ScrollReveal, StaggerContainer, StaggerItem } from '../components/ui/ScrollReveal';
@@ -129,7 +129,7 @@ export const PartnerWithUs: React.FC = () => {
                     text="Manufacturing, logistics, installation, warranties handled end to end by us."
                   />
                   <BenefitCard 
-                    icon={<DollarSign size={32}/>}
+                    icon={<IndianRupee size={32}/>}
                     title="Straightforward earnings"
                     text="Bring a deal. Close it. Get paid. Transparent commissions with no fine print."
                   />
