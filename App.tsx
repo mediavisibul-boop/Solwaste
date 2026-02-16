@@ -1,9 +1,9 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Layout } from './components/Layout';
+import { MinimalLayout } from './components/MinimalLayout';
 import { ScrollToTop } from './components/ScrollToTop';
 import { SWMPopup } from './components/SWMPopup';
-import { Home } from './pages/Home';
+import Home from './pages/Home';
 
 // Lazy load all secondary pages for better performance
 const OWC = lazy(() => import('./pages/OWC').then(m => ({ default: m.OWC })));
@@ -36,8 +36,8 @@ const App: React.FC = () => {
     <Router>
       <ScrollToTop />
       <SWMPopup />
-      <Layout>
-        <Suspense fallback={<PageLoader />}>
+      <Suspense fallback={<PageLoader />}>
+        <MinimalLayout>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/owc" element={<OWC />} />
@@ -55,8 +55,8 @@ const App: React.FC = () => {
             <Route path="/accessibility-statement" element={<AccessibilityStatement />} />
             <Route path="/sitemap" element={<Sitemap />} />
           </Routes>
-        </Suspense>
-      </Layout>
+        </MinimalLayout>
+      </Suspense>
     </Router>
   );
 };

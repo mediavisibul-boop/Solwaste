@@ -75,10 +75,10 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({
         </div>
         
         <div className="lg:w-1/2 w-full">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 mb-3 sm:mb-4 md:mb-5 uppercase leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-3 sm:mb-4 uppercase leading-tight">
             {name}
           </h2>
-          <p className="text-gray-700 dark:text-gray-300 text-base sm:text-lg md:text-xl mb-5 sm:mb-6 md:mb-7 leading-relaxed font-normal">
+          <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base md:text-lg mb-5 sm:mb-6 leading-relaxed font-normal">
             {description}
           </p>
           
@@ -90,7 +90,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({
               {features.map((feature, i) => (
                 <li key={i} className="flex items-start">
                   <Check className="text-gray-900 mr-3 sm:mr-4 mt-1 flex-shrink-0" size={18} />
-                  <span className="text-gray-800 dark:text-gray-200 font-semibold text-base sm:text-lg">
+                  <span className="text-gray-800 dark:text-gray-200 font-medium text-sm sm:text-base">
                     {feature}
                   </span>
                 </li>
@@ -125,7 +125,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({
               </h4>
               <div className="h-1 w-8 sm:w-12 bg-gray-900 rounded-full" />
             </div>
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-gray-900 uppercase tracking-tight">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-gray-900 uppercase tracking-tight">
               Technical Details
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mt-3 sm:mt-4 text-sm sm:text-base max-w-2xl mx-auto">

@@ -170,42 +170,7 @@ export const Sustainability: React.FC = () => {
           </Section>
       </div>
 
-      {/* Footer Contact Section */}
-      <div className="bg-gray-900 text-white py-20">
-          <div className="container mx-auto px-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                  <div>
-                      <h2 className="text-4xl font-heading font-bold uppercase mb-6">Get in Touch</h2>
-                      <p className="text-gray-400 mb-8 text-lg">
-                          For questions or information regarding this Environmental & Sustainability Commitment, please contact us.
-                      </p>
-                      
-                      <div className="space-y-6">
-                          <div className="flex items-start">
-                              <MapPin className="text-white mt-1 mr-4 flex-shrink-0" />
-                              <p className="text-gray-300">
-                                  Solwaste Innovations Private Limited<br/>
-                                  1st Floor, 264–265, Dr. Annie Besant Road,<br/>
-                                  Worli, Mumbai, Maharashtra – 400025, India
-                              </p>
-                          </div>
-                          <div className="flex items-center">
-                              <Mail className="text-white mr-4" />
-                              <a href="mailto:privacy@solwaste.co" className="text-gray-300 hover:text-white transition-colors">privacy@solwaste.co</a>
-                          </div>
-                          <div className="flex items-center">
-                              <Phone className="text-white mr-4" />
-                              <a href="tel:+919429691308" className="text-gray-300 hover:text-white transition-colors">+91 9429691308</a>
-                          </div>
-                      </div>
-                  </div>
-                  <div className="bg-white/5 p-8 border border-white/10 rounded-sm">
-                      <p className="text-xl font-heading font-bold mb-4">"Sustainability starts with a decision."</p>
-                      <p className="text-gray-400">Join us in creating a zero-landfill future.</p>
-                  </div>
-              </div>
-          </div>
-      </div>
+
     </div>
   );
 };
