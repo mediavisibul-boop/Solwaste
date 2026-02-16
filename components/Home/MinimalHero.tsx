@@ -19,69 +19,71 @@ export const MinimalHero: React.FC = () => {
         
 
         {/* Content overlay */}
-        <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-5" style={{ paddingTop: 'clamp(24px, 5vw, 40px)' }}>
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 sm:px-5">
           
-
-          {/* Main heading */}
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="font-extrabold tracking-tight text-white"
-            style={{ fontSize: 'clamp(28px, 5vw, 64px)', lineHeight: 1.05 }}
-          >
-            Solwaste Power
-          </motion.h1>
-
-          {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="mt-3 sm:mt-4 text-white/80 max-w-md mx-auto px-2"
-            style={{ fontSize: 'clamp(12px, 2vw, 14px)', lineHeight: 1.7 }}
-          >
-            The ultimate composting experience,<br />
-            better than traditional methods.
-          </motion.p>
-
-          {/* CTA Button */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="mt-0"
-          >
-            <Link
-              to="/owc"
-              className="inline-flex items-center gap-2 bg-black text-white font-medium hover:bg-gray-800 active:bg-gray-900 transition-colors duration-300"
-              style={{ 
-                padding: 'clamp(10px, 2vw, 14px) clamp(20px, 3vw, 28px)', 
-                borderRadius: '999px',
-                fontSize: 'clamp(11px, 1.5vw, 13px)',
-                letterSpacing: '0.02em'
-              }}
+          {/* Text Group */}
+          <div className="flex flex-col items-center">
+            {/* Main heading */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="font-extrabold tracking-tight text-white"
+              style={{ fontSize: 'clamp(30px, 5vw, 64px)', lineHeight: 1.05 }}
             >
-              Get Yours Now
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </Link>
-          </motion.div>
+              Solwaste Power
+            </motion.h1>
 
-          {/* Hero Machine Image Placeholder */}
+            {/* Subtitle */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="mt-2 sm:mt-4 text-white/80 max-w-md mx-auto px-2"
+              style={{ fontSize: 'clamp(13px, 1.8vw, 14px)', lineHeight: 1.6 }}
+            >
+              The ultimate composting experience,<br />
+              better than traditional methods.
+            </motion.p>
+
+            {/* CTA Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="mt-3 sm:mt-4"
+            >
+              <Link
+                to="/owc"
+                className="inline-flex items-center gap-2 bg-black text-white font-medium hover:bg-gray-800 active:bg-gray-900 transition-colors duration-300"
+                style={{ 
+                  padding: 'clamp(10px, 1.5vw, 14px) clamp(20px, 2.5vw, 28px)', 
+                  borderRadius: '999px',
+                  fontSize: 'clamp(12px, 1.4vw, 13px)',
+                  letterSpacing: '0.02em'
+                }}
+              >
+                Get Yours Now
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </motion.div>
+          </div>
+
+          {/* Hero Machine Image */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-3 w-full max-w-[90%] sm:max-w-[80%] md:max-w-[1100px] mx-auto px-2 sm:px-5"
+            className="w-full max-w-[90%] sm:max-w-[80%] md:max-w-[1100px] mx-auto px-2 sm:px-5 mt-4 sm:mt-6"
           >
             <img 
               src="/ecoloopwbg.png" 
               alt="EcoLoop Machine" 
-              className="w-full object-contain transition-all duration-700 ease-in-out grayscale hover:grayscale-0"
+              className="w-full object-contain transition-all duration-700 ease-in-out lg:grayscale lg:hover:grayscale-0"
               style={{ 
-                maxHeight: 'clamp(200px, 45vw, 580px)', 
+                maxHeight: 'clamp(220px, 40vw, 580px)', 
                 borderRadius: '16px' 
               }}
             />
