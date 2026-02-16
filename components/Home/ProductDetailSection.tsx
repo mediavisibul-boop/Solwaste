@@ -49,17 +49,17 @@ const rightFeatures = [
 
 export const ProductDetailSection: React.FC = () => {
   return (
-    <section className="bg-[#f5f5f5]" style={{ padding: '120px 0 140px' }}>
-      <div className="max-w-[1200px] mx-auto px-5 md:px-10">
+    <section className="bg-[#f5f5f5]" style={{ padding: 'clamp(60px, 10vw, 120px) 0 clamp(70px, 11vw, 140px)' }}>
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-5 md:px-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.6 }}
             className="font-bold text-black"
-            style={{ fontSize: '28px', lineHeight: 1.3 }}
+            style={{ fontSize: 'clamp(22px, 3.5vw, 28px)', lineHeight: 1.3 }}
           >
             Solwaste Smart Home
           </motion.h2>
@@ -68,8 +68,8 @@ export const ProductDetailSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-3 text-[#777]"
-            style={{ fontSize: '14px' }}
+            className="mt-2 sm:mt-3 text-[#777]"
+            style={{ fontSize: 'clamp(12px, 1.5vw, 14px)' }}
           >
             The ultimate home composting experience,<br />
             better than traditional methods.
@@ -77,9 +77,9 @@ export const ProductDetailSection: React.FC = () => {
         </div>
 
         {/* Feature Pointers Layout */}
-        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-6">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-6">
           {/* Left Features */}
-          <div className="flex-1 space-y-8 lg:space-y-10">
+          <div className="flex-1 w-full grid grid-cols-2 lg:grid-cols-1 gap-4 sm:gap-6 lg:space-y-10 lg:gap-0">
             {leftFeatures.map((feature, index) => (
               <motion.div
                 key={index}
@@ -87,17 +87,17 @@ export const ProductDetailSection: React.FC = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="text-right"
+                className="text-left lg:text-right"
               >
-                <div className="flex items-start justify-end gap-3">
+                <div className="flex items-start lg:justify-end gap-2 sm:gap-3">
                   <div>
-                    <div className="flex items-center justify-end gap-2 mb-1">
-                      <span className="text-[11px] text-[#999] font-medium">{feature.number}</span>
-                      <h4 className="font-semibold text-black" style={{ fontSize: '15px' }}>
+                    <div className="flex items-center lg:justify-end gap-1.5 sm:gap-2 mb-1">
+                      <span className="text-[10px] sm:text-[11px] text-[#999] font-medium">{feature.number}</span>
+                      <h4 className="font-semibold text-black" style={{ fontSize: 'clamp(12px, 1.5vw, 15px)' }}>
                         {feature.title}
                       </h4>
                     </div>
-                    <p className="text-[#777]" style={{ fontSize: '12px', lineHeight: 1.6 }}>
+                    <p className="text-[#777] hidden sm:block" style={{ fontSize: 'clamp(11px, 1.2vw, 12px)', lineHeight: 1.6 }}>
                       {feature.description}
                     </p>
                   </div>
@@ -112,13 +112,13 @@ export const ProductDetailSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.7 }}
-            className="flex-shrink-0 w-full lg:w-auto"
+            className="flex-shrink-0 w-full lg:w-auto order-first lg:order-none"
           >
             <div 
-              className="mx-auto  flex items-center justify-center"
+              className="mx-auto flex items-center justify-center"
               style={{ 
-                width: 'clamp(500px, 52vw, 580px)', 
-                height: 'clamp(750px, 60vw, 700px)',
+                width: 'clamp(280px, 52vw, 580px)', 
+                height: 'clamp(350px, 60vw, 700px)',
                 borderRadius: '20px'
               }}
             >
@@ -131,7 +131,7 @@ export const ProductDetailSection: React.FC = () => {
           </motion.div>
 
           {/* Right Features */}
-          <div className="flex-1 space-y-8 lg:space-y-10">
+          <div className="flex-1 w-full grid grid-cols-2 lg:grid-cols-1 gap-4 sm:gap-6 lg:space-y-10 lg:gap-0">
             {rightFeatures.map((feature, index) => (
               <motion.div
                 key={index}
@@ -141,15 +141,15 @@ export const ProductDetailSection: React.FC = () => {
                 transition={{ duration: 0.5, delay: index * 0.08 }}
                 className="text-left"
               >
-                <div className="flex items-start gap-3">
+                <div className="flex items-start gap-2 sm:gap-3">
                   <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-[11px] text-[#999] font-medium">{feature.number}</span>
-                      <h4 className="font-semibold text-black" style={{ fontSize: '15px' }}>
+                    <div className="flex items-center gap-1.5 sm:gap-2 mb-1">
+                      <span className="text-[10px] sm:text-[11px] text-[#999] font-medium">{feature.number}</span>
+                      <h4 className="font-semibold text-black" style={{ fontSize: 'clamp(12px, 1.5vw, 15px)' }}>
                         {feature.title}
                       </h4>
                     </div>
-                    <p className="text-[#777]" style={{ fontSize: '12px', lineHeight: 1.6 }}>
+                    <p className="text-[#777] hidden sm:block" style={{ fontSize: 'clamp(11px, 1.2vw, 12px)', lineHeight: 1.6 }}>
                       {feature.description}
                     </p>
                   </div>

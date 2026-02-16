@@ -3,24 +3,24 @@ import { Link } from 'react-router-dom';
 
 export const MinimalFooter: React.FC = () => {
   return (
-    <footer className="relative bg-black text-white overflow-hidden" style={{ padding: '80px 0 0' }}>
+    <footer className="relative bg-black text-white overflow-hidden" style={{ padding: 'clamp(40px, 7vw, 80px) 0 0' }}>
       {/* Top Bar with Logo + Social */}
-      <div className="max-w-[1200px] mx-auto px-5 md:px-10">
-        <div className="flex items-center justify-between pb-10 border-b border-white/10">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-5 md:px-10">
+        <div className="flex items-center justify-between pb-6 sm:pb-10 border-b border-white/10">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5">
+          <Link to="/" className="flex items-center gap-2">
             <img 
               src="/logo.png" 
               alt="Solwaste Logo" 
-              className="w-7 h-7 object-contain brightness-0 invert"
+              className="w-6 h-6 sm:w-7 sm:h-7 object-contain brightness-0 invert"
             />
-            <span className="text-[18px] font-extrabold tracking-tight" style={{ letterSpacing: '-0.02em' }}>
+            <span className="text-[16px] sm:text-[18px] font-extrabold tracking-tight" style={{ letterSpacing: '-0.02em' }}>
               Solwaste
             </span>
           </Link>
 
           {/* Social Icons */}
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-3 sm:gap-5">
             <a href="https://www.instagram.com/solwaste?igsh=MXVsMXVpMmZkOWh3Yg==" target="_blank" rel="noopener noreferrer" className="hover:opacity-60 transition-opacity" aria-label="Instagram">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
             </a>
@@ -38,19 +38,19 @@ export const MinimalFooter: React.FC = () => {
       </div>
 
       {/* Footer Links Grid */}
-      <div className="max-w-[1200px] mx-auto px-5 md:px-10 py-12">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 lg:gap-12">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-5 md:px-10 py-8 sm:py-12">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
           {/* Column 1 — Contact */}
           <div className="col-span-2 sm:col-span-1">
-            <h4 className="text-[11px] font-semibold uppercase tracking-widest text-white/50 mb-5">Contact</h4>
-            <div className="space-y-3">
-              <a href="tel:+919429691308" className="block text-[13px] text-white/80 hover:text-white transition-colors">
+            <h4 className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-widest text-white/50 mb-3 sm:mb-5">Contact</h4>
+            <div className="space-y-2 sm:space-y-3">
+              <a href="tel:+919429691308" className="block text-[12px] sm:text-[13px] text-white/80 hover:text-white transition-colors">
                 +91-9429691308
               </a>
-              <a href="mailto:hello@solwaste.co" className="block text-[13px] text-white/80 hover:text-white transition-colors">
+              <a href="mailto:hello@solwaste.co" className="block text-[12px] sm:text-[13px] text-white/80 hover:text-white transition-colors break-all">
                 hello@solwaste.co
               </a>
-              <p className="text-[12px] text-white/50 leading-relaxed">
+              <p className="text-[11px] sm:text-[12px] text-white/50 leading-relaxed">
                 Worli, 1st floor, 264-265,<br />
                 Dr. Annie Besant Road,<br />
                 Worli, Mumbai, MH 400025
@@ -60,53 +60,53 @@ export const MinimalFooter: React.FC = () => {
 
           {/* Column 2 — Company */}
           <div>
-            <h4 className="text-[11px] font-semibold uppercase tracking-widest text-white/50 mb-5">Company</h4>
-            <ul className="space-y-3">
-              <li><Link to="/about" className="text-[13px] text-white/80 hover:text-white transition-colors">About</Link></li>
-              <li><Link to="/sustainability" className="text-[13px] text-white/80 hover:text-white transition-colors">Sustainability</Link></li>
-              <li><Link to="/vision-2047" className="text-[13px] text-white/80 hover:text-white transition-colors">Vision 2047</Link></li>
-              <li><Link to="/careers" className="text-[13px] text-white/80 hover:text-white transition-colors">Careers</Link></li>
-              <li><Link to="/partner" className="text-[13px] text-white/80 hover:text-white transition-colors">Partner With Us</Link></li>
+            <h4 className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-widest text-white/50 mb-3 sm:mb-5">Company</h4>
+            <ul className="space-y-2 sm:space-y-3">
+              <li><Link to="/about" className="text-[12px] sm:text-[13px] text-white/80 hover:text-white transition-colors">About</Link></li>
+              <li><Link to="/sustainability" className="text-[12px] sm:text-[13px] text-white/80 hover:text-white transition-colors">Sustainability</Link></li>
+              <li><Link to="/vision-2047" className="text-[12px] sm:text-[13px] text-white/80 hover:text-white transition-colors">Vision 2047</Link></li>
+              <li><Link to="/careers" className="text-[12px] sm:text-[13px] text-white/80 hover:text-white transition-colors">Careers</Link></li>
+              <li><Link to="/partner" className="text-[12px] sm:text-[13px] text-white/80 hover:text-white transition-colors">Partner With Us</Link></li>
             </ul>
           </div>
 
           {/* Column 3 — Products */}
           <div>
-            <h4 className="text-[11px] font-semibold uppercase tracking-widest text-white/50 mb-5">Products</h4>
-            <ul className="space-y-3">
-              <li><Link to="/owc" className="text-[13px] text-white/80 hover:text-white transition-colors">Our Machines</Link></li>
-              <li><Link to="/fahaka" className="text-[13px] text-white/80 hover:text-white transition-colors">Fahaka</Link></li>
-              <li><Link to="/case-studies" className="text-[13px] text-white/80 hover:text-white transition-colors">Case Studies</Link></li>
-              <li><Link to="/gallery" className="text-[13px] text-white/80 hover:text-white transition-colors">Gallery</Link></li>
+            <h4 className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-widest text-white/50 mb-3 sm:mb-5">Products</h4>
+            <ul className="space-y-2 sm:space-y-3">
+              <li><Link to="/owc" className="text-[12px] sm:text-[13px] text-white/80 hover:text-white transition-colors">Our Machines</Link></li>
+              <li><Link to="/fahaka" className="text-[12px] sm:text-[13px] text-white/80 hover:text-white transition-colors">Fahaka</Link></li>
+              <li><Link to="/case-studies" className="text-[12px] sm:text-[13px] text-white/80 hover:text-white transition-colors">Case Studies</Link></li>
+              <li><Link to="/gallery" className="text-[12px] sm:text-[13px] text-white/80 hover:text-white transition-colors">Gallery</Link></li>
             </ul>
           </div>
 
           {/* Column 4 — Resources */}
           <div>
-            <h4 className="text-[11px] font-semibold uppercase tracking-widest text-white/50 mb-5">Resources</h4>
-            <ul className="space-y-3">
-              <li><Link to="/press-media" className="text-[13px] text-white/80 hover:text-white transition-colors">Press & Media</Link></li>
-              <li><Link to="/contact" className="text-[13px] text-white/80 hover:text-white transition-colors">Contact Us</Link></li>
+            <h4 className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-widest text-white/50 mb-3 sm:mb-5">Resources</h4>
+            <ul className="space-y-2 sm:space-y-3">
+              <li><Link to="/press-media" className="text-[12px] sm:text-[13px] text-white/80 hover:text-white transition-colors">Press & Media</Link></li>
+              <li><Link to="/contact" className="text-[12px] sm:text-[13px] text-white/80 hover:text-white transition-colors">Contact Us</Link></li>
             </ul>
           </div>
         </div>
       </div>
 
       {/* Bottom Bar */}
-      <div className="max-w-[1200px] mx-auto px-5 md:px-10">
-        <div className="border-t border-white/10 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex flex-wrap items-center justify-center gap-5">
-            <Link to="/privacy-policy" className="text-[11px] text-white/40 hover:text-white/60 transition-colors">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-5 md:px-10">
+        <div className="border-t border-white/10 py-5 sm:py-6 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-5">
+            <Link to="/privacy-policy" className="text-[10px] sm:text-[11px] text-white/40 hover:text-white/60 transition-colors">
               Privacy Policy
             </Link>
-            <Link to="/accessibility-statement" className="text-[11px] text-white/40 hover:text-white/60 transition-colors">
+            <Link to="/accessibility-statement" className="text-[10px] sm:text-[11px] text-white/40 hover:text-white/60 transition-colors">
               Accessibility Statement
             </Link>
-            <Link to="/sitemap" className="text-[11px] text-white/40 hover:text-white/60 transition-colors">
+            <Link to="/sitemap" className="text-[10px] sm:text-[11px] text-white/40 hover:text-white/60 transition-colors">
               Sitemap
             </Link>
           </div>
-          <span className="text-[11px] text-white/30">
+          <span className="text-[10px] sm:text-[11px] text-white/30">
             &copy; 2026 Solwaste. All rights reserved.
           </span>
         </div>

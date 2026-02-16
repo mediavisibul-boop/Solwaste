@@ -6,7 +6,7 @@ export const MinimalHero: React.FC = () => {
   return (
     <div className="relative" style={{ margin: 0, padding: 0 }}>
       {/* Hero Content */}
-      <div className="relative overflow-hidden" style={{ minHeight: 'calc(100vh - 80px)', padding: 0, margin: 0 }}>
+      <div className="relative overflow-hidden" style={{ height: 'calc(100vh - 64px)', padding: 0, margin: 0 }}>
         {/* Background image */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -19,7 +19,7 @@ export const MinimalHero: React.FC = () => {
         
 
         {/* Content overlay */}
-        <div className="relative z-10 flex flex-col items-center text-center" style={{ paddingTop: '40px' }}>
+        <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-5" style={{ paddingTop: 'clamp(24px, 5vw, 40px)' }}>
           
 
           {/* Main heading */}
@@ -28,7 +28,7 @@ export const MinimalHero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
             className="font-extrabold tracking-tight text-white"
-            style={{ fontSize: 'clamp(36px, 5vw, 64px)', lineHeight: 1.05 }}
+            style={{ fontSize: 'clamp(28px, 5vw, 64px)', lineHeight: 1.05 }}
           >
             Solwaste Power
           </motion.h1>
@@ -38,8 +38,8 @@ export const MinimalHero: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="mt-4 text-white/80 max-w-md mx-auto"
-            style={{ fontSize: '14px', lineHeight: 1.7 }}
+            className="mt-3 sm:mt-4 text-white/80 max-w-md mx-auto px-2"
+            style={{ fontSize: 'clamp(12px, 2vw, 14px)', lineHeight: 1.7 }}
           >
             The ultimate composting experience,<br />
             better than traditional methods.
@@ -54,11 +54,11 @@ export const MinimalHero: React.FC = () => {
           >
             <Link
               to="/owc"
-              className="inline-flex items-center gap-2 bg-black text-white font-medium hover:bg-gray-800 transition-colors duration-300"
+              className="inline-flex items-center gap-2 bg-black text-white font-medium hover:bg-gray-800 active:bg-gray-900 transition-colors duration-300"
               style={{ 
-                padding: '14px 28px', 
+                padding: 'clamp(10px, 2vw, 14px) clamp(20px, 3vw, 28px)', 
                 borderRadius: '999px',
-                fontSize: '13px',
+                fontSize: 'clamp(11px, 1.5vw, 13px)',
                 letterSpacing: '0.02em'
               }}
             >
@@ -74,14 +74,14 @@ export const MinimalHero: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-3 w-full max-w-[1100px] mx-auto px-5"
+            className="mt-3 w-full max-w-[90%] sm:max-w-[80%] md:max-w-[1100px] mx-auto px-2 sm:px-5"
           >
             <img 
               src="/ecoloopwbg.png" 
               alt="EcoLoop Machine" 
               className="w-full object-contain transition-all duration-700 ease-in-out grayscale hover:grayscale-0"
               style={{ 
-                maxHeight: 'clamp(300px, 45vw, 580px)', 
+                maxHeight: 'clamp(200px, 45vw, 580px)', 
                 borderRadius: '16px' 
               }}
             />
@@ -99,7 +99,7 @@ export const MinimalHero: React.FC = () => {
             const next = document.getElementById('feature-section');
             next?.scrollIntoView({ behavior: 'smooth' });
           }}
-          className="w-16 h-16 rounded-full bg-black text-white flex items-center justify-center shadow-lg hover:bg-gray-800 transition-colors duration-300"
+          className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-black text-white flex items-center justify-center shadow-lg hover:bg-gray-800 active:bg-gray-900 transition-colors duration-300"
           aria-label="Scroll down"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

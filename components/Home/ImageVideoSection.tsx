@@ -26,8 +26,8 @@ export const ImageVideoSection: React.FC = () => {
   };
 
   return (
-    <section className="bg-[#f5f5f5]" style={{ padding: '0 0 120px 0' }}>
-      <div className="max-w-[1200px] mx-auto px-5 md:px-10">
+    <section className="bg-[#f5f5f5]" style={{ padding: '0 0 clamp(60px, 10vw, 120px) 0' }}>
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-5 md:px-10">
         {/* Video/Image Box */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -35,12 +35,12 @@ export const ImageVideoSection: React.FC = () => {
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.7 }}
           className="relative w-full overflow-hidden"
-          style={{ borderRadius: '24px' }}
+          style={{ borderRadius: 'clamp(12px, 2.5vw, 24px)' }}
         >
           {/* Video */}
           <div 
             className="w-full relative bg-black"
-            style={{ height: 'clamp(350px, 45vw, 550px)' }}
+            style={{ height: 'clamp(220px, 50vw, 550px)' }}
           >
             <video
               ref={videoRef}
@@ -53,28 +53,28 @@ export const ImageVideoSection: React.FC = () => {
             {/* Play/Pause button (center) */}
             <button 
               onClick={togglePlay}
-              className="absolute inset-0 m-auto w-16 h-16 rounded-full bg-white/90 flex items-center justify-center hover:bg-white transition-colors shadow-lg z-10"
+              className="absolute inset-0 m-auto w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white/90 flex items-center justify-center hover:bg-white active:bg-white transition-colors shadow-lg z-10"
               aria-label={isPlaying ? 'Pause video' : 'Play video'}
               style={{ opacity: isPlaying ? 0 : 1, transition: 'opacity 0.3s' }}
               onMouseEnter={(e) => { if (isPlaying) e.currentTarget.style.opacity = '1'; }}
               onMouseLeave={(e) => { if (isPlaying) e.currentTarget.style.opacity = '0'; }}
             >
-              {isPlaying ? <Pause size={24} fill="black" stroke="black" /> : <Play size={24} fill="black" stroke="black" />}
+              {isPlaying ? <Pause size={20} fill="black" stroke="black" className="sm:w-6 sm:h-6" /> : <Play size={20} fill="black" stroke="black" className="sm:w-6 sm:h-6" />}
             </button>
 
             {/* Mute/Unmute button (bottom-right) */}
             <button
               onClick={toggleMute}
-              className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-black/50 flex items-center justify-center hover:bg-black/70 transition-colors z-10"
+              className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/50 flex items-center justify-center hover:bg-black/70 active:bg-black/80 transition-colors z-10"
               aria-label={isMuted ? 'Unmute' : 'Mute'}
             >
-              {isMuted ? <VolumeX size={18} className="text-white" /> : <Volume2 size={18} className="text-white" />}
+              {isMuted ? <VolumeX size={16} className="text-white sm:w-[18px] sm:h-[18px]" /> : <Volume2 size={16} className="text-white sm:w-[18px] sm:h-[18px]" />}
             </button>
           </div>
         </motion.div>
 
         {/* Info Row Below Video */}
-        <div className="mt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div className="mt-5 sm:mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6">
           <div>
             <motion.h3
               initial={{ opacity: 0, y: 15 }}
@@ -82,7 +82,7 @@ export const ImageVideoSection: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
               className="font-bold text-black"
-              style={{ fontSize: '22px' }}
+              style={{ fontSize: 'clamp(18px, 2.5vw, 22px)' }}
             >
               Solwaste Composting Machine
             </motion.h3>
@@ -91,8 +91,8 @@ export const ImageVideoSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="mt-2 text-[#777]"
-              style={{ fontSize: '13px', lineHeight: 1.7 }}
+              className="mt-1.5 sm:mt-2 text-[#777]"
+              style={{ fontSize: 'clamp(11px, 1.4vw, 13px)', lineHeight: 1.7 }}
             >
               A fully automatic waste conversion in 24 hours.
             </motion.p>

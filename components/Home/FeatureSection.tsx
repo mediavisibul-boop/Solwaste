@@ -35,9 +35,9 @@ export const FeatureSection: React.FC = () => {
     <section 
       id="feature-section" 
       className="bg-[#f5f5f5]"
-      style={{ padding: '120px 0' }}
+      style={{ padding: 'clamp(60px, 10vw, 120px) 0' }}
     >
-      <div className="max-w-[1200px] mx-auto px-2 md:px-6">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-5 md:px-6">
         {/* Section Header */}
         <div className="text-center">
           <motion.h2
@@ -46,7 +46,7 @@ export const FeatureSection: React.FC = () => {
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.6 }}
             className="font-bold text-black"
-            style={{ fontSize: '28px', lineHeight: 1.3 }}
+            style={{ fontSize: 'clamp(22px, 3.5vw, 28px)', lineHeight: 1.3 }}
           >
             An Innovative Smart Composting Solution
           </motion.h2>
@@ -55,8 +55,8 @@ export const FeatureSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-5 text-[#777] mx-auto"
-            style={{ fontSize: '14px', lineHeight: 1.8, maxWidth: '580px' }}
+            className="mt-4 sm:mt-5 text-[#777] mx-auto px-2"
+            style={{ fontSize: 'clamp(12px, 1.5vw, 14px)', lineHeight: 1.8, maxWidth: '580px' }}
           >
             Solwaste machines convert food waste into compost efficiently. Designed for 
             commercial and residential use with swappable, upgradable components for all scenarios.
@@ -65,8 +65,8 @@ export const FeatureSection: React.FC = () => {
 
         {/* Feature Cards */}
         <div 
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-16"
-          style={{ gap: '60px' }}
+          className="grid grid-cols-2 lg:grid-cols-4 mt-10 sm:mt-16"
+          style={{ gap: 'clamp(24px, 5vw, 60px)' }}
         >
           {features.map((feature, index) => (
             <motion.div
@@ -78,20 +78,20 @@ export const FeatureSection: React.FC = () => {
               className="text-center"
             >
               {/* Icon */}
-              <div className="w-12 h-12 mx-auto flex items-center justify-center text-black">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 mx-auto flex items-center justify-center text-black">
                 {feature.icon}
               </div>
               {/* Title */}
               <h4 
-                className="mt-5 font-semibold text-black"
-                style={{ fontSize: '16px' }}
+                className="mt-3 sm:mt-5 font-semibold text-black"
+                style={{ fontSize: 'clamp(13px, 1.5vw, 16px)' }}
               >
                 {feature.title}
               </h4>
               {/* Description */}
               <p 
-                className="mt-2.5 text-[#777] leading-relaxed mx-auto"
-                style={{ fontSize: '13px', maxWidth: '220px' }}
+                className="mt-1.5 sm:mt-2.5 text-[#777] leading-relaxed mx-auto"
+                style={{ fontSize: 'clamp(11px, 1.3vw, 13px)', maxWidth: '220px' }}
               >
                 {feature.description}
               </p>

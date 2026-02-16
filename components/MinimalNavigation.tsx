@@ -20,9 +20,9 @@ export const MinimalNavigation: React.FC = () => {
     <>
       <nav 
         className="sticky top-0 left-0 right-0 z-50 bg-[#f5f5f5] border-b border-black/5"
-        style={{ height: '80px' }}
+        style={{ height: '64px' }}
       >
-        <div className="max-w-[1200px] mx-auto px-5 md:px-10 h-full flex items-center justify-between">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-5 md:px-10 h-full flex items-center justify-between">
           {/* Left Navigation - Desktop */}
           <div className="hidden lg:flex items-center" style={{ gap: '48px' }}>
             {leftLinks.map((link) => (
@@ -40,15 +40,15 @@ export const MinimalNavigation: React.FC = () => {
           {/* Center Logo */}
           <Link 
             to="/" 
-            className="flex items-center gap-2.5 lg:absolute lg:left-1/2 lg:-translate-x-1/2"
+            className="flex items-center gap-2 lg:absolute lg:left-1/2 lg:-translate-x-1/2"
           >
             <img 
               src="/logo.png" 
               alt="Solwaste Logo" 
-              className="w-8 h-8 object-contain"
+              className="w-7 h-7 sm:w-8 sm:h-8 object-contain"
             />
             <span 
-              className="text-[20px] font-extrabold tracking-tight"
+              className="text-[17px] sm:text-[20px] font-extrabold tracking-tight"
               style={{ letterSpacing: '-0.02em' }}
             >
               Solwaste
@@ -71,7 +71,7 @@ export const MinimalNavigation: React.FC = () => {
 
           {/* Mobile Menu Button */}
           <button 
-            className="lg:hidden p-2 -mr-2"
+            className="lg:hidden p-2.5 -mr-2 active:bg-black/5 rounded-lg transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -91,16 +91,16 @@ export const MinimalNavigation: React.FC = () => {
           onClick={() => setIsMobileMenuOpen(false)} 
         />
         <div 
-          className={`absolute top-[80px] left-0 right-0 bg-[#f5f5f5] shadow-lg transition-transform duration-300 ${
-            isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
+          className={`absolute top-[64px] left-0 right-0 bg-[#f5f5f5] shadow-lg transition-all duration-300 ease-out ${
+            isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0 pointer-events-none'
           }`}
         >
-          <div className="px-6 py-8 flex flex-col gap-1">
+          <div className="px-5 py-6 flex flex-col">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 to={link.to}
-                className="text-[14px] font-medium uppercase py-3.5 border-b border-black/5 hover:opacity-60 transition-opacity"
+                className="text-[15px] font-medium uppercase py-4 border-b border-black/5 active:bg-black/5 transition-colors"
                 style={{ letterSpacing: '0.08em' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
