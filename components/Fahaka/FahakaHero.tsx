@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 export const FahakaHero: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const fahakaImages = ["/fahaka.webp", "/fahaka2.webp", "/fahaka3.webp"];
+  const fahakaImages = ["/fahaka.png", "/fahaka2.webp", "/fahaka3.webp"];
 
   // Auto-rotate images
   useEffect(() => {

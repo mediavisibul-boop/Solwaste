@@ -67,7 +67,7 @@ export const slides: Slide[] = [
     title: "FAHAKA",
     subtitle: "The Universal Decomposer",
     description: "Breaking the barriers of organic waste. Capable of processing Food, Plastic Bottles, and Sanitary Waste into sterile resources.",
-    images: ["/fahaka.webp", "/fahaka2.webp", "/fahaka3.webp"],
+    images: ["/fahaka.png", "/fahaka2.webp", "/fahaka3.webp"],
     isDark: true,
     badge: "Innovation Lab"
   }

@@ -8,14 +8,14 @@ const products = [
     capacity: 'Societies & Hotels',
     description: 'A zero-maintenance workhorse designed for residential societies, hotels, and resorts. EcoLoop ensures waste management never impacts aesthetics or air quality. On-site composting, zero odor, and German-engineered reliability.',
     link: '/owc',
-    image: '/ecoloop2.webp',
+    image: '/ecoloop2.png',
   },
   {
     name: 'Fahaka Industrial',
     capacity: 'Universal Decomposer',
     description: "Traditional composters fail at contamination. Fahaka thrives on it. The world's first unified processor for Food, Plastics, Sanitary, and Biochemical Waste.",
     link: '/fahaka',
-    image: '/fahaka.webp',
+    image: '/fahaka.png',
   },
 ];
 
