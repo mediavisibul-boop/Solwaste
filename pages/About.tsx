@@ -24,21 +24,21 @@ export const About: React.FC = () => {
         type="website"
       />
       {/* Header - Mobile Optimized */}
-      <div className="bg-gray-900 text-white min-h-screen flex items-center relative overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6 relative z-10 py-24 sm:py-28 md:py-32 lg:py-36">
+      <div className="bg-gray-900 text-white min-h-[80vh] sm:min-h-screen flex items-center relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 max-w-7xl relative z-10 py-20 sm:py-24 md:py-28 lg:py-32 xl:py-36">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="max-w-4xl"
           >
-             <div className="flex items-center space-x-4 mb-6">
-                <div className="h-1 w-12 sm:w-16 bg-brand-primary rounded-full"></div>
-                <span className="text-white font-semibold uppercase tracking-wider text-sm">About Solwaste</span>
+             <div className="flex items-center space-x-3 sm:space-x-4 mb-4 sm:mb-6">
+                <div className="h-1 w-10 sm:w-12 md:w-16 bg-brand-primary rounded-full"></div>
+                <span className="text-white font-semibold uppercase tracking-wider text-xs sm:text-sm">About Solwaste</span>
             </div>
-            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold text-white mb-6 sm:mb-7 md:mb-8 leading-tight">
+            <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-extrabold text-white mb-5 sm:mb-6 md:mb-7 lg:mb-8 leading-tight">
               Engineering A <br className="hidden sm:block"/> Sustainable Tomorrow
             </h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white max-w-3xl leading-relaxed border-l-4 border-brand-primary/50 pl-6">
+            <p className="text-sm xs:text-base sm:text-lg md:text-xl text-white max-w-3xl leading-relaxed border-l-4 border-brand-primary/50 pl-4 sm:pl-6">
               We help organizations across India implement on-site composting solutions that reduce waste costs, ensure compliance, and support long-term sustainability goals. Through proven technology, turnkey installation, and compliance-ready systems, we turn environmental challenges into economic resources.
             </p>
           </motion.div>
@@ -49,11 +49,11 @@ export const About: React.FC = () => {
       </div>
 
       {/* Main Content - Mobile Optimized */}
-      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 items-center mb-12 sm:mb-16 md:mb-20 lg:mb-24">
+      <section className="py-10 sm:py-14 md:py-18 lg:py-20 xl:py-24 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-14 xl:gap-20 items-center mb-10 sm:mb-14 md:mb-18 lg:mb-24">
             <ScrollReveal variant="fadeInLeft" viewport={{ once: true, amount: 0.3 }}>
-              <h2 className="text-3xl xs:text-4xl sm:text-5xl font-heading font-bold text-gray-900 mb-5 leading-tight">
+              <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4 sm:mb-5 leading-tight">
                 Our Story & Expertise
               </h2>
               <div className="w-20 sm:w-24 h-1 bg-gray-900 rounded-full mb-6 sm:mb-7 md:mb-8"></div>
@@ -104,11 +104,11 @@ export const About: React.FC = () => {
       </section>
 
       {/* Clients / Who We Serve - Mobile Optimized */}
-      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white border-t border-gray-200">
-        <div className="container mx-auto px-4 sm:px-6">
+      <section className="py-10 sm:py-14 md:py-18 lg:py-20 xl:py-24 bg-white border-t border-gray-200">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 max-w-7xl">
            <ScrollReveal variant="fadeInDown" delay={0.1} viewport={{ once: true, amount: 0.5 }}>
-             <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14 md:mb-16 lg:mb-18">
-                <h2 className="text-3xl xs:text-4xl sm:text-5xl font-heading font-bold text-gray-900 mb-4 uppercase tracking-wide leading-tight">Who We Serve</h2>
+             <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 md:mb-14 lg:mb-16">
+                <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-3 sm:mb-4 uppercase tracking-wide leading-tight">Who We Serve</h2>
                 <div className="w-16 sm:w-20 h-1 bg-gray-900 rounded-full mx-auto"></div>
              </div>
            </ScrollReveal>

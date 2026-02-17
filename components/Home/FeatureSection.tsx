@@ -2,11 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Zap, Wind, Leaf, Smartphone } from 'lucide-react';
 
-const tabs = [
-  { label: 'On the Road', active: false },
-  { label: 'For Housing', active: true },
-];
-
 const features = [
   {
     icon: <Zap size={28} strokeWidth={1.5} />,
@@ -34,10 +29,9 @@ export const FeatureSection: React.FC = () => {
   return (
     <section 
       id="feature-section" 
-      className="bg-[#f5f5f5]"
-      style={{ padding: 'clamp(60px, 10vw, 120px) 0' }}
+      className="bg-[#f5f5f5] py-14 xs:py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32"
     >
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-5 md:px-6">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
         {/* Section Header */}
         <div className="text-center">
           <motion.h2
@@ -45,8 +39,7 @@ export const FeatureSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.6 }}
-            className="font-bold text-black"
-            style={{ fontSize: 'clamp(22px, 3.5vw, 28px)', lineHeight: 1.3 }}
+            className="font-bold text-black text-lg xs:text-xl sm:text-[22px] md:text-2xl lg:text-[28px] xl:text-3xl leading-tight"
           >
             An Innovative Smart Composting Solution
           </motion.h2>
@@ -55,8 +48,7 @@ export const FeatureSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 sm:mt-5 text-[#777] mx-auto px-2"
-            style={{ fontSize: 'clamp(12px, 1.5vw, 14px)', lineHeight: 1.8, maxWidth: '580px' }}
+            className="mt-3 sm:mt-4 md:mt-5 text-[#777] mx-auto px-2 max-w-xl text-xs sm:text-[13px] md:text-sm leading-relaxed"
           >
             Solwaste machines convert food waste into compost efficiently. Designed for 
             commercial and residential use with swappable, upgradable components for all scenarios.
@@ -64,10 +56,7 @@ export const FeatureSection: React.FC = () => {
         </div>
 
         {/* Feature Cards */}
-        <div 
-          className="grid grid-cols-2 lg:grid-cols-4 mt-10 sm:mt-16"
-          style={{ gap: 'clamp(24px, 5vw, 60px)' }}
-        >
+        <div className="grid grid-cols-2 lg:grid-cols-4 mt-8 sm:mt-12 md:mt-16 gap-6 xs:gap-8 sm:gap-10 md:gap-12 lg:gap-14 xl:gap-16">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -82,17 +71,11 @@ export const FeatureSection: React.FC = () => {
                 {feature.icon}
               </div>
               {/* Title */}
-              <h4 
-                className="mt-3 sm:mt-5 font-semibold text-black"
-                style={{ fontSize: 'clamp(13px, 1.5vw, 16px)' }}
-              >
+              <h4 className="mt-3 sm:mt-4 md:mt-5 font-semibold text-black text-[12px] xs:text-[13px] sm:text-sm md:text-[15px] lg:text-base">
                 {feature.title}
               </h4>
               {/* Description */}
-              <p 
-                className="mt-1.5 sm:mt-2.5 text-[#777] leading-relaxed mx-auto"
-                style={{ fontSize: 'clamp(11px, 1.3vw, 13px)', maxWidth: '220px' }}
-              >
+              <p className="mt-1.5 sm:mt-2 md:mt-3 text-[#777] leading-relaxed mx-auto max-w-[220px] text-[10px] xs:text-[11px] sm:text-xs md:text-[13px]">
                 {feature.description}
               </p>
             </motion.div>

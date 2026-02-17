@@ -16,9 +16,9 @@ export const TechSpecs: React.FC = () => {
 
   return (
     <section className="py-20 lg:py-32 bg-white text-black">
-      <div className="container mx-auto px-4 sm:px-6">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 md:px-8 lg:px-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold font-heading mb-3">Core Specifications</h2>
+          <h2 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold font-heading mb-3">Core Specifications</h2>
           <div className="w-20 h-1 bg-black mx-auto"></div>
         </div>
         
@@ -29,19 +29,19 @@ export const TechSpecs: React.FC = () => {
             { icon: <ShieldCheck size={32}/>, label: "Sterilization", value: "Log 6", sub: "Medical Grade" },
             { icon: <Recycle size={32}/>, label: "Residue", value: "< 5%", sub: "Of Input Volume" }
           ].map((spec, idx) => (
-            <div key={idx} className="border border-gray-200 rounded-lg p-8 text-center hover:shadow-xl transition-shadow duration-300">
+            <div key={idx} className="border border-gray-200 rounded-lg p-4 sm:p-5 md:p-6 lg:p-8 text-center hover:shadow-xl transition-shadow duration-300">
               <div className="inline-flex justify-center items-center w-16 h-16 rounded-full bg-gray-100 text-black mb-5">
                 {spec.icon}
               </div>
               <h3 className="text-gray-500 font-semibold uppercase tracking-wider text-sm mb-2">{spec.label}</h3>
-              <div className="text-3xl font-bold text-black mb-1">{spec.value}</div>
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-1">{spec.value}</div>
               {spec.sub && <div className="text-gray-500 text-sm">{spec.sub}</div>}
             </div>
           ))}
         </div>
 
         <div className="text-center max-w-3xl mx-auto">
-          <h3 className="text-4xl sm:text-5xl font-heading font-bold text-black mb-6">
+          <h3 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-heading font-bold text-black mb-6">
             Ready to deploy Fahaka?
           </h3>
           <p className="text-gray-600 text-lg mb-8">

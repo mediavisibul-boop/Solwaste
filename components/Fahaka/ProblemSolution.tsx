@@ -6,7 +6,7 @@ import { ScrollReveal } from '../ui/ScrollReveal';
 export const ProblemSolution: React.FC = () => {
   return (
     <section className="py-20 lg:py-32 bg-white text-black">
-      <div className="container mx-auto px-4 sm:px-6">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 md:px-8 lg:px-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold mb-4">
             Why Fahaka?
@@ -19,7 +19,7 @@ export const ProblemSolution: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           
           {/* Problem */}
-          <div className="border border-gray-200 rounded-lg p-8">
+          <div className="border border-gray-200 rounded-lg p-4 sm:p-5 md:p-6 lg:p-8">
             <div className="flex items-center gap-4 mb-6">
               <div className="w-12 h-12 rounded-lg bg-black flex items-center justify-center">
                 <AlertTriangle className="w-6 h-6 text-white" />
@@ -48,7 +48,7 @@ export const ProblemSolution: React.FC = () => {
           </div>
 
           {/* Solution */}
-          <div className="border border-gray-200 rounded-lg p-8 bg-black text-white">
+          <div className="border border-gray-200 rounded-lg p-4 sm:p-5 md:p-6 lg:p-8 bg-black text-white">
             <div className="flex items-center gap-4 mb-6">
               <div className="w-12 h-12 rounded-lg bg-white flex items-center justify-center">
                 <Zap className="w-6 h-6 text-black" />

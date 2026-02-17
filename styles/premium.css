@@ -292,20 +292,15 @@ button:active, .btn:active {
   }
 }
 
-/* Ensure proper spacing on mobile */
+/* Ensure proper spacing on mobile — scoped to legacy pages only */
 @media (max-width: 640px) {
-  section {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
-  
+  /* Removed global section padding to avoid conflicts with new components */
+
   h1 {
-    font-size: clamp(1.75rem, 5vw, 2.5rem);
     line-height: 1.1;
   }
   
   h2 {
-    font-size: clamp(1.5rem, 4vw, 2rem);
     line-height: 1.2;
   }
   
@@ -353,13 +348,10 @@ button:active, .btn:active {
   }
 }
 
-/* Desktop optimizations */
+/* Desktop optimizations — scoped to avoid conflicts */
 @media (min-width: 1024px) {
-  section {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-  }
-  
+  /* Removed global section padding to avoid conflicts with new components */
+
   .grid {
     gap: 1.5rem;
   }

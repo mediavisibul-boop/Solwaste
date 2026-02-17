@@ -39,7 +39,7 @@ export const OWC: React.FC = () => {
         type="product"
       />
       {/* Header */}
-      <div className="bg-gray-900 text-white min-h-screen flex items-center justify-center relative overflow-hidden">
+      <div className="bg-gray-900 text-white min-h-[80vh] sm:min-h-screen flex items-center justify-center relative overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -50,13 +50,13 @@ export const OWC: React.FC = () => {
           {/* Premium white fade overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/25 to-black/30"></div>
         </div>
-        <div className="container mx-auto px-4 sm:px-6 md:px-8 text-center relative z-10 py-24 sm:py-28 md:py-32 lg:py-36">
-          <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-white mb-4 sm:mb-5 md:mb-6 uppercase leading-tight max-w-4xl mx-auto" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.6), 0 6px 35px rgba(0,0,0,0.4)' }}>Organic Waste Composters</h1>
-          <p className="text-sm sm:text-base md:text-lg text-gray-300 max-w-2xl mx-auto font-light leading-relaxed px-4 sm:px-6" style={{ textShadow: '0 2px 15px rgba(0,0,0,0.5), 0 4px 25px rgba(0,0,0,0.3)' }}>High-performance composting solutions for every scale. From compact residential units to massive industrial processors.</p>
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-7xl text-center relative z-10 py-20 sm:py-24 md:py-28 lg:py-32 xl:py-36">
+          <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-3 sm:mb-4 md:mb-5 lg:mb-6 uppercase leading-tight max-w-4xl mx-auto" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.6), 0 6px 35px rgba(0,0,0,0.4)' }}>Organic Waste Composters</h1>
+          <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-300 max-w-2xl mx-auto font-light leading-relaxed px-4 sm:px-6" style={{ textShadow: '0 2px 15px rgba(0,0,0,0.5), 0 4px 25px rgba(0,0,0,0.3)' }}>High-performance composting solutions for every scale. From compact residential units to massive industrial processors.</p>
         </div>
       </div>
 
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 max-w-7xl">
         {products.map((product) => (
           <div id={product.id} key={product.id}>
             <ProductDetail {...product} />

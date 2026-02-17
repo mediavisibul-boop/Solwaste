@@ -11,8 +11,8 @@ const FadeIn: React.FC<{ children: React.ReactNode, delay?: number }> = ({ child
 
 export const CallToActionSection: React.FC = () => {
   return (
-    <section className="py-32 bg-white text-center">
-      <div className="container mx-auto px-6">
+    <section className="py-14 sm:py-18 md:py-24 lg:py-32 bg-white text-center">
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
         <FadeIn>
           <h2 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-heading font-black text-gray-900 mb-4 sm:mb-6 md:mb-8 uppercase leading-[0.95] max-w-[90vw] mx-auto">
             Act Now. <span className="text-gray-700">Not in 2047.</span>

@@ -26,22 +26,18 @@ export const ImageVideoSection: React.FC = () => {
   };
 
   return (
-    <section className="bg-[#f5f5f5]" style={{ padding: '0 0 clamp(60px, 10vw, 120px) 0' }}>
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-5 md:px-10">
+    <section className="bg-[#f5f5f5] pb-14 xs:pb-16 sm:pb-20 md:pb-24 lg:pb-28 xl:pb-32">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
         {/* Video/Image Box */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.7 }}
-          className="relative w-full overflow-hidden"
-          style={{ borderRadius: 'clamp(12px, 2.5vw, 24px)' }}
+          className="relative w-full overflow-hidden rounded-xl sm:rounded-2xl md:rounded-3xl"
         >
           {/* Video */}
-          <div 
-            className="w-full relative bg-black"
-            style={{ height: 'clamp(220px, 50vw, 550px)' }}
-          >
+          <div className="w-full relative bg-black h-[200px] xs:h-[240px] sm:h-[320px] md:h-[400px] lg:h-[480px] xl:h-[540px] 2xl:h-[560px]">
             <video
               ref={videoRef}
               src="/homeVid.mp4"
@@ -74,15 +70,14 @@ export const ImageVideoSection: React.FC = () => {
         </motion.div>
 
         {/* Info Row Below Video */}
-        <div className="mt-5 sm:mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6">
+        <div className="mt-4 sm:mt-6 md:mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 md:gap-6">
           <div>
             <motion.h3
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="font-bold text-black"
-              style={{ fontSize: 'clamp(18px, 2.5vw, 22px)' }}
+              className="font-bold text-black text-base xs:text-lg sm:text-xl md:text-[22px] lg:text-2xl"
             >
               Solwaste Composting Machine
             </motion.h3>
@@ -91,8 +86,8 @@ export const ImageVideoSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="mt-1.5 sm:mt-2 text-[#777]"
-              style={{ fontSize: 'clamp(11px, 1.4vw, 13px)', lineHeight: 1.7 }}
+              className="mt-1 sm:mt-1.5 md:mt-2 text-[#777] text-[11px] xs:text-xs sm:text-[13px] md:text-sm"
+              style={{ lineHeight: 1.7 }}
             >
               A fully automatic waste conversion in 24 hours.
             </motion.p>
@@ -105,13 +100,8 @@ export const ImageVideoSection: React.FC = () => {
           >
             <Link
               to="/owc"
-              className="inline-flex items-center gap-2 bg-black text-white font-medium hover:bg-gray-800 transition-colors"
-              style={{ 
-                padding: '12px 24px', 
-                borderRadius: '999px',
-                fontSize: '12px',
-                letterSpacing: '0.02em'
-              }}
+              className="inline-flex items-center gap-2 bg-black text-white font-medium hover:bg-gray-800 transition-colors px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-[11px] xs:text-xs sm:text-[13px]"
+              style={{ letterSpacing: '0.02em' }}
             >
               Learn More
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

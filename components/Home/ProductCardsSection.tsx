@@ -21,9 +21,9 @@ const products = [
 
 export const ProductCardsSection: React.FC = () => {
   return (
-    <section className="bg-[#f5f5f5]" style={{ padding: '0 0 clamp(60px, 10vw, 120px)' }}>
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-5 md:px-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: 'clamp(20px, 4vw, 40px)' }}>
+    <section className="bg-[#f5f5f5] pb-14 xs:pb-16 sm:pb-20 md:pb-24 lg:pb-28 xl:pb-32">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 xs:gap-6 sm:gap-7 md:gap-8 lg:gap-10">
           {products.map((product, index) => (
             <motion.div
               key={index}
@@ -31,14 +31,10 @@ export const ProductCardsSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="bg-[#e9e9e9] flex flex-col overflow-hidden"
-              style={{ borderRadius: 'clamp(12px, 2vw, 20px)' }}
+              className="bg-[#e9e9e9] flex flex-col overflow-hidden rounded-xl sm:rounded-2xl md:rounded-[20px]"
             >
               {/* Card Image */}
-              <div 
-                className="w-full relative overflow-hidden"
-                style={{ height: 'clamp(180px, 30vw, 280px)' }}
-              >
+              <div className="w-full relative overflow-hidden h-[160px] xs:h-[180px] sm:h-[200px] md:h-[230px] lg:h-[260px] xl:h-[280px]">
                 <img 
                   src={product.image} 
                   alt={product.name} 
@@ -51,28 +47,20 @@ export const ProductCardsSection: React.FC = () => {
               </div>
 
               {/* Card Content */}
-              <div style={{ padding: 'clamp(20px, 3vw, 32px) clamp(20px, 4vw, 40px) clamp(24px, 4vw, 40px)' }}>
-                <h3 className="font-bold text-black" style={{ fontSize: 'clamp(16px, 2vw, 20px)' }}>
+              <div className="p-5 xs:p-6 sm:p-7 md:p-8 pb-6 xs:pb-7 sm:pb-8 md:pb-10">
+                <h3 className="font-bold text-black text-sm xs:text-base sm:text-lg md:text-xl">
                   {product.name}
                 </h3>
-                <p className="text-[#999] mt-1" style={{ fontSize: 'clamp(10px, 1.2vw, 12px)' }}>
+                <p className="text-[#999] mt-1 text-[10px] xs:text-[11px] sm:text-xs">
                   {product.capacity}
                 </p>
-                <p 
-                  className="text-[#777] mt-3 sm:mt-4"
-                  style={{ fontSize: 'clamp(11px, 1.3vw, 13px)', lineHeight: 1.7 }}
-                >
+                <p className="text-[#777] mt-2.5 sm:mt-3 md:mt-4 text-[11px] xs:text-xs sm:text-[13px] md:text-sm leading-relaxed">
                   {product.description}
                 </p>
-                <div className="mt-4 sm:mt-6">
+                <div className="mt-4 sm:mt-5 md:mt-6">
                   <Link
                     to={product.link}
-                    className="inline-flex items-center gap-2 bg-black text-white font-medium hover:bg-gray-800 active:bg-gray-900 transition-colors"
-                    style={{ 
-                      padding: 'clamp(8px, 1.2vw, 10px) clamp(16px, 2vw, 20px)', 
-                      borderRadius: '999px',
-                      fontSize: 'clamp(10px, 1.2vw, 12px)'
-                    }}
+                    className="inline-flex items-center gap-2 bg-black text-white font-medium hover:bg-gray-800 active:bg-gray-900 transition-colors rounded-full px-4 sm:px-5 py-2 sm:py-2.5 text-[10px] xs:text-[11px] sm:text-xs"
                   >
                     Learn More
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

@@ -4,15 +4,14 @@ import { Link } from 'react-router-dom';
 
 export const CommunitySection: React.FC = () => {
   return (
-    <section className="bg-[#f5f5f5]" style={{ padding: '0 0 clamp(60px, 10vw, 120px)' }}>
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-5 md:px-10">
+    <section className="bg-[#f5f5f5] pb-14 xs:pb-16 sm:pb-20 md:pb-24 lg:pb-28 xl:pb-32">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.7 }}
-          className="relative overflow-hidden"
-          style={{ borderRadius: 'clamp(12px, 2.5vw, 24px)' }}
+          className="relative overflow-hidden rounded-xl sm:rounded-2xl md:rounded-3xl"
         >
           {/* Background */}
           <div className="absolute inset-0">
@@ -27,16 +26,14 @@ export const CommunitySection: React.FC = () => {
 
           {/* Content */}
           <div 
-            className="relative z-10 text-center text-white flex flex-col items-center justify-center"
-            style={{ padding: 'clamp(40px, 8vw, 120px) clamp(20px, 4vw, 40px)' }}
+            className="relative z-10 text-center text-white flex flex-col items-center justify-center py-10 xs:py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 px-5 sm:px-8 md:px-10"
           >
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-bold text-white"
-              style={{ fontSize: 'clamp(18px, 3vw, 28px)', lineHeight: 1.3 }}
+              className="font-bold text-white text-base xs:text-lg sm:text-xl md:text-2xl lg:text-[28px] xl:text-3xl leading-tight"
             >
               Be Part of the Sustainable Movement
             </motion.h2>
@@ -45,8 +42,7 @@ export const CommunitySection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="mt-3 sm:mt-4 text-white/70 max-w-lg mx-auto px-2"
-              style={{ fontSize: 'clamp(12px, 1.5vw, 14px)', lineHeight: 1.8 }}
+              className="mt-3 sm:mt-4 text-white/70 max-w-lg mx-auto px-2 text-xs sm:text-[13px] md:text-sm leading-relaxed"
             >
               Join a community that is redefining waste management. As a member of the Solwaste family, 
               you get access to exclusive events, insights, and a network of like-minded individuals who 
@@ -61,12 +57,7 @@ export const CommunitySection: React.FC = () => {
             >
               <Link
                 to="/partner"
-                className="inline-flex items-center gap-2 bg-white text-black font-medium hover:bg-gray-100 active:bg-gray-200 transition-colors"
-                style={{ 
-                  padding: 'clamp(10px, 1.5vw, 14px) clamp(20px, 3vw, 28px)', 
-                  borderRadius: '999px',
-                  fontSize: 'clamp(11px, 1.3vw, 13px)'
-                }}
+                className="inline-flex items-center gap-2 bg-white text-black font-medium hover:bg-gray-100 active:bg-gray-200 transition-colors rounded-full px-5 sm:px-6 md:px-7 py-2.5 sm:py-3 md:py-3.5 text-[11px] xs:text-xs sm:text-[13px] md:text-sm"
               >
                 Join Our Community
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

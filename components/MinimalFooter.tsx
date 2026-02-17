@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 export const MinimalFooter: React.FC = () => {
   return (
-    <footer className="relative bg-black text-white overflow-hidden" style={{ padding: 'clamp(40px, 7vw, 80px) 0 0' }}>
+    <footer className="relative bg-black text-white overflow-hidden pt-10 xs:pt-12 sm:pt-14 md:pt-16 lg:pt-20">
       {/* Top Bar with Logo + Social */}
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-5 md:px-10">
-        <div className="flex items-center justify-between pb-6 sm:pb-10 border-b border-white/10">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
+        <div className="flex items-center justify-between pb-5 sm:pb-8 md:pb-10 border-b border-white/10">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <img 
@@ -38,7 +38,7 @@ export const MinimalFooter: React.FC = () => {
       </div>
 
       {/* Footer Links Grid */}
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-5 md:px-10 py-8 sm:py-12">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 py-6 sm:py-8 md:py-12">
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
           {/* Column 1 — Contact */}
           <div className="col-span-2 sm:col-span-1">
@@ -93,7 +93,7 @@ export const MinimalFooter: React.FC = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-5 md:px-10">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
         <div className="border-t border-white/10 py-5 sm:py-6 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-5">
             <Link to="/privacy-policy" className="text-[10px] sm:text-[11px] text-white/40 hover:text-white/60 transition-colors">

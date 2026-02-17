@@ -36,9 +36,9 @@ export const ProcessFlow: React.FC = () => {
 
   return (
     <section className="py-20 bg-gray-50 text-black">
-      <div className="container mx-auto px-4 sm:px-6">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 md:px-8 lg:px-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold font-heading mb-2">
+          <h2 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold font-heading mb-2">
             The Process
           </h2>
           <p className="text-gray-600 text-lg">From contaminated input to sterile output in four simple steps.</p>
@@ -55,7 +55,7 @@ export const ProcessFlow: React.FC = () => {
                 className="text-center"
               >
                 <div className="relative mb-4 inline-block">
-                  <div className="w-20 h-20 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center">
                     <step.icon className="w-8 h-8 text-black" />
                   </div>
                   <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-black text-white flex items-center justify-center font-bold text-sm">

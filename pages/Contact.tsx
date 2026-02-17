@@ -24,14 +24,14 @@ export const Contact: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-gray-900/90 via-gray-800/80 to-gray-900/95"></div>
         </div>
         
-        <div className="container mx-auto px-4 sm:px-6 md:px-8 text-center relative z-10 py-20 sm:py-24 md:py-28">
-          <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white uppercase leading-tight max-w-5xl mx-auto">GET IN TOUCH</h1>
-          <p className="text-gray-300 mt-3 xs:mt-4 sm:mt-5 text-sm xs:text-base sm:text-lg md:text-xl px-4 sm:px-6 max-w-2xl mx-auto leading-relaxed">Start your journey towards zero waste today.</p>
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-7xl text-center relative z-10 py-16 sm:py-20 md:py-24 lg:py-28">
+          <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-white uppercase leading-tight max-w-5xl mx-auto">GET IN TOUCH</h1>
+          <p className="text-gray-300 mt-3 xs:mt-4 sm:mt-5 text-xs xs:text-sm sm:text-base md:text-lg px-4 sm:px-6 max-w-2xl mx-auto leading-relaxed">Start your journey towards zero waste today.</p>
         </div>
       </div>
 
-      <section className="py-10 xs:py-12 sm:py-14 md:py-16 lg:py-20 xl:py-24 bg-white">
-        <div className="container mx-auto px-6 sm:px-8 md:px-10 lg:px-12 xl:px-16">
+      <section className="py-8 xs:py-10 sm:py-12 md:py-16 lg:py-20 xl:py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xs:gap-10 sm:gap-12 md:gap-14 lg:gap-16 xl:gap-20">
             {/* Contact Info - Enhanced responsive design */}
             <div>

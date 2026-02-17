@@ -50,21 +50,21 @@ export const CaseStudies: React.FC = () => {
       />
       
       {/* Header */}
-      <section className="bg-gray-900 text-white min-h-screen flex items-center relative overflow-hidden">
+      <section className="bg-gray-900 text-white min-h-[80vh] sm:min-h-screen flex items-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/about.webp')] bg-cover bg-center opacity-10"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-white/35 via-white/25 to-transparent"></div>
         
-        <div className="container mx-auto px-6 relative z-10 py-24 sm:py-28 md:py-32 lg:py-36">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 max-w-7xl relative z-10 py-20 sm:py-24 md:py-28 lg:py-32 xl:py-36">
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 className="max-w-3xl"
             >
-                <h1 className="text-5xl md:text-7xl font-heading font-black text-white mb-6 uppercase leading-none">
+                <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-black text-white mb-4 sm:mb-6 uppercase leading-none">
                     Real Impact
                 </h1>
-                <p className="text-xl text-gray-300 max-w-xl leading-relaxed mb-10">
+                <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-xl leading-relaxed mb-8 sm:mb-10">
                     From government institutions to municipal corporations, our waste management solutions are transforming how India handles organic waste.
                 </p>
             </motion.div>
@@ -72,13 +72,13 @@ export const CaseStudies: React.FC = () => {
       </section>
 
       {/* Filter & Grid */}
-      <section className="py-20">
-          <div className="container mx-auto px-6">
+      <section className="py-12 sm:py-16 md:py-20">
+          <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 max-w-7xl">
               <ScrollReveal variant="fadeInUp" viewport={{ once: true, amount: 0.4 }}>
                 <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
                   <div>
-                      <h2 className="text-4xl font-heading font-bold text-gray-900 uppercase mb-2">Installation Showcase</h2>
-                      <p className="text-gray-500 dark:text-gray-400">Explore our footprint across the nation.</p>
+                      <h2 className="text-2xl xs:text-3xl sm:text-4xl font-heading font-bold text-gray-900 uppercase mb-2">Installation Showcase</h2>
+                      <p className="text-gray-500 text-sm sm:text-base">Explore our footprint across the nation.</p>
                   </div>
                   
                   <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto">
@@ -155,11 +155,11 @@ export const CaseStudies: React.FC = () => {
       </section>
 
       {/* Table View */}
-      <section className="py-20 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
-          <div className="container mx-auto px-6">
-             <div className="text-center mb-12">
-                  <h2 className="text-4xl font-heading font-bold text-gray-900 uppercase mb-2">Complete Database</h2>
-                  <p className="text-gray-500 dark:text-gray-400">Full project list for reference.</p>
+      <section className="py-12 sm:py-16 md:py-20 bg-white border-t border-gray-200">
+          <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 max-w-7xl">
+             <div className="text-center mb-8 sm:mb-10 md:mb-12">
+                  <h2 className="text-2xl xs:text-3xl sm:text-4xl font-heading font-bold text-gray-900 uppercase mb-2">Complete Database</h2>
+                  <p className="text-gray-500 text-sm sm:text-base">Full project list for reference.</p>
              </div>
 
              <div className="overflow-x-auto shadow-sm border border-gray-200 dark:border-gray-700">

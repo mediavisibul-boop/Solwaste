@@ -49,17 +49,16 @@ const rightFeatures = [
 
 export const ProductDetailSection: React.FC = () => {
   return (
-    <section className="bg-[#f5f5f5]" style={{ padding: 'clamp(60px, 10vw, 120px) 0 clamp(70px, 11vw, 140px)' }}>
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-5 md:px-10">
+    <section className="bg-[#f5f5f5] py-14 xs:py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32 pb-16 xs:pb-18 sm:pb-24 md:pb-28 lg:pb-32 xl:pb-36">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
         {/* Section Header */}
-        <div className="text-center mb-10 sm:mb-16">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.6 }}
-            className="font-bold text-black"
-            style={{ fontSize: 'clamp(22px, 3.5vw, 28px)', lineHeight: 1.3 }}
+            className="font-bold text-black text-lg xs:text-xl sm:text-[22px] md:text-2xl lg:text-[28px] xl:text-3xl leading-tight"
           >
             Solwaste Smart Home
           </motion.h2>
@@ -68,8 +67,7 @@ export const ProductDetailSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-2 sm:mt-3 text-[#777]"
-            style={{ fontSize: 'clamp(12px, 1.5vw, 14px)' }}
+            className="mt-2 sm:mt-3 text-[#777] text-xs sm:text-[13px] md:text-sm"
           >
             The ultimate home composting experience,<br />
             better than traditional methods.
@@ -93,11 +91,11 @@ export const ProductDetailSection: React.FC = () => {
                   <div>
                     <div className="flex items-center lg:justify-end gap-1.5 sm:gap-2 mb-1">
                       <span className="text-[10px] sm:text-[11px] text-[#999] font-medium">{feature.number}</span>
-                      <h4 className="font-semibold text-black" style={{ fontSize: 'clamp(12px, 1.5vw, 15px)' }}>
+                      <h4 className="font-semibold text-black text-[11px] xs:text-xs sm:text-[13px] md:text-sm lg:text-[15px]">
                         {feature.title}
                       </h4>
                     </div>
-                    <p className="text-[#777] hidden sm:block" style={{ fontSize: 'clamp(11px, 1.2vw, 12px)', lineHeight: 1.6 }}>
+                    <p className="text-[#777] hidden sm:block text-[10px] sm:text-[11px] md:text-xs" style={{ lineHeight: 1.6 }}>
                       {feature.description}
                     </p>
                   </div>
@@ -114,14 +112,7 @@ export const ProductDetailSection: React.FC = () => {
             transition={{ duration: 0.7 }}
             className="flex-shrink-0 w-full lg:w-auto order-first lg:order-none"
           >
-            <div 
-              className="mx-auto flex items-center justify-center"
-              style={{ 
-                width: 'clamp(280px, 52vw, 580px)', 
-                height: 'clamp(350px, 60vw, 700px)',
-                borderRadius: '20px'
-              }}
-            >
+            <div className="mx-auto flex items-center justify-center w-[260px] xs:w-[300px] sm:w-[380px] md:w-[440px] lg:w-[480px] xl:w-[540px] 2xl:w-[580px] h-[320px] xs:h-[360px] sm:h-[440px] md:h-[520px] lg:h-[580px] xl:h-[650px] 2xl:h-[700px] rounded-2xl">
               <img 
                 src="/details.png" 
                 alt="Solwaste Smart Home" 
@@ -145,11 +136,11 @@ export const ProductDetailSection: React.FC = () => {
                   <div>
                     <div className="flex items-center gap-1.5 sm:gap-2 mb-1">
                       <span className="text-[10px] sm:text-[11px] text-[#999] font-medium">{feature.number}</span>
-                      <h4 className="font-semibold text-black" style={{ fontSize: 'clamp(12px, 1.5vw, 15px)' }}>
+                      <h4 className="font-semibold text-black text-[11px] xs:text-xs sm:text-[13px] md:text-sm lg:text-[15px]">
                         {feature.title}
                       </h4>
                     </div>
-                    <p className="text-[#777] hidden sm:block" style={{ fontSize: 'clamp(11px, 1.2vw, 12px)', lineHeight: 1.6 }}>
+                    <p className="text-[#777] hidden sm:block text-[10px] sm:text-[11px] md:text-xs" style={{ lineHeight: 1.6 }}>
                       {feature.description}
                     </p>
                   </div>

@@ -45,24 +45,24 @@ export const Careers: React.FC = () => {
         type="website"
       />
       {/* Hero */}
-      <section className="bg-gray-900 text-white min-h-screen flex items-center relative overflow-hidden">
+      <section className="bg-gray-900 text-white min-h-[80vh] sm:min-h-screen flex items-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
         
-        <div className="container mx-auto px-6 relative z-10 py-24 sm:py-28 md:py-32 lg:py-36">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 max-w-7xl relative z-10 py-20 sm:py-24 md:py-28 lg:py-32 xl:py-36">
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 className="max-w-4xl"
             >
-                <h1 className="text-4xl md:text-6xl font-heading font-black text-white mb-4 uppercase leading-none" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.9)' }}>
+                <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-black text-white mb-3 sm:mb-4 uppercase leading-none" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.9)' }}>
                     Join Solwaste
                 </h1>
-                <p className="text-lg md:text-xl text-white font-bold mb-5" style={{ textShadow: '0 3px 15px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.9)' }}>
+                <p className="text-sm sm:text-lg md:text-xl text-white font-bold mb-4 sm:mb-5" style={{ textShadow: '0 3px 15px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.9)' }}>
                     Careers | Internships | Volunteering
                 </p>
                 <div className="w-20 h-1.5 bg-white mb-6"></div>
-                <p className="text-lg text-white max-w-2xl leading-relaxed mb-6" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.8), 0 1px 6px rgba(0,0,0,0.9)' }}>
+                <p className="text-sm sm:text-base md:text-lg text-white max-w-2xl leading-relaxed mb-5 sm:mb-6" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.8), 0 1px 6px rgba(0,0,0,0.9)' }}>
                     We're not just managing waste. We're redesigning how cities think about it. 
                     If sustainability excites you, climate action matters to you, and you want real-world exposure (not just certificates), you're in the right place.
                 </p>
@@ -84,11 +84,11 @@ export const Careers: React.FC = () => {
       </section>
 
       {/* Why Join Us */}
-      <section className="py-24 bg-gray-50">
-          <div className="container mx-auto px-6">
-              <div className="text-center max-w-3xl mx-auto mb-20">
-                  <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-6 uppercase">Why Join Us?</h2>
-                  <p className="text-xl text-gray-600 font-light">
+      <section className="py-14 sm:py-18 md:py-20 lg:py-24 bg-gray-50">
+          <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 max-w-7xl">
+              <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14 md:mb-16 lg:mb-20">
+                  <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4 sm:mb-6 uppercase">Why Join Us?</h2>
+                  <p className="text-base sm:text-lg md:text-xl text-gray-600 font-light">
                     No greenwashing. No vanity projects. Just real impact, real learning, and work you can be proud of.
                   </p>
               </div>
@@ -129,10 +129,10 @@ export const Careers: React.FC = () => {
       </section>
 
       {/* Roles */}
-      <section id="roles" className="py-24 bg-white border-y border-gray-200">
-          <div className="container mx-auto px-6">
+      <section id="roles" className="py-14 sm:py-18 md:py-20 lg:py-24 bg-white border-y border-gray-200">
+          <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 max-w-7xl">
               <ScrollReveal variant="fadeInUp" viewport={{ once: true, amount: 0.5 }}>
-                <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-12 uppercase">Open Roles</h2>
+                <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-8 sm:mb-10 md:mb-12 uppercase">Open Roles</h2>
               </ScrollReveal>
               <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.06} viewport={{ once: true, amount: 0.1 }}>
                   {roles.map((role, idx) => (
@@ -150,10 +150,10 @@ export const Careers: React.FC = () => {
                   ))}
               </StaggerContainer>
                <ScrollReveal variant="scaleIn" delay={0.3} viewport={{ once: true, amount: 0.8 }}>
-                 <div className="mt-12 p-8 bg-gray-900 text-white rounded-sm flex flex-col md:flex-row items-center justify-between shadow-xl">
-                  <div className="mb-6 md:mb-0">
-                      <h3 className="text-2xl font-heading font-bold mb-2 text-white">Don't see your role?</h3>
-                      <p className="text-gray-300">We are always looking for exceptional talent. Pitch us your role.</p>
+                 <div className="mt-8 sm:mt-10 md:mt-12 p-5 sm:p-6 md:p-8 bg-gray-900 text-white rounded-sm flex flex-col md:flex-row items-center justify-between shadow-xl gap-4 sm:gap-6">
+                  <div className="mb-4 md:mb-0 text-center md:text-left">
+                      <h3 className="text-xl sm:text-2xl font-heading font-bold mb-2 text-white">Don't see your role?</h3>
+                      <p className="text-gray-300 text-sm sm:text-base">We are always looking for exceptional talent. Pitch us your role.</p>
                   </div>
                   <button onClick={() => window.open('https://quark-cornflower-fe8.notion.site/2cc84662572280318ff3ff2d5f2f0fee?pvs=105', '_blank')} className="relative overflow-hidden min-h-[52px] xs:min-h-[56px] flex items-center justify-center rounded-xl bg-gradient-to-r from-white to-gray-100 hover:from-gray-100 hover:to-white shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_35px_rgba(255,255,255,0.6)] active:scale-[0.98] hover:scale-[1.03] transition-all duration-300 touch-manipulation group">
                     {/* Shine effect */}
@@ -174,12 +174,12 @@ export const Careers: React.FC = () => {
       </section>
 
       {/* Process */}
-      <section className="py-24 bg-gray-50">
-          <div className="container mx-auto px-6">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <section className="py-14 sm:py-18 md:py-20 lg:py-24 bg-gray-50">
+          <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 max-w-7xl">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 md:gap-14 lg:gap-16 items-center">
                   <div>
-                      <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-10 uppercase">What Happens Next?</h2>
-                      <div className="space-y-12">
+                      <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-6 sm:mb-8 md:mb-10 uppercase">What Happens Next?</h2>
+                      <div className="space-y-8 sm:space-y-10 md:space-y-12">
                           <Step 
                             number="1" 
                             title="We review on a rolling basis" 
@@ -197,10 +197,10 @@ export const Careers: React.FC = () => {
                           />
                       </div>
                   </div>
-                  <div className="bg-gray-900 p-12 text-center text-white rounded-sm shadow-2xl relative overflow-hidden transform hover:-translate-y-2 transition-transform duration-500">
+                  <div className="bg-gray-900 p-6 sm:p-8 md:p-10 lg:p-12 text-center text-white rounded-sm shadow-2xl relative overflow-hidden transform hover:-translate-y-2 transition-transform duration-500">
                       <div className="relative z-10">
-                          <h3 className="text-3xl font-heading font-bold mb-6 uppercase text-white">Let's build a cleaner future together ♻️</h3>
-                          <p className="text-gray-200 text-lg mb-10 font-medium">
+                          <h3 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold mb-4 sm:mb-6 uppercase text-white">Let's build a cleaner future together ♻️</h3>
+                          <p className="text-gray-200 text-sm sm:text-base md:text-lg mb-6 sm:mb-8 md:mb-10 font-medium">
                               Ready to make a difference? Apply now and start your journey with Solwaste.
                           </p>
                           <button onClick={() => window.open('https://quark-cornflower-fe8.notion.site/2cc84662572280318ff3ff2d5f2f0fee?pvs=105', '_blank')} className="relative overflow-hidden w-full min-h-[60px] xs:min-h-[64px] sm:min-h-[68px] flex items-center justify-center rounded-xl bg-gradient-to-r from-white to-gray-100 hover:from-gray-100 hover:to-white shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:shadow-[0_0_50px_rgba(255,255,255,0.7)] active:scale-[0.98] hover:scale-[1.03] transition-all duration-300 touch-manipulation group">

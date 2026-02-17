@@ -6,7 +6,7 @@ export const MinimalHero: React.FC = () => {
   return (
     <div className="relative" style={{ margin: 0, padding: 0 }}>
       {/* Hero Content */}
-      <div className="relative overflow-hidden" style={{ height: 'calc(100vh - 64px)', padding: 0, margin: 0 }}>
+      <div className="relative overflow-hidden" style={{ minHeight: 'calc(100vh - 64px)', padding: 0, margin: 0 }}>
         {/* Background image */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -19,17 +19,17 @@ export const MinimalHero: React.FC = () => {
         
 
         {/* Content overlay */}
-        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 sm:px-5">
+        <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 lg:px-10" style={{ minHeight: 'calc(100vh - 64px)' }}>
           
-          {/* Text Group */}
-          <div className="flex flex-col items-center">
+          {/* Text Group - with proper top padding to avoid nav overlap */}
+          <div className="flex flex-col items-center pt-10 sm:pt-14 md:pt-16 lg:pt-20 xl:pt-24">
             {/* Main heading */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="font-extrabold tracking-tight text-white"
-              style={{ fontSize: 'clamp(30px, 5vw, 64px)', lineHeight: 1.05 }}
+              className="font-extrabold tracking-tight text-white text-[28px] xs:text-[32px] sm:text-[38px] md:text-[46px] lg:text-[54px] xl:text-[62px] 2xl:text-[68px] 3xl:text-[72px]"
+              style={{ lineHeight: 1.05 }}
             >
               Solwaste Power
             </motion.h1>
@@ -39,10 +39,10 @@ export const MinimalHero: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="mt-2 sm:mt-4 text-white/80 max-w-md mx-auto px-2"
-              style={{ fontSize: 'clamp(13px, 1.8vw, 14px)', lineHeight: 1.6 }}
+              className="mt-2 sm:mt-3 md:mt-4 text-white/80 max-w-sm sm:max-w-md mx-auto px-2 text-[12px] xs:text-[13px] sm:text-sm md:text-base lg:text-lg"
+              style={{ lineHeight: 1.6 }}
             >
-              The ultimate composting experience,<br />
+              The ultimate composting experience,<br className="hidden xs:block" />
               better than traditional methods.
             </motion.p>
 
@@ -51,17 +51,12 @@ export const MinimalHero: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="mt-3 sm:mt-4"
+              className="mt-3 sm:mt-4 md:mt-5"
             >
               <Link
                 to="/owc"
-                className="inline-flex items-center gap-2 bg-black text-white font-medium hover:bg-gray-800 active:bg-gray-900 transition-colors duration-300"
-                style={{ 
-                  padding: 'clamp(10px, 1.5vw, 14px) clamp(20px, 2.5vw, 28px)', 
-                  borderRadius: '999px',
-                  fontSize: 'clamp(12px, 1.4vw, 13px)',
-                  letterSpacing: '0.02em'
-                }}
+                className="inline-flex items-center gap-2 bg-black text-white font-medium hover:bg-gray-800 active:bg-gray-900 transition-colors duration-300 px-5 sm:px-6 md:px-7 py-2.5 sm:py-3 md:py-3.5 rounded-full text-[11px] xs:text-xs sm:text-[13px] md:text-sm"
+                style={{ letterSpacing: '0.02em' }}
               >
                 Get Yours Now
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -76,23 +71,20 @@ export const MinimalHero: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="w-full max-w-[90%] sm:max-w-[80%] md:max-w-[1100px] mx-auto px-2 sm:px-5 mt-4 sm:mt-6"
+            className="w-full max-w-[92%] xs:max-w-[88%] sm:max-w-[82%] md:max-w-[75%] lg:max-w-[900px] xl:max-w-[1000px] 2xl:max-w-[1100px] mx-auto mt-4 sm:mt-6 md:mt-8 lg:mt-10 pb-8 sm:pb-10"
           >
             <img 
               src="/ecoloopwbg.png" 
               alt="EcoLoop Machine" 
-              className="w-full object-contain transition-all duration-700 ease-in-out lg:grayscale lg:hover:grayscale-0"
-              style={{ 
-                maxHeight: 'clamp(220px, 40vw, 580px)', 
-                borderRadius: '16px' 
-              }}
+              className="w-full object-contain transition-all duration-700 ease-in-out lg:grayscale lg:hover:grayscale-0 max-h-[200px] xs:max-h-[240px] sm:max-h-[320px] md:max-h-[400px] lg:max-h-[480px] xl:max-h-[540px] 2xl:max-h-[580px]"
+              style={{ borderRadius: '16px' }}
             />
           </motion.div>
         </div>
       </div>
 
       {/* Scroll Circle Button - overlapping next section */}
-      <div className="relative z-20 flex justify-center" style={{ marginTop: '-32px' }}>
+      <div className="relative z-20 flex justify-center -mt-8">
         <motion.button
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -101,10 +93,10 @@ export const MinimalHero: React.FC = () => {
             const next = document.getElementById('feature-section');
             next?.scrollIntoView({ behavior: 'smooth' });
           }}
-          className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-black text-white flex items-center justify-center shadow-lg hover:bg-gray-800 active:bg-gray-900 transition-colors duration-300"
+          className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-black text-white flex items-center justify-center shadow-lg hover:bg-gray-800 active:bg-gray-900 transition-colors duration-300"
           aria-label="Scroll down"
         >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg className="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M12 5v14M5 12l7 7 7-7" />
           </svg>
         </motion.button>
