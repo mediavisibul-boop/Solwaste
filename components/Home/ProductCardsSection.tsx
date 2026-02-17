@@ -4,16 +4,16 @@ import { Link } from 'react-router-dom';
 
 const products = [
   {
-    name: 'CyberSoil',
-    capacity: 'Smart Home Composting',
-    description: 'Intelligent composting for modern homes. Smart sensors and app connectivity for effortless waste management and nutrient-rich compost.',
+    name: 'EcoLoop',
+    capacity: 'Societies & Hotels',
+    description: 'A zero-maintenance workhorse designed for residential societies, hotels, and resorts. EcoLoop ensures waste management never impacts aesthetics or air quality. On-site composting, zero odor, and German-engineered reliability.',
     link: '/owc',
-    image: '/cybersoil.webp',
+    image: '/ecoloop2.webp',
   },
   {
     name: 'Fahaka Industrial',
-    capacity: 'High-Capacity Processing',
-    description: 'With IPX5 protection that is designed for the most demanding environments. Clean energy for communities, real zero waste, and proven durability.',
+    capacity: 'Universal Decomposer',
+    description: "Traditional composters fail at contamination. Fahaka thrives on it. The world's first unified processor for Food, Plastics, Sanitary, and Biochemical Waste.",
     link: '/fahaka',
     image: '/fahaka.webp',
   },

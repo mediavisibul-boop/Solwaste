@@ -6,7 +6,7 @@ import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
 export const ImageVideoSection: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
 
   const togglePlay = () => {
     if (!videoRef.current) return;
@@ -43,6 +43,7 @@ export const ImageVideoSection: React.FC = () => {
               src="/homeVid.mp4"
               className="w-full h-full object-cover"
               playsInline
+              muted={isMuted}
               onEnded={() => setIsPlaying(false)}
             />
 
