@@ -73,7 +73,7 @@ export const About: React.FC = () => {
               <div className="relative mt-8 lg:mt-0">
                 <div className="absolute top-0 right-0 -mr-4 sm:-mr-6 md:-mr-8 -mt-4 sm:-mt-6 md:-mt-8 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 bg-gray-900/10 z-0"></div>
                 <img 
-                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop" 
+                    src="/aboutPage.jpg" 
                     alt="Engineering Team" 
                     className="shadow-2xl relative z-10 w-full grayscale hover:grayscale-0 transition-all duration-500"
                 />

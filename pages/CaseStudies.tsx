@@ -51,8 +51,8 @@ export const CaseStudies: React.FC = () => {
       
       {/* Header */}
       <section className="bg-gray-900 text-white min-h-[80vh] sm:min-h-screen flex items-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/about.webp')] bg-cover bg-center opacity-10"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-white/35 via-white/25 to-transparent"></div>
+        <div className="absolute inset-0 bg-[url('/about.webp')] bg-cover bg-center opacity-35"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-white/15 via-white/5 to-transparent"></div>
         
         <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 max-w-7xl relative z-10 py-20 sm:py-24 md:py-28 lg:py-32 xl:py-36">
             <motion.div

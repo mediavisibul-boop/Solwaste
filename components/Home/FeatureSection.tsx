@@ -11,7 +11,7 @@ const features = [
   {
     icon: <Wind size={28} strokeWidth={1.5} />,
     title: 'Odor Control',
-    description: 'Advanced filtration system eliminates smell completely during composting.',
+    description: 'Advance enzyme based filtration system eliminates odor completely during composting.',
   },
   {
     icon: <Leaf size={28} strokeWidth={1.5} />,
@@ -50,8 +50,8 @@ export const FeatureSection: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mt-3 sm:mt-4 md:mt-5 text-[#777] mx-auto px-2 max-w-xl text-xs sm:text-[13px] md:text-sm leading-relaxed"
           >
-            Solwaste machines convert food waste into compost efficiently. Designed for 
-            commercial and residential use with swappable, upgradable components for all scenarios.
+            Solwaste machines convert Food / Garden Waste into Soil Enricher efficiently. Designed for 
+            commercial and residential use with upgradable components for all scenarios.
           </motion.p>
         </div>
 
