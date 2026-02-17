@@ -6,33 +6,37 @@ export const MinimalFooter: React.FC = () => {
     <footer className="relative bg-black text-white overflow-hidden pt-10 xs:pt-12 sm:pt-14 md:pt-16 lg:pt-20">
       {/* Top Bar with Logo + Social */}
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
-        <div className="flex items-center justify-between pb-5 sm:pb-8 md:pb-10 border-b border-white/10">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <img 
-              src="/logo.png" 
-              alt="Solwaste Logo" 
-              className="w-6 h-6 sm:w-7 sm:h-7 object-contain brightness-0 invert"
-            />
-            <span className="text-[16px] sm:text-[18px] font-extrabold tracking-tight" style={{ letterSpacing: '-0.02em' }}>
-              Solwaste
-            </span>
-          </Link>
-
-          {/* Social Icons */}
-          <div className="flex items-center gap-3 sm:gap-5">
-            <a href="https://www.instagram.com/solwaste?igsh=MXVsMXVpMmZkOWh3Yg==" target="_blank" rel="noopener noreferrer" className="hover:opacity-60 transition-opacity" aria-label="Instagram">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            </a>
-            <a href="https://x.com/SolwasteCo" target="_blank" rel="noopener noreferrer" className="hover:opacity-60 transition-opacity" aria-label="X / Twitter">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            </a>
-            <a href="https://www.linkedin.com/company/solwaste/" target="_blank" rel="noopener noreferrer" className="hover:opacity-60 transition-opacity" aria-label="LinkedIn">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" className="hover:opacity-60 transition-opacity" aria-label="YouTube">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.377.504A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.504 9.376.504 9.376.504s7.505 0 9.377-.504a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><polygon fill="black" points="9.545 15.568 15.818 12 9.545 8.432"/></svg>
-            </a>
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between pb-5 sm:pb-8 md:pb-10 border-b border-white/10 gap-4 sm:gap-0">
+          {/* Logo + Tagline + Social (stacked for mobile/tablet) */}
+          <div className="flex flex-col items-center sm:items-start gap-2 w-full sm:w-auto">
+            <div className="flex flex-col items-center sm:items-start gap-1">
+              <Link to="/" className="flex items-center gap-2">
+                <img 
+                  src="/logo.png" 
+                  alt="Solwaste Logo" 
+                  className="w-6 h-6 sm:w-7 sm:h-7 object-contain brightness-0 invert"
+                />
+                <span className="text-[16px] sm:text-[18px] font-extrabold tracking-tight" style={{ letterSpacing: '-0.02em' }}>
+                  Solwaste
+                </span>
+              </Link>
+              <span className="text-xs sm:text-sm text-white/60 font-medium mt-1 ml-1">Nothing Wasted Ever.</span>
+            </div>
+            {/* Social Icons (centered for mobile/tablet) */}
+            <div className="flex items-center justify-center sm:justify-start gap-3 sm:gap-5 mt-2 sm:mt-0">
+              <a href="https://www.instagram.com/solwaste?igsh=MXVsMXVpMmZkOWh3Yg==" target="_blank" rel="noopener noreferrer" className="hover:opacity-60 transition-opacity" aria-label="Instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+              <a href="https://x.com/SolwasteCo" target="_blank" rel="noopener noreferrer" className="hover:opacity-60 transition-opacity" aria-label="X / Twitter">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/company/solwaste/" target="_blank" rel="noopener noreferrer" className="hover:opacity-60 transition-opacity" aria-label="LinkedIn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="hover:opacity-60 transition-opacity" aria-label="YouTube">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.377.504A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.504 9.376.504 9.376.504s7.505 0 9.377-.504a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><polygon fill="black" points="9.545 15.568 15.818 12 9.545 8.432"/></svg>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -123,7 +127,7 @@ export const MinimalFooter: React.FC = () => {
             transform: 'translateY(25%)',
           }}
         >
-          EMPOWER
+          SOLWASTE
         </div>
       </div>
     </footer>
