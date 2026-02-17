@@ -76,7 +76,9 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({
         
         <div className="lg:w-1/2 w-full">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-3 sm:mb-4 uppercase leading-tight">
-            {name}
+             {['CyberSoil', 'EcoLoop', 'CompoGen'].includes(name) ? (
+               <span>{name}<sup style={{ fontSize: '0.65em', verticalAlign: 'super' }}>TM</sup></span>
+             ) : name}
           </h2>
           <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base md:text-lg mb-5 sm:mb-6 leading-relaxed font-normal">
             {description}

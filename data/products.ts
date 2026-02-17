@@ -19,9 +19,9 @@ export interface ProductData {
 export const products: ProductData[] = [
   {
     id: "cybersoil",
-    name: "CyberSoil™",
+    name: "CyberSoil",
     tagline: "Residential & VP Cabins",
-    description: "Sustainability meets luxury. CyberSoil brings advanced solar dehydration technology into a form factor that fits under a dishwasher. Perfect for luxury apartments and executive offices.",
+    description: "CyberSoil redefines office and luxury apartment composting with advanced solar dehydration technology in a sleek, under-counter design. Effortless installation, ultra-quiet operation, and a premium finish make it ideal for executive spaces. Coming Soon.",
     images: ["/cybersoil.webp", "/cybersoil2.webp"],
     features: [
       "Advanced Solar Dehydration Technology",
@@ -46,13 +46,12 @@ export const products: ProductData[] = [
   },
   {
     id: "ecoloop",
-    name: "EcoLoop™",
+    name: "EcoLoop",
     tagline: "Societies & Hotels",
     description: "A zero-maintenance workhorse designed for residential societies, hotels, and resorts. The EcoLoop ensures that waste management doesn't impact the aesthetics or air quality of your premises.",
     images: ["/ecoloop.webp", "/ecoloop2.webp", "/ecoloop3.webp"],
     features: [
       "Zero Odor & Pest Free Operation",
-      "HEPA + Activated Carbon Filtration System",
       "Medical Grade SS 304 Construction",
       "Silent Operation (< 60dB)"
     ],
@@ -73,7 +72,7 @@ export const products: ProductData[] = [
   },
   {
     id: "compogen",
-    name: "CompoGen™",
+    name: "CompoGen",
     tagline: "Industrial & Municipal",
     description: "The CompoGen series is built for the heavy lifting. Designed for municipal corporations and large industrial parks, it uses high-torque German geared motors to crush and compost massive volumes of organic waste.",
     images: ["/compogen.webp", "/compogen2.webp"],
