@@ -11,6 +11,7 @@ interface ProductDetailProps {
   features: string[];
   specs: {label: string, value: string}[];
   reversed?: boolean;
+  comingSoon?: boolean;
 }
 
 export const ProductDetail: React.FC<ProductDetailProps> = ({ 
@@ -20,7 +21,8 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({
   images, 
   features, 
   specs, 
-  reversed 
+  reversed, 
+  comingSoon 
 }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -83,7 +85,9 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({
           <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base md:text-lg mb-5 sm:mb-6 leading-relaxed font-normal">
             {description}
           </p>
-          
+          {name === 'CyberSoil' && comingSoon && (
+            <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">Coming Soon !</h2>
+          )}
           <div>
             <h4 className="font-heading font-bold uppercase text-gray-900 mb-3 sm:mb-4 text-sm sm:text-base tracking-wide">
               Key Features

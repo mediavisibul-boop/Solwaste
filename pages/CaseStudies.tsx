@@ -65,7 +65,7 @@ export const CaseStudies: React.FC = () => {
                     Real Impact
                 </h1>
                 <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-xl leading-relaxed mb-8 sm:mb-10">
-                    From government institutions to municipal corporations, our waste management solutions are transforming how India handles organic waste.
+                    From <strong className="font-bold text-white">Government Institutions, Municipal Corporations, Private Entities and Residential Complexes</strong>, our waste management solutions are transforming how India handles organic waste.
                 </p>
             </motion.div>
         </div>

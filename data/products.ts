@@ -3,6 +3,7 @@ export interface ProductData {
   name: string;
   tagline: string;
   description: string;
+  comingSoon?: boolean;
   images: string[];
   features: string[];
   specs: {label: string, value: string}[];
@@ -21,7 +22,8 @@ export const products: ProductData[] = [
     id: "cybersoil",
     name: "CyberSoil",
     tagline: "Residential & VP Cabins",
-    description: "CyberSoil redefines office and luxury apartment composting with advanced solar dehydration technology in a sleek, under-counter design. Effortless installation, ultra-quiet operation, and a premium finish make it ideal for executive spaces. Coming Soon.",
+    description: "CyberSoil redefines office and luxury apartment composting with advanced solar dehydration technology in a sleek, under-counter design. Effortless installation, ultra-quiet operation, and a premium finish make it ideal for executive spaces.",
+    comingSoon: true,
     images: ["/cybersoil.webp", "/cybersoil2.webp"],
     features: [
       "Advanced Solar Dehydration Technology",
