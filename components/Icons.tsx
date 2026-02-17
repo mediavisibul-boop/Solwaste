@@ -84,5 +84,9 @@ export const Bottle = make('Bottle');
 export const Pill = make('Pill');
 export const Sun = make('Sun');
 export const Moon = make('Moon');
+export const UtensilsCrossed = make('UtensilsCrossed');
+export const Laptop = make('Laptop');
+export const HeartPulse = make('HeartPulse');
+export const Landmark = make('Landmark');
 
 export default {} as any;

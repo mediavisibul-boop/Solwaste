@@ -100,7 +100,7 @@ const Gallery = () => {
 
       {/* Gallery Grid */}
       <div className="bg-white py-12 sm:py-16 md:py-20 lg:py-24">
-        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 max-w-7xl">
           
           {/* Section Title */}
           <ScrollReveal variant="fadeInUp" viewport={{ once: true, amount: 0.4 }}>
@@ -115,7 +115,7 @@ const Gallery = () => {
           </ScrollReveal>
 
           {/* Gallery Grid */}
-          <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 xs:gap-4 sm:gap-5 md:gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-3 xs:gap-4 sm:gap-5 md:gap-6 lg:gap-8">
             {galleryImages.slice().reverse().map((image, index) => {
               const originalIndex = galleryImages.length - 1 - index;
               return (

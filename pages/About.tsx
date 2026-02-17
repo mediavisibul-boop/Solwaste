@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Target, Globe, Award, Users, ChevronRight, Building2, Hospital, Building, Store } from '../components/Icons';
+import { Target, Globe, Award, Users, ChevronRight, UtensilsCrossed, Laptop, HeartPulse, Landmark } from '../components/Icons';
 import { SEO } from '../components/SEO';
 import { ScrollReveal, StaggerContainer, StaggerItem } from '../components/ui/ScrollReveal';
 
@@ -39,7 +39,7 @@ export const About: React.FC = () => {
               Engineering A <br className="hidden sm:block"/> Sustainable Tomorrow
             </h1>
             <p className="text-sm xs:text-base sm:text-lg md:text-xl text-white max-w-3xl leading-relaxed border-l-4 border-brand-primary/50 pl-4 sm:pl-6">
-              We help organizations across India implement on-site composting solutions that reduce waste costs, ensure compliance, and support long-term sustainability goals. Through proven technology, turnkey installation, and compliance-ready systems, we turn environmental challenges into economic resources.
+              Solwaste empowers forward-thinking organizations across India to implement on-site composting solutions that drive cost savings, ensure regulatory compliance, and advance sustainability leadership. Our proven technology, turnkey project delivery, and compliance-ready systems transform environmental challenges into measurable business value.
             </p>
           </motion.div>
         </div>
@@ -54,18 +54,18 @@ export const About: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-14 xl:gap-20 items-center mb-10 sm:mb-14 md:mb-18 lg:mb-24">
             <ScrollReveal variant="fadeInLeft" viewport={{ once: true, amount: 0.3 }}>
               <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4 sm:mb-5 leading-tight">
-                Our Story & Expertise
+                Our Legacy & Expertise
               </h2>
               <div className="w-20 sm:w-24 h-1 bg-gray-900 rounded-full mb-6 sm:mb-7 md:mb-8"></div>
               <div className="space-y-5 sm:space-y-6 text-gray-700 leading-relaxed text-base sm:text-lg">
                 <p>
-                  Solwaste was founded with a singular vision: to address the growing organic waste crisis in urban environments through reliable, scalable, compliance-ready technology.
+                  Solwaste was established to address the urgent challenge of organic waste management in India’s rapidly growing urban landscape. Our mission is to empower organizations to transform waste liabilities into valuable resources through advanced, compliance-ready technology.
                 </p>
                 <p>
-                  Leveraging <strong className="font-semibold text-gray-900">German engineering</strong> principles, we developed a suite of Organic Waste Composters (OWC) that offer superior efficiency and durability compared to conventional methods. Our composting solutions help <strong className="font-semibold text-gray-900">bulk waste generators (BWGs) in India</strong> including hotels, malls, IT parks, hospitals, educational institutions, and food processing units stay compliant with India's Solid Waste Management Rules 2026 (effective 1 April 2026) while reducing costs.
+                  Drawing on the precision and reliability of <strong className="font-semibold text-gray-900">German engineering</strong>, we have engineered a portfolio of Organic Waste Composters (OWC) that set new benchmarks for efficiency, durability, and operational excellence. Our solutions are trusted by <strong className="font-semibold text-gray-900">Leading Hotels, IT Parks, Hospitals, Educational Institutions, Malls, and Food Processing Units</strong>—all seeking to meet India’s Solid Waste Management Rules 2026 while optimizing operational costs.
                 </p>
                 <p>
-                  Today, with over <strong className="font-semibold text-gray-900">500 installations</strong> across commercial, institutional, and residential sectors, we are a trusted partner in India's journey towards the "Waste to Wealth" and "Clean India" missions. Our on-site composting solutions reduce waste hauling costs, ensure compliance, and help organizations achieve their ESG and sustainability goals.
+                  With a proven track record of over <strong className="font-semibold text-gray-900">500 successful installations</strong> nationwide, Solwaste is the preferred partner for organizations committed to sustainability, regulatory compliance, and ESG leadership. Our on-site composting systems deliver measurable cost savings, ensure seamless compliance, and help our clients achieve their environmental and business objectives with confidence.
                 </p>
               </div>
             </ScrollReveal>
@@ -87,17 +87,17 @@ export const About: React.FC = () => {
             <Card 
               icon={<Target size={36} className="sm:w-10 sm:h-10 md:w-12 md:h-12" />}
               title="Our Mission"
-              text="To provide robust, zero-landfill solutions that empower communities to manage their waste at the source, reducing environmental impact and generating value."
+              text="Empower organizations with zero-landfill solutions that cut costs, ensure compliance, and drive sustainability."
             />
             <Card 
               icon={<Globe size={36} className="sm:w-10 sm:h-10 md:w-12 md:h-12" />}
               title="Vision 2047"
-              text="Supporting India's goal for sustainable cities by creating a circular economy where organic waste is universally viewed as a resource for energy and soil health."
+              text="Lead India’s circular economy by turning organic waste into energy and soil health."
             />
             <Card 
               icon={<Award size={36} className="sm:w-10 sm:h-10 md:w-12 md:h-12" />}
               title="Quality Promise"
-              text="We commit to German-engineered precision, ensuring our machines deliver maximum uptime, minimal maintenance, and optimal output quality."
+              text="German-engineered machines. Maximum uptime. Minimal maintenance. Superior results."
             />
           </StaggerContainer>
         </div>
@@ -115,10 +115,10 @@ export const About: React.FC = () => {
            
            <StaggerContainer className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6" staggerDelay={0.08} viewport={{ once: true, amount: 0.1 }}>
              {[
-               { icon: <Building2 size={32} className="sm:w-9 sm:h-9" />, label: "Hotels & Resorts", desc: "Hospitality Industry" },
-               { icon: <Building size={32} className="sm:w-9 sm:h-9" />, label: "Corporate & IT Parks", desc: "Tech Parks & SEZs" },
-               { icon: <Hospital size={32} className="sm:w-9 sm:h-9" />, label: "Hospitals & Institutions", desc: "Healthcare & Education" },
-               { icon: <Store size={32} className="sm:w-9 sm:h-9" />, label: "Malls & Municipalities", desc: "Commercial & Government" },
+               { icon: <UtensilsCrossed size={32} className="sm:w-9 sm:h-9" />, label: "Hotels, Resorts & Restaurants", desc: "Hospitality Industry" },
+               { icon: <Laptop size={32} className="sm:w-9 sm:h-9" />, label: "Corporate & IT Parks", desc: "Tech Parks & SEZs" },
+               { icon: <HeartPulse size={32} className="sm:w-9 sm:h-9" />, label: "Hospitals & Institutions", desc: "Healthcare & Education" },
+               { icon: <Landmark size={32} className="sm:w-9 sm:h-9" />, label: "Malls & Municipalities", desc: "Commercial & Government" },
              ].map((client, idx) => (
                <StaggerItem key={idx}>
                  <div className="p-6 sm:p-7 md:p-8 bg-white rounded-premium border-b-4 border-transparent hover:border-gray-900 shadow-premium hover:shadow-premium-lg transition-all duration-400 group">

@@ -22,28 +22,19 @@ export const MinimalHero: React.FC = () => {
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 lg:px-10" style={{ minHeight: 'calc(100vh - 64px)' }}>
           
           {/* Text Group - with proper top padding to avoid nav overlap */}
-          <div className="flex flex-col items-center pt-10 sm:pt-14 md:pt-16 lg:pt-20 xl:pt-24">
-            {/* Main heading */}
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.1 }}
-              className="font-extrabold tracking-tight text-white text-[28px] xs:text-[32px] sm:text-[38px] md:text-[46px] lg:text-[54px] xl:text-[62px] 2xl:text-[68px] 3xl:text-[72px]"
-              style={{ lineHeight: 1.05 }}
-            >
-              Solwaste Power
-            </motion.h1>
+          <div className="flex flex-col items-center pt-10 sm:pt-14 md:pt-16 lg:pt-4 xl:pt-14">
+            
 
             {/* Subtitle */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="mt-2 sm:mt-3 md:mt-4 text-white/80 max-w-sm sm:max-w-md mx-auto px-2 text-[12px] xs:text-[13px] sm:text-sm md:text-base lg:text-lg"
+              className="mt-2 sm:mt-3 md:mt-4 text-white/80 max-w-sm sm:max-w-md mx-auto px-2 text-[14px] xs:text-[16px] sm:text-lg md:text-xl lg:text-2xl"
               style={{ lineHeight: 1.6 }}
             >
-              The ultimate composting experience,<br className="hidden xs:block" />
-              better than traditional methods.
+              Experience next-generation composting.<br />
+              Superior to traditional methods in every way.
             </motion.p>
 
             {/* CTA Button */}

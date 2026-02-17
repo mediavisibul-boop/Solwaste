@@ -48,7 +48,7 @@ export const PartnerWithUs: React.FC = () => {
       <section className="bg-gray-900 text-white min-h-screen flex items-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2032&auto=format&fit=crop')] bg-cover bg-center"></div>
         
-        <div className="container mx-auto px-6 relative z-10 py-24 sm:py-28 md:py-32 lg:py-36">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 relative z-10 py-24 sm:py-28 md:py-32 lg:py-36">
             <ScrollReveal variant="fadeInLeft" viewport={{ once: true, amount: 0.3 }}>
               <div className="max-w-4xl">
                 <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-black text-white mb-3 sm:mb-4 md:mb-5 uppercase leading-[0.95]" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.9)' }}>
@@ -81,9 +81,9 @@ export const PartnerWithUs: React.FC = () => {
 
       {/* Is This You? */}
       <section className="py-24 bg-gray-50 border-b border-gray-200">
-        <div className="container mx-auto px-6">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
             <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4 uppercase">Is This You?</h2>
+                <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4 uppercase">Is This You?</h2>
                 <div className="w-16 h-1 bg-gray-900 mx-auto"></div>
             </div>
             
@@ -114,9 +114,9 @@ export const PartnerWithUs: React.FC = () => {
 
       {/* Partner Benefits */}
       <section className="py-24 bg-white">
-          <div className="container mx-auto px-6">
+          <div className="container max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
               <div className="text-center max-w-3xl mx-auto mb-20">
-                  <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 dark:text-white mb-6 uppercase">A Partnership That <br/><span className="text-gray-700">Actually Makes Sense</span></h2>
+                  <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-gray-900 dark:text-white mb-6 uppercase">A Partnership That <br/><span className="text-gray-700">Actually Makes Sense</span></h2>
                   <p className="text-xl text-gray-600 font-light">
                     No fluff. No empty promises. Just a clean, scalable way to earn while contributing to real environmental impact.
                   </p>
@@ -159,12 +159,12 @@ export const PartnerWithUs: React.FC = () => {
 
       {/* Process Section */}
       <section className="py-24 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white relative overflow-hidden">
-         <div className="absolute -left-20 -bottom-20 w-96 h-96 bg-gray-900 rounded-full opacity-10 blur-[120px]"></div>
-         <div className="absolute -right-32 -top-32 w-96 h-96 bg-gray-900 rounded-full opacity-10 blur-[120px]"></div>
-          <div className="container mx-auto px-6 relative z-10">
+         <div className="absolute -left-20 -bottom-20 w-96 h-96 bg-gray-900 rounded-full opacity-10 blur-[120px] hidden sm:block"></div>
+         <div className="absolute -right-32 -top-32 w-96 h-96 bg-gray-900 rounded-full opacity-10 blur-[120px] hidden sm:block"></div>
+          <div className="container max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 relative z-10">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                   <div>
-                      <h2 className="text-4xl md:text-5xl font-heading font-bold mb-10 uppercase text-gray-900 dark:text-white">What happens after you apply?</h2>
+                      <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-10 uppercase text-gray-900 dark:text-white">What happens after you apply?</h2>
                       <div className="space-y-12 pl-4 border-l-4 border-gray-900/60">
                           <Step 
                             number="1" 
@@ -184,10 +184,10 @@ export const PartnerWithUs: React.FC = () => {
                       </div>
                   </div>
                   
-                  <div className="bg-white dark:bg-gray-800 text-gray-900 dark:text-white p-10 rounded-sm shadow-2xl">
+                  <div className="bg-white dark:bg-gray-800 text-gray-900 dark:text-white p-5 sm:p-6 md:p-8 lg:p-10 rounded-sm shadow-2xl">
                         <div className="flex items-center mb-6">
                             <Rocket className="text-gray-900 mr-4" size={40} />
-                            <h3 className="text-3xl font-heading font-bold uppercase">Ready to Start?</h3>
+                            <h3 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold uppercase">Ready to Start?</h3>
                         </div>
                         <p className="text-gray-700 text-lg mb-8">
                             Join a network of changemakers who are turning waste management into a movement.

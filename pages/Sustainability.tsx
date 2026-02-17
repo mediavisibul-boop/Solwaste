@@ -10,9 +10,9 @@ const Section: React.FC<{ number: string; title: string; children: React.ReactNo
       <div className="md:w-1/4 flex-shrink-0">
         <div className="flex items-center space-x-3 mb-3 text-green-500">
             {icon}
-            <span className="font-heading font-bold text-4xl opacity-20">{number}</span>
+            <span className="font-heading font-bold text-2xl sm:text-3xl md:text-4xl opacity-20">{number}</span>
         </div>
-        <h3 className="text-2xl font-heading font-bold text-gray-900 dark:text-white uppercase leading-tight pr-4">
+        <h3 className="text-lg sm:text-xl md:text-2xl font-heading font-bold text-gray-900 uppercase leading-tight pr-4">
             {title}
         </h3>
       </div>
@@ -36,7 +36,7 @@ export const Sustainability: React.FC = () => {
       />
       {/* Header */}
       <div className="bg-gray-50 min-h-screen flex items-center border-b border-gray-200">
-        <div className="container mx-auto px-6 py-24 sm:py-28 md:py-32 lg:py-36">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 md:px-8 lg:px-10 py-24 sm:py-28 md:py-32 lg:py-36">
             <ScrollReveal variant="fadeInUp" viewport={{ once: true, amount: 0.3 }}>
                 <div className="inline-block border border-gray-900 px-3 py-1 text-xs font-bold text-gray-900 uppercase tracking-widest mb-6 bg-white">
                     Our Commitment
@@ -65,7 +65,7 @@ export const Sustainability: React.FC = () => {
       </div>
 
       {/* Content Sections */}
-      <div className="container mx-auto px-6 py-20">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 md:px-8 lg:px-10 py-20">
           <Section number="01" title="Our Sustainability Vision" icon={<Eye size={28} />}>
               <p>
                 We envision a future where waste is treated as a valuable resource, not a liability. Our goal is to enable cleaner cities, healthier communities, and resilient ecosystems by deploying smart, scalable, and environmentally responsible waste-management solutions.
