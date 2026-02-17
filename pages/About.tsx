@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Target, Globe, Award, Users, ChevronRight, UtensilsCrossed, Laptop, HeartPulse, Landmark } from '../components/Icons';
 import { SEO } from '../components/SEO';
 import { ScrollReveal, StaggerContainer, StaggerItem } from '../components/ui/ScrollReveal';
+import PartnersSection from '../components/PartnersSection';
 
 const Card: React.FC<{ icon: React.ReactNode, title: string, text: string }> = ({ icon, title, text }) => (
   <StaggerItem>
@@ -72,12 +73,12 @@ export const About: React.FC = () => {
             <ScrollReveal variant="scaleIn" delay={0.3} viewport={{ once: true, amount: 0.2 }}>
               <div className="relative mt-8 lg:mt-0">
                 <div className="absolute top-0 right-0 -mr-4 sm:-mr-6 md:-mr-8 -mt-4 sm:-mt-6 md:-mt-8 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 bg-gray-900/10 z-0"></div>
+                <div className="absolute -bottom-4 sm:-bottom-6 md:-bottom-8 -left-4 sm:-left-6 md:-left-8 w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 border-2 sm:border-4 border-gray-900 z-0 hidden md:block"></div>
                 <img 
-                    src="/aboutPage.jpg" 
-                    alt="Engineering Team" 
-                    className="shadow-2xl relative z-10 w-full grayscale hover:grayscale-0 transition-all duration-500"
+                  src="/aboutPage.jpg" 
+                  alt="Engineering Team" 
+                  className="shadow-2xl relative z-10 w-full grayscale hover:grayscale-0 transition-all duration-500"
                 />
-               <div className="absolute -bottom-4 sm:-bottom-6 md:-bottom-8 -left-4 sm:-left-6 md:-left-8 w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 border-2 sm:border-4 border-gray-900 z-20 hidden md:block"></div>
               </div>
             </ScrollReveal>
           </div>
@@ -131,6 +132,8 @@ export const About: React.FC = () => {
            </StaggerContainer>
         </div>
       </section>
-    </div>
+    {/* Partners Section - Trusted By Leading Organizations */}
+    <PartnersSection />
+  </div>
   );
 };
