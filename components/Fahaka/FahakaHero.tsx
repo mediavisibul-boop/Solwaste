@@ -15,7 +15,7 @@ export const FahakaHero: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden bg-white">
+    <section className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden bg-white pt-16 lg:pt-20">
       {/* Background Image Slideshow */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="wait">

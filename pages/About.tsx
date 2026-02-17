@@ -7,10 +7,10 @@ import PartnersSection from '../components/PartnersSection';
 
 const Card: React.FC<{ icon: React.ReactNode, title: string, text: string }> = ({ icon, title, text }) => (
   <StaggerItem>
-    <div className="bg-white p-6 sm:p-7 md:p-8 border-l-4 border-gray-200 hover:border-gray-900 rounded-r-premium shadow-premium hover:shadow-premium-lg hover:bg-gray-50 transition-all duration-400">
+    <div className="bg-white p-6 sm:p-7 md:p-8 border-l-4 border-gray-200 hover:border-gray-900 rounded-r-premium shadow-premium hover:shadow-premium-lg hover:bg-gray-50 transition-all duration-400 h-full flex flex-col">
       <div className="text-gray-900 mb-5 sm:mb-6">{icon}</div>
       <h3 className="text-xl sm:text-2xl font-heading font-bold text-gray-900 mb-3 sm:mb-4 uppercase tracking-wide leading-tight">{title}</h3>
-      <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm sm:text-base">{text}</p>
+      <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm sm:text-base flex-1">{text}</p>
     </div>
   </StaggerItem>
 );
@@ -52,39 +52,68 @@ export const About: React.FC = () => {
       {/* Main Content - Mobile Optimized */}
       <section className="py-10 sm:py-14 md:py-18 lg:py-20 xl:py-24 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-14 xl:gap-20 items-center mb-10 sm:mb-14 md:mb-18 lg:mb-24">
-            <ScrollReveal variant="fadeInLeft" viewport={{ once: true, amount: 0.3 }}>
-              <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4 sm:mb-5 leading-tight">
+          <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-14 lg:mb-24">
+
+          {/* LEFT CONTENT */}
+          <ScrollReveal variant="fadeInLeft" viewport={{ once: true, amount: 0.3 }}>
+            <div>
+              <h2 className="text-2xl sm:text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-5 leading-tight">
                 Our Legacy & Expertise
               </h2>
-              <div className="w-20 sm:w-24 h-1 bg-gray-900 rounded-full mb-6 sm:mb-7 md:mb-8"></div>
-              <div className="space-y-5 sm:space-y-6 text-gray-700 leading-relaxed text-base sm:text-lg">
+
+              <div className="w-24 h-1 bg-gray-900 rounded-full mb-8"></div>
+
+              <div className="space-y-6 text-gray-700 leading-relaxed text-base sm:text-lg">
                 <p>
                   Solwaste was established to address the urgent challenge of organic waste management in India’s rapidly growing urban landscape. Our mission is to empower organizations to transform waste liabilities into valuable resources through advanced, compliance-ready technology.
                 </p>
+
                 <p>
-                  Drawing on the precision and reliability of <strong className="font-semibold text-gray-900">German engineering</strong>, we have engineered a portfolio of Organic Waste Composters (OWC) that set new benchmarks for efficiency, durability, and operational excellence. Our solutions are trusted by <strong className="font-semibold text-gray-900">Leading Hotels, IT Parks, Hospitals, Educational Institutions, Malls, and Food Processing Units</strong>—all seeking to meet India’s Solid Waste Management Rules 2026 while optimizing operational costs.
+                  Drawing on the precision and reliability of{" "}
+                  <strong className="font-semibold text-gray-900">
+                    German engineering
+                  </strong>, we have engineered a portfolio of Organic Waste Composters (OWC) that set new benchmarks for efficiency, durability, and operational excellence. Our solutions are trusted by{" "}
+                  <strong className="font-semibold text-gray-900">
+                    Leading Hotels, IT Parks, Hospitals, Educational Institutions, Malls, and Food Processing Units
+                  </strong>—all seeking to meet India’s Solid Waste Management Rules 2026 while optimizing operational costs.
                 </p>
+
                 <p>
-                  With a proven track record of over <strong className="font-semibold text-gray-900">500 successful installations</strong> nationwide, Solwaste is the preferred partner for organizations committed to sustainability, regulatory compliance, and ESG leadership. Our on-site composting systems deliver measurable cost savings, ensure seamless compliance, and help our clients achieve their environmental and business objectives with confidence.
+                  With a proven track record of over{" "}
+                  <strong className="font-semibold text-gray-900">
+                    500 successful installations
+                  </strong>{" "}
+                  nationwide, Solwaste is the preferred partner for organizations committed to sustainability, regulatory compliance, and ESG leadership.
                 </p>
               </div>
-            </ScrollReveal>
-            <ScrollReveal variant="scaleIn" delay={0.3} viewport={{ once: true, amount: 0.2 }}>
-              <div className="relative mt-8 lg:mt-0">
-                <div className="absolute top-0 right-0 -mr-4 sm:-mr-6 md:-mr-8 -mt-4 sm:-mt-6 md:-mt-8 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 bg-gray-900/10 z-0"></div>
-                <div className="absolute -bottom-4 sm:-bottom-6 md:-bottom-8 -left-4 sm:-left-6 md:-left-8 w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 border-2 sm:border-4 border-gray-900 z-0 hidden md:block"></div>
-                <img 
-                  src="/aboutPage.jpg" 
-                  alt="Engineering Team" 
-                  className="shadow-2xl relative z-10 w-full grayscale hover:grayscale-0 transition-all duration-500"
-                />
-              </div>
-            </ScrollReveal>
-          </div>
+            </div>
+          </ScrollReveal>
+
+          {/* RIGHT IMAGE */}
+          <ScrollReveal variant="scaleIn" delay={0.3} viewport={{ once: true, amount: 0.2 }}>
+            <div className="relative max-w-lg ml-auto mt-10 lg:mt-0">
+
+              {/* Decorative Top Box */}
+              <div className="absolute top-0 right-0 translate-x-1/4 -translate-y-1/4 w-32 h-32 md:w-40 md:h-40 bg-gray-900/10 z-0"></div>
+
+              {/* Decorative Border */}
+              <div className="absolute -bottom-8 -left-8 w-48 h-48 md:w-64 md:h-64 border-4 border-gray-900 z-0 hidden md:block"></div>
+
+              {/* Image */}
+              <img
+                src="/aboutPage.jpg"
+                alt="Engineering Team"
+                className="relative z-10 w-full shadow-2xl grayscale hover:grayscale-0 transition-all duration-500"
+              />
+
+            </div>
+          </ScrollReveal>
+
+        </div>
+
 
           {/* Mission/Vision Grid - Migrated from Home - Mobile Optimized */}
-          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6 md:gap-7 lg:gap-8" staggerDelay={0.12} viewport={{ once: true, amount: 0.15 }}>
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6 md:gap-7 lg:gap-8 items-stretch" staggerDelay={0.12} viewport={{ once: true, amount: 0.15 }}>
             <Card 
               icon={<Target size={36} className="sm:w-10 sm:h-10 md:w-12 md:h-12" />}
               title="Our Mission"

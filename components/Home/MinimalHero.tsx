@@ -6,7 +6,7 @@ export const MinimalHero: React.FC = () => {
   return (
     <div className="relative" style={{ margin: 0, padding: 0 }}>
       {/* Hero Content */}
-      <div className="relative overflow-hidden" style={{ minHeight: 'calc(100vh - 64px)', padding: 0, margin: 0 }}>
+      <div className="relative overflow-hidden" style={{ minHeight: '100vh', padding: 0, margin: 0 }}>
         {/* Background image */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -19,23 +19,22 @@ export const MinimalHero: React.FC = () => {
         
 
         {/* Content overlay */}
-        <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 lg:px-10" style={{ minHeight: 'calc(100vh - 64px)' }}>
+        <div className="relative z-10 pt-16 lg:pt-26 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 lg:px-10" style={{ minHeight: 'calc(100vh - 64px)' }}>
           
-          {/* Text Group - with proper top padding to avoid nav overlap */}
-          <div className="flex flex-col items-center pt-10 sm:pt-14 md:pt-16 lg:pt-4 xl:pt-14">
+          {/* Text Group - no extra top padding, handled by layout */}
+          <div className="flex flex-col items-center">
             
 
             {/* Subtitle */}
-            <motion.p
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="mt-2 sm:mt-3 md:mt-4 text-white/80 max-w-sm sm:max-w-md mx-auto px-2 text-[14px] xs:text-[16px] sm:text-lg md:text-xl lg:text-2xl"
-              style={{ lineHeight: 1.6 }}
+              className="mt-2 sm:mt-3 md:mt-4 text-white font-extrabold mx-auto px-2 text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl leading-tight"
+              style={{ lineHeight: 1.3 }}
             >
-              Experience next-generation composting.<br />
-              Superior to traditional methods in every way.
-            </motion.p>
+              Experience next-generation composting.<br/> Superior to traditional methods in every way.
+            </motion.h2>
 
             {/* CTA Button */}
             <motion.div
@@ -65,7 +64,7 @@ export const MinimalHero: React.FC = () => {
             className="w-full max-w-[92%] xs:max-w-[88%] sm:max-w-[82%] md:max-w-[75%] lg:max-w-[900px] xl:max-w-[1000px] 2xl:max-w-[1100px] mx-auto mt-4 sm:mt-6 md:mt-8 lg:mt-10 pb-8 sm:pb-10"
           >
             <img 
-              src="/ecoloopwbg.png" 
+              src="/ecoloop5.png" 
               alt="EcoLoop Machine" 
               className="w-full object-contain transition-all duration-700 ease-in-out lg:grayscale lg:hover:grayscale-0 max-h-[200px] xs:max-h-[240px] sm:max-h-[320px] md:max-h-[400px] lg:max-h-[480px] xl:max-h-[540px] 2xl:max-h-[580px]"
               style={{ borderRadius: '16px' }}

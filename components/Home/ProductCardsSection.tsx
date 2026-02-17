@@ -8,7 +8,7 @@ const products = [
     capacity: 'Societies & Hotels',
     description: 'A zero-maintenance workhorse designed for residential societies, hotels, and resorts. EcoLoop ensures waste management never impacts aesthetics or air quality. On-site composting, zero odor, and German-engineered reliability.',
     link: '/owc',
-    image: '/ecoloop2.png',
+    image: '/ecoloop4.png',
   },
   {
     name: 'Fahaka Industrial',

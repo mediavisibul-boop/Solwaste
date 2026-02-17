@@ -4,7 +4,7 @@ import { Flag } from '../Icons';
 
 export const HeroSection: React.FC = () => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white text-center overflow-hidden">
+    <section className="relative min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white text-center overflow-hidden pt-16 lg:pt-20">
       <div className="absolute inset-0 z-0 opacity-30 sm:opacity-40">
         <img 
           src="https://images.unsplash.com/photo-1532375810709-75b1da00537c?q=80&w=2076&auto=format&fit=crop" 

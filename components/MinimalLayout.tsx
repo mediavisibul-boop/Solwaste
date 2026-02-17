@@ -6,7 +6,7 @@ export const MinimalLayout: React.FC<{ children: React.ReactNode }> = ({ childre
   return (
     <div className="min-h-screen bg-[#f5f5f5]" style={{ fontFamily: "'Inter', sans-serif" }}>
       <MinimalNavigation />
-      <main style={{ padding: 0, margin: 0 }}>{children}</main>
+      <main className="pt-16 lg:pt-20" style={{ padding: 0, margin: 0 }}>{children}</main>
       <MinimalFooter />
     </div>
   );
