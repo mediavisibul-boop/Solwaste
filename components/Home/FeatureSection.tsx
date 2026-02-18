@@ -29,7 +29,7 @@ export const FeatureSection: React.FC = () => {
   return (
     <section 
       id="feature-section" 
-      className="bg-[#f5f5f5] py-14 xs:py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32"
+      className="bg-[#f5f5f5] py-4 xs:py-5 sm:py-6 md:py-8 lg:py-10 xl:py-12"
     >
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
         {/* Section Header */}

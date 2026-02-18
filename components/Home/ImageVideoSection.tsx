@@ -26,7 +26,7 @@ export const ImageVideoSection: React.FC = () => {
   };
 
   return (
-    <section className="bg-[#f5f5f5] pb-14 xs:pb-16 sm:pb-20 md:pb-24 lg:pb-28 xl:pb-32">
+    <section className="bg-[#f5f5f5] pb-6 xs:pb-8 sm:pb-10 md:pb-12 lg:pb-14 xl:pb-16">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
         {/* Video/Image Box */}
         <motion.div
