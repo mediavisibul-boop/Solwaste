@@ -52,7 +52,7 @@ export const ProductDetailSection: React.FC = () => {
     <section className="bg-[#f5f5f5] py-14 xs:py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32 pb-16 xs:pb-18 sm:pb-24 md:pb-28 lg:pb-32 xl:pb-36">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
         {/* Section Header */}
-        <div className="text-center mb-8 sm:mb-12 md:mb-16">
+        <div className="text-center mb-2 sm:mb-6 md:mb-10">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
