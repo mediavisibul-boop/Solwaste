@@ -10,6 +10,7 @@ const PressMedia = () => {
       title: "Fahaka Installation Success",
       description: "Revolutionary waste management solution successfully installed and operational",
       image: "/tweet1.png",
+      link: "https://x.com/mopr_goi/status/1659152987162574848?s=20",
       category: "Installation",
       date: "2026"
     }
@@ -71,19 +72,28 @@ const PressMedia = () => {
                 transition={{ delay: index * 0.1 }}
                 className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-gray-200 hover:border-gray-900"
               >
-                {/* Image */}
-                <div className="relative overflow-hidden bg-gray-100 aspect-[4/3]">
-                  <img 
-                    src={item.image} 
-                    alt={item.title}
-                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute top-4 left-4 z-10">
-                    <span className="inline-block px-3 py-1 bg-gray-900 text-white text-xs font-bold uppercase tracking-wider rounded-full">
-                      {item.category}
-                    </span>
+                {/* Image (clickable) */}
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block group"
+                  tabIndex={0}
+                  aria-label={`Read more about ${item.title}`}
+                >
+                  <div className="relative overflow-hidden bg-gray-100 aspect-[4/3]">
+                    <img 
+                      src={item.image} 
+                      alt={item.title}
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute top-4 left-4 z-10">
+                      <span className="inline-block px-3 py-1 bg-gray-900 text-white text-xs font-bold uppercase tracking-wider rounded-full">
+                        {item.category}
+                      </span>
+                    </div>
                   </div>
-                </div>
+                </a>
 
                 {/* Content */}
                 <div className="p-6">
