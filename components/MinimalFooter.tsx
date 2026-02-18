@@ -5,7 +5,7 @@ export const MinimalFooter: React.FC = () => {
   return (
     <footer className="relative bg-black text-white overflow-hidden pt-10 xs:pt-12 sm:pt-14 md:pt-16 lg:pt-20">
       {/* Top Bar with Logo + Social */}
-      <div className="max-w-screen-2xl mx-auto px-2 sm:px-4 md:px-8 xl:px-12 2xl:px-20">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between pb-5 sm:pb-8 md:pb-10 border-b border-white/10 gap-4 sm:gap-0">
           {/* Logo + Tagline + Social (stacked for mobile/tablet) */}
           <div className="flex flex-col items-center sm:items-start gap-2 w-full sm:w-auto">
@@ -42,7 +42,7 @@ export const MinimalFooter: React.FC = () => {
       </div>
 
       {/* Footer Links Grid */}
-      <div className="max-w-screen-2xl mx-auto px-2 sm:px-4 md:px-8 xl:px-12 2xl:px-20 py-6 sm:py-8 md:py-12">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 py-6 sm:py-8 md:py-12">
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
           {/* Column 1 — Contact */}
           <div className="col-span-2 sm:col-span-1">

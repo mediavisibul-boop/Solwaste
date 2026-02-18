@@ -19,7 +19,7 @@ export const MinimalNavigation: React.FC = () => {
     <>
       {/* NAVBAR */}
       <nav className="fixed top-0 left-0 right-0 z-50 h-16 lg:h-20 bg-[#f5f5f5]/95 backdrop-blur-md border-b border-black/5">
-        <div className="max-w-screen-2xl mx-auto px-2 sm:px-4 md:px-8 xl:px-12 2xl:px-20 h-full flex items-center justify-between">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-10 h-full flex items-center justify-between">
 
           {/* Left Desktop */}
           <div className="hidden lg:flex items-center gap-12">
