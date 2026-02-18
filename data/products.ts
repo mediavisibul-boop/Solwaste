@@ -51,7 +51,7 @@ export const products: ProductData[] = [
     name: "EcoLoop",
     tagline: "Societies & Hotels",
     description: "A zero-maintenance workhorse designed for residential societies, hotels, and resorts. The EcoLoop ensures that waste management doesn't impact the aesthetics or air quality of your premises.",
-    images: ["/ecoloop.webp", "/ecoloop2.png", "/ecoloop3.webp"],
+    images: ["/ecoloop.webp", "/ecoloop2.jpeg", "/ecoloop3.webp"],
     features: [
       "Zero Odor & Pest Free Operation",
       "Medical Grade SS 304 Construction",
