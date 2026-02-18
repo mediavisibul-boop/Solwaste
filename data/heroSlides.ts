@@ -35,7 +35,7 @@ export const slides: Slide[] = [
     title: "CompoGen™",
     subtitle: "The Enterprise Standard",
     description: "The 1.5+ Ton/day industrial powerhouse. High-torque German motors designed for 24/7 continuous operation in municipal and commercial sectors.",
-    images: ["/compogen.webp", "/compogen2.webp"],
+    images: ["/compogen.webp", "/compogen4.jpeg"],
     isDark: true,
     badge: "Industrial & Municipal",
     specs: [

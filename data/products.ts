@@ -77,7 +77,7 @@ export const products: ProductData[] = [
     name: "CompoGen",
     tagline: "Industrial & Municipal",
     description: "The CompoGen series is built for the heavy lifting. Designed for municipal corporations and large industrial parks, it uses high-torque German geared motors to crush and compost massive volumes of organic waste.",
-    images: ["/compogen.webp", "/compogen2.webp"],
+    images: ["/compogen.webp", "/compogen4.jpeg"],
     features: [
       "Fully PLC Controlled with Cloud BMS Integration",
       "High-Torque German Geared Motors",
