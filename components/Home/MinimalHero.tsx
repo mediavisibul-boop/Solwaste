@@ -44,7 +44,9 @@ export const MinimalHero: React.FC = () => {
               className="mt-3 sm:mt-4 md:mt-5"
             >
               <Link
-                to="/owc"
+                to="https://docs.google.com/forms/d/e/1FAIpQLSdJoK4BsvHgAj48wjr94IZNKtQHWlpo7pK905muYs-vrBksJQ/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-black text-white font-medium hover:bg-gray-800 active:bg-gray-900 transition-colors duration-300 px-5 sm:px-6 md:px-7 py-2.5 sm:py-3 md:py-3.5 rounded-full text-[11px] xs:text-xs sm:text-[13px] md:text-sm"
                 style={{ letterSpacing: '0.02em' }}
               >
