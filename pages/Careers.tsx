@@ -138,7 +138,7 @@ export const Careers: React.FC = () => {
                   {roles.map((role, idx) => (
                       <StaggerItem key={idx}>
                         <a 
-                          href="https://quark-cornflower-fe8.notion.site/2cc84662572280318ff3ff2d5f2f0fee?pvs=105"
+                          href="https://forms.gle/YGHsjnZPRbiAHskdA"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="bg-gray-50 p-6 border-2 border-gray-200 flex justify-between items-center group hover:border-gray-900 hover:bg-white transition-all cursor-pointer shadow-sm hover:shadow-md"
@@ -155,7 +155,7 @@ export const Careers: React.FC = () => {
                       <h3 className="text-xl sm:text-2xl font-heading font-bold mb-2 text-white">Don't see your role?</h3>
                       <p className="text-gray-300 text-sm sm:text-base">We are always looking for exceptional talent. Pitch us your role.</p>
                   </div>
-                  <button onClick={() => window.open('https://quark-cornflower-fe8.notion.site/2cc84662572280318ff3ff2d5f2f0fee?pvs=105', '_blank')} className="relative overflow-hidden min-h-[52px] xs:min-h-[56px] flex items-center justify-center rounded-xl bg-gradient-to-r from-white to-gray-100 hover:from-gray-100 hover:to-white shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_35px_rgba(255,255,255,0.6)] active:scale-[0.98] hover:scale-[1.03] transition-all duration-300 touch-manipulation group">
+                  <button onClick={() => window.open('https://forms.gle/YGHsjnZPRbiAHskdA', '_blank')} className="relative overflow-hidden min-h-[52px] xs:min-h-[56px] flex items-center justify-center rounded-xl bg-gradient-to-r from-white to-gray-100 hover:from-gray-100 hover:to-white shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_35px_rgba(255,255,255,0.6)] active:scale-[0.98] hover:scale-[1.03] transition-all duration-300 touch-manipulation group">
                     {/* Shine effect */}
                     <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
                     
@@ -203,7 +203,7 @@ export const Careers: React.FC = () => {
                           <p className="text-gray-200 text-sm sm:text-base md:text-lg mb-6 sm:mb-8 md:mb-10 font-medium">
                               Ready to make a difference? Apply now and start your journey with Solwaste.
                           </p>
-                          <button onClick={() => window.open('https://quark-cornflower-fe8.notion.site/2cc84662572280318ff3ff2d5f2f0fee?pvs=105', '_blank')} className="relative overflow-hidden w-full min-h-[60px] xs:min-h-[64px] sm:min-h-[68px] flex items-center justify-center rounded-xl bg-gradient-to-r from-white to-gray-100 hover:from-gray-100 hover:to-white shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:shadow-[0_0_50px_rgba(255,255,255,0.7)] active:scale-[0.98] hover:scale-[1.03] transition-all duration-300 touch-manipulation group">
+                          <button onClick={() => window.open('https://forms.gle/YGHsjnZPRbiAHskdA', '_blank')} className="relative overflow-hidden w-full min-h-[60px] xs:min-h-[64px] sm:min-h-[68px] flex items-center justify-center rounded-xl bg-gradient-to-r from-white to-gray-100 hover:from-gray-100 hover:to-white shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:shadow-[0_0_50px_rgba(255,255,255,0.7)] active:scale-[0.98] hover:scale-[1.03] transition-all duration-300 touch-manipulation group">
                             {/* Shine effect */}
                             <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
                             

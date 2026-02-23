@@ -35,7 +35,7 @@ export const CommunitySection: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="font-bold text-white text-base xs:text-lg sm:text-xl md:text-2xl lg:text-[28px] xl:text-3xl leading-tight"
             >
-              Be Part of the Sustainable Movement
+              Start with a Free Waste Assessment
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -44,9 +44,7 @@ export const CommunitySection: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="mt-3 sm:mt-4 text-white/70 max-w-lg mx-auto px-2 text-xs sm:text-[13px] md:text-sm leading-relaxed"
             >
-              Join a community that is redefining waste management. As a member of the Solwaste family, 
-              you get access to exclusive events, insights, and a network of like-minded individuals who 
-              share a passion for innovation and sustainability.
+              Discover how much waste your facility generates and uncover opportunities to reduce costs, improve efficiency, and move toward sustainable operations at no cost to you.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -56,10 +54,10 @@ export const CommunitySection: React.FC = () => {
               className="mt-6 sm:mt-8"
             >
               <Link
-                to="/partner"
+                to="https://docs.google.com/forms/d/e/1FAIpQLSdJoK4BsvHgAj48wjr94IZNKtQHWlpo7pK905muYs-vrBksJQ/viewform"
                 className="inline-flex items-center gap-2 bg-white text-black font-medium hover:bg-gray-100 active:bg-gray-200 transition-colors rounded-full px-5 sm:px-6 md:px-7 py-2.5 sm:py-3 md:py-3.5 text-[11px] xs:text-xs sm:text-[13px] md:text-sm"
               >
-                Join Our Community
+                Get Free Assessment
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
