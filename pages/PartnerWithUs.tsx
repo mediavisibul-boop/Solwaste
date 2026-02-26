@@ -61,7 +61,7 @@ export const PartnerWithUs: React.FC = () => {
                 <p className="text-lg text-white max-w-2xl leading-relaxed mb-6" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.8), 0 1px 6px rgba(0,0,0,0.9)' }}>
                     We make composting machines. You know people who need them. Let's work together.
                 </p>
-                <button onClick={() => window.open('https://forms.gle/5cvW2EP3i6S55TK77', '_blank')} className="relative overflow-hidden min-h-[60px] xs:min-h-[64px] sm:min-h-[68px] flex items-center justify-center rounded-xl bg-gradient-to-r from-white to-gray-100 hover:from-gray-100 hover:to-white shadow-[0_0_25px_rgba(255,255,255,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.6)] active:scale-[0.98] hover:scale-[1.03] transition-all duration-300 touch-manipulation group">
+                <button onClick={() => window.open('https://forms.gle/DWVkQwKJUFQUHMqv9', '_blank')} className="relative overflow-hidden min-h-[60px] xs:min-h-[64px] sm:min-h-[68px] flex items-center justify-center rounded-xl bg-gradient-to-r from-white to-gray-100 hover:from-gray-100 hover:to-white shadow-[0_0_25px_rgba(255,255,255,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.6)] active:scale-[0.98] hover:scale-[1.03] transition-all duration-300 touch-manipulation group">
                   {/* Shine effect */}
                   <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
                   
@@ -192,7 +192,7 @@ export const PartnerWithUs: React.FC = () => {
                         <p className="text-gray-700 text-lg mb-8">
                             Join a network of changemakers who are turning waste management into a movement.
                         </p>
-                        <button onClick={() => window.open('https://forms.gle/5cvW2EP3i6S55TK77', '_blank')} className="relative overflow-hidden w-full min-h-[64px] flex items-center justify-center rounded-xl bg-gray-900 backdrop-blur-md border-2 border-gray-700 hover:border-gray-600 shadow-2xl shadow-gray-900/20 hover:shadow-gray-900/40 active:scale-[0.98] hover:scale-[1.02] transition-all duration-300 touch-manipulation group">
+                        <button onClick={() => window.open('https://forms.gle/DWVkQwKJUFQUHMqv9', '_blank')} className="relative overflow-hidden w-full min-h-[64px] flex items-center justify-center rounded-xl bg-gray-900 backdrop-blur-md border-2 border-gray-700 hover:border-gray-600 shadow-2xl shadow-gray-900/20 hover:shadow-gray-900/40 active:scale-[0.98] hover:scale-[1.02] transition-all duration-300 touch-manipulation group">
                           {/* Corner accents */}
                           <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-white opacity-60"></div>
                           <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-white opacity-60"></div>

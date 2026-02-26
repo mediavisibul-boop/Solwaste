@@ -54,7 +54,7 @@ export const CommunitySection: React.FC = () => {
               className="mt-6 sm:mt-8"
             >
               <Link
-                to="https://docs.google.com/forms/d/e/1FAIpQLSdJoK4BsvHgAj48wjr94IZNKtQHWlpo7pK905muYs-vrBksJQ/viewform"
+                to="https://forms.gle/KJynwA3zGGKnydSY8"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-white text-black font-medium hover:bg-gray-100 active:bg-gray-200 transition-colors rounded-full px-5 sm:px-6 md:px-7 py-2.5 sm:py-3 md:py-3.5 text-[11px] xs:text-xs sm:text-[13px] md:text-sm"
